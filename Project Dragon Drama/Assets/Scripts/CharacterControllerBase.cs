@@ -29,7 +29,7 @@ public class CharacterControllerBase : MonoBehaviour
     private void Awake()
     {
         _player = _playerObject.GetComponent<Rigidbody>();
-        _state = PlayerState.Menu;
+        _state = PlayerState.Moving;
     }
 
     private void Update()
