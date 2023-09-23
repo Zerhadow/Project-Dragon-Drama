@@ -1816,6 +1816,7 @@ MonoBehaviour:
   _state: 0
   pressETextBox: {fileID: 1908095330}
   dialogueTextBox: {fileID: 1644190237}
+  continueTextBox: {fileID: 508497230}
   cutSceneController: {fileID: 888801426}
 --- !u!4 &606336312
 Transform:
@@ -2234,6 +2235,7 @@ MonoBehaviour:
   mg1PFP: {fileID: 1072567125}
   cutsceneStart: 0
   characterControllerBase: {fileID: 606336311}
+  continueTextBox: {fileID: 508497230}
 --- !u!114 &888801427
 MonoBehaviour:
   m_ObjectHideFlags: 0

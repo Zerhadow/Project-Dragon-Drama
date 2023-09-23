@@ -28,6 +28,7 @@ public class CharacterControllerBase : MonoBehaviour
 
     public GameObject pressETextBox;
     public GameObject dialogueTextBox;
+    public GameObject continueTextBox;
     public CutSceneController cutSceneController;
 
     bool endofDialogue = false;
@@ -111,6 +112,7 @@ public class CharacterControllerBase : MonoBehaviour
                     {
                         // Close dialogue popup
                         dialogueTextBox.SetActive(false);
+                        continueTextBox.SetActive(false);
 
                         /*For Testing. Disable once implemented*/
                         DebugColorUpdate(_adjacentNPC, Color.magenta);

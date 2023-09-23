@@ -13,6 +13,7 @@ public class CutSceneController : MonoBehaviour
     public GameObject playerPFP, mg1PFP;
     public bool cutsceneStart = false;
     public CharacterControllerBase characterControllerBase;
+    public GameObject continueTextBox;
 
     
     void Awake() {
@@ -22,6 +23,7 @@ public class CutSceneController : MonoBehaviour
         dialogueDictionaries.meangirl3.fillBank();
         chapterIdx = 0;
         pageIdx = 0;
+        continueTextBox.SetActive(false);
     }
     
     // Start is called before the first frame update
@@ -48,10 +50,10 @@ public class CutSceneController : MonoBehaviour
                 Debug.Log("End of Cutscene");
                 characterControllerBase.setEndofDialogue(true);
                 pageIdx = 0;
+                continueTextBox.SetActive(true);
             } else {
                 changePotriat();
                 dialogueTextBox.text = entryList[pageIdx++].text;
-
             }
         }
     }
