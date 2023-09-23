@@ -26,6 +26,8 @@ public class CharacterControllerBase : MonoBehaviour
     public PlayerState _state;
     private PlayerState _prevState;
 
+    public GameObject pressETextBox;
+
     private void Awake()
     {
         _player = _playerObject.GetComponent<Rigidbody>();
