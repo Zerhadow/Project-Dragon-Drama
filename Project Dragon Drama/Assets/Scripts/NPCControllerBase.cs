@@ -7,6 +7,7 @@ public class NPCControllerBase : MonoBehaviour
     [Header ("Required Objects")]
     [SerializeField] GameObject _npc;
     [SerializeField] GameObject _characterController;
+    public GameObject pressETextBox;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -17,6 +18,7 @@ public class NPCControllerBase : MonoBehaviour
             /*For Debug Tesing*/
             _npc.GetComponent<Renderer>().material.SetColor("_Color", Color.magenta);
             Debug.Log("Player in talking range of " + _npc.name);
+            pressETextBox.SetActive(true);
         }
     }
 
@@ -29,6 +31,7 @@ public class NPCControllerBase : MonoBehaviour
             /*For Debug Tesing*/
             _npc.GetComponent<Renderer>().material.SetColor("_Color", Color.yellow);
             Debug.Log("Player has left talking range of " + _npc.name);
+            pressETextBox.SetActive(false);
         }
     }
 }
