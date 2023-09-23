@@ -26,6 +26,13 @@ public class CharacterControllerBase : MonoBehaviour
     public PlayerState _state;
     private PlayerState _prevState;
 
+    public GameObject pressETextBox;
+    public GameObject dialogueTextBox;
+    public GameObject continueTextBox;
+    public CutSceneController cutSceneController;
+
+    bool endofDialogue = false;
+
     private void Awake()
     {
         _player = _playerObject.GetComponent<Rigidbody>();
@@ -75,6 +82,9 @@ public class CharacterControllerBase : MonoBehaviour
                     else if ((Input.GetKeyDown(KeyCode.E)) && (_adjacentNPC != null)) //Talk to NPC, GoTo NPCTalk
                     {
                         // Open dialogue popup tied to adjacentNPC
+                        pressETextBox.SetActive(false);
+                        dialogueTextBox.SetActive(true);
+                        cutSceneController.cutsceneStart = true;
 
                         /*For Testing. Disable once implemented*/
                         DebugColorUpdate(_adjacentNPC, Color.green);
@@ -85,7 +95,7 @@ public class CharacterControllerBase : MonoBehaviour
 
                     /*Debug for state change*/
                     DebugColorUpdate(_playerObject, Color.blue);
-                    Debug.Log("Moving State");
+                    // Debug.Log("Moving State");
                 }
                 break;
             case PlayerState.NPCTalk: //NPC popup dialogue
@@ -98,9 +108,11 @@ public class CharacterControllerBase : MonoBehaviour
                         _prevState = _state;
                         _state = PlayerState.Menu;
                     }
-                    else if (Input.GetKeyDown(KeyCode.E)) //Dismiss popup text, GoTo Moving
+                    else if (Input.GetKeyDown(KeyCode.E) && endofDialogue) //Dismiss popup text, GoTo Moving
                     {
                         // Close dialogue popup
+                        dialogueTextBox.SetActive(false);
+                        continueTextBox.SetActive(false);
 
                         /*For Testing. Disable once implemented*/
                         DebugColorUpdate(_adjacentNPC, Color.magenta);
@@ -111,7 +123,7 @@ public class CharacterControllerBase : MonoBehaviour
 
                     /*Debug for state change*/
                     DebugColorUpdate(_playerObject, Color.yellow);
-                    Debug.Log("NPCTalk State");
+                    // Debug.Log("NPCTalk State");
                 }
                 break;
             case PlayerState.Dialogue: //Visual novel cutscene dialoue
@@ -170,5 +182,11 @@ public class CharacterControllerBase : MonoBehaviour
     private void DebugColorUpdate(GameObject gameObject, Color color)
     {
         gameObject.GetComponent<Renderer>().material.SetColor("_Color", color);
+    }
+
+    public void setEndofDialogue(bool b)
+    {
+        endofDialogue = b;
+        // Debug.Log("End of Dialogue: " + endofDialogue);
     }
 }
