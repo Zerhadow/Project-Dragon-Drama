@@ -10,6 +10,7 @@ public class CutSceneController : MonoBehaviour
     List<Entry> entryList = new List<Entry>();
     Entry entry;
     int chapterIdx, pageIdx;
+    public GameObject playerPFP, mg1PFP;
 
     
     void Awake() {
@@ -27,6 +28,7 @@ public class CutSceneController : MonoBehaviour
         Entry entry = new Entry();
 
         # region Start of Chapter 1
+        playerPFP.SetActive(true);
         entry.createEntry(0, 1, dialogueDictionaries.player.playerDiagBank[0], false, true);
         dialogueTextBox.text = dialogueDictionaries.player.playerDiagBank[0];
         entryList.Add(entry);
@@ -42,11 +44,24 @@ public class CutSceneController : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.E)) {
             Debug.Log("E pressed");
             dialogueTextBox.text = entryList[pageIdx++].text;
+            if(entryList[pageIdx].char1 == 0) {
+                playerPFP.SetActive(true);
+                mg1PFP.SetActive(false);
+            } else if (entryList[pageIdx].char1 == 1) {
+                playerPFP.SetActive(false);
+                mg1PFP.SetActive(true);
+            } else if(entryList[pageIdx].char1 == 2) {
+                playerPFP.SetActive(false);
+                mg1PFP.SetActive(false);
+            } else if(entryList[pageIdx].char1 == 3) {
+                playerPFP.SetActive(true);
+                mg1PFP.SetActive(true);
+            }
         }
     }
 
     class Entry {
-        int char1, char2;
+        public int char1, char2;
         public string text;
         bool isChar1_shaded, isChar2_shaded;
 
