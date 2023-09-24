@@ -20,6 +20,7 @@ public class CharacterControllerBase : MonoBehaviour
     private Rigidbody _player;
     float moveAmountVertical = 0f;
     float moveAmountHorizontal = 0f;
+    private InventoryController _inventory;
 
     public GameObject _adjacentNPC = null;
 
@@ -29,7 +30,10 @@ public class CharacterControllerBase : MonoBehaviour
     private void Awake()
     {
         _player = _playerObject.GetComponent<Rigidbody>();
+        _inventory = this.GetComponent<InventoryController>();
+
         _state = PlayerState.Moving;
+        _inventory.Clear();
     }
 
     private void Update()
@@ -75,6 +79,13 @@ public class CharacterControllerBase : MonoBehaviour
                     else if ((Input.GetKeyDown(KeyCode.E)) && (_adjacentNPC != null)) //Talk to NPC, GoTo NPCTalk
                     {
                         // Open dialogue popup tied to adjacentNPC
+
+                        //Check if NPC gives key gossip and add to inventory if true
+                        if(_adjacentNPC.transform.Find("Talk Range").gameObject.GetComponent<NPCControllerBase>().GiveKeyGossip())
+                        {
+                            string gossipKey = _adjacentNPC.name.ToString();
+                            _inventory.AddItem(gossipKey);
+                        }
 
                         /*For Testing. Disable once implemented*/
                         DebugColorUpdate(_adjacentNPC, Color.green);
