@@ -9,6 +9,9 @@ public class NPCControllerBase : MonoBehaviour
     [SerializeField] GameObject _characterController;
     public GameObject pressETextBox;
 
+    [Header("NPC Vairables")]
+    [SerializeField] bool _givesKeyGossip = false;
+
     private void OnTriggerEnter(Collider other)
     {
         if(other.tag == "Player") //Player has entered talk range
@@ -33,5 +36,10 @@ public class NPCControllerBase : MonoBehaviour
             Debug.Log("Player has left talking range of " + _npc.name);
             pressETextBox.SetActive(false);
         }
+    }
+
+    public bool GiveKeyGossip ()
+    {
+        return _givesKeyGossip;
     }
 }
