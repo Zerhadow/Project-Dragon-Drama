@@ -34,6 +34,8 @@ public class CharacterControllerBase : MonoBehaviour
 
     bool endofDialogue = false;
 
+    public NPCControllerBase npcObj;
+
     private void Awake()
     {
         _player = _playerObject.GetComponent<Rigidbody>();
@@ -85,10 +87,21 @@ public class CharacterControllerBase : MonoBehaviour
                     }
                     else if ((Input.GetKeyDown(KeyCode.E)) && (_adjacentNPC != null)) //Talk to NPC, GoTo NPCTalk
                     {
-                        // Open dialogue popup tied to adjacentNPC
-                        pressETextBox.SetActive(false);
-                        dialogueTextBox.SetActive(true);
-                        cutSceneController.cutsceneStart = true;
+                        if(_adjacentNPC.name == "MG_Regina") {
+                            Debug.Log("Regina");
+                            // Open dialogue popup tied to adjacentNPC
+                            pressETextBox.SetActive(false);
+                            dialogueTextBox.SetActive(true);
+                            cutSceneController.cutsceneStart = true;
+                        } else {
+                            Debug.Log("Not Regina");
+                            npcObj = _adjacentNPC.transform.Find("Talk Range").gameObject.GetComponent<NPCControllerBase>();
+                            // Open dialogue popup tied to adjacentNPC
+
+                            pressETextBox.SetActive(false);
+                            dialogueTextBox.SetActive(true);
+                            cutSceneController.NPCtalk(npcObj);
+                        }
 
                         //Check if NPC gives key gossip and add to inventory if true
                         if(_adjacentNPC.transform.Find("Talk Range").gameObject.GetComponent<NPCControllerBase>().GiveKeyGossip())

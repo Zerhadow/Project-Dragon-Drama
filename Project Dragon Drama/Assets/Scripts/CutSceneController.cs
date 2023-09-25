@@ -74,19 +74,30 @@ public class CutSceneController : MonoBehaviour
 
     void changePotriat() {
         //set pfp
-        if(entryList[pageIdx].char1 == 0) {
+        if(entryList[pageIdx].char1 == 0) { //player
             playerPFP.SetActive(true);
             mg1PFP.SetActive(false);
-        } else if (entryList[pageIdx].char1 == 1) {
+        } else if (entryList[pageIdx].char1 == 1) { //mg1
             playerPFP.SetActive(false);
             mg1PFP.SetActive(true);
-        } else if(entryList[pageIdx].char1 == 2) {
+        } else if(entryList[pageIdx].char1 == 2) { //mg2
             playerPFP.SetActive(false);
             mg1PFP.SetActive(false);
-        } else if(entryList[pageIdx].char1 == 3) {
+        } else if(entryList[pageIdx].char1 == 3) { //mg3
             playerPFP.SetActive(false);
             mg1PFP.SetActive(false);
         }
-    }    
+    }
+
+    void npcPotriat() {
+        playerPFP.SetActive(false);
+    }
+
+    public void NPCtalk(NPCControllerBase npc) {
+        npcPotriat();
+        Debug.Log("NPC diag:" + npc.gossipText);
+        dialogueTextBox.text = npc.gossipText;
+        characterControllerBase.setEndofDialogue(true);
+    }
 }
 
