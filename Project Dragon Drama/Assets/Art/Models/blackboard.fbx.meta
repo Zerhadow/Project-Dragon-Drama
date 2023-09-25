@@ -3,7 +3,12 @@ guid: 74c3ac9aea4d4c74da5cad5db9455086
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: blackboard_MAT
+    second: {fileID: 2100000, guid: b3ef55000e2e06146b6366134e84a86b, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

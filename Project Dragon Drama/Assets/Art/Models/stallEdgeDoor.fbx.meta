@@ -3,7 +3,12 @@ guid: 49e83e5cef01bd147b84f6a3a49abf80
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: stall_MAT
+    second: {fileID: 2100000, guid: 2b0da9f65138ae34e8d321933866fb4f, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

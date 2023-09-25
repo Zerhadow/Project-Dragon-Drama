@@ -3,7 +3,12 @@ guid: 56d63d24eedf01d488d1c2081e723479
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: door_MAT
+    second: {fileID: 2100000, guid: c5e6d710ee2a1fb43bf9b21771fb893f, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

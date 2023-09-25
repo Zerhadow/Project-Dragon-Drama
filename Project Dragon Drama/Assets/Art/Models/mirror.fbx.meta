@@ -3,7 +3,12 @@ guid: 52ca540a935554749863aa6c70a6da3f
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: mirror_MAT
+    second: {fileID: 2100000, guid: 5f678c1ba4a42b640bad91d4604f4fe4, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

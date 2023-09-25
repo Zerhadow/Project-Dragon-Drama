@@ -3,7 +3,12 @@ guid: e6a9878b57f141e40a4b8b9002e06568
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: wallWindows_MAT
+    second: {fileID: 2100000, guid: 4422da4e5b371d042aaa3857babc28f1, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

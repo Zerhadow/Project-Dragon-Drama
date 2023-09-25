@@ -3,7 +3,12 @@ guid: 67bda12133cd7be4c988703274b00013
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: toliet_MAT
+    second: {fileID: 2100000, guid: b496f76594846444c8c71f299d2a577e, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

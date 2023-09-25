@@ -3,7 +3,12 @@ guid: 7f40c859b0776584bbbb2b7c853ca9a3
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: teachDesk_MAT
+    second: {fileID: 2100000, guid: f34d6a3112b08624db2b97df470ea31f, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
