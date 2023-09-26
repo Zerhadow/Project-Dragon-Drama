@@ -7,6 +7,18 @@ public class DialogueDictionaries : MonoBehaviour {
     public Meangirl1 meangirl1 = new Meangirl1();
     public Meangirl2 meangirl2 = new Meangirl2();
     public Meangirl3 meangirl3 = new Meangirl3();
+    public DialogueOptionsText diagOptions = new DialogueOptionsText();
+    public Cutscene1 cutscene1 = new Cutscene1();
+}
+
+public class Cutscene1 {
+    public Dictionary<int, string> cutscene1DiagBank = new Dictionary<int, string>();
+
+    public void fillBank() {
+    cutscene1DiagBank.Add(0, "Player talks to meangirl1.");
+    cutscene1DiagBank.Add(1, "Meangirl1 talks to meangirl2.");
+    cutscene1DiagBank.Add(2, "Meangirl2 talks to meangirl3.");
+    }
 }
 
 public class Player {
@@ -31,7 +43,7 @@ public class Meangirl1 {
     public void fillBank() {
         # region Chapter 1
         meangirl1DiagBank.Add(0, "I am Regina George.");
-        meangirl1DiagBank.Add(1, "I am a player.");
+        meangirl1DiagBank.Add(1, "Well that's weird to say");
         meangirl1DiagBank.Add(2, "I am a player.");
         # endregion
     }
@@ -62,5 +74,17 @@ public class Meangirl3 {
         meangirl3DiagBank.Add(1, "I am a player.");
         meangirl3DiagBank.Add(2, "I am a player.");
         # endregion
+    }
+}
+
+public class DialogueOptionsText {
+    int index;
+    string text;
+    public Dictionary<int, string> dialogueOptionsBank1 = new Dictionary<int, string>();
+
+    public void fillBank1() {
+        dialogueOptionsBank1.Add(0, "Buy apple");
+        dialogueOptionsBank1.Add(1, "Buy orange");
+        dialogueOptionsBank1.Add(2, "Buy banana");
     }
 }

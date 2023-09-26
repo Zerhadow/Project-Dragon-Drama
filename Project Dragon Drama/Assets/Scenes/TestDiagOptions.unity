@@ -1024,6 +1024,7 @@ MonoBehaviour:
   _characterController: {fileID: 606336310}
   pressETextBox: {fileID: 760780151}
   _givesKeyGossip: 1
+  gossipText: This is a test gossip text
 --- !u!135 &364285239
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1369,8 +1370,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 300, y: 125}
+  m_AnchoredPosition: {x: 0, y: 320}
+  m_SizeDelta: {x: 750, y: 125}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &485901265
 MonoBehaviour:
@@ -1819,6 +1820,7 @@ MonoBehaviour:
   _characterController: {fileID: 606336310}
   pressETextBox: {fileID: 760780151}
   _givesKeyGossip: 1
+  gossipText: This is a test gossip text
 --- !u!135 &586814229
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1928,6 +1930,7 @@ MonoBehaviour:
   dialogueTextBox: {fileID: 1240934004}
   continueTextBox: {fileID: 1036843975}
   cutSceneController: {fileID: 1154466036}
+  npcObj: {fileID: 0}
 --- !u!4 &606336312
 Transform:
   m_ObjectHideFlags: 0
@@ -1968,7 +1971,7 @@ GameObject:
   - component: {fileID: 671544116}
   - component: {fileID: 671544115}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: Opt3 Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2709,8 +2712,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -550, y: 0}
-  m_SizeDelta: {x: 300, y: 125}
+  m_AnchoredPosition: {x: 0, y: 140}
+  m_SizeDelta: {x: 750, y: 125}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &771780497
 MonoBehaviour:
@@ -2818,7 +2821,7 @@ GameObject:
   - component: {fileID: 830508552}
   - component: {fileID: 830508551}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: Opt1 Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2863,7 +2866,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Button
+  m_text: Turkety saoidjoasi
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2952,7 +2955,7 @@ GameObject:
   - component: {fileID: 891697396}
   - component: {fileID: 891697395}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: Opt2 Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3087,7 +3090,7 @@ GameObject:
   - component: {fileID: 914418690}
   - component: {fileID: 914418689}
   m_Layer: 0
-  m_Name: PCTemplate 3
+  m_Name: MG_Regina
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3865,6 +3868,8 @@ MonoBehaviour:
   cutsceneStart: 0
   characterControllerBase: {fileID: 606336311}
   continueTextBox: {fileID: 1036843975}
+  dialogueOptions: {fileID: 403898640}
+  diagOptions: {fileID: 0}
 --- !u!114 &1154466037
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3963,6 +3968,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0627c0d2c114a2c47bc2efd3cc994ff8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  button1Text: {fileID: 830508551}
+  button2Text: {fileID: 891697395}
+  button3Text: {fileID: 671544115}
+  optionChosen: 
+  ifPressed: 0
 --- !u!1 &1240934004
 GameObject:
   m_ObjectHideFlags: 0
@@ -3978,7 +3988,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1240934005
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4142,8 +4152,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 550, y: 0}
-  m_SizeDelta: {x: 300, y: 125}
+  m_AnchoredPosition: {x: 0, y: -40}
+  m_SizeDelta: {x: 750, y: 125}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1339834604
 MonoBehaviour:
@@ -4395,6 +4405,7 @@ MonoBehaviour:
   _characterController: {fileID: 606336310}
   pressETextBox: {fileID: 760780151}
   _givesKeyGossip: 0
+  gossipText: This is a test gossip text
 --- !u!135 &1444538695
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -4887,6 +4898,74 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1725208994}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1748675054
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1748675057}
+  - component: {fileID: 1748675056}
+  - component: {fileID: 1748675055}
+  m_Layer: 0
+  m_Name: EventSystem
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1748675055
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1748675054}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SendPointerHoverToParent: 1
+  m_HorizontalAxis: Horizontal
+  m_VerticalAxis: Vertical
+  m_SubmitButton: Submit
+  m_CancelButton: Cancel
+  m_InputActionsPerSecond: 10
+  m_RepeatDelay: 0.5
+  m_ForceModuleActive: 0
+--- !u!114 &1748675056
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1748675054}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_FirstSelected: {fileID: 0}
+  m_sendNavigationEvents: 1
+  m_DragThreshold: 10
+--- !u!4 &1748675057
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1748675054}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1928367389
 GameObject:
   m_ObjectHideFlags: 0
@@ -5222,6 +5301,7 @@ MonoBehaviour:
   _characterController: {fileID: 606336310}
   pressETextBox: {fileID: 760780151}
   _givesKeyGossip: 1
+  gossipText: This is a test gossip text
 --- !u!1 &2055483034
 GameObject:
   m_ObjectHideFlags: 0
@@ -5499,7 +5579,7 @@ GameObject:
   - component: {fileID: 2145156768}
   - component: {fileID: 2145156767}
   m_Layer: 0
-  m_Name: NPCTemplate
+  m_Name: NPC_Chuck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5607,3 +5687,4 @@ SceneRoots:
   - {fileID: 82980733}
   - {fileID: 914418692}
   - {fileID: 1955899051}
+  - {fileID: 1748675057}

@@ -14,6 +14,10 @@ public class CutSceneController : MonoBehaviour
     public bool cutsceneStart = false;
     public CharacterControllerBase characterControllerBase;
     public GameObject continueTextBox;
+    
+    public GameObject dialogueOptions;
+    public DiagOptions diagOptions;
+    bool diagOptReady = false;
 
     
     void Awake() {
@@ -21,9 +25,12 @@ public class CutSceneController : MonoBehaviour
         dialogueDictionaries.meangirl1.fillBank();
         dialogueDictionaries.meangirl2.fillBank();
         dialogueDictionaries.meangirl3.fillBank();
+        dialogueDictionaries.diagOptions.fillBank1();
         chapterIdx = 0;
         pageIdx = 0;
         continueTextBox.SetActive(false);
+        dialogueOptions.SetActive(false);
+        diagOptions = this.GetComponent<DiagOptions>();
     }
     
     // Start is called before the first frame update
@@ -38,7 +45,12 @@ public class CutSceneController : MonoBehaviour
         Entry entry2 = new Entry();
         entry2.createEntry(1, 0, dialogueDictionaries.meangirl1.meangirl1DiagBank[0], true, false);
         entryList.Add(entry2);
-        dialogueTextBox.text = entryList[pageIdx].text;
+        // dialogueTextBox.text = entryList[pageIdx].text;
+
+        Entry entry3 = new Entry();
+        entry3.createEntry(1, 0, dialogueDictionaries.meangirl1.meangirl1DiagBank[1], true, false);
+        entryList.Add(entry3);
+        
         # endregion
     }
 
@@ -46,15 +58,34 @@ public class CutSceneController : MonoBehaviour
     void Update()
     {   
         if(Input.GetKeyDown(KeyCode.E) && cutsceneStart) {
+            if(diagOptReady) {
+                diagOptReady = false;
+                changePotriat();
+                dialogueTextBox.text = entryList[pageIdx++].text;
+            }
+            
             if(pageIdx == entryList.Count) {
                 Debug.Log("End of Cutscene");
                 characterControllerBase.setEndofDialogue(true);
                 pageIdx = 0;
                 continueTextBox.SetActive(true);
+            } else if(pageIdx == 2) {
+                dialogueOptions.SetActive(true);
+                diagOptions.SetOptions(dialogueDictionaries.diagOptions.dialogueOptionsBank1[0],
+                    dialogueDictionaries.diagOptions.dialogueOptionsBank1[1], dialogueDictionaries.diagOptions.dialogueOptionsBank1[2]);
             } else {
                 changePotriat();
                 dialogueTextBox.text = entryList[pageIdx++].text;
             }
+        }
+
+        if(diagOptions.ifPressed) {
+            Debug.Log("Option Chosen: " + diagOptions.optionChosen);
+            diagOptions.ifPressed = false;
+            dialogueOptions.SetActive(false);
+            diagOptReady = true;
+            changePotriatToPlayer();
+            dialogueTextBox.text = diagOptions.optionChosen;
         }
     }
 
@@ -72,21 +103,37 @@ public class CutSceneController : MonoBehaviour
         }
     }
 
+    void changePotriatToPlayer() {
+        playerPFP.SetActive(true);
+        mg1PFP.SetActive(false);
+    }
+
     void changePotriat() {
         //set pfp
-        if(entryList[pageIdx].char1 == 0) {
+        if(entryList[pageIdx].char1 == 0) { //player
             playerPFP.SetActive(true);
             mg1PFP.SetActive(false);
-        } else if (entryList[pageIdx].char1 == 1) {
+        } else if (entryList[pageIdx].char1 == 1) { //mg1
             playerPFP.SetActive(false);
             mg1PFP.SetActive(true);
-        } else if(entryList[pageIdx].char1 == 2) {
+        } else if(entryList[pageIdx].char1 == 2) { //mg2
             playerPFP.SetActive(false);
             mg1PFP.SetActive(false);
-        } else if(entryList[pageIdx].char1 == 3) {
+        } else if(entryList[pageIdx].char1 == 3) { //mg3
             playerPFP.SetActive(false);
             mg1PFP.SetActive(false);
         }
-    }    
+    }
+
+    void npcPotriat() {
+        playerPFP.SetActive(false);
+    }
+
+    public void NPCtalk(NPCControllerBase npc) {
+        npcPotriat();
+        Debug.Log("NPC diag:" + npc.gossipText);
+        dialogueTextBox.text = npc.gossipText;
+        characterControllerBase.setEndofDialogue(true);
+    }
 }
 
