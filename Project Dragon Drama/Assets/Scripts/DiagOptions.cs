@@ -7,6 +7,8 @@ using TMPro;
 public class DiagOptions : MonoBehaviour
 {
     public TMP_Text button1Text, button2Text, button3Text;
+    public string optionChosen;
+    public bool ifPressed = false;
     
     // Start is called before the first frame update
     void Start()
@@ -21,7 +23,8 @@ public class DiagOptions : MonoBehaviour
     }
 
     public void Option1() {
-        Debug.Log("Option 1 says" + button1Text.text);
+        optionChosen = button1Text.text;
+        ifPressed = true;
 
         //have player say this text
     }
@@ -32,5 +35,11 @@ public class DiagOptions : MonoBehaviour
 
     public void Option3() {
         Debug.Log("Option 3");  
+    }
+
+    public void SetOptions(string option1, string option2, string option3) {
+        button1Text.text = option1;
+        button2Text.text = option2;
+        button3Text.text = option3;
     }
 }

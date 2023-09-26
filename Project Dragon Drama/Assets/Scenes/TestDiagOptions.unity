@@ -1930,6 +1930,7 @@ MonoBehaviour:
   dialogueTextBox: {fileID: 1240934004}
   continueTextBox: {fileID: 1036843975}
   cutSceneController: {fileID: 1154466036}
+  npcObj: {fileID: 0}
 --- !u!4 &606336312
 Transform:
   m_ObjectHideFlags: 0
@@ -3867,6 +3868,8 @@ MonoBehaviour:
   cutsceneStart: 0
   characterControllerBase: {fileID: 606336311}
   continueTextBox: {fileID: 1036843975}
+  dialogueOptions: {fileID: 403898640}
+  diagOptions: {fileID: 0}
 --- !u!114 &1154466037
 MonoBehaviour:
   m_ObjectHideFlags: 0
