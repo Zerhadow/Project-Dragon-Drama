@@ -50,8 +50,6 @@ public class CutSceneController : MonoBehaviour
         Entry entry3 = new Entry();
         entry3.createEntry(1, 0, dialogueDictionaries.meangirl1.meangirl1DiagBank[1], true, false);
         entryList.Add(entry3);
-
-        Debug.Log("Number of Entries: " + entryList.Count);
         
         # endregion
     }

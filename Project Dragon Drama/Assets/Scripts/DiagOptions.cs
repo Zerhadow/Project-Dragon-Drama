@@ -25,16 +25,16 @@ public class DiagOptions : MonoBehaviour
     public void Option1() {
         optionChosen = button1Text.text;
         ifPressed = true;
-
-        //have player say this text
     }
 
     public void Option2() {
-        Debug.Log("Option 2");
+        optionChosen = button2Text.text;
+        ifPressed = true;
     }
 
     public void Option3() {
-        Debug.Log("Option 3");  
+        optionChosen = button3Text.text;
+        ifPressed = true;
     }
 
     public void SetOptions(string option1, string option2, string option3) {
