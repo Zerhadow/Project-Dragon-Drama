@@ -6,11 +6,12 @@ using TMPro;
 public class CutSceneController : MonoBehaviour
 {
     DialogueDictionaries dialogueDictionaries = new DialogueDictionaries();
+    CutsceneManager cutsceneManager = new CutsceneManager();
     public TMP_Text dialogueTextBox;
     List<Entry> entryList = new List<Entry>();
     Entry entry;
     int chapterIdx, pageIdx;
-    public GameObject playerPFP, mg1PFP;
+    public GameObject playerPFP, mg1PFP, mg2PFP, mg3PFP, friendPFP;
     public bool cutsceneStart = false;
     public CharacterControllerBase characterControllerBase;
     public GameObject continueTextBox;
@@ -26,7 +27,9 @@ public class CutSceneController : MonoBehaviour
         dialogueDictionaries.meangirl1.fillBank();
         dialogueDictionaries.meangirl2.fillBank();
         dialogueDictionaries.meangirl3.fillBank();
+        dialogueDictionaries.friend.fillBank();
         dialogueDictionaries.diagOptions.fillBank1();
+        cutsceneManager.cutscene1.fillBank(dialogueDictionaries);
         chapterIdx = 0;
         pageIdx = 0;
         continueTextBox.SetActive(false);
@@ -66,22 +69,41 @@ public class CutSceneController : MonoBehaviour
                 dialogueTextBox.text = entryList[pageIdx++].text;
             }
             
-            if(pageIdx == entryList.Count) {
-                Debug.Log("End of Cutscene");
-                characterControllerBase.setEndofDialogue(true);
-                pageIdx = 0;
-                continueTextBox.SetActive(true);
-                skipButton.SetActive(false);
-            } else if(pageIdx == 2) {
-                dialogueOptions.SetActive(true);
-                diagOptions.SetOptions(dialogueDictionaries.diagOptions.dialogueOptionsBank1[0],
-                    dialogueDictionaries.diagOptions.dialogueOptionsBank1[1], dialogueDictionaries.diagOptions.dialogueOptionsBank1[2]);
-                skipButton.SetActive(false);
-            } else {
-                skipButton.SetActive(true);
-                changePotriat();
-                dialogueTextBox.text = entryList[pageIdx++].text;
-            }
+            // if(pageIdx == entryList.Count) {
+            //     Debug.Log("End of Cutscene");
+            //     characterControllerBase.setEndofDialogue(true);
+            //     pageIdx = 0;
+            //     continueTextBox.SetActive(true);
+            //     skipButton.SetActive(false);
+            // }
+
+            // else if(pageIdx == 2) {
+            //     dialogueOptions.SetActive(true);
+            //     diagOptions.SetOptions(dialogueDictionaries.diagOptions.dialogueOptionsBank1[0],
+            //         dialogueDictionaries.diagOptions.dialogueOptionsBank1[1], dialogueDictionaries.diagOptions.dialogueOptionsBank1[2]);
+            //     skipButton.SetActive(false);
+            // }
+            if(cutsceneStart) {
+                if(chapterIdx == 0) {
+                    if(pageIdx == cutsceneManager.cutscene1.cutscene1DiagBank.Count) {
+                        Debug.Log("End of Cutscene");
+                        characterControllerBase.setEndofDialogue(true);
+                        pageIdx = 0;
+                        continueTextBox.SetActive(true);
+                        skipButton.SetActive(false);
+                        chapterIdx++;
+                        characterControllerBase.gossipSearch = true;
+                    } else {
+                        skipButton.SetActive(true);
+                        changePotriat2(cutsceneManager.cutscene1.portraitBank[pageIdx]);
+                        dialogueTextBox.text = cutsceneManager.cutscene1.cutscene1DiagBank[pageIdx++];
+                    }
+                } else if(chapterIdx == 1) {
+
+                }
+                
+                // cutsceneStart = false;
+            } 
         }
 
         if(diagOptions.ifPressed) {
@@ -127,6 +149,41 @@ public class CutSceneController : MonoBehaviour
         } else if(entryList[pageIdx].char1 == 3) { //mg3
             playerPFP.SetActive(false);
             mg1PFP.SetActive(false);
+        }
+    }
+
+    void changePotriat2(int idx) {
+        //set pfp
+        if(idx == 0) { //player
+            playerPFP.SetActive(true);
+            mg1PFP.SetActive(false);
+            mg2PFP.SetActive(false);
+            mg3PFP.SetActive(false);
+            friendPFP.SetActive(false);
+        } else if (idx == 1) { //mg1
+            playerPFP.SetActive(false);
+            mg1PFP.SetActive(true);
+            mg2PFP.SetActive(false);
+            mg3PFP.SetActive(false);
+            friendPFP.SetActive(false);
+        } else if(idx == 2) { //mg2
+            playerPFP.SetActive(false);
+            mg1PFP.SetActive(false);
+            mg2PFP.SetActive(true);
+            mg3PFP.SetActive(false);
+            friendPFP.SetActive(false);
+        } else if(idx == 3) { //mg3
+            playerPFP.SetActive(false);
+            mg1PFP.SetActive(false);
+            mg2PFP.SetActive(false);
+            mg3PFP.SetActive(true);
+            friendPFP.SetActive(false);
+        } else if(idx == 4) { //friend
+            playerPFP.SetActive(false);
+            mg1PFP.SetActive(false);
+            mg2PFP.SetActive(false);
+            mg3PFP.SetActive(false);
+            friendPFP.SetActive(true);
         }
     }
 

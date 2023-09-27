@@ -33,6 +33,7 @@ public class CharacterControllerBase : MonoBehaviour
     public CutSceneController cutSceneController;
 
     bool endofDialogue = false;
+    public bool gossipSearch = false;
 
     public NPCControllerBase npcObj;
 
@@ -87,14 +88,12 @@ public class CharacterControllerBase : MonoBehaviour
                     }
                     else if ((Input.GetKeyDown(KeyCode.E)) && (_adjacentNPC != null)) //Talk to NPC, GoTo NPCTalk
                     {
-                        if(_adjacentNPC.name == "MG_Regina") {
-                            Debug.Log("Regina");
+                        if(!gossipSearch) { //start cutscene
                             // Open dialogue popup tied to adjacentNPC
                             pressETextBox.SetActive(false);
                             dialogueTextBox.SetActive(true);
                             cutSceneController.cutsceneStart = true;
                         } else {
-                            Debug.Log("Not Regina");
                             npcObj = _adjacentNPC.transform.Find("Talk Range").gameObject.GetComponent<NPCControllerBase>();
                             // Open dialogue popup tied to adjacentNPC
 
