@@ -1101,8 +1101,8 @@ MonoBehaviour:
   _npc: {fileID: 1955899047}
   _characterController: {fileID: 606336310}
   pressETextBox: {fileID: 760780151}
-  _givesKeyGossip: 1
-  gossipText: This is a test gossip text
+  _givesKeyGossip: 0
+  gossipText: Zach is a fking liar
 --- !u!135 &364285239
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -2008,6 +2008,7 @@ MonoBehaviour:
   dialogueTextBox: {fileID: 1240934004}
   continueTextBox: {fileID: 1036843975}
   cutSceneController: {fileID: 1154466036}
+  gossipSearch: 0
   npcObj: {fileID: 0}
 --- !u!4 &606336312
 Transform:
@@ -3302,7 +3303,7 @@ GameObject:
   - component: {fileID: 914418690}
   - component: {fileID: 914418689}
   m_Layer: 0
-  m_Name: MG_Regina
+  m_Name: Sam
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4843,7 +4844,7 @@ MonoBehaviour:
   _characterController: {fileID: 606336310}
   pressETextBox: {fileID: 760780151}
   _givesKeyGossip: 0
-  gossipText: This is a test gossip text
+  gossipText: This is not test gossip text
 --- !u!135 &1444538695
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -4927,8 +4928,10 @@ GameObject:
   - component: {fileID: 1502270202}
   - component: {fileID: 1502270201}
   - component: {fileID: 1502270200}
+  - component: {fileID: 1502270203}
+  - component: {fileID: 1502270204}
   m_Layer: 0
-  m_Name: Cube (17)
+  m_Name: Sky is high
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4990,7 +4993,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: d11db59485512a74da166682b79ab116, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5020,6 +5023,40 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1502270198}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!135 &1502270203
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1502270198}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 2.5
+  m_Center: {x: -0.0000009536743, y: 0.00000008940697, z: -0.0000019073486}
+--- !u!114 &1502270204
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1502270198}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d92c27f09476fea418ccb7f32d11321d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterController: {fileID: 606336311}
 --- !u!1 &1523423353
 GameObject:
   m_ObjectHideFlags: 0

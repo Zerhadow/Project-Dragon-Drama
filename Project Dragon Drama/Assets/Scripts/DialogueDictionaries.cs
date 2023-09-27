@@ -22,6 +22,11 @@ public class Player {
         playerDiagBank.Add(1, "…And?");
         playerDiagBank.Add(2, "I am a player.");
         # endregion
+
+        #region Chapter 2
+        playerDiagBank.Add(3, "You didn’t sleep?");
+
+        #endregion
     }
 }
 
@@ -37,6 +42,12 @@ public class Friend {
         friendDiagBank.Add(2, "You’re weird.");
         friendDiagBank.Add(3, "Name’s Sam by the way.");
         # endregion
+
+        #region Chapter 2
+        friendDiagBank.Add(4, "I have spent the entire night planning how to take her down.");
+        friendDiagBank.Add(5, "No. Not really, so I’m gonna need\nYou to take care of it for us.");
+
+        #endregion
     }
 }
 
