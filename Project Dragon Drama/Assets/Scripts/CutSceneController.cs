@@ -18,6 +18,7 @@ public class CutSceneController : MonoBehaviour
     public GameObject dialogueOptions;
     public DiagOptions diagOptions;
     bool diagOptReady = false;
+    public GameObject skipButton;
 
     
     void Awake() {
@@ -31,6 +32,7 @@ public class CutSceneController : MonoBehaviour
         continueTextBox.SetActive(false);
         dialogueOptions.SetActive(false);
         diagOptions = this.GetComponent<DiagOptions>();
+        skipButton.SetActive(false);
     }
     
     // Start is called before the first frame update
@@ -69,11 +71,14 @@ public class CutSceneController : MonoBehaviour
                 characterControllerBase.setEndofDialogue(true);
                 pageIdx = 0;
                 continueTextBox.SetActive(true);
+                skipButton.SetActive(false);
             } else if(pageIdx == 2) {
                 dialogueOptions.SetActive(true);
                 diagOptions.SetOptions(dialogueDictionaries.diagOptions.dialogueOptionsBank1[0],
                     dialogueDictionaries.diagOptions.dialogueOptionsBank1[1], dialogueDictionaries.diagOptions.dialogueOptionsBank1[2]);
+                skipButton.SetActive(false);
             } else {
+                skipButton.SetActive(true);
                 changePotriat();
                 dialogueTextBox.text = entryList[pageIdx++].text;
             }
@@ -134,6 +139,17 @@ public class CutSceneController : MonoBehaviour
         Debug.Log("NPC diag:" + npc.gossipText);
         dialogueTextBox.text = npc.gossipText;
         characterControllerBase.setEndofDialogue(true);
+    }
+
+    public void SkipCutscene() {
+        Debug.Log("Skip Cutscene");
+        cutsceneStart = false;
+        dialogueTextBox.text = "";
+        continueTextBox.SetActive(false);
+        characterControllerBase.dialogueTextBox.SetActive(false);
+        characterControllerBase.setEndofDialogue(true);
+        pageIdx = entryList.Count;
+        chapterIdx++;
     }
 }
 

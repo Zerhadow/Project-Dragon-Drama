@@ -12,6 +12,7 @@ public class DialogueDictionaries : MonoBehaviour {
 }
 
 public class Cutscene1 {
+
     public Dictionary<int, string> cutscene1DiagBank = new Dictionary<int, string>();
 
     public void fillBank() {
