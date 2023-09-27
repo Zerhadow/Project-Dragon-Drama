@@ -11,7 +11,7 @@ public class CutSceneController : MonoBehaviour
     List<Entry> entryList = new List<Entry>();
     Entry entry;
     int chapterIdx, pageIdx;
-    public GameObject playerPFP, mg1PFP, mg2PFP, mg3PFP, friendPFP;
+    public GameObject playerPFP, mg1PFP, mg2PFP, mg3PFP, friendPFP; // UI Images for each character
     public bool cutsceneStart = false;
     public CharacterControllerBase characterControllerBase;
     public GameObject continueTextBox;
@@ -20,9 +20,11 @@ public class CutSceneController : MonoBehaviour
     public DiagOptions diagOptions;
     bool diagOptReady = false;
     public GameObject skipButton;
+    public int diagOptIdx1 = 3, diagOptIdx2 = 0, diagOptIdx3 = 0;
 
     
     void Awake() {
+        //fill dialogue dictionaries in order to access them
         dialogueDictionaries.player.fillBank();
         dialogueDictionaries.meangirl1.fillBank();
         dialogueDictionaries.meangirl2.fillBank();
@@ -31,57 +33,39 @@ public class CutSceneController : MonoBehaviour
         dialogueDictionaries.diagOptions.fillBank1();
         cutsceneManager.cutscene1.fillBank(dialogueDictionaries);
         cutsceneManager.cutscene2.fillBank(dialogueDictionaries);
+
         chapterIdx = 0;
         pageIdx = 0;
+
+        playerPFP.SetActive(false);
         continueTextBox.SetActive(false);
         dialogueOptions.SetActive(false);
-        diagOptions = this.GetComponent<DiagOptions>();
         skipButton.SetActive(false);
-    }
-    
-    // Start is called before the first frame update
-    void Start()
-    {
-        Entry entry = new Entry();
 
-        # region Start of Chapter 1
-        entry.createEntry(0, 1, dialogueDictionaries.player.playerDiagBank[0], false, true);
-        entryList.Add(entry);
-
-        Entry entry2 = new Entry();
-        entry2.createEntry(1, 0, dialogueDictionaries.meangirl1.meangirl1DiagBank[0], true, false);
-        entryList.Add(entry2);
-        // dialogueTextBox.text = entryList[pageIdx].text;
-
-        Entry entry3 = new Entry();
-        entry3.createEntry(1, 0, dialogueDictionaries.meangirl1.meangirl1DiagBank[1], true, false);
-        entryList.Add(entry3);
-        
-        # endregion
+        diagOptions = this.GetComponent<DiagOptions>();
+        int diagOptIdx1 = 3, diagOptIdx2 = 0, diagOptIdx3 = 0;
     }
 
     // Update is called once per frame
     void Update()
     {   
-        if(Input.GetKeyDown(KeyCode.E) && cutsceneStart) {
-            if(diagOptReady) {
+        if(Input.GetKeyDown(KeyCode.E) && cutsceneStart) { // if the player presses E and the cutscene is playing
+            if(diagOptReady) { // after the player chooses an option
                 diagOptReady = false;
-                changePortriat(0);
                 dialogueTextBox.text = cutsceneManager.cutscene2.diagBank[pageIdx++];
             }
             
-            if(cutsceneStart) {
-                if(chapterIdx == 0) {
-                    if(pageIdx == cutsceneManager.cutscene1.diagBank.Count) {
+            if(chapterIdx == 0) {
+                    if(pageIdx == cutsceneManager.cutscene1.diagBank.Count) { // end of cutscene
                         Debug.Log("End of Cutscene");
                         characterControllerBase.setEndofDialogue(true);
                         pageIdx = 0;
                         continueTextBox.SetActive(true);
                         skipButton.SetActive(false);
-                        chapterIdx++;
+                        chapterIdx++; 
                         cutsceneStart = false;
-                        characterControllerBase.gossipSearch = true;
-                    } else {
+                        characterControllerBase.gossipSearch = true; // allow player to talk with other NPCs
+                    } else { // each E press will go to the next index of the cutscene dialogue bank
                         skipButton.SetActive(true);
                         changePortriat(cutsceneManager.cutscene1.portraitBank[pageIdx]);
                         dialogueTextBox.text = cutsceneManager.cutscene1.diagBank[pageIdx++];
@@ -97,7 +81,7 @@ public class CutSceneController : MonoBehaviour
                         chapterIdx++;
                         cutsceneStart = false;
                         characterControllerBase.gossipSearch = true;
-                    } else if(pageIdx == 3) {
+                    } else if(pageIdx == diagOptIdx1) { //hard coding when the dialogue option is supposed to start
                         dialogueOptions.SetActive(true);
                         diagOptions.SetOptions(dialogueDictionaries.diagOptions.dialogueOptionsBank1[0],
                             dialogueDictionaries.diagOptions.dialogueOptionsBank1[1], dialogueDictionaries.diagOptions.dialogueOptionsBank1[2]);
@@ -108,16 +92,16 @@ public class CutSceneController : MonoBehaviour
                         dialogueTextBox.text = cutsceneManager.cutscene2.diagBank[pageIdx++];
                     }
                 }
-            } 
         }
 
-        if(diagOptions.ifPressed) {
+        if(diagOptions.ifPressed) { // if the player has chosen an option, change to player potrait and display the chosen option
             Debug.Log("Option Chosen: " + diagOptions.optionChosen);
             diagOptions.ifPressed = false;
             dialogueOptions.SetActive(false);
             diagOptReady = true;
             changePortriat(0);
             dialogueTextBox.text = diagOptions.optionChosen;
+            // pageIdx++;
         }
     }
 
@@ -185,15 +169,16 @@ public class CutSceneController : MonoBehaviour
         characterControllerBase.setEndofDialogue(true);
     }
 
-    public void SkipCutscene() {
+    public void SkipCutscene() { //skips to end of cutscene; will need to skip to before the dialogue option
         Debug.Log("Skip Cutscene");
         cutsceneStart = false;
         dialogueTextBox.text = "";
         continueTextBox.SetActive(false);
         characterControllerBase.dialogueTextBox.SetActive(false);
         characterControllerBase.setEndofDialogue(true);
-        pageIdx = entryList.Count;
+        pageIdx = 0;
         chapterIdx++;
+        characterControllerBase.gossipSearch = true;
     }
 }
 
