@@ -21,7 +21,7 @@ public class AreaColliderCheck : MonoBehaviour
         if (other.gameObject.tag == "Player") {
             Debug.Log("Player is in the area");
             characterController.gossipSearch = false;
-            characterController.setEndofDialogue(false);
+            characterController.endofDialogue = false;
         }
     }
 }
