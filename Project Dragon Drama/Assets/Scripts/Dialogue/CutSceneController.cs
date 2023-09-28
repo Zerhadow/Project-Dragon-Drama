@@ -10,11 +10,14 @@ public class CutSceneController : MonoBehaviour
     public TMP_Text dialogueTextBox;
     List<Entry> entryList = new List<Entry>();
     Entry entry;
-    int chapterIdx, pageIdx;
+    public int chapterIdx;
+    private int pageIdx;
     public GameObject playerPFP, mg1PFP, mg2PFP, mg3PFP, friendPFP; // UI Images for each character
     public bool cutsceneStart = false;
     public CharacterControllerBase characterControllerBase;
+    public GameObject dialogueTextObj;
     public GameObject continueTextBox;
+    public GameObject pressETextBox;
     
     public GameObject dialogueOptions;
     public DiagOptions diagOptions;
@@ -44,6 +47,10 @@ public class CutSceneController : MonoBehaviour
 
         diagOptions = this.GetComponent<DiagOptions>();
         int diagOptIdx1 = 3, diagOptIdx2 = 0, diagOptIdx3 = 0;
+
+        skipButton.SetActive(true);
+        changePortriat(cutsceneManager.cutscene1.portraitBank[pageIdx]);
+        dialogueTextBox.text = cutsceneManager.cutscene1.diagBank[pageIdx++];
     }
 
     // Update is called once per frame
@@ -167,6 +174,7 @@ public class CutSceneController : MonoBehaviour
         Debug.Log("NPC diag:" + npc.gossipText);
         dialogueTextBox.text = npc.gossipText;
         characterControllerBase.setEndofDialogue(true);
+        skipButton.SetActive(false);
     }
 
     public void SkipCutscene() { //skips to end of cutscene; will need to skip to before the dialogue option
@@ -177,8 +185,13 @@ public class CutSceneController : MonoBehaviour
         characterControllerBase.dialogueTextBox.SetActive(false);
         characterControllerBase.setEndofDialogue(true);
         pageIdx = 0;
-        chapterIdx++;
         characterControllerBase.gossipSearch = true;
+    }
+
+    public void TriggerNextCutscene() {
+        pressETextBox.SetActive(false);
+        dialogueTextObj.SetActive(true);
+        cutsceneStart = true;
     }
 }
 

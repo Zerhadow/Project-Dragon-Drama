@@ -88,12 +88,20 @@ public class CharacterControllerBase : MonoBehaviour
                     }
                     else if ((Input.GetKeyDown(KeyCode.E)) && (_adjacentNPC != null)) //Talk to NPC, GoTo NPCTalk
                     {
-                        if(!gossipSearch) { //start cutscene
+                        if(!gossipSearch && _adjacentNPC.name == "Sam") { //start cutscene
                             // Open dialogue popup tied to adjacentNPC
-                            pressETextBox.SetActive(false);
-                            dialogueTextBox.SetActive(true);
-                            cutSceneController.cutsceneStart = true;
-                        } else {
+                            cutSceneController.TriggerNextCutscene();
+                        } 
+                        
+                        //  else if(_inventory.HasItem("NPC_Chuck")) {
+                        //     pressETextBox.SetActive(false);
+                        //     dialogueTextBox.SetActive(true);
+                        //     cutSceneController.cutsceneStart = true;
+                        //     gossipSearch = false;
+                        //     endofDialogue = false;
+                        //  }                        
+                        
+                        else {
                             npcObj = _adjacentNPC.transform.Find("Talk Range").gameObject.GetComponent<NPCControllerBase>();
                             // Open dialogue popup tied to adjacentNPC
 
@@ -101,6 +109,8 @@ public class CharacterControllerBase : MonoBehaviour
                             dialogueTextBox.SetActive(true);
                             cutSceneController.NPCtalk(npcObj);
                         }
+
+
 
                         //Check if NPC gives key gossip and add to inventory if true
                         if(_adjacentNPC.transform.Find("Talk Range").gameObject.GetComponent<NPCControllerBase>().GiveKeyGossip())
