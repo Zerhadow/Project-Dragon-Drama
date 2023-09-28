@@ -18,8 +18,8 @@ public class CharacterControllerBase : MonoBehaviour
     [SerializeField] float _moveSpeed = 5f;
 
     private Rigidbody _player;
-    float moveAmountVertical = 0f;
-    float moveAmountHorizontal = 0f;
+    float _moveAmountVertical = 0f;
+    float _moveAmountHorizontal = 0f;
     private InventoryController _inventory;
 
     public GameObject _adjacentNPC = null;
@@ -178,21 +178,22 @@ public class CharacterControllerBase : MonoBehaviour
     //Translate input for movement (must be separate from Move method due to FixedUpdate)
     private void MovementInput()
     {
-        moveAmountVertical = Input.GetAxisRaw("Vertical") * _moveSpeed;
-        moveAmountHorizontal = Input.GetAxisRaw("Horizontal") * _moveSpeed;
+        _moveAmountVertical = Input.GetAxisRaw("Vertical") * _moveSpeed;
+        _moveAmountHorizontal = Input.GetAxisRaw("Horizontal") * _moveSpeed;
     }
 
     //Moves player based on player input (must be in FixedUpdate therefore is always called)
     private void MovePlayer()
-    { 
-        _player.velocity = new Vector3(moveAmountVertical, 0, -moveAmountHorizontal);
+    {
+        Vector3 expectedVelocity = new Vector3(_moveAmountVertical, 0, -_moveAmountHorizontal);
+        _player.AddForce(expectedVelocity - _player.velocity, ForceMode.VelocityChange);
     }
 
     //Halts player movement
     private void stopMoving()
     {
-        moveAmountVertical = 0f;
-        moveAmountHorizontal = 0f;
+        _moveAmountVertical = 0f;
+        _moveAmountHorizontal = 0f;
     }
 
     //Setter for NPCController
