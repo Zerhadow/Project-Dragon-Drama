@@ -153,15 +153,13 @@ public class CutSceneController : MonoBehaviour
     }
 
     public void NPCtalk(NPCControllerBase npc) {
-        if(characterControllerBase.gossipSearch) {
-            pressETextBox.SetActive(false);
-            dialogueTextObj.SetActive(true);
-            npcPotriat();
-            Debug.Log("NPC diag:" + npc.gossipText);
-            dialogueTextBox.text = npc.gossipText;
-            characterControllerBase.endofDialogue = true;
-            skipButton.SetActive(false);
-        }
+        pressETextBox.SetActive(false);
+        dialogueTextObj.SetActive(true);
+        npcPotriat();
+        Debug.Log("NPC diag:" + npc.gossipText);
+        dialogueTextBox.text = npc.gossipText;
+        characterControllerBase.NPCTalking = false;
+        skipButton.SetActive(false);
     }
 
     public void SkipCutscene() { //skips to end of cutscene; will need to skip to before the dialogue option

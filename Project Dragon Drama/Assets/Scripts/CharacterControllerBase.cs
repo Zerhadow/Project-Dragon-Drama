@@ -44,11 +44,12 @@ public class CharacterControllerBase : MonoBehaviour
 
     public bool endofDialogue = false;
     public bool gossipSearch = false;
+    public bool NPCTalking = false;
 
     public NPCControllerBase npcObj;
 
     private int playerPoints = 1;
-    //need a static chapter idx
+    public int pageIdx = 0;
     // set an if statement to know if its the last chapter to check player points
 
     private void Awake()
@@ -145,10 +146,13 @@ public class CharacterControllerBase : MonoBehaviour
                             Debug.Log("Points: " + playerPoints);
 
                             cutSceneController.StartCutscene();
+
+                            _state = PlayerState.Dialogue;
                         } else {
                             npcObj = _adjacentNPC.transform.Find("Talk Range").gameObject.GetComponent<NPCControllerBase>();
                             // Open dialogue popup tied to adjacentNPC;
                             cutSceneController.NPCtalk(npcObj);
+                            _state = PlayerState.NPCTalk;
                         }
 
                         //Check if NPC gives key gossip and add to inventory if true
@@ -161,8 +165,6 @@ public class CharacterControllerBase : MonoBehaviour
                         /*For Testing. Disable once implemented*/
                         DebugColorUpdate(_adjacentNPC, Color.green);
                         Debug.Log("Player talking to " + _adjacentNPC.name);
-
-                        _state = PlayerState.NPCTalk;
                     }
 
                     /*Debug for state change*/
@@ -171,7 +173,8 @@ public class CharacterControllerBase : MonoBehaviour
                 }
                 break;
             case PlayerState.NPCTalk: //NPC popup dialogue
-                {
+                {                    
+                    NPCTalking = true;
                     //No Movement, Click to progress or dismiss. Dismiss goes back to Moving
                     stopMoving();
 
@@ -180,7 +183,7 @@ public class CharacterControllerBase : MonoBehaviour
                         _prevState = _state;
                         _state = PlayerState.Menu;
                     }
-                    else if (Input.GetKeyDown(KeyCode.E) && endofDialogue) //Dismiss popup text, GoTo Moving
+                    else if (Input.GetKeyDown(KeyCode.E) && NPCTalking) //Dismiss popup text, GoTo Moving
                     {
                         // Close dialogue popup
                         dialogueTextBox.SetActive(false);
@@ -208,10 +211,22 @@ public class CharacterControllerBase : MonoBehaviour
                         _prevState = _state;
                         _state = PlayerState.Menu;
                     }
+                    else if (Input.GetKeyDown(KeyCode.E) && endofDialogue) //Dismiss popup text, GoTo Moving
+                    {
+                        // Close dialogue popup
+                        dialogueTextBox.SetActive(false);
+                        continueTextBox.SetActive(false);
+
+                        /*For Testing. Disable once implemented*/
+                        DebugColorUpdate(_adjacentNPC, Color.magenta);
+                        Debug.Log(_adjacentNPC.name + " has stopped talking");
+
+                        _state = PlayerState.Moving;
+                    }
 
                     /*Debug for state change*/
                     DebugColorUpdate(_playerObj, Color.green);
-                    Debug.Log("Dialogue State");
+                    // Debug.Log("Dialogue State");
                 }
                 break;
             default:
