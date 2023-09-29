@@ -9,6 +9,51 @@ public class DialogueDictionaries : MonoBehaviour {
     public Meangirl3 meangirl3 = new Meangirl3();
     public Friend friend = new Friend();
     public DialogueOptionsText diagOptions = new DialogueOptionsText();
+
+    public Narrator narrator = new Narrator();
+    public Teacher teacher = new Teacher();
+}
+
+public class Narrator {
+    int index;
+
+    string text;
+    public Dictionary<int, string> narratorDiagBank = new Dictionary<int, string>();int idx = 0;
+
+
+    public void fillBank() {
+        int idx = 0;
+
+        # region Chapter 1
+
+        narratorDiagBank.Add(idx++, "The teacher in the front of the classroom, going off on a long lecture");
+        narratorDiagBank.Add(idx++, "She pauses from taking notes and looks around the room");
+        narratorDiagBank.Add(idx++, "To her surprise there actually is one person staring at her, the girl sitting right next to her.");
+        narratorDiagBank.Add(idx++, "Bailey Jumps at little when their gazes meet");
+        narratorDiagBank.Add(idx++, "A dragon roars and the students get out of their seats and start to move, class is over.");
+        narratorDiagBank.Add(idx++, "The two move move into the hallway");
+        narratorDiagBank.Add(idx++, "Three girls are walking in the hallway. They catch Bailey's eye.");
+
+        #endregion
+    }
+}
+
+public class Teacher {
+    int index;
+    string text;
+    public Dictionary<int, string> teacherDiagBank = new Dictionary<int, string>();
+
+    public void fillBank() {
+        int idx = 0;
+
+        # region Chapter 1
+
+        teacherDiagBank.Add(index++, "Teacher: And here's a hint to the book we’ll be talking about! “The supreme art of war is to subdue the enemy without fighting”");
+
+        #endregion
+    }
+
+    
 }
 
 public class Player {
@@ -17,14 +62,22 @@ public class Player {
     public Dictionary<int, string> playerDiagBank = new Dictionary<int, string>();
 
     public void fillBank() {
+        int idx = 0;
+
         # region Chapter 1
-        playerDiagBank.Add(0, "What is?");
-        playerDiagBank.Add(1, "…And?");
-        playerDiagBank.Add(2, "I am a player.");
+        playerDiagBank.Add(idx++, "*Today is my first day at Dragon High. And since the start of the day, I've been nothing but a nervous wreck*");
+        playerDiagBank.Add(idx++, "*It feels like everyone’s always staring at me. Even if they actually aren’t.*");
+        playerDiagBank.Add(idx++, "What is?");
+        playerDiagBank.Add(idx++, "…And?");
+        playerDiagBank.Add(idx++, "Nice to meet you.");
+        playerDiagBank.Add(idx++, "It’s Bailey");
+        playerDiagBank.Add(idx++, "I think I have Gold Hoarding.");
+        playerDiagBank.Add(idx++, "Who are they?");
+        playerDiagBank.Add(idx++, "Smaugs?");
         # endregion
 
         #region Chapter 2
-        playerDiagBank.Add(3, "You didn’t sleep?");
+        playerDiagBank.Add(idx++, "You didn’t sleep?");
 
         #endregion
     }
@@ -36,16 +89,23 @@ public class Friend {
     public Dictionary<int, string> friendDiagBank = new Dictionary<int, string>();
 
     public void fillBank() {
+        int idx = 0;
+
         # region Chapter 1
-        friendDiagBank.Add(0, "That's crazy...");
-        friendDiagBank.Add(1, "You’ve been completely focused, the entire class.");
-        friendDiagBank.Add(2, "You’re weird.");
-        friendDiagBank.Add(3, "Name’s Sam by the way.");
+        friendDiagBank.Add(idx++, "That's crazy...");
+        friendDiagBank.Add(idx++, "You’ve been completely focused, the entire class.");
+        friendDiagBank.Add(idx++, "You’re weird.");
+        friendDiagBank.Add(idx++, "Name’s Sam by the way.");
+        friendDiagBank.Add(idx++, "So you got a name Newbie?");
+        friendDiagBank.Add(idx++, "Well Baily What class do you have next?");
+        friendDiagBank.Add(idx++, "Oh! I know exactly where that is!");
+        friendDiagBank.Add(idx++, "That one should be at the end of the hall on the left.");
+        friendDiagBank.Add(idx++, "Oh! Those are the Smaugs.");
         # endregion
 
         #region Chapter 2
-        friendDiagBank.Add(4, "I have spent the entire night planning how to take her down.");
-        friendDiagBank.Add(5, "No. Not really, so I’m gonna need\nYou to take care of it for us.");
+        friendDiagBank.Add(idx++, "I have spent the entire night planning how to take her down.");
+        friendDiagBank.Add(idx++, "No. Not really, so I’m gonna need\nYou to take care of it for us.");
 
         #endregion
     }

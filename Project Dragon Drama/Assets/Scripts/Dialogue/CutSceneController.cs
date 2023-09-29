@@ -43,6 +43,8 @@ public class CutSceneController : MonoBehaviour
         dialogueDictionaries.meangirl3.fillBank();
         dialogueDictionaries.friend.fillBank();
         dialogueDictionaries.diagOptions.fillBank1();
+        dialogueDictionaries.narrator.fillBank();
+        dialogueDictionaries.teacher.fillBank();
         cutsceneManager.cutscene1.fillBank(dialogueDictionaries);
         cutsceneManager.cutscene2.fillBank(dialogueDictionaries);
 
@@ -141,6 +143,8 @@ public class CutSceneController : MonoBehaviour
             mg2PFP.SetActive(false);
             mg3PFP.SetActive(false);
             friendPFP.SetActive(true);
+        } else {
+            npcPotriat();
         }
     }
 
