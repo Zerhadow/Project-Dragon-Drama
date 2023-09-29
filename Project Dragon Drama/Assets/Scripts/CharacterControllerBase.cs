@@ -72,7 +72,6 @@ public class CharacterControllerBase : MonoBehaviour
         dialogueTextBox = GameObject.Find("DialogBar");
         continueTextBox = GameObject.Find("Continue");
         cutSceneController = GameObject.Find("Canvas").GetComponent<CutSceneController>();
-        pressETextBox.SetActive(false);
         dialogueTextBox.SetActive(false);
         continueTextBox.SetActive(false);
         Debug.Log("CharController: " + pressETextBox.name.ToString() + " is linked");
@@ -82,6 +81,10 @@ public class CharacterControllerBase : MonoBehaviour
 
         //initial scene setup
         _state = PlayerState.Moving;
+    }
+
+    private void  Start() {
+        pressETextBox.SetActive(false);
     }
 
     private void Update()

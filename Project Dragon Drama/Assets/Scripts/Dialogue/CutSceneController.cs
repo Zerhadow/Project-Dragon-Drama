@@ -14,7 +14,7 @@ public class CutSceneController : MonoBehaviour
     private int pageIdx;
     public GameObject playerPFP, mg1PFP, mg2PFP, mg3PFP, friendPFP; // UI Images for each character
     public bool cutsceneStart = false;
-    public CharacterControllerBase characterControllerBase;
+    // public CharacterControllerBase characterControllerBase;
     
     public GameObject dialogueTextObj;
     public GameObject continueTextBox;
@@ -58,7 +58,7 @@ public class CutSceneController : MonoBehaviour
 
         skipButton.SetActive(true);
         changePortriat(cutsceneManager.cutscene1.portraitBank[pageIdx]);
-        dialogueTextBox.text = cutsceneManager.cutscene1.diagBank[pageIdx++];
+        dialogueTextBox.text = cutsceneManager.cutscene1.diagBank[pageIdx];
     }
 
     // Update is called once per frame

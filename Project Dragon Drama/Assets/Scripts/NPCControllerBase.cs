@@ -6,12 +6,9 @@ public class NPCControllerBase : MonoBehaviour
 {
     [Header ("Required Objects")]
     [SerializeField] GameObject _npc;
-    /*
-    [SerializeField] GameObject _characterController;
-    public GameObject pressETextBox;
-    */
-    private GameObject _characterController;
+    // [SerializeField] GameObject _characterController;
     private GameObject pressETextBox;
+    private GameObject _characterController;
 
     [Header("NPC Vairables")]
     [SerializeField] bool _givesKeyGossip = false;
