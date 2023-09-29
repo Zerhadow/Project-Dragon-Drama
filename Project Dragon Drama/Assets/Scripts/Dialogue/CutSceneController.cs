@@ -25,7 +25,7 @@ public class CutSceneController : MonoBehaviour
     public DiagOptions diagOptions;
     bool diagOptReady = false;
     public GameObject skipButton;
-    public int diagOptIdx1 = 3, diagOptIdx2 = 0, diagOptIdx3 = 0;
+    private int diagOptIdx1 = 3, diagOptIdx2 = 0, diagOptIdx3 = 0;
 
     
     void Awake() {
@@ -49,7 +49,6 @@ public class CutSceneController : MonoBehaviour
         nextCutsceneBtn.SetActive(false);
 
         diagOptions = this.GetComponent<DiagOptions>();
-        int diagOptIdx1 = 3, diagOptIdx2 = 0, diagOptIdx3 = 0;
 
         skipButton.SetActive(true);
         changePortriat(cutsceneManager.cutscene1.portraitBank[pageIdx]);
@@ -69,9 +68,9 @@ public class CutSceneController : MonoBehaviour
             if(diagOptReady) { // after the player chooses an option
                 diagOptReady = false;
                 dialogueTextBox.text = cutsceneManager.cutscene2.diagBank[pageIdx++];
+                changePortriat(cutsceneManager.cutscene2.portraitBank[pageIdx]);
             }
-            
-            if(chapterIdx == 0) {
+            else if(chapterIdx == 0) {
                 Cutscene1();
             } else if(chapterIdx == 1) {
                 Cutscene2();
@@ -179,6 +178,10 @@ public class CutSceneController : MonoBehaviour
     public void TriggerNextCutscene() {
         characterControllerBase.gossipSearch = false;
         characterControllerBase.endofDialogue = false;
+        if (chapterIdx == 1)
+        {
+            Cutscene2();
+        }
     }
 
     private void Cutscene1() {
