@@ -44,7 +44,7 @@ public class CharacterControllerBase : MonoBehaviour
 
     
 
-    bool endofDialogue = false;
+    public bool endofDialogue = false;
     public bool gossipSearch = false;
 
     public NPCControllerBase npcObj;
@@ -128,17 +128,12 @@ public class CharacterControllerBase : MonoBehaviour
                     }
                     else if ((Input.GetKeyDown(KeyCode.E)) && (_adjacentNPC != null)) //Talk to NPC, GoTo NPCTalk
                     {
-                        if(!gossipSearch) { //start cutscene
+                        if(!gossipSearch && _adjacentNPC.name == "Sam") { //start cutscene
                             // Open dialogue popup tied to adjacentNPC
-                            pressETextBox.SetActive(false);
-                            dialogueTextBox.SetActive(true);
-                            cutSceneController.cutsceneStart = true;
+                            cutSceneController.StartCutscene();
                         } else {
                             npcObj = _adjacentNPC.transform.Find("Talk Range").gameObject.GetComponent<NPCControllerBase>();
-                            // Open dialogue popup tied to adjacentNPC
-
-                            pressETextBox.SetActive(false);
-                            dialogueTextBox.SetActive(true);
+                            // Open dialogue popup tied to adjacentNPC;
                             cutSceneController.NPCtalk(npcObj);
                         }
 
@@ -246,11 +241,5 @@ public class CharacterControllerBase : MonoBehaviour
     private void DebugColorUpdate(GameObject gameObject, Color color)
     {
         gameObject.GetComponent<Renderer>().material.SetColor("_Color", color);
-    }
-
-    public void setEndofDialogue(bool b)
-    {
-        endofDialogue = b;
-        // Debug.Log("End of Dialogue: " + endofDialogue);
     }
 }
