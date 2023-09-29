@@ -42,12 +42,14 @@ public class CharacterControllerBase : MonoBehaviour
     public PlayerState _state;
     private PlayerState _prevState;
 
-    
-
     public bool endofDialogue = false;
     public bool gossipSearch = false;
 
     public NPCControllerBase npcObj;
+
+    private int playerPoints = 1;
+    //need a static chapter idx
+    // set an if statement to know if its the last chapter to check player points
 
     private void Awake()
     {
@@ -81,6 +83,7 @@ public class CharacterControllerBase : MonoBehaviour
 
         //initial scene setup
         _state = PlayerState.Moving;
+        _inventory.Clear();
     }
 
     private void  Start() {
@@ -133,6 +136,14 @@ public class CharacterControllerBase : MonoBehaviour
                     {
                         if(!gossipSearch && _adjacentNPC.name == "Sam") { //start cutscene
                             // Open dialogue popup tied to adjacentNPC
+                            if(_inventory.GetSize() > 0) {
+                                playerPoints++;
+                            } else {
+                                playerPoints--;
+                            }
+
+                            Debug.Log("Points: " + playerPoints);
+
                             cutSceneController.StartCutscene();
                         } else {
                             npcObj = _adjacentNPC.transform.Find("Talk Range").gameObject.GetComponent<NPCControllerBase>();

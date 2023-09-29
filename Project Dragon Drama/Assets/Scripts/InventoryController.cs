@@ -80,6 +80,11 @@ public class InventoryController : MonoBehaviour
         return m_GossipItems.Contains(key);
     }
 
+    public int GetSize()
+    {
+        return m_GossipItems.Count;
+    }
+
     public void Clear()
     {
         m_GossipItems.Clear();

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class CutSceneController : MonoBehaviour
 {
@@ -184,10 +185,15 @@ public class CutSceneController : MonoBehaviour
     public void TriggerNextCutscene() {
         characterControllerBase.gossipSearch = false;
         characterControllerBase.endofDialogue = false;
+
         if (chapterIdx == 1)
         {
             Cutscene2();
         }
+
+        //load next scene in build index
+        // SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+
     }
 
     private void Cutscene1() {

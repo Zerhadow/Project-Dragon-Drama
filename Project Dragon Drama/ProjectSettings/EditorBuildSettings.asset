@@ -12,6 +12,6 @@ EditorBuildSettings:
     path: Assets/Scenes/SchoolLevel.unity
     guid: 4a2bbd26b3a3180478b8d1f48a4486e3
   - enabled: 1
-    path: Assets/Scenes/SchoolLevelTest.unity
-    guid: 836a8efd39d5c2542a0b36d439a0299a
+    path: Assets/Scenes/GS 2.unity
+    guid: a6f22c7d47548574db4123d02f203ce1
   m_configObjects: {}
