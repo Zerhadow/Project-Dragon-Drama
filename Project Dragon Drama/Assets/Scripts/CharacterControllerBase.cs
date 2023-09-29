@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 
 public enum PlayerState
@@ -9,17 +10,31 @@ public enum PlayerState
 }
 public class CharacterControllerBase : MonoBehaviour
 {
+    //Singleton
+    public static CharacterControllerBase Instance;
+
+    /*
     [Header("Required Objects")]
     [SerializeField] GameObject _playerObject;
-    /*Enable once implemented*/
-    // [SerializeField] GameObject _cutscenseController;
+    [SerializeField] GameObject _cutscenseController;
+    public GameObject pressETextBox;
+    public GameObject dialogueTextBox;
+    public GameObject continueTextBox;
+    public CutSceneController cutSceneController;
+    */
+
+    private GameObject _playerObj;
+    private Rigidbody _playerRb;
+    private GameObject pressETextBox;
+    public GameObject dialogueTextBox;
+    private GameObject continueTextBox;
+    private CutSceneController cutSceneController;
 
     [Header("Movements Settings")]
     [SerializeField] float _moveSpeed = 5f;
 
-    private Rigidbody _player;
-    float moveAmountVertical = 0f;
-    float moveAmountHorizontal = 0f;
+    float _moveAmountVertical = 0f;
+    float _moveAmountHorizontal = 0f;
     private InventoryController _inventory;
 
     public GameObject _adjacentNPC = null;
@@ -27,10 +42,7 @@ public class CharacterControllerBase : MonoBehaviour
     public PlayerState _state;
     private PlayerState _prevState;
 
-    public GameObject pressETextBox;
-    public GameObject dialogueTextBox;
-    public GameObject continueTextBox;
-    public CutSceneController cutSceneController;
+    
 
     bool endofDialogue = false;
     public bool gossipSearch = false;
@@ -39,11 +51,37 @@ public class CharacterControllerBase : MonoBehaviour
 
     private void Awake()
     {
-        _player = _playerObject.GetComponent<Rigidbody>();
-        _inventory = this.GetComponent<InventoryController>();
+        //Singleton check: if there exists and instance and it isn't this, delete this.
+        if ((Instance != null) && (Instance != this))
+        {
+            Destroy(this);
+            Debug.Log("CharController: There can be only one");
+        }
+        else
+        {
+            Instance = this;
+            DontDestroyOnLoad(Instance);
+            Debug.Log("CharController: I am the one");
+        }
 
+        //Find and set object references
+        _playerObj = GameObject.Find("Player");
+        _playerRb = _playerObj.GetComponent<Rigidbody>();
+        _inventory = this.GetComponent<InventoryController>();
+        pressETextBox = GameObject.Find("PressE");
+        dialogueTextBox = GameObject.Find("DialogBar");
+        continueTextBox = GameObject.Find("Continue");
+        cutSceneController = GameObject.Find("Canvas").GetComponent<CutSceneController>();
+        pressETextBox.SetActive(false);
+        dialogueTextBox.SetActive(false);
+        continueTextBox.SetActive(false);
+        Debug.Log("CharController: " + pressETextBox.name.ToString() + " is linked");
+        Debug.Log("CharController: " + dialogueTextBox.name.ToString() + " is linked");
+        Debug.Log("CharController: " + continueTextBox.name.ToString() + " is linked");
+        Debug.Log("CharController: " + cutSceneController.name.ToString() + " is linked");
+
+        //initial scene setup
         _state = PlayerState.Moving;
-        _inventory.Clear();
     }
 
     private void Update()
@@ -57,6 +95,8 @@ public class CharacterControllerBase : MonoBehaviour
             _state = PlayerState.NPCTalk;
         else if (Input.GetKeyDown(KeyCode.P))
             _state = PlayerState.Dialogue;
+        else if (Input.GetKeyDown(KeyCode.L))
+            SceneManager.LoadScene("SchoolLevelTest", LoadSceneMode.Single); //go to SchoolLevelTest
         /* --- For Test Only --- */
 
         switch (_state)
@@ -72,7 +112,7 @@ public class CharacterControllerBase : MonoBehaviour
                     }
 
                     /*Debug for state change*/
-                    DebugColorUpdate(_playerObject, Color.red);
+                    DebugColorUpdate(_playerObj, Color.red);
                     Debug.Log("Menu State");
                 }
                 break;
@@ -117,7 +157,7 @@ public class CharacterControllerBase : MonoBehaviour
                     }
 
                     /*Debug for state change*/
-                    DebugColorUpdate(_playerObject, Color.blue);
+                    DebugColorUpdate(_playerObj, Color.blue);
                     // Debug.Log("Moving State");
                 }
                 break;
@@ -145,7 +185,7 @@ public class CharacterControllerBase : MonoBehaviour
                     }
 
                     /*Debug for state change*/
-                    DebugColorUpdate(_playerObject, Color.yellow);
+                    DebugColorUpdate(_playerObj, Color.yellow);
                     // Debug.Log("NPCTalk State");
                 }
                 break;
@@ -161,7 +201,7 @@ public class CharacterControllerBase : MonoBehaviour
                     }
 
                     /*Debug for state change*/
-                    DebugColorUpdate(_playerObject, Color.green);
+                    DebugColorUpdate(_playerObj, Color.green);
                     Debug.Log("Dialogue State");
                 }
                 break;
@@ -178,21 +218,22 @@ public class CharacterControllerBase : MonoBehaviour
     //Translate input for movement (must be separate from Move method due to FixedUpdate)
     private void MovementInput()
     {
-        moveAmountVertical = Input.GetAxisRaw("Vertical") * _moveSpeed;
-        moveAmountHorizontal = Input.GetAxisRaw("Horizontal") * _moveSpeed;
+        _moveAmountVertical = Input.GetAxisRaw("Vertical") * _moveSpeed;
+        _moveAmountHorizontal = Input.GetAxisRaw("Horizontal") * _moveSpeed;
     }
 
     //Moves player based on player input (must be in FixedUpdate therefore is always called)
     private void MovePlayer()
-    { 
-        _player.velocity = new Vector3(moveAmountVertical, 0, -moveAmountHorizontal);
+    {
+        Vector3 expectedVelocity = new Vector3(_moveAmountVertical, 0, -_moveAmountHorizontal);
+        _playerRb.AddForce(expectedVelocity - _playerRb.velocity, ForceMode.VelocityChange);
     }
 
     //Halts player movement
     private void stopMoving()
     {
-        moveAmountVertical = 0f;
-        moveAmountHorizontal = 0f;
+        _moveAmountVertical = 0f;
+        _moveAmountHorizontal = 0f;
     }
 
     //Setter for NPCController

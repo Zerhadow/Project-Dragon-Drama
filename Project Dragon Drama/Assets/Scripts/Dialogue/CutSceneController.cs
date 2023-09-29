@@ -13,7 +13,6 @@ public class CutSceneController : MonoBehaviour
     int chapterIdx, pageIdx;
     public GameObject playerPFP, mg1PFP, mg2PFP, mg3PFP, friendPFP; // UI Images for each character
     public bool cutsceneStart = false;
-    public CharacterControllerBase characterControllerBase;
     public GameObject continueTextBox;
     
     public GameObject dialogueOptions;
@@ -22,8 +21,14 @@ public class CutSceneController : MonoBehaviour
     public GameObject skipButton;
     public int diagOptIdx1 = 3, diagOptIdx2 = 0, diagOptIdx3 = 0;
 
-    
+    //public CharacterControllerBase characterControllerBase;
+    private CharacterControllerBase characterControllerBase;
+
+
     void Awake() {
+        //find CharacterControllerBase in scene
+        characterControllerBase = GameObject.Find("CharacterController").GetComponent<CharacterControllerBase>();
+
         //fill dialogue dictionaries in order to access them
         dialogueDictionaries.player.fillBank();
         dialogueDictionaries.meangirl1.fillBank();
@@ -38,7 +43,7 @@ public class CutSceneController : MonoBehaviour
         pageIdx = 0;
 
         playerPFP.SetActive(false);
-        continueTextBox.SetActive(false);
+        //continueTextBox.SetActive(false);
         dialogueOptions.SetActive(false);
         skipButton.SetActive(false);
 

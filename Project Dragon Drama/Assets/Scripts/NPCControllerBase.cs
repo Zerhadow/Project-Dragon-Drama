@@ -6,12 +6,23 @@ public class NPCControllerBase : MonoBehaviour
 {
     [Header ("Required Objects")]
     [SerializeField] GameObject _npc;
+    /*
     [SerializeField] GameObject _characterController;
     public GameObject pressETextBox;
+    */
+    private GameObject _characterController;
+    private GameObject pressETextBox;
 
     [Header("NPC Vairables")]
     [SerializeField] bool _givesKeyGossip = false;
     [SerializeField] public string gossipText = "This is a test gossip text";
+
+    private void Awake()
+    {
+        //Find and set object references
+        _characterController = GameObject.Find("CharacterController");
+        pressETextBox = GameObject.Find("PressE");
+    }
 
     private void OnTriggerEnter(Collider other)
     {
