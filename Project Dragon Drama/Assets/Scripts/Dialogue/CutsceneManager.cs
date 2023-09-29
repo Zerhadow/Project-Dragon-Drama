@@ -68,6 +68,18 @@ public class CutsceneManager : MonoBehaviour
             portraitBank.Add(4);
             diagBank.Add(idx++, diagDict.player.playerDiagBank[playerIdx++]);
             portraitBank.Add(0);
+            diagBank.Add(idx++, diagDict.friend.friendDiagBank[friendIdx++]);
+            portraitBank.Add(4);
+            diagBank.Add(idx++, diagDict.player.playerDiagBank[playerIdx++]);
+            portraitBank.Add(0);
+            diagBank.Add(idx++, diagDict.friend.friendDiagBank[friendIdx++]);
+            portraitBank.Add(4);
+            diagBank.Add(idx++, diagDict.player.playerDiagBank[playerIdx++]);
+            portraitBank.Add(0);
+            diagBank.Add(idx++, diagDict.friend.friendDiagBank[friendIdx++]);
+            portraitBank.Add(4);
+            diagBank.Add(idx++, diagDict.friend.friendDiagBank[friendIdx++]);
+            portraitBank.Add(4);
         }
     }
 

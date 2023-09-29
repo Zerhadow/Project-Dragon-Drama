@@ -74,6 +74,8 @@ public class Player {
         playerDiagBank.Add(idx++, "I think I have Gold Hoarding.");
         playerDiagBank.Add(idx++, "Who are they?");
         playerDiagBank.Add(idx++, "Smaugs?");
+        playerDiagBank.Add(idx++, "Then why do they get so much attention?");
+        playerDiagBank.Add(idx++, "Ok then…");
         # endregion
 
         #region Chapter 2
@@ -101,6 +103,10 @@ public class Friend {
         friendDiagBank.Add(idx++, "Oh! I know exactly where that is!");
         friendDiagBank.Add(idx++, "That one should be at the end of the hall on the left.");
         friendDiagBank.Add(idx++, "Oh! Those are the Smaugs.");
+        friendDiagBank.Add(idx++, "Basically they think that they run the School, but no one really cares.");
+        friendDiagBank.Add(idx++, "Because they’re the Smaugs. What else is there to know?");
+        friendDiagBank.Add(idx++, "God. How much I’d love to tear them Down off of their high horse.");
+        friendDiagBank.Add(idx++, "I’m sure others agree with me. If you don’t believe me, go on ahead and Chat with other people.");
         # endregion
 
         #region Chapter 2
