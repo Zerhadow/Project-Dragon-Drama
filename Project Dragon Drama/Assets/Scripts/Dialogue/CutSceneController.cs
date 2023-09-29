@@ -11,7 +11,7 @@ public class CutSceneController : MonoBehaviour
     List<Entry> entryList = new List<Entry>();
     Entry entry;
     public int chapterIdx;
-    private int pageIdx;
+    public int pageIdx;
     public GameObject playerPFP, mg1PFP, mg2PFP, mg3PFP, friendPFP; // UI Images for each character
     public bool cutsceneStart = false;
     public CharacterControllerBase characterControllerBase;
@@ -66,11 +66,6 @@ public class CutSceneController : MonoBehaviour
         }
         
         if(Input.GetKeyDown(KeyCode.E) && cutsceneStart) { // if the player presses E and the cutscene is playing
-            if(diagOptReady) { // after the player chooses an option
-                diagOptReady = false;
-                dialogueTextBox.text = cutsceneManager.cutscene2.diagBank[pageIdx++];
-            }
-            
             if(chapterIdx == 0) {
                 Cutscene1();
             } else if(chapterIdx == 1) {
@@ -194,7 +189,7 @@ public class CutSceneController : MonoBehaviour
         } else { // each E press will go to the next index of the cutscene dialogue bank
             skipButton.SetActive(true);
             changePortriat(cutsceneManager.cutscene1.portraitBank[pageIdx]);
-            dialogueTextBox.text = cutsceneManager.cutscene1.diagBank[pageIdx++];
+            dialogueTextBox.text = cutsceneManager.cutscene1.diagBank[pageIdx];
         }
     }
 
@@ -214,10 +209,16 @@ public class CutSceneController : MonoBehaviour
             diagOptions.SetOptions(dialogueDictionaries.diagOptions.dialogueOptionsBank1[0],
                 dialogueDictionaries.diagOptions.dialogueOptionsBank1[1], dialogueDictionaries.diagOptions.dialogueOptionsBank1[2]);
             skipButton.SetActive(false);
+
+            if(diagOptReady) { // after the player chooses an option
+                diagOptReady = false;
+                dialogueTextBox.text = cutsceneManager.cutscene2.diagBank[pageIdx];
+            }
+
         } else {
             skipButton.SetActive(true);
             changePortriat(cutsceneManager.cutscene2.portraitBank[pageIdx]);
-            dialogueTextBox.text = cutsceneManager.cutscene2.diagBank[pageIdx++];
+            dialogueTextBox.text = cutsceneManager.cutscene2.diagBank[pageIdx];
         }
     }
 }

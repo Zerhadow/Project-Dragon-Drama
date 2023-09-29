@@ -126,17 +126,21 @@ public class CharacterControllerBase : MonoBehaviour
                         _prevState = _state;
                         _state = PlayerState.Menu;
                     }
-                    else if (Input.GetKeyDown(KeyCode.E) && endofDialogue) //Dismiss popup text, GoTo Moving
+                    else if (Input.GetKeyDown(KeyCode.E)) //Dismiss popup text, GoTo Moving
                     {
-                        // Close dialogue popup
-                        dialogueTextBox.SetActive(false);
-                        continueTextBox.SetActive(false);
+                        if(endofDialogue) {
+                            // Close dialogue popup
+                            dialogueTextBox.SetActive(false);
+                            continueTextBox.SetActive(false);
 
-                        /*For Testing. Disable once implemented*/
-                        DebugColorUpdate(_adjacentNPC, Color.magenta);
-                        Debug.Log(_adjacentNPC.name + " has stopped talking");
+                            /*For Testing. Disable once implemented*/
+                            DebugColorUpdate(_adjacentNPC, Color.magenta);
+                            Debug.Log(_adjacentNPC.name + " has stopped talking");
 
-                        _state = PlayerState.Moving;
+                            _state = PlayerState.Moving;
+                        } else {
+                            cutSceneController.pageIdx++;
+                        }                        
                     }
 
                     /*Debug for state change*/
