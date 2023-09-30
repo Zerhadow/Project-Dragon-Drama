@@ -9,9 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Title Menu.unity
     guid: f2292980a79bbae4397ba114090d24a7
   - enabled: 1
-    path: Assets/Scenes/SchoolLevel.unity
-    guid: 4a2bbd26b3a3180478b8d1f48a4486e3
+    path: Assets/Scenes/GS 1.unity
+    guid: 4ac3cdd0e2fd9a44abcd570e851c3f17
   - enabled: 1
-    path: Assets/Scenes/GS 2.unity
-    guid: a6f22c7d47548574db4123d02f203ce1
+    path: Assets/Scenes/GSTest.unity
+    guid: fd6454b3882784e4d9de4a7344aaaa19
   m_configObjects: {}
