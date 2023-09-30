@@ -54,6 +54,15 @@ public class Narrator {
         narratorDiagBank.Add(idx++, "As you walk away to leave the commotion you get a faint look of Persia in the distance. She’s broken, running away, attempting to escape from the truth that’s come to bite her.");
         narratorDiagBank.Add(idx++, "Persia Approaches You");
         narratorDiagBank.Add(idx++, "Persia dashes away. Leaving Bailey befuddled with that last line. It couldn’t just mean nothing. Could it?");
+        #endregion
+
+        # region Cutscene 7
+        narratorDiagBank.Add(idx++, "The next day, Sam approaches you again.");
+        narratorDiagBank.Add(idx++, "Sam quickly moves away from Bailey as Jassica one of the Smaugs approaches.");
+        narratorDiagBank.Add(idx++, "The literary teacher spouts something on and on about some book called “The Art of War, by Sun who or something”, although");
+        narratorDiagBank.Add(idx++, "although the only thing you could think about was the opportunity that came into your lap.");
+        narratorDiagBank.Add(idx++, "The only line you can remember from the lecture was “The opportunity of defeating the enemy is provided by the enemy himself”");
+        narratorDiagBank.Add(idx++, "After class, Sam approaches you.");
         
         #endregion
     }
@@ -132,6 +141,22 @@ public class Player {
         playerDiagBank.Add(idx++, "Wasn’t it based on a lie though?");
         playerDiagBank.Add(idx++, "I just got here, you really think I could’ve done all of that in one day?");
         playerDiagBank.Add(idx++, "What? That’s so obscure");
+        #endregion
+
+        #region Cutscene 7
+        playerDiagBank.Add(idx++, "So, what?");
+        playerDiagBank.Add(idx++, "I guess..");
+        playerDiagBank.Add(idx++, "And?");
+        playerDiagBank.Add(idx++, "Just the typical “You ruined my life” I mean come on, our lives haven’t even started yet.");
+        playerDiagBank.Add(idx++, "Are they all like that?");
+        playerDiagBank.Add(idx++, "Ew.");
+        playerDiagBank.Add(idx++, "So, what now?");
+        playerDiagBank.Add(idx++, "She did mention something along the lines of “at least I don’t have a fake horn”");
+        playerDiagBank.Add(idx++, "I mean, that doesn’t make any sense why would anyone have a fake horn?");
+        playerDiagBank.Add(idx++, "What?");
+        playerDiagBank.Add(idx++, "Those are REAL??");
+        playerDiagBank.Add(idx++, "It’s Bailey, and what do you want?");
+        playerDiagBank.Add(idx++, "Jassica invited me to sit with them at lunch");
         
         #endregion
     }
@@ -185,7 +210,25 @@ public class Friend {
         friendDiagBank.Add(idx++, "Oh it’s fine, I’ll just make a few copies and post this everywhere. Thanks! You did good!");
         friendDiagBank.Add(idx++, "And now we watch.");
         friendDiagBank.Add(idx++, "Of course we did! They’re bitches.");
-        
+        #endregion
+
+        #region Cutscene 7
+        friendDiagBank.Add(idx++, "Sooooo?");
+        friendDiagBank.Add(idx++, "Oh come on, we took down one of the Smaugs in one day, and your just going to quit there?");
+        friendDiagBank.Add(idx++, "Plus, I saw Persia talking to you yesterday");
+        friendDiagBank.Add(idx++, "What did she say?");
+        friendDiagBank.Add(idx++, "See what I mean? Girl has 2000 years left and she thinks that her world’s over when she’s 15.");
+        friendDiagBank.Add(idx++, "Honestly? She was the best.");
+        friendDiagBank.Add(idx++, "So what do you say? Wanna take them out?");
+        friendDiagBank.Add(idx++, "You’re coming along then.");
+        friendDiagBank.Add(idx++, "Well, are you sure she didn’t mention anything off? She always had a loose tongue");
+        friendDiagBank.Add(idx++, "A fake horn?");
+        friendDiagBank.Add(idx++, "Bailey.");
+        friendDiagBank.Add(idx++, "You do know what a horn job is? Don’t you?");
+        friendDiagBank.Add(idx++, "Of course they’re real, they aren’t like unicorns");
+        friendDiagBank.Add(idx++, "Uhoh. Smaugs at 6 o’clock");
+        friendDiagBank.Add(idx++, "Hey what was that at the start of class?");
+        friendDiagBank.Add(idx++, "What? This is perfect! Now you can figure out who has the Horn job.");
         #endregion
     }
 }
@@ -207,16 +250,18 @@ public class Meangirl1 { // Persia
     }
 }
 
-public class Meangirl2 {
-    int index;
-    string text;
+public class Meangirl2 { //Jassica
     public Dictionary<int, string> meangirl2DiagBank = new Dictionary<int, string>();
 
     public void fillBank() {
-        # region Cutscene 2
-        meangirl2DiagBank.Add(0, "Hello, I am ");
-        meangirl2DiagBank.Add(1, "I am a player.");
-        meangirl2DiagBank.Add(2, "I am a player.");
+        int idx = 0;
+
+        # region Cutscene 7
+        meangirl2DiagBank.Add(idx++, "Hey you! Hailey was it?");
+        meangirl2DiagBank.Add(idx++, "Oh I just came over to congratulate you for taking down Persia.");
+        meangirl2DiagBank.Add(idx++, "Oh please there’s no point in hiding it. It was all so obvious, besides. With her gone, we need a new Smaug to join her.");
+        meangirl2DiagBank.Add(idx++, "And who better than the very girl who took her down. What do you say? Care to join?");
+        meangirl2DiagBank.Add(idx++, "See you there!");
         # endregion
     }
 }
@@ -261,14 +306,27 @@ public class KeyStudent {
 
 public class DialogueOptionsText {
     public Dictionary<int, string> dialogueOptionsBank1 = new Dictionary<int, string>();
+    public Dictionary<int, string> dialogueOptionsBank2 = new Dictionary<int, string>();
+    public Dictionary<int, string> dialogueOptionsBank3 = new Dictionary<int, string>();
 
-    public void fillBank1() {
+    public void fillBank1() { // for cutscene 7
 
-        # region Cutscene 2
-        
-        dialogueOptionsBank1.Add(0, "Buy apple");
-        dialogueOptionsBank1.Add(1, "Buy orange");
-        dialogueOptionsBank1.Add(2, "Buy banana");
-        #endregion
+        dialogueOptionsBank1.Add(0, "Yes");
+        dialogueOptionsBank1.Add(1, "No");
+        dialogueOptionsBank1.Add(2, "*Incoherent Grumbling*");
     }
+
+    public void fillBank2() {
+        dialogueOptionsBank2.Add(0, "How did you know?");
+        dialogueOptionsBank2.Add(1, "What are you talking about?");
+        dialogueOptionsBank2.Add(2, "F you. Leave me alone");
+    }
+
+    public void fillBank3() {
+        dialogueOptionsBank3.Add(0, "Yes");
+        dialogueOptionsBank3.Add(1, "No");
+        dialogueOptionsBank3.Add(2, "I thought I told you to stop talking to me");
+    }
+
+
 }
