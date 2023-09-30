@@ -49,6 +49,8 @@ public class CutSceneController : MonoBehaviour
         cutsceneManager.cutscene1.fillBank(dialogueDictionaries);
         cutsceneManager.cutscene2.fillBank(dialogueDictionaries);
         cutsceneManager.cutscene3.fillBank(dialogueDictionaries);
+        cutsceneManager.cutscene4.fillBank(dialogueDictionaries);
+        cutsceneManager.cutscene5.fillBank(dialogueDictionaries);
 
         chapterIdx = 0;
         pageIdx = 0;
@@ -85,6 +87,10 @@ public class CutSceneController : MonoBehaviour
                 Cutscene1();
             } else if(chapterIdx == 1) {
                 Cutscene2();
+            } else if(chapterIdx == 2) {
+                Cutscene3();
+            } else if(chapterIdx == 3) {
+                Cutscene4();
             }
         }
 
@@ -193,6 +199,14 @@ public class CutSceneController : MonoBehaviour
         if (chapterIdx == 1)
         {
             LoadCutscene2();
+        } else if(chapterIdx == 2) {
+            LoadCutscene3();
+        } else if(chapterIdx == 3) {
+            Cutscene3();
+        } else if(chapterIdx == 4) {
+            Cutscene4();
+        } else if(chapterIdx == 5) {
+            // SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
 
         //load next scene in build index
@@ -218,7 +232,7 @@ public class CutSceneController : MonoBehaviour
     }
 
     private void LoadCutscene2() {
-        Debug.Log("Load Cutscene 2");
+        // Debug.Log("Load Cutscene 2");
         skipButton.SetActive(true);
         changePortriat(cutsceneManager.cutscene2.portraitBank[pageIdx]);
         dialogueTextBox.text = cutsceneManager.cutscene2.diagBank[0];
@@ -241,8 +255,32 @@ public class CutSceneController : MonoBehaviour
         }
     }
 
+    private void LoadCutscene3() {
+        Debug.Log("Load Cutscene 3");
+        skipButton.SetActive(true);
+        changePortriat(cutsceneManager.cutscene3.portraitBank[pageIdx]);
+        dialogueTextBox.text = cutsceneManager.cutscene3.diagBank[0];
+    }
+    
     private void Cutscene3() {
         if(pageIdx == cutsceneManager.cutscene3.diagBank.Count) {
+            Debug.Log("End of Cutscene");
+            characterControllerBase.endofDialogue = true;
+            continueTextBox.SetActive(true);
+            skipButton.SetActive(false);
+            pageIdx = 0;
+            chapterIdx++;
+            cutsceneStart = false;
+            characterControllerBase.gossipSearch = true;
+        } else {
+            skipButton.SetActive(true);
+            changePortriat(cutsceneManager.cutscene3.portraitBank[pageIdx]);
+            dialogueTextBox.text = cutsceneManager.cutscene3.diagBank[pageIdx++];
+        }
+    }
+
+    private void Cutscene4() {
+        if(pageIdx == cutsceneManager.cutscene4.diagBank.Count) {
             Debug.Log("End of Cutscene");
             characterControllerBase.endofDialogue = true;
             continueTextBox.SetActive(true);
@@ -258,8 +296,8 @@ public class CutSceneController : MonoBehaviour
             skipButton.SetActive(false);
         } else {
             skipButton.SetActive(true);
-            changePortriat(cutsceneManager.cutscene3.portraitBank[pageIdx]);
-            dialogueTextBox.text = cutsceneManager.cutscene3.diagBank[pageIdx++];
+            changePortriat(cutsceneManager.cutscene4.portraitBank[pageIdx]);
+            dialogueTextBox.text = cutsceneManager.cutscene4.diagBank[pageIdx++];
         }
     }
 }

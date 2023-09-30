@@ -26,7 +26,6 @@ public class Narrator {
         int idx = 0;
 
         # region Cutscene 1
-
         narratorDiagBank.Add(idx++, "The teacher in the front of the classroom, going off on a long lecture");
         narratorDiagBank.Add(idx++, "She pauses from taking notes and looks around the room");
         narratorDiagBank.Add(idx++, "To her surprise there actually is one person staring at her, the girl sitting right next to her.");
@@ -34,7 +33,11 @@ public class Narrator {
         narratorDiagBank.Add(idx++, "A dragon roars and the students get out of their seats and start to move, class is over.");
         narratorDiagBank.Add(idx++, "The two move move into the hallway");
         narratorDiagBank.Add(idx++, "Three girls are walking in the hallway. They catch Bailey's eye.");
+        #endregion
 
+        # region Cutscene 3
+        narratorDiagBank.Add(idx++, "With this new found knowledge you go back to Sam.");
+        narratorDiagBank.Add(idx++, "The Dragon roar is heard again and students are moving to class.");
         #endregion
     }
 }
@@ -86,7 +89,10 @@ public class Player {
         playerDiagBank.Add(idx++, "So… blackmail");
         playerDiagBank.Add(idx++, "Wouldn’t that go against what you’re doing?");
         playerDiagBank.Add(idx++, "What?");
+        #endregion
 
+        #region Cutscene 3
+        playerDiagBank.Add(idx++, "Nope. But it’s definitely one of the Smaugs.");
         #endregion
     }
 }
@@ -115,10 +121,11 @@ public class Friend {
         friendDiagBank.Add(idx++, "I’m sure others agree with me. If you don’t believe me, go on ahead and Chat with other people.");
         # endregion
 
-        #region Cutscene 2
-        friendDiagBank.Add(idx++, "I have spent the entire night planning how to take her down.");
-        friendDiagBank.Add(idx++, "No. Not really, so I’m gonna need\nYou to take care of it for us.");
-
+        #region Cutscene 3
+        friendDiagBank.Add(idx++, "Oh my God! Really! Do you know which one?");
+        friendDiagBank.Add(idx++, "I’d bet it’s Persia, she’s always bragging about How huge her family’s hoard is.");
+        friendDiagBank.Add(idx++, "We’ll talk more tomorrow, just keep that info in mind, okay?");
+        
         #endregion
     }
 }
