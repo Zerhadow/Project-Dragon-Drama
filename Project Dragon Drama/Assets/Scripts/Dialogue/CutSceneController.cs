@@ -28,6 +28,7 @@ public class CutSceneController : MonoBehaviour
     bool diagOptReady = false;
     public GameObject skipButton;
     private int diagOptIdx1 = 14, diagOptIdx2 = 30, diagOptIdx3 = 32;
+    private int diagOptIdx4 = 4, diagOptIdx5 = 12, diagOptIdx6 = 49, diagOptIdx7 = 65;
     private bool holdCutscene = false;
 
     //public CharacterControllerBase characterControllerBase;
@@ -48,10 +49,15 @@ public class CutSceneController : MonoBehaviour
         dialogueDictionaries.narrator.fillBank();
         dialogueDictionaries.teacher.fillBank();
         dialogueDictionaries.keyStudent.fillBank();
+        dialogueDictionaries.hotGuy.fillBank();
 
         dialogueDictionaries.diagOptions.fillBank1();
         dialogueDictionaries.diagOptions.fillBank2();
         dialogueDictionaries.diagOptions.fillBank3();
+        dialogueDictionaries.diagOptions.fillBank4();
+        dialogueDictionaries.diagOptions.fillBank5();
+        dialogueDictionaries.diagOptions.fillBank6();
+        dialogueDictionaries.diagOptions.fillBank7();
 
         cutsceneManager.cutscene1.fillBank(dialogueDictionaries);
         cutsceneManager.cutscene2.fillBank(dialogueDictionaries);
@@ -62,6 +68,9 @@ public class CutSceneController : MonoBehaviour
         cutsceneManager.cutscene7.fillBank(dialogueDictionaries);
         cutsceneManager.cutscene8.fillBank(dialogueDictionaries);
         cutsceneManager.cutscene9.fillBank(dialogueDictionaries);
+        cutsceneManager.cutscene10.fillBank(dialogueDictionaries);
+        cutsceneManager.cutscene11.fillBank(dialogueDictionaries);
+        cutsceneManager.cutscene12.fillBank(dialogueDictionaries);
 
         chapterIdx = 0;
         pageIdx = 0;
@@ -79,7 +88,7 @@ public class CutSceneController : MonoBehaviour
         dialogueTextBox.text = cutsceneManager.cutscene1.diagBank[pageIdx];
 
         //Current Cutscene Under Test:
-        chapterIdx = 6;
+        chapterIdx = 9;
     }
 
     // Update is called once per frame
@@ -125,36 +134,89 @@ public class CutSceneController : MonoBehaviour
                     holdCutscene = false;
                     //changePortriat(cutsceneManager.cutscene7.portraitBank[pageIdx]);
                     //dialogueTextBox.text = cutsceneManager.cutscene7.diagBank[pageIdx];
+                } else if(chapterIdx == 8) {
+                    if(diagCntrlIdx == 0){ //Control for multiple dialogue choices in cutscene.
+                    // make dialogue box show response to option
+                        if(diagOptions.optionNum == 1) {
+                            dialogueTextBox.text = cutsceneManager.cutscene9.GetOptionResponse(1);
+                            changePortriat(cutsceneManager.cutscene9.portraitBank[pageIdx]);
+                        } else if(diagOptions.optionNum == 2) {
+                            dialogueTextBox.text = cutsceneManager.cutscene9.GetOptionResponse(2);
+                            changePortriat(cutsceneManager.cutscene9.portraitBank[pageIdx]);
+                        } else if(diagOptions.optionNum == 3) {
+                            dialogueTextBox.text = cutsceneManager.cutscene9.GetOptionResponse(3);
+                            changePortriat(cutsceneManager.cutscene9.portraitBank[pageIdx]);
+                        }
+                    }
+                    diagCntrlIdx++;
+                    holdCutscene = false;
+                    //changePortriat(cutsceneManager.cutscene7.portraitBank[pageIdx]);
+                    //dialogueTextBox.text = cutsceneManager.cutscene7.diagBank[pageIdx];
+                } else if(chapterIdx == 9) {
+                    if(diagCntrlIdx == 0){ //Control for multiple dialogue choices in cutscene.
+                    // make dialogue box show response to option
+                        if(diagOptions.optionNum == 1) {
+                            dialogueTextBox.text = cutsceneManager.cutscene10.GetOptionResponse(1);
+                            changePortriat(cutsceneManager.cutscene10.portraitBank[pageIdx]);
+                        } else if(diagOptions.optionNum == 2) {
+                            dialogueTextBox.text = cutsceneManager.cutscene10.GetOptionResponse(2);
+                            changePortriat(cutsceneManager.cutscene10.portraitBank[pageIdx]);
+                        } else if(diagOptions.optionNum == 3) {
+                            dialogueTextBox.text = cutsceneManager.cutscene10.GetOptionResponse(3);
+                            changePortriat(cutsceneManager.cutscene10.portraitBank[pageIdx]);
+                        }
+                    } else if(diagCntrlIdx == 1) {
+                        if (diagOptions.optionNum == 1) {
+                            dialogueTextBox.text = cutsceneManager.cutscene10.GetOptionResponse2(1);
+                            changePortriat(cutsceneManager.cutscene10.portraitBank[pageIdx]);
+                        } else if (diagOptions.optionNum == 2) {
+                            dialogueTextBox.text = cutsceneManager.cutscene10.GetOptionResponse2(2);
+                            changePortriat(cutsceneManager.cutscene10.portraitBank[pageIdx]);
+                        } else if (diagOptions.optionNum == 3) {
+                            dialogueTextBox.text = cutsceneManager.cutscene10.GetOptionResponse2(3);
+                            changePortriat(cutsceneManager.cutscene10.portraitBank[pageIdx]);
+                        }
+                    } else if(diagCntrlIdx == 2) {
+                        if (diagOptions.optionNum == 1) {
+                            dialogueTextBox.text = cutsceneManager.cutscene10.GetOptionResponse3(1);
+                            changePortriat(cutsceneManager.cutscene10.portraitBank[pageIdx]);
+                        } else if (diagOptions.optionNum == 2) {
+                            dialogueTextBox.text = cutsceneManager.cutscene10.GetOptionResponse3(2);
+                            changePortriat(cutsceneManager.cutscene10.portraitBank[pageIdx]);
+                        } else if (diagOptions.optionNum == 3) {
+                            dialogueTextBox.text = cutsceneManager.cutscene10.GetOptionResponse3(3);
+                            changePortriat(cutsceneManager.cutscene10.portraitBank[pageIdx]);
+                        }
+                    }
+                    diagCntrlIdx++;
+                    holdCutscene = false;
+                    //changePortriat(cutsceneManager.cutscene7.portraitBank[pageIdx]);
+                    //dialogueTextBox.text = cutsceneManager.cutscene7.diagBank[pageIdx];
                 }
             }
             else if(!holdCutscene){
                 if(chapterIdx == 0) {
-                    Debug.Log("Cutscene 1");
                     Cutscene1();
                 } else if(chapterIdx == 1) {
-                    Debug.Log("Cutscene 2");
                     Cutscene2();
                 } else if(chapterIdx == 2) {
-                    Debug.Log("Cutscene 3");
                     Cutscene3();
                 } else if(chapterIdx == 3) {
-                    Debug.Log("Cutscene 4");
                     Cutscene4();
                 } else if(chapterIdx == 4) {
-                    Debug.Log("Cutscene 5");
                     Cutscene5();
                 } else if(chapterIdx == 5) {
-                    Debug.Log("Cutscene 6");
                     Cutscene6();
                 } else if(chapterIdx == 6) {
-                    Debug.Log("Cutscene 7");
                     Cutscene7();
                 } else if(chapterIdx == 7) {
-                    Debug.Log("Cutscene 8");
                     Cutscene8();
                 } else if(chapterIdx == 8) {
-                    Debug.Log("Cutscene 9");
-                    // Cutscene9();
+                    Cutscene9();
+                } else if(chapterIdx == 9) {
+                    Cutscene10();
+                } else if(chapterIdx == 10) {
+                    Cutscene11();
                 }
             }
         }
@@ -166,7 +228,6 @@ public class CutSceneController : MonoBehaviour
             diagOptReady = true;
             changePortriat(0);
             dialogueTextBox.text = diagOptions.optionChosen;
-            // pageIdx++;
         }
     }
 
@@ -216,6 +277,12 @@ public class CutSceneController : MonoBehaviour
             mg2PFP.SetActive(false);
             mg3PFP.SetActive(false);
             friendPFP.SetActive(true);
+        } else if(idx == 5) { //Ken
+            playerPFP.SetActive(false);
+            mg1PFP.SetActive(false);
+            mg2PFP.SetActive(false);
+            mg3PFP.SetActive(false);
+            friendPFP.SetActive(false);
         } else {
             npcPotriat();
         }
@@ -280,9 +347,11 @@ public class CutSceneController : MonoBehaviour
         } else if(chapterIdx == 8) {
             LoadCutscene9();
         } else if(chapterIdx == 9) {
-            Debug.Log("End of Cutscenes");
-        } else {
-            // Debug.Log("End of Cutscenes");
+            LoadCutscene10();
+        } else if(chapterIdx == 10) {
+            LoadCutscene11();
+        } else if(chapterIdx == 11) 
+        {
         }
 
         //load next scene in build index
@@ -488,11 +557,6 @@ public class CutSceneController : MonoBehaviour
             chapterIdx++;
             cutsceneStart = false;
             characterControllerBase.gossipSearch = true;
-        } else if(pageIdx == diagOptIdx1) { //hard coding when the dialogue option is supposed to start
-            dialogueOptions.SetActive(true);
-            diagOptions.SetOptions(dialogueDictionaries.diagOptions.dialogueOptionsBank1[0],
-                dialogueDictionaries.diagOptions.dialogueOptionsBank1[1], dialogueDictionaries.diagOptions.dialogueOptionsBank1[2]);
-            skipButton.SetActive(false);
         } else {
             skipButton.SetActive(true);
             changePortriat(cutsceneManager.cutscene8.portraitBank[pageIdx]);
@@ -517,6 +581,82 @@ public class CutSceneController : MonoBehaviour
             chapterIdx++;
             cutsceneStart = false;
             characterControllerBase.gossipSearch = true;
+        } else if(pageIdx == diagOptIdx4) { //hard coding when the dialogue option is supposed to start
+            diagOptIdx4 = -1;
+            holdCutscene = true;
+            dialogueOptions.SetActive(true);
+            diagOptions.SetOptions(dialogueDictionaries.diagOptions.dialogueOptionsBank4[0],
+                dialogueDictionaries.diagOptions.dialogueOptionsBank4[1], dialogueDictionaries.diagOptions.dialogueOptionsBank4[2]);
+            skipButton.SetActive(false);
+        } else {
+            skipButton.SetActive(true);
+            changePortriat(cutsceneManager.cutscene9.portraitBank[pageIdx]);
+            dialogueTextBox.text = cutsceneManager.cutscene9.diagBank[pageIdx++];
+        }
+    }
+
+    private void LoadCutscene10() {
+        Debug.Log("Load Cutscene 10");
+        skipButton.SetActive(true);
+        changePortriat(cutsceneManager.cutscene10.portraitBank[pageIdx]);
+        dialogueTextBox.text = cutsceneManager.cutscene10.diagBank[0];
+    }
+
+    private void Cutscene10() {
+        if(pageIdx == cutsceneManager.cutscene10.diagBank.Count) {
+            Debug.Log("End of Cutscene");
+            characterControllerBase.endofDialogue = true;
+            continueTextBox.SetActive(true);
+            skipButton.SetActive(false);
+            pageIdx = 0;
+            chapterIdx++;
+            cutsceneStart = false;
+            characterControllerBase.gossipSearch = true;
+        } else if(pageIdx == diagOptIdx5) { //hard coding when the dialogue option is supposed to start
+            diagOptIdx5 = -1;
+            holdCutscene = true;
+            dialogueOptions.SetActive(true);
+            diagOptions.SetOptions(dialogueDictionaries.diagOptions.dialogueOptionsBank5[0],
+                dialogueDictionaries.diagOptions.dialogueOptionsBank5[1], dialogueDictionaries.diagOptions.dialogueOptionsBank5[2]);
+            skipButton.SetActive(false);
+        } else if(pageIdx == diagOptIdx6) {
+            diagOptIdx6 = -1;
+            holdCutscene = true;
+            dialogueOptions.SetActive(true);
+            diagOptions.SetOptions(dialogueDictionaries.diagOptions.dialogueOptionsBank6[0],
+                dialogueDictionaries.diagOptions.dialogueOptionsBank6[1], dialogueDictionaries.diagOptions.dialogueOptionsBank6[2]);
+            skipButton.SetActive(false);
+        } else if(pageIdx == diagOptIdx7) {
+            diagOptIdx7 = -1;
+            holdCutscene = true;
+            dialogueOptions.SetActive(true);
+            diagOptions.SetOptions(dialogueDictionaries.diagOptions.dialogueOptionsBank7[0],
+                dialogueDictionaries.diagOptions.dialogueOptionsBank7[1], dialogueDictionaries.diagOptions.dialogueOptionsBank7[2]);
+            skipButton.SetActive(false);
+        } else {
+            skipButton.SetActive(true);
+            changePortriat(cutsceneManager.cutscene10.portraitBank[pageIdx]);
+            dialogueTextBox.text = cutsceneManager.cutscene10.diagBank[pageIdx++];
+        }
+    }
+
+    private void LoadCutscene11() {
+        Debug.Log("Load Cutscene 11");
+        skipButton.SetActive(true);
+        changePortriat(cutsceneManager.cutscene11.portraitBank[pageIdx]);
+        dialogueTextBox.text = cutsceneManager.cutscene11.diagBank[0];
+    }
+
+    private void Cutscene11() {
+        if(pageIdx == cutsceneManager.cutscene11.diagBank.Count) {
+            Debug.Log("End of Cutscene");
+            characterControllerBase.endofDialogue = true;
+            // continueTextBox.SetActive(true);
+            skipButton.SetActive(false);
+            pageIdx = 0;
+            chapterIdx++;
+            cutsceneStart = false;
+            characterControllerBase.gossipSearch = false;
         } else if(pageIdx == diagOptIdx1) { //hard coding when the dialogue option is supposed to start
             dialogueOptions.SetActive(true);
             diagOptions.SetOptions(dialogueDictionaries.diagOptions.dialogueOptionsBank1[0],
@@ -524,8 +664,37 @@ public class CutSceneController : MonoBehaviour
             skipButton.SetActive(false);
         } else {
             skipButton.SetActive(true);
-            changePortriat(cutsceneManager.cutscene9.portraitBank[pageIdx]);
-            dialogueTextBox.text = cutsceneManager.cutscene9.diagBank[pageIdx++];
+            changePortriat(cutsceneManager.cutscene11.portraitBank[pageIdx]);
+            dialogueTextBox.text = cutsceneManager.cutscene11.diagBank[pageIdx++];
+        }
+    }
+
+    private void LoadCutscene12() {
+        Debug.Log("Load Cutscene 12");
+        skipButton.SetActive(true);
+        changePortriat(cutsceneManager.cutscene11.portraitBank[pageIdx]);
+        dialogueTextBox.text = cutsceneManager.cutscene11.diagBank[0];
+    }
+
+    private void Cutscene12() {
+        if(pageIdx == cutsceneManager.cutscene11.diagBank.Count) {
+            Debug.Log("End of Cutscene");
+            characterControllerBase.endofDialogue = true;
+            // continueTextBox.SetActive(true);
+            skipButton.SetActive(false);
+            pageIdx = 0;
+            chapterIdx++;
+            cutsceneStart = false;
+            characterControllerBase.gossipSearch = false;
+        } else if(pageIdx == diagOptIdx1) { //hard coding when the dialogue option is supposed to start
+            dialogueOptions.SetActive(true);
+            diagOptions.SetOptions(dialogueDictionaries.diagOptions.dialogueOptionsBank1[0],
+                dialogueDictionaries.diagOptions.dialogueOptionsBank1[1], dialogueDictionaries.diagOptions.dialogueOptionsBank1[2]);
+            skipButton.SetActive(false);
+        } else {
+            skipButton.SetActive(true);
+            changePortriat(cutsceneManager.cutscene11.portraitBank[pageIdx]);
+            dialogueTextBox.text = cutsceneManager.cutscene11.diagBank[pageIdx++];
         }
     }
 }

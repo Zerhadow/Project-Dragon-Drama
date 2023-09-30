@@ -13,8 +13,12 @@ public class CutsceneManager : MonoBehaviour
     public Cutscene7 cutscene7 = new Cutscene7();
     public Cutscene8 cutscene8 = new Cutscene8();
     public Cutscene9 cutscene9 = new Cutscene9();
+    public Cutscene10 cutscene10 = new Cutscene10();
+    public Cutscene11 cutscene11 = new Cutscene11();
+    public Cutscene12 cutscene12 = new Cutscene12();
 
-    int narratorIdx = 0, playerIdx = 0, friendIdx = 0, teacherIdx = 0, keyStudentIdx = 0, meangirl1Idx = 0, meangirl2Idx = 0, meangirl3Idx = 0;
+    int narratorIdx = 0, playerIdx = 0, friendIdx = 0, teacherIdx = 0, keyStudentIdx = 0;
+    int meangirl1Idx = 0, meangirl2Idx = 0, meangirl3Idx = 0, hotGuyIdx = 0;
 
     public class Cutscene1 {
         public Dictionary<int, string> diagBank = new Dictionary<int, string>();
@@ -414,9 +418,27 @@ public class CutsceneManager : MonoBehaviour
         public void fillBank (DialogueDictionaries diagDict) {
             int idx = 0, narratorIdx = 22, playerIdx = 44, friendIdx = 46, meangirl1Idx = 0, meangirl2Idx = 5, meangirl3Idx = 0;
 
-            diagBank.Add(idx++, diagDict.meangirl1.meangirl1DiagBank[meangirl1Idx++]);
-            portraitBank.Add(1);
-            
+            diagBank.Add(idx++, diagDict.narrator.narratorDiagBank[narratorIdx++]);
+            portraitBank.Add(-1);
+            diagBank.Add(idx++, diagDict.meangirl2.meangirl2DiagBank[meangirl2Idx++]);
+            portraitBank.Add(2);
+            diagBank.Add(idx++, diagDict.meangirl3.meangirl3DiagBank[meangirl3Idx++]);
+            portraitBank.Add(3);
+            diagBank.Add(idx++, diagDict.meangirl2.meangirl2DiagBank[meangirl2Idx++]);
+            portraitBank.Add(2);
+            diagBank.Add(idx++, diagDict.player.playerDiagBank[playerIdx++]);
+            portraitBank.Add(0);
+            diagBank.Add(idx++, diagDict.meangirl3.meangirl3DiagBank[meangirl3Idx++]);
+            portraitBank.Add(3);
+            diagBank.Add(idx++, diagDict.meangirl2.meangirl2DiagBank[meangirl2Idx++]);
+            portraitBank.Add(2);
+            diagBank.Add(idx++, diagDict.meangirl3.meangirl3DiagBank[meangirl3Idx++]);
+            portraitBank.Add(3);
+            // Debug.Log("meangirl2Idx: " + meangirl2Idx); // 8
+            // Debug.Log("meangirl3Idx: " + meangirl3Idx); // 3
+            // Debug.Log("playerIdx: " + playerIdx); // 45
+            // Debug.Log("friendIdx: " + friendIdx); // 46
+            // Debug.Log("narratorIdx: " + narratorIdx); // 23
         }
     }
 
@@ -425,11 +447,272 @@ public class CutsceneManager : MonoBehaviour
         public List<int> portraitBank = new List<int>();
 
         public void fillBank (DialogueDictionaries diagDict) {
-            int idx = 0, narratorIdx = 16, playerIdx = 31, friendIdx = 30, meangirl1Idx = 0, meangirl2Idx = 0, meangirl3Idx = 0;
+            int idx = 0, narratorIdx = 23, playerIdx = 45, friendIdx = 46, meangirl1Idx = 0, meangirl2Idx = 8, meangirl3Idx = 3;
 
-            diagBank.Add(idx++, diagDict.meangirl1.meangirl1DiagBank[meangirl1Idx++]);
-            portraitBank.Add(1);
+            diagBank.Add(idx++, diagDict.friend.friendDiagBank[friendIdx++]);
+            portraitBank.Add(4);
+            diagBank.Add(idx++, diagDict.player.playerDiagBank[playerIdx++]);
+            portraitBank.Add(0);
+            diagBank.Add(idx++, diagDict.friend.friendDiagBank[friendIdx++]);
+            portraitBank.Add(4);
+            diagBank.Add(idx++, diagDict.friend.friendDiagBank[friendIdx++]);
+            portraitBank.Add(4);
+            // Debug.Log("Idx: " + idx); Need to get idx to tell CSC Controller
+            //Response to Diag Option
+            diagBank.Add(idx++, diagDict.friend.friendDiagBank[friendIdx++]);
+            portraitBank.Add(4);
+            diagBank.Add(idx++, diagDict.player.playerDiagBank[playerIdx++]);
+            portraitBank.Add(0);
+            diagBank.Add(idx++, diagDict.friend.friendDiagBank[friendIdx++]);
+            portraitBank.Add(4);
+            diagBank.Add(idx++, diagDict.friend.friendDiagBank[friendIdx++]);
+            portraitBank.Add(4);
+            diagBank.Add(idx++, diagDict.friend.friendDiagBank[friendIdx++]);
+            portraitBank.Add(4);
+            diagBank.Add(idx++, diagDict.player.playerDiagBank[playerIdx++]);
+            portraitBank.Add(0);
+            // Debug.Log("friendIdx: " + friendIdx); // 53
+            // Debug.Log("playerIdx: " + playerIdx); // 48
+            // Debug.Log("narratorIdx: " + narratorIdx); // 23
+        }
+
+        public string GetOptionResponse(int idx) {
+            if(idx == 1) {
+                return "Yeah that would add up.";
+            } else if(idx == 2) {
+                return "Are you serious? It’s obviously Jassica.";
+            } else if(idx == 3) {
+                return "What the hell? I thought we were friends.";
+            } else {
+                return "I'll take that as a yes.";
+            }
+        }
+    }
+
+    public class Cutscene10 {
+        public Dictionary<int, string> diagBank = new Dictionary<int, string>();
+        public List<int> portraitBank = new List<int>();
+
+        public void fillBank (DialogueDictionaries diagDict) {
+            int idx = 0, playerIdx = 48, friendIdx = 53, meangirl1Idx = 0, meangirl2Idx = 8, meangirl3Idx = 3, narratorIdx = 23, hotGuyIdx = 0;
+
+            diagBank.Add(idx++, diagDict.narrator.narratorDiagBank[narratorIdx++]);
+            portraitBank.Add(-1);
+            diagBank.Add(idx++, diagDict.hotGuy.hotGuyDiagBank[hotGuyIdx++]);
+            portraitBank.Add(5);
+            diagBank.Add(idx++, diagDict.player.playerDiagBank[playerIdx++]);
+            portraitBank.Add(0);
+            diagBank.Add(idx++, diagDict.hotGuy.hotGuyDiagBank[hotGuyIdx++]);
+            portraitBank.Add(5);
+            diagBank.Add(idx++, diagDict.player.playerDiagBank[playerIdx++]);
+            portraitBank.Add(0);
+            diagBank.Add(idx++, diagDict.hotGuy.hotGuyDiagBank[hotGuyIdx++]);
+            portraitBank.Add(5);
+            diagBank.Add(idx++, diagDict.player.playerDiagBank[playerIdx++]);
+            portraitBank.Add(0);
+            diagBank.Add(idx++, diagDict.hotGuy.hotGuyDiagBank[hotGuyIdx++]);
+            portraitBank.Add(5);
+            diagBank.Add(idx++, diagDict.player.playerDiagBank[playerIdx++]);
+            portraitBank.Add(0);
+            diagBank.Add(idx++, diagDict.hotGuy.hotGuyDiagBank[hotGuyIdx++]);
+            portraitBank.Add(5);
+            diagBank.Add(idx++, diagDict.player.playerDiagBank[playerIdx++]);
+            portraitBank.Add(0);
+            diagBank.Add(idx++, diagDict.hotGuy.hotGuyDiagBank[hotGuyIdx++]);
+            portraitBank.Add(5);
+            // Debug.Log("Idx: " + idx); // Need to get idx to tell CSC Controller
+            //Response to Diag Option
+            diagBank.Add(idx++, diagDict.hotGuy.hotGuyDiagBank[hotGuyIdx++]);
+            portraitBank.Add(5);
+            diagBank.Add(idx++, diagDict.player.playerDiagBank[playerIdx++]); 
+            portraitBank.Add(0);
+            diagBank.Add(idx++, diagDict.hotGuy.hotGuyDiagBank[hotGuyIdx++]);
+            portraitBank.Add(5);
+            diagBank.Add(idx++, diagDict.player.playerDiagBank[playerIdx++]);
+            portraitBank.Add(0);
+            diagBank.Add(idx++, diagDict.hotGuy.hotGuyDiagBank[hotGuyIdx++]);
+            portraitBank.Add(5);
+            diagBank.Add(idx++, diagDict.hotGuy.hotGuyDiagBank[hotGuyIdx++]);
+            portraitBank.Add(5);
+            diagBank.Add(idx++, diagDict.player.playerDiagBank[playerIdx++]);
+            portraitBank.Add(0);
+            diagBank.Add(idx++, diagDict.hotGuy.hotGuyDiagBank[hotGuyIdx++]);
+            portraitBank.Add(5);
+            diagBank.Add(idx++, diagDict.narrator.narratorDiagBank[narratorIdx++]);
+            portraitBank.Add(-1);
+            diagBank.Add(idx++, diagDict.player.playerDiagBank[playerIdx++]);
+            portraitBank.Add(0);
+            diagBank.Add(idx++, diagDict.friend.friendDiagBank[friendIdx++]);
+            portraitBank.Add(4);
+            diagBank.Add(idx++, diagDict.player.playerDiagBank[playerIdx++]);
+            portraitBank.Add(0);
+            diagBank.Add(idx++, diagDict.friend.friendDiagBank[friendIdx++]);
+            portraitBank.Add(4);
+            diagBank.Add(idx++, diagDict.player.playerDiagBank[playerIdx++]);
+            portraitBank.Add(0);
+            diagBank.Add(idx++, diagDict.friend.friendDiagBank[friendIdx++]);
+            portraitBank.Add(4);
+            diagBank.Add(idx++, diagDict.player.playerDiagBank[playerIdx++]);
+            portraitBank.Add(0);
+            diagBank.Add(idx++, diagDict.friend.friendDiagBank[friendIdx++]);
+            portraitBank.Add(4);
+            diagBank.Add(idx++, diagDict.player.playerDiagBank[playerIdx++]);
+            portraitBank.Add(0);
+            diagBank.Add(idx++, diagDict.narrator.narratorDiagBank[narratorIdx++]);
+            portraitBank.Add(-1);
+            diagBank.Add(idx++, diagDict.narrator.narratorDiagBank[narratorIdx++]);
+            portraitBank.Add(-1);
+            diagBank.Add(idx++, diagDict.narrator.narratorDiagBank[narratorIdx++]);
+            portraitBank.Add(-1);
+            diagBank.Add(idx++, diagDict.friend.friendDiagBank[friendIdx++]);
+            portraitBank.Add(4);
+            diagBank.Add(idx++, diagDict.meangirl2.meangirl2DiagBank[meangirl2Idx++]);
+            portraitBank.Add(2);
+            diagBank.Add(idx++, diagDict.friend.friendDiagBank[friendIdx++]);
+            portraitBank.Add(4);
+            diagBank.Add(idx++, diagDict.narrator.narratorDiagBank[narratorIdx++]);
+            portraitBank.Add(-1);
+            diagBank.Add(idx++, diagDict.friend.friendDiagBank[friendIdx++]);
+            portraitBank.Add(4);
+            diagBank.Add(idx++, diagDict.narrator.narratorDiagBank[narratorIdx++]);
+            portraitBank.Add(-1);
+            diagBank.Add(idx++, diagDict.meangirl3.meangirl3DiagBank[meangirl3Idx++]);
+            portraitBank.Add(3);
+            diagBank.Add(idx++, diagDict.meangirl2.meangirl2DiagBank[meangirl2Idx++]);
+            portraitBank.Add(2);
+            diagBank.Add(idx++, diagDict.meangirl3.meangirl3DiagBank[meangirl3Idx++]);
+            portraitBank.Add(3);
+            diagBank.Add(idx++, diagDict.narrator.narratorDiagBank[narratorIdx++]);
+            portraitBank.Add(-1);
+            diagBank.Add(idx++, diagDict.meangirl3.meangirl3DiagBank[meangirl3Idx++]);
+            portraitBank.Add(3);
+            diagBank.Add(idx++, diagDict.meangirl3.meangirl3DiagBank[meangirl3Idx++]);
+            portraitBank.Add(3);
+            diagBank.Add(idx++, diagDict.narrator.narratorDiagBank[narratorIdx++]);
+            portraitBank.Add(-1);
+            diagBank.Add(idx++, diagDict.meangirl2.meangirl2DiagBank[meangirl2Idx++]);
+            portraitBank.Add(2);
+            diagBank.Add(idx++, diagDict.narrator.narratorDiagBank[narratorIdx++]);
+            portraitBank.Add(-1);
+            diagBank.Add(idx++, diagDict.meangirl2.meangirl2DiagBank[meangirl2Idx++]);
+            portraitBank.Add(2);
+            // Debug.Log("Idx: " + idx); // Need to get idx to tell CSC Controller
+            //Response to Diag Option
+            diagBank.Add(idx++, diagDict.meangirl2.meangirl2DiagBank[meangirl2Idx++]);
+            portraitBank.Add(2);
+            diagBank.Add(idx++, diagDict.narrator.narratorDiagBank[narratorIdx++]);
+            portraitBank.Add(-1);
+            diagBank.Add(idx++, diagDict.meangirl2.meangirl2DiagBank[meangirl2Idx++]);
+            portraitBank.Add(2);
+            diagBank.Add(idx++, diagDict.player.playerDiagBank[playerIdx++]); 
+            portraitBank.Add(0);
+            diagBank.Add(idx++, diagDict.meangirl2.meangirl2DiagBank[meangirl2Idx++]); 
+            portraitBank.Add(2);
+            diagBank.Add(idx++, diagDict.player.playerDiagBank[playerIdx++]); 
+            portraitBank.Add(0);
+            diagBank.Add(idx++, diagDict.meangirl2.meangirl2DiagBank[meangirl2Idx++]);
+            portraitBank.Add(2);
+            diagBank.Add(idx++, diagDict.player.playerDiagBank[playerIdx++]);
+            portraitBank.Add(0);
+            diagBank.Add(idx++, diagDict.meangirl2.meangirl2DiagBank[meangirl2Idx++]); 
+            portraitBank.Add(2);
+            diagBank.Add(idx++, diagDict.player.playerDiagBank[playerIdx++]);
+            portraitBank.Add(0);
+            diagBank.Add(idx++, diagDict.narrator.narratorDiagBank[narratorIdx++]);
+            portraitBank.Add(-1);
+            diagBank.Add(idx++, diagDict.meangirl2.meangirl2DiagBank[meangirl2Idx++]);
+            portraitBank.Add(2);
+            diagBank.Add(idx++, diagDict.player.playerDiagBank[playerIdx++]);
+            portraitBank.Add(0);
+            diagBank.Add(idx++, diagDict.meangirl2.meangirl2DiagBank[meangirl2Idx++]);
+            portraitBank.Add(2);
+            diagBank.Add(idx++, diagDict.player.playerDiagBank[playerIdx++]);
+            portraitBank.Add(0);
+            diagBank.Add(idx++, diagDict.meangirl2.meangirl2DiagBank[meangirl2Idx++]);
+            portraitBank.Add(2);
             
+            // Debug.Log("Idx: " + idx); // Need to get idx to tell CSC Controller
+            //Response to Diag Option
+            diagBank.Add(idx++, diagDict.meangirl2.meangirl2DiagBank[meangirl2Idx++]);
+            portraitBank.Add(2);
+            diagBank.Add(idx++, diagDict.player.playerDiagBank[playerIdx++]);
+            portraitBank.Add(0);
+            diagBank.Add(idx++, diagDict.meangirl2.meangirl2DiagBank[meangirl2Idx++]);
+            portraitBank.Add(2);
+            diagBank.Add(idx++, diagDict.player.playerDiagBank[playerIdx++]);
+            portraitBank.Add(0);
+            diagBank.Add(idx++, diagDict.meangirl2.meangirl2DiagBank[meangirl2Idx++]);
+            portraitBank.Add(2);
+            diagBank.Add(idx++, diagDict.player.playerDiagBank[playerIdx++]);
+            portraitBank.Add(0);
+            diagBank.Add(idx++, diagDict.meangirl2.meangirl2DiagBank[meangirl2Idx++]);
+            portraitBank.Add(2);
+            diagBank.Add(idx++, diagDict.player.playerDiagBank[playerIdx++]);
+            portraitBank.Add(0);
+            diagBank.Add(idx++, diagDict.meangirl2.meangirl2DiagBank[meangirl2Idx++]);
+            portraitBank.Add(2);
+            // Debug.Log("FriendIdx: " + friendIdx); // 60
+            // Debug.Log("PlayerIdx: " + playerIdx); // 71
+            // Debug.Log("NarratorIdx: " + narratorIdx); // 35
+            // Debug.Log("Meangirl2Idx: " + meangirl2Idx); // 25
+            // Debug.Log("Meangirl3Idx: " + meangirl3Idx); // 7
+            // Debug.Log("HotGuyIdx: " + hotGuyIdx); // 11
+        }
+
+        public string GetOptionResponse(int idx) {
+            if(idx == 1) {
+                return "What? I'm guessing you're talking about Jassica's horn.";
+            } else if(idx == 2) {
+                return "I think Jassica maybe";
+            } else if(idx == 3) {
+                return "Yeah her horn. I was with her when she broke it.";
+            } else {
+                return "I’m sorry, I didn’t mean to stare.";
+            }
+        }
+
+        public string GetOptionResponse2(int idx) {
+            if(idx == 1) {
+                return "No, please stay";
+            } else if(idx == 2) {
+                return "Alright fine";
+            } else if(idx == 3) {
+                return "… Ok.";
+            } else {
+                return "I’m sorry, I didn’t mean to stare.";
+            }
+        }
+
+        public string GetOptionResponse3(int idx) {
+            if(idx == 1) {
+                return "You are interested in him. Duh";
+            } else if(idx == 2) {
+                return "I was too late.";
+            } else if(idx == 3) {
+                return "Of course, newt. We all do.";
+            } else {
+                return "I’m sorry, I didn’t mean to stare.";
+            }
+        }
+    }
+
+    public class Cutscene11 {
+        public Dictionary<int, string> diagBank = new Dictionary<int, string>();
+        public List<int> portraitBank = new List<int>();
+
+        public void fillBank (DialogueDictionaries diagDict) {
+            int idx = 0, playerIdx = 71, friendIdx = 60, meangirl1Idx = 0, meangirl2Idx = 25, meangirl3Idx = 7, narratorIdx = 35, hotGuyIdx = 11;
+
+            // diagBank.Add(idx++, diagDict.meangirl2.meangirl2DiagBank[meangirl2Idx++]);
+        }
+    }
+
+    public class Cutscene12 {
+        public Dictionary<int, string> diagBank = new Dictionary<int, string>();
+        public List<int> portraitBank = new List<int>();
+
+        public void fillBank (DialogueDictionaries diagDict) {
+
         }
     }
 }
