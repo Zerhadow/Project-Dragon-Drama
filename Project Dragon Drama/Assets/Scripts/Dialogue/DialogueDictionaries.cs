@@ -13,12 +13,11 @@ public class DialogueDictionaries : MonoBehaviour {
     public Narrator narrator = new Narrator();
     public Teacher teacher = new Teacher();
     public KeyStudent keyStudent = new KeyStudent();
+
+    public HotGuy hotGuy = new HotGuy();
 }
 
 public class Narrator {
-    int index;
-
-    string text;
     public Dictionary<int, string> narratorDiagBank = new Dictionary<int, string>();int idx = 0;
 
 
@@ -68,6 +67,22 @@ public class Narrator {
         # region Cutscene 8
         narratorDiagBank.Add(idx++, "Nataly mentions something about how one of her horns has been acting up recently and she needs to schedule her monthly Horn visit at her cornologist.");
         #endregion
+
+        # region Cutscene 10
+        narratorDiagBank.Add(idx++, "You find Ken who’s awesome and totally sexy and hot, and I’m not talking about his breath.");
+        narratorDiagBank.Add(idx++, "The player receives some anti-itch horn cream.");
+        narratorDiagBank.Add(idx++, "Sam devises a plan, and gets ready for it.");
+        narratorDiagBank.Add(idx++, "Towards the end of the day Sam is walking past Jassica, when suddenly something small slips out of her bag.");
+        narratorDiagBank.Add(idx++, "Sam picks up the cream and turns around, she then loudly and audibly gasps in shock at the contents.");
+        narratorDiagBank.Add(idx++, "Jassica looks at the cream in Sam’s hand and swipes at Sam’s hand, Sam narrowly avoids the swipe and reads the label aloud.");
+        narratorDiagBank.Add(idx++, "Murmurs and whispers begin to fill the hallway. Jassica is stunned in awe at what’s happening.s");
+        narratorDiagBank.Add(idx++, "Tears begin to flow down Jassica’s eyes as she runs through the hallway and disappears around a corner.");
+        narratorDiagBank.Add(idx++, "As you walk to your next class, you get the feeling to check the bathroom. As you enter you hear sobbing from one of the stalls. And hear faintly");
+        narratorDiagBank.Add(idx++, "You knock on the door.");
+        narratorDiagBank.Add(idx++, "Jassica opens the stall door.");
+        narratorDiagBank.Add(idx++, "Jassica pulls an envelope from her backpack.");
+        
+        #endregion
     }
 }
 
@@ -90,8 +105,6 @@ public class Teacher {
 }
 
 public class Player {
-    int index;
-    string text;
     public Dictionary<int, string> playerDiagBank = new Dictionary<int, string>();
 
     public void fillBank() {
@@ -170,6 +183,29 @@ public class Player {
         playerDiagBank.Add(idx++, "That’s what she said");
         playerDiagBank.Add(idx++, "Do they have any Exes");
         playerDiagBank.Add(idx++, "Gotcha.");
+        #endregion
+
+        #region Cutscene 10
+        playerDiagBank.Add(idx++, "Uh. Yeah. Ken, right? Literally everyone knows about you");
+        playerDiagBank.Add(idx++, "I’m so sorry.");
+        playerDiagBank.Add(idx++, "Wait what?");
+        playerDiagBank.Add(idx++, "How’s that been working out?");
+        playerDiagBank.Add(idx++, "Are you sure everything’s ok between them?");
+        playerDiagBank.Add(idx++, "Was there anything different about her afterwards?");
+        playerDiagBank.Add(idx++, "Why the hell would you do that?");
+        playerDiagBank.Add(idx++, "You sure?");
+        playerDiagBank.Add(idx++, "I think Sam needs to see this.");
+        playerDiagBank.Add(idx++, "I honestly don’t know what I’m doing.");
+        playerDiagBank.Add(idx++, "Why?");
+        playerDiagBank.Add(idx++, "From cream?");
+        playerDiagBank.Add(idx++, "Sure, whatever you say.");
+        playerDiagBank.Add(idx++, "Oh my god. I’m so sorry");
+        playerDiagBank.Add(idx++, "Look, I-");
+        playerDiagBank.Add(idx++, "I- I don’t know what to say.");
+        playerDiagBank.Add(idx++, "I don’t even know how though.");
+        playerDiagBank.Add(idx++, "What is it?");
+        playerDiagBank.Add(idx++, "Why do you have this?");
+        playerDiagBank.Add(idx++, "Thank you.");
         #endregion
     }
 }
@@ -252,6 +288,16 @@ public class Friend {
         friendDiagBank.Add(idx++, "I know she has one ex, but I Don’t know much about him, try talking around.");
         friendDiagBank.Add(idx++, "And remember, find anything juicy and come talk to me!!");
         #endregion
+
+        #region Cutscene 10
+        friendDiagBank.Add(idx++, "Holy cow! You are good at this!");
+        friendDiagBank.Add(idx++, "Doesn’t matter! We’re going to use this against her!");
+        friendDiagBank.Add(idx++, "Because, this is undeniable proof, that Jassica Got a horn job.");
+        friendDiagBank.Add(idx++, "Believe me. It will work.");
+        friendDiagBank.Add(idx++, "Jassica!");
+        friendDiagBank.Add(idx++, "Why did this slip out of your bag!");
+        friendDiagBank.Add(idx++, "Anti-Itch Horn cream? Why would you need that?");
+        #endregion
     }
 }
 
@@ -291,6 +337,23 @@ public class Meangirl2 { //Jassica
         meangirl2DiagBank.Add(idx++, "Yeah, ever since that Football accident.");
         meangirl2DiagBank.Add(idx++, "Yeah my horn grew back in like a week. must be blessed By the genes of my ancestry. Or something.");
         #endregion
+
+        # region Cutscene 10
+        meangirl2DiagBank.Add(idx++, "What? What do you want?");
+        meangirl2DiagBank.Add(idx++, "It’s for my horn. I need it.");
+        meangirl2DiagBank.Add(idx++, "It wasn’t my fault.");
+        meangirl2DiagBank.Add(idx++, "Not now Bailey. I don’t want to talk to you!");
+        meangirl2DiagBank.Add(idx++, "It wasn't my fault ok? I had to.");
+        meangirl2DiagBank.Add(idx++, "After I broke my horn, they told me it wouldn't grow back. Some rare birth defect was the reason.");
+        meangirl2DiagBank.Add(idx++, "Yeah, but you had to tell everyone. I don’t know how I’m even going to show my face tomorrow.");
+        meangirl2DiagBank.Add(idx++, "I know everyone hates the Smaugs, but it’s really Nataly everyone hates. Even Persia and I.");
+        meangirl2DiagBank.Add(idx++, "Look. You already have her trust. If you want to take her down. I say do it.");
+        meangirl2DiagBank.Add(idx++, "Here.");
+        meangirl2DiagBank.Add(idx++, "It’s a love note, one I wrote for Ken.");
+        meangirl2DiagBank.Add(idx++, "After Nataly stole him from me. Right before we broke up. I wrote this as a last ditch effort to try and keep him.");
+        meangirl2DiagBank.Add(idx++, "Look. He’s a good guy. He doesn’t deserve Nataly, or me, but you. You might just be what he needs.");
+        
+        #endregion
     }
 }
 
@@ -305,12 +368,17 @@ public class Meangirl3 { // Nataly
         meangirl3DiagBank.Add(idx++, "Oh yeah you’re new, you weren’t there.");
         meangirl3DiagBank.Add(idx++, "Or Something.");
         # endregion
+
+        # region Cutscene 10
+        meangirl3DiagBank.Add(idx++, "Jassica? What’s the meaning of all this?");
+        meangirl3DiagBank.Add(idx++, "Don’t tell me. YOU GOT A HORN JOB?!");
+        meangirl3DiagBank.Add(idx++, "I can’t believe her.");
+        meangirl3DiagBank.Add(idx++, "I always knew she was a fake.");
+        #endregion
     }
 }
 
 public class KeyStudent {
-    int index;
-    string text;
     public Dictionary<int, string> keyStudentDiagBank = new Dictionary<int, string>();
 
     public void fillBank() {
@@ -327,8 +395,26 @@ public class KeyStudent {
         keyStudentDiagBank.Add(idx++, "Besides, she’s broke as shit.");
         keyStudentDiagBank.Add(idx++, "Whoops…");
         keyStudentDiagBank.Add(idx++, "Let’s just leave it at that shall we.");
-        
         # endregion
+    }
+}
+
+public class HotGuy {
+    public Dictionary<int, string> hotGuyDiagBank = new Dictionary<int, string>();
+
+    public void fillBank() {
+        int idx = 0;
+        hotGuyDiagBank.Add(idx++, "Oh, Hey! You’re the new girl right?");
+        hotGuyDiagBank.Add(idx++, "Not surprised. You get involved with the Smaugs and suddenly everyone knows about you.");
+        hotGuyDiagBank.Add(idx++, "Don’t be. Everyone already know’s your name Bailey");
+        hotGuyDiagBank.Add(idx++, "Joking, just heard it from Nataly.");
+        hotGuyDiagBank.Add(idx++, "It’s alright I guess. I still feel bad for Jassica though.");
+        hotGuyDiagBank.Add(idx++, "Well, I can’t be alone in the same room with both of them If that’s what you mean.");
+        hotGuyDiagBank.Add(idx++, "Well… she kept this cream around for her horn. I never really asked about it, but after we broke up I kept some of it.");
+        hotGuyDiagBank.Add(idx++, "It’s not a creepy memento! It just gives my horns a nice feeling.");
+        hotGuyDiagBank.Add(idx++, "I’d be happy to give some to you, Trust me. It’s one of the best feelings Ever! Especially after a good trimming.");
+        hotGuyDiagBank.Add(idx++, "Absolutely! I’ve already got some more at my house. I faked a doctor’s note. Pretty sweet right?");
+        
     }
 }
 
@@ -337,6 +423,9 @@ public class DialogueOptionsText {
     public Dictionary<int, string> dialogueOptionsBank2 = new Dictionary<int, string>();
     public Dictionary<int, string> dialogueOptionsBank3 = new Dictionary<int, string>();
     public Dictionary<int, string> dialogueOptionsBank4 = new Dictionary<int, string>();
+    public Dictionary<int, string> dialogueOptionsBank5 = new Dictionary<int, string>();
+    public Dictionary<int, string> dialogueOptionsBank6 = new Dictionary<int, string>();
+    public Dictionary<int, string> dialogueOptionsBank7 = new Dictionary<int, string>();
     
 
     public void fillBank1() { // for cutscene 7
@@ -364,5 +453,21 @@ public class DialogueOptionsText {
         dialogueOptionsBank4.Add(2, "Sam");
     }
 
+    public void fillBank5() {
+        dialogueOptionsBank5.Add(0, "You're SO hot");
+        dialogueOptionsBank5.Add(1, "Has one of them mentioned a horn?");
+        dialogueOptionsBank5.Add(2, "I want to ask you about Jassica's horn");
+    }
 
+    public void fillBank6() {
+        dialogueOptionsBank6.Add(0, "Fine! I don't want to talk to you either.");
+        dialogueOptionsBank6.Add(1, "Isn't this the time for girl talk?");
+        dialogueOptionsBank6.Add(2, "I have some snack in my pocket, lets just talk.");
+    }
+
+    public void fillBank7() {
+        dialogueOptionsBank7.Add(0, "Why me?");
+        dialogueOptionsBank7.Add(1, "Why didn't you give it to him?");
+        dialogueOptionsBank7.Add(2, "You got problems");
+    }
 }
