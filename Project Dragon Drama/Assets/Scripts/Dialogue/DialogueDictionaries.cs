@@ -88,6 +88,12 @@ public class Narrator {
         narratorDiagBank.Add(idx++, "“Keep your friends close, and keep your enemies closer.”");
         narratorDiagBank.Add(idx++, "The dragon roars once more");
         #endregion
+
+        # region Cutscene 12
+        narratorDiagBank.Add(idx++, "When you approach Nataly, she immediately starts acting buddy buddy with you.");
+        narratorDiagBank.Add(idx++, "You put the love note in Ken's locker. You find Sam. afterwards");
+        narratorDiagBank.Add(idx++, "Nataly is in a fury! She’s screaming, running around, and just acting like a toddler who lost their sippy cup on the floor. You and Sam see her on her rampage.");
+        #endregion
     }
 }
 
@@ -222,6 +228,12 @@ public class Player {
         playerDiagBank.Add(idx++, "I have an idea. Just need to figure out where Ken’s locker is.");
         playerDiagBank.Add(idx++, "I need to talk to Nataly.");
         #endregion
+
+        # region Cutscene 12
+        playerDiagBank.Add(idx++, "Hi Nataly!");
+        playerDiagBank.Add(idx++, "It’s finished");
+        playerDiagBank.Add(idx++, "It’s only 10 days, There’s not a whole lot we can do.");
+        #endregion
     }
 }
 
@@ -280,7 +292,7 @@ public class Friend {
         friendDiagBank.Add(idx++, "Oh come on, we took down one of the Smaugs in one day, and your just going to quit there?");
         friendDiagBank.Add(idx++, "Plus, I saw Persia talking to you yesterday");
         friendDiagBank.Add(idx++, "What did she say?");
-        friendDiagBank.Add(idx++, "See what I mean? Girl has 2000 years left and she thinks that her world’s over when she’s 15.");
+        friendDiagBank.Add(idx++, "See what I mean? Girl has 2000 years left and she thinks that her world’s over when she’s 25.");
         friendDiagBank.Add(idx++, "Honestly? She was the best.");
         friendDiagBank.Add(idx++, "So what do you say? Wanna take them out?");
         friendDiagBank.Add(idx++, "You’re coming along then.");
@@ -321,7 +333,11 @@ public class Friend {
         friendDiagBank.Add(idx++, "So what’re you gonna do with it?");
         friendDiagBank.Add(idx++, "What? Ehh whatever, this one seems boring as hell,");
         friendDiagBank.Add(idx++, "Do whatever you want I won’t be a part of it. It’ll just blow up in your face I know it.");
-        
+        #endregion
+
+        #region Cutscene 12
+        friendDiagBank.Add(idx++, "Really? Already? No big grand finale? Nothing?");
+        friendDiagBank.Add(idx++, "Fine, I guess that’s fair.");
         #endregion
     }
 }
@@ -403,6 +419,13 @@ public class Meangirl3 { // Nataly
         meangirl3DiagBank.Add(idx++, "I can’t believe her.");
         meangirl3DiagBank.Add(idx++, "I always knew she was a fake.");
         #endregion
+
+        # region Cutscene 12
+        meangirl3DiagBank.Add(idx++, "Bailey!!! Hi!!!");
+        meangirl3DiagBank.Add(idx++, "Oh my god, can you believe Jassica? She kept that thing hidden from me for years. At least there’s no secrets between us? Right");
+        meangirl3DiagBank.Add(idx++, "Why?");
+        meangirl3DiagBank.Add(idx++, "Don't do something you'll regret.");
+        #endregion
     }
 }
 
@@ -455,6 +478,9 @@ public class DialogueOptionsText {
     public Dictionary<int, string> dialogueOptionsBank5 = new Dictionary<int, string>();
     public Dictionary<int, string> dialogueOptionsBank6 = new Dictionary<int, string>();
     public Dictionary<int, string> dialogueOptionsBank7 = new Dictionary<int, string>();
+    public Dictionary<int, string> dialogueOptionsBank8 = new Dictionary<int, string>();
+    public Dictionary<int, string> dialogueOptionsBank9 = new Dictionary<int, string>();
+
     
 
     public void fillBank1() { // for cutscene 7
@@ -498,5 +524,17 @@ public class DialogueOptionsText {
         dialogueOptionsBank7.Add(0, "Why me?");
         dialogueOptionsBank7.Add(1, "Why didn't you give it to him?");
         dialogueOptionsBank7.Add(2, "You got problems");
+    }
+
+    public void fillBank8() {
+        dialogueOptionsBank8.Add(0, "So, you're just cool with your friends getting ousted?");
+        dialogueOptionsBank8.Add(1, "Ken is SOOOO hot right?");
+        dialogueOptionsBank8.Add(2, "Where's Ken's locker?");
+    }
+
+    public void fillBank9() {
+        dialogueOptionsBank9.Add(0, "I thought his friend was cute.");
+        dialogueOptionsBank9.Add(1, "I have a love note for Ken.");
+        dialogueOptionsBank9.Add(2, "I'm here to finish what I started.");
     }
 }
