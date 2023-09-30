@@ -39,6 +39,10 @@ public class Narrator {
         narratorDiagBank.Add(idx++, "With this new found knowledge you go back to Sam.");
         narratorDiagBank.Add(idx++, "The Dragon roar is heard again and students are moving to class.");
         #endregion
+
+        # region Cutscene 4
+        narratorDiagBank.Add(idx++, "The next day, you find Sam in the Library");
+        #endregion
     }
 }
 
@@ -94,6 +98,13 @@ public class Player {
         #region Cutscene 3
         playerDiagBank.Add(idx++, "Nope. But it’s definitely one of the Smaugs.");
         #endregion
+
+        #region Cutscene 4
+        playerDiagBank.Add(idx++, "You didn’t sleep?");
+        playerDiagBank.Add(idx++, "Fine. What do I do?");
+        playerDiagBank.Add(idx++, "That’s it? That’s what you spent the whole night working on?");
+        playerDiagBank.Add(idx++, "You wouldn’t happen to know where her stuff is would you?");
+        #endregion
     }
 }
 
@@ -125,6 +136,17 @@ public class Friend {
         friendDiagBank.Add(idx++, "Oh my God! Really! Do you know which one?");
         friendDiagBank.Add(idx++, "I’d bet it’s Persia, she’s always bragging about How huge her family’s hoard is.");
         friendDiagBank.Add(idx++, "We’ll talk more tomorrow, just keep that info in mind, okay?");
+        #endregion
+
+        #region Cutscene 4
+        friendDiagBank.Add(idx++, "I have spent the entire night planning how to take her down.");
+        friendDiagBank.Add(idx++, "No. Not really, so I’m gonna need you to take care of it for us.");
+        friendDiagBank.Add(idx++, "Well, if he knew about her being broke then there has to be some kind of evidence she carries on her to prove she’s faking it.");
+        friendDiagBank.Add(idx++, "No!... Kinda…");
+        friendDiagBank.Add(idx++, "I spent most of the night thinking about What the thing she might have.");
+        friendDiagBank.Add(idx++, "If you just go looking around her stuff I’m sure you’ll find it.");
+        friendDiagBank.Add(idx++, "Nope! But you’re a social butterfly, Seeing how you got the biggest Tea this school has seen on your Very first day.");
+        friendDiagBank.Add(idx++, "I’m sure you’ll figure it out. Now go, I got some snoring to do.");
         
         #endregion
     }
@@ -197,8 +219,6 @@ public class KeyStudent {
 }
 
 public class DialogueOptionsText {
-    int index;
-    string text;
     public Dictionary<int, string> dialogueOptionsBank1 = new Dictionary<int, string>();
 
     public void fillBank1() {
