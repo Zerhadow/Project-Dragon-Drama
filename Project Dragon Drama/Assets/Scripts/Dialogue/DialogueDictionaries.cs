@@ -81,7 +81,12 @@ public class Narrator {
         narratorDiagBank.Add(idx++, "You knock on the door.");
         narratorDiagBank.Add(idx++, "Jassica opens the stall door.");
         narratorDiagBank.Add(idx++, "Jassica pulls an envelope from her backpack.");
-        
+        #endregion
+
+        # region Cutscene 11
+        narratorDiagBank.Add(idx++, "The teacher once again reads more of “The art of War” By Some Two. And once again a passage sticks out to Bailey.");
+        narratorDiagBank.Add(idx++, "“Keep your friends close, and keep your enemies closer.”");
+        narratorDiagBank.Add(idx++, "The dragon roars once more");
         #endregion
     }
 }
@@ -210,6 +215,13 @@ public class Player {
         playerDiagBank.Add(idx++, "Why 20 minutes?");
         playerDiagBank.Add(idx++, "Oh.");
         #endregion
+
+        #region Cutscene 11
+        playerDiagBank.Add(idx++, "Just a note?");
+        playerDiagBank.Add(idx++, "Trust me. It’ll work.");
+        playerDiagBank.Add(idx++, "I have an idea. Just need to figure out where Ken’s locker is.");
+        playerDiagBank.Add(idx++, "I need to talk to Nataly.");
+        #endregion
     }
 }
 
@@ -301,6 +313,16 @@ public class Friend {
         friendDiagBank.Add(idx++, "Why did this slip out of your bag!");
         friendDiagBank.Add(idx++, "Anti-Itch Horn cream? Why would you need that?");
         #endregion
+
+        #region Cutscene 11
+        friendDiagBank.Add(idx++, "Hey there my busy bee? What are we going to do today?");
+        friendDiagBank.Add(idx++, "A NOTE?!");
+        friendDiagBank.Add(idx++, "We put up poster after poster? Staged a whole reveal? And you just have a note?!");
+        friendDiagBank.Add(idx++, "So what’re you gonna do with it?");
+        friendDiagBank.Add(idx++, "What? Ehh whatever, this one seems boring as hell,");
+        friendDiagBank.Add(idx++, "Do whatever you want I won’t be a part of it. It’ll just blow up in your face I know it.");
+        
+        #endregion
     }
 }
 
@@ -359,7 +381,6 @@ public class Meangirl2 { //Jassica
         meangirl2DiagBank.Add(idx++, "Put it in his locker dummy. He’ll read it eventually, and in 20 minutes, he'll be yours guaranteed.");
         meangirl2DiagBank.Add(idx++, "That’s how long it takes him to Read one page of paper.");
         meangirl2DiagBank.Add(idx++, "Look, just don’t mess up tomorrow and By the end of the day, Nataly will be history.");
-        
         #endregion
     }
 }
