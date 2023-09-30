@@ -53,6 +53,7 @@ public class CutSceneController : MonoBehaviour
         cutsceneManager.cutscene5.fillBank(dialogueDictionaries);
         cutsceneManager.cutscene6.fillBank(dialogueDictionaries);
         cutsceneManager.cutscene7.fillBank(dialogueDictionaries);
+        cutsceneManager.cutscene8.fillBank(dialogueDictionaries);
 
         chapterIdx = 0;
         pageIdx = 0;
@@ -86,17 +87,29 @@ public class CutSceneController : MonoBehaviour
                 changePortriat(cutsceneManager.cutscene2.portraitBank[pageIdx]);
             }
             else if(chapterIdx == 0) {
+                Debug.Log("Cutscene 1");
                 Cutscene1();
             } else if(chapterIdx == 1) {
+                Debug.Log("Cutscene 2");
                 Cutscene2();
             } else if(chapterIdx == 2) {
+                Debug.Log("Cutscene 3");
                 Cutscene3();
             } else if(chapterIdx == 3) {
+                Debug.Log("Cutscene 4");
                 Cutscene4();
             } else if(chapterIdx == 4) {
+                Debug.Log("Cutscene 5");
                 Cutscene5();
             } else if(chapterIdx == 5) {
+                Debug.Log("Cutscene 6");
                 Cutscene6();
+            } else if(chapterIdx == 6) {
+                Debug.Log("Cutscene 7");
+                Cutscene7();
+            } else if(chapterIdx == 7) {
+                Debug.Log("Cutscene 8");
+                Cutscene8();
             }
         }
 
@@ -386,6 +399,35 @@ public class CutSceneController : MonoBehaviour
             skipButton.SetActive(true);
             changePortriat(cutsceneManager.cutscene7.portraitBank[pageIdx]);
             dialogueTextBox.text = cutsceneManager.cutscene7.diagBank[pageIdx++];
+        }
+    }
+
+    private void LoadCutscene8() {
+        Debug.Log("Load Cutscene 8");
+        skipButton.SetActive(true);
+        changePortriat(cutsceneManager.cutscene8.portraitBank[pageIdx]);
+        dialogueTextBox.text = cutsceneManager.cutscene8.diagBank[0];
+    }
+
+    private void Cutscene8() {
+        if(pageIdx == cutsceneManager.cutscene8.diagBank.Count) {
+            Debug.Log("End of Cutscene");
+            characterControllerBase.endofDialogue = true;
+            continueTextBox.SetActive(true);
+            skipButton.SetActive(false);
+            pageIdx = 0;
+            chapterIdx++;
+            cutsceneStart = false;
+            characterControllerBase.gossipSearch = true;
+        } else if(pageIdx == diagOptIdx1) { //hard coding when the dialogue option is supposed to start
+            dialogueOptions.SetActive(true);
+            diagOptions.SetOptions(dialogueDictionaries.diagOptions.dialogueOptionsBank1[0],
+                dialogueDictionaries.diagOptions.dialogueOptionsBank1[1], dialogueDictionaries.diagOptions.dialogueOptionsBank1[2]);
+            skipButton.SetActive(false);
+        } else {
+            skipButton.SetActive(true);
+            changePortriat(cutsceneManager.cutscene8.portraitBank[pageIdx]);
+            dialogueTextBox.text = cutsceneManager.cutscene8.diagBank[pageIdx++];
         }
     }
 }

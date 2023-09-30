@@ -48,6 +48,12 @@ public class Narrator {
         narratorDiagBank.Add(idx++, "You give Sam a note from Persia's Father");
         narratorDiagBank.Add(idx++, "The note details how much in debt their family is and how she needs to quit spending her money on such frivolous things, , and assist in helping the family.");
         narratorDiagBank.Add(idx++, "A few hours pass. Suddenly an uproar of noise comes from the hallways.");
+        #endregion
+
+        # region Cutscene 6
+        narratorDiagBank.Add(idx++, "As you walk away to leave the commotion you get a faint look of Persia in the distance. She’s broken, running away, attempting to escape from the truth that’s come to bite her.");
+        narratorDiagBank.Add(idx++, "Persia Approaches You");
+        narratorDiagBank.Add(idx++, "Persia dashes away. Leaving Bailey befuddled with that last line. It couldn’t just mean nothing. Could it?");
         
         #endregion
     }
@@ -120,6 +126,14 @@ public class Player {
         playerDiagBank.Add(idx++, "Did we really do something good?");
         playerDiagBank.Add(idx++, "Ok…");
         #endregion
+
+        #region Cutscene 6
+        playerDiagBank.Add(idx++, "What?");
+        playerDiagBank.Add(idx++, "Wasn’t it based on a lie though?");
+        playerDiagBank.Add(idx++, "I just got here, you really think I could’ve done all of that in one day?");
+        playerDiagBank.Add(idx++, "What? That’s so obscure");
+        
+        #endregion
     }
 }
 
@@ -176,16 +190,19 @@ public class Friend {
     }
 }
 
-public class Meangirl1 {
-    int index;
-    string text;
+public class Meangirl1 { // Persia
     public Dictionary<int, string> meangirl1DiagBank = new Dictionary<int, string>();
 
     public void fillBank() {
-        # region Custscene 2
-        meangirl1DiagBank.Add(0, "I am Regina George.");
-        meangirl1DiagBank.Add(1, "Well that's a weird thing to say.");
-        meangirl1DiagBank.Add(2, "You’re weird.");
+        int idx = 0;
+
+        # region Custscene 6
+        meangirl1DiagBank.Add(idx++, "It was totally you wasn’t it.");
+        meangirl1DiagBank.Add(idx++, "You told everyone I’m broke. Got me kicked out of the Smaugs. Everything in my life. Ruined, in just one day.");
+        meangirl1DiagBank.Add(idx++, "That part doesn’t matter!");
+        meangirl1DiagBank.Add(idx++, "Say what you like, but I will have my suspicions.");
+        meangirl1DiagBank.Add(idx++, "I may be broke, but at least my horn isn’t fake");
+        meangirl1DiagBank.Add(idx++, "Uh oh! Forget that last part.");
         # endregion
     }
 }

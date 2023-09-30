@@ -168,7 +168,7 @@ public class CharacterControllerBase : MonoBehaviour
 
                         /*For Testing. Disable once implemented*/
                         DebugColorUpdate(_adjacentNPC, Color.green);
-                        Debug.Log("Player talking to " + _adjacentNPC.name);
+                        // Debug.Log("Player talking to " + _adjacentNPC.name);
                     }
 
                     /*Debug for state change*/
@@ -195,7 +195,7 @@ public class CharacterControllerBase : MonoBehaviour
 
                         /*For Testing. Disable once implemented*/
                         DebugColorUpdate(_adjacentNPC, Color.magenta);
-                        Debug.Log(_adjacentNPC.name + " has stopped talking");
+                        // Debug.Log(_adjacentNPC.name + " has stopped talking");
 
                         _state = PlayerState.Moving;
                     }

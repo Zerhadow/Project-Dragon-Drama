@@ -11,6 +11,7 @@ public class CutsceneManager : MonoBehaviour
     public Cutscene5 cutscene5 = new Cutscene5();
     public Cutscene6 cutscene6 = new Cutscene6();
     public Cutscene7 cutscene7 = new Cutscene7();
+    public Cutscene8 cutscene8 = new Cutscene8();
 
     int narratorIdx = 0, playerIdx = 0, friendIdx = 0, teacherIdx = 0, keyStudentIdx = 0, meangirl1Idx = 0, meangirl2Idx = 0, meangirl3Idx = 0;
 
@@ -236,9 +237,9 @@ public class CutsceneManager : MonoBehaviour
             portraitBank.Add(4);
             diagBank.Add(idx++, diagDict.player.playerDiagBank[playerIdx++]);
             portraitBank.Add(0);
-            Debug.Log("friendIdx: " + friendIdx); // 38
-            Debug.Log("playerIdx: " + playerIdx); // 28
-            Debug.Log("narratorIdx: " + narratorIdx); // 12
+            // Debug.Log("friendIdx: " + friendIdx); // 30
+            // Debug.Log("playerIdx: " + playerIdx); // 27
+            // Debug.Log("narratorIdx: " + narratorIdx); // 13
         }
     }
 
@@ -247,11 +248,37 @@ public class CutsceneManager : MonoBehaviour
         public List<int> portraitBank = new List<int>();
 
         public void fillBank (DialogueDictionaries diagDict) {
-            int idx = 0, narratorIdx = 7, playerIdx = 17, meangirl1Idx = 0, meangirl2Idx = 0, meangirl3Idx = 0;
+            int idx = 0, narratorIdx = 13, playerIdx = 27, friendIdx = 30, meangirl1Idx = 0, meangirl2Idx = 0, meangirl3Idx = 0;
 
+            diagBank.Add(idx++, diagDict.narrator.narratorDiagBank[narratorIdx++]);
+            portraitBank.Add(-1);
+            diagBank.Add(idx++, diagDict.narrator.narratorDiagBank[narratorIdx++]);
+            portraitBank.Add(-1);
             diagBank.Add(idx++, diagDict.meangirl1.meangirl1DiagBank[meangirl1Idx++]);
             portraitBank.Add(1);
-            
+            diagBank.Add(idx++, diagDict.player.playerDiagBank[playerIdx++]);
+            portraitBank.Add(0);
+            diagBank.Add(idx++, diagDict.meangirl1.meangirl1DiagBank[meangirl1Idx++]);
+            portraitBank.Add(1);
+            diagBank.Add(idx++, diagDict.player.playerDiagBank[playerIdx++]);
+            portraitBank.Add(0);
+            diagBank.Add(idx++, diagDict.meangirl1.meangirl1DiagBank[meangirl1Idx++]);
+            portraitBank.Add(1);
+            diagBank.Add(idx++, diagDict.player.playerDiagBank[playerIdx++]);
+            portraitBank.Add(0);
+            diagBank.Add(idx++, diagDict.meangirl1.meangirl1DiagBank[meangirl1Idx++]);
+            portraitBank.Add(1);
+            diagBank.Add(idx++, diagDict.meangirl1.meangirl1DiagBank[meangirl1Idx++]);
+            portraitBank.Add(1);
+            diagBank.Add(idx++, diagDict.player.playerDiagBank[playerIdx++]);
+            portraitBank.Add(0);
+            diagBank.Add(idx++, diagDict.meangirl1.meangirl1DiagBank[meangirl1Idx++]);
+            portraitBank.Add(1);
+            diagBank.Add(idx++, diagDict.narrator.narratorDiagBank[narratorIdx++]);
+            portraitBank.Add(-1);
+            // Debug.Log("friendIdx: " + friendIdx); // 30
+            // Debug.Log("playerIdx: " + playerIdx); // 31
+            // Debug.Log("narratorIdx: " + narratorIdx); // 16
         }
     }
 
@@ -260,7 +287,20 @@ public class CutsceneManager : MonoBehaviour
         public List<int> portraitBank = new List<int>();
 
         public void fillBank (DialogueDictionaries diagDict) {
-            int idx = 0, narratorIdx = 7, playerIdx = 17, meangirl1Idx = 0, meangirl2Idx = 0, meangirl3Idx = 0;
+            int idx = 0, narratorIdx = 16, playerIdx = 31, friendIdx = 30, meangirl1Idx = 0, meangirl2Idx = 0, meangirl3Idx = 0;
+
+            diagBank.Add(idx++, diagDict.meangirl1.meangirl1DiagBank[meangirl1Idx++]);
+            portraitBank.Add(1);
+            
+        }
+    }
+
+    public class Cutscene8 {
+        public Dictionary<int, string> diagBank = new Dictionary<int, string>();
+        public List<int> portraitBank = new List<int>();
+
+        public void fillBank (DialogueDictionaries diagDict) {
+            int idx = 0, narratorIdx = 16, playerIdx = 31, friendIdx = 30, meangirl1Idx = 0, meangirl2Idx = 0, meangirl3Idx = 0;
 
             diagBank.Add(idx++, diagDict.meangirl1.meangirl1DiagBank[meangirl1Idx++]);
             portraitBank.Add(1);
