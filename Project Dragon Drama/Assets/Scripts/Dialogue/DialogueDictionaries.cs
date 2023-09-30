@@ -245,6 +245,14 @@ public class Player {
         playerDiagBank.Add(idx++, "What’s up?");
         playerDiagBank.Add(idx++, "Really?");
         #endregion
+
+        # region Good Ending 
+        playerDiagBank.Add(idx++, "Look uhm. That note, in the locker.");
+        playerDiagBank.Add(idx++, "I just- are you sure things will be ok?");
+        playerDiagBank.Add(idx++, "I’m glad.");
+        playerDiagBank.Add(idx++, "Pancakes?");
+        playerDiagBank.Add(idx++, "Ok sure, but it’ll be casual. No need to wear make up.");
+        #endregion
     }
 }
 
@@ -485,6 +493,13 @@ public class HotGuy {
         hotGuyDiagBank.Add(idx++, "Uh.. Am I interrupting something?");
         hotGuyDiagBank.Add(idx++, "I broke up with Nataly");
         hotGuyDiagBank.Add(idx++, "Yeah, she was a newt.");
+        #endregion
+
+        # region Good Ending
+        hotGuyDiagBank.Add(idx++, "Yeah the amazing note.");
+        hotGuyDiagBank.Add(idx++, "Nataly will get over herself quickly. I was starting to hate it myself. That note was the push I needed to get out.");
+        hotGuyDiagBank.Add(idx++, "So, there’s a diner that recently opened.");
+        hotGuyDiagBank.Add(idx++, "Yeah.");
         #endregion
         
     }

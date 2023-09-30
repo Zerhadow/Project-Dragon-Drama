@@ -838,6 +838,24 @@ public class CutsceneManager : MonoBehaviour
 
         public void fillBank(DialogueDictionaries diagDict) {
             int idx = 0, playerIdx = 82, friendIdx = 72, meangirl1Idx = 0, meangirl2Idx = 25, meangirl3Idx = 11, narratorIdx = 43, hotGuyIdx = 15;
+            diagBank.Add(idx++, diagDict.player.playerDiagBank[playerIdx++]);
+            portraitBank.Add(0);
+            diagBank.Add(idx++, diagDict.hotGuy.hotGuyDiagBank[hotGuyIdx++]);
+            portraitBank.Add(5);
+            diagBank.Add(idx++, diagDict.player.playerDiagBank[playerIdx++]);
+            portraitBank.Add(0);
+            diagBank.Add(idx++, diagDict.hotGuy.hotGuyDiagBank[hotGuyIdx++]);
+            portraitBank.Add(5);
+            diagBank.Add(idx++, diagDict.player.playerDiagBank[playerIdx++]);
+            portraitBank.Add(0);
+            diagBank.Add(idx++, diagDict.hotGuy.hotGuyDiagBank[hotGuyIdx++]);
+            portraitBank.Add(5);
+            diagBank.Add(idx++, diagDict.player.playerDiagBank[playerIdx++]);
+            portraitBank.Add(0);
+            diagBank.Add(idx++, diagDict.hotGuy.hotGuyDiagBank[hotGuyIdx++]);
+            portraitBank.Add(5);
+            diagBank.Add(idx++, diagDict.player.playerDiagBank[playerIdx++]);
+            portraitBank.Add(0);
         }
     }
 
