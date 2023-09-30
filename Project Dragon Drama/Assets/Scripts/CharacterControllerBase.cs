@@ -33,9 +33,11 @@ public class CharacterControllerBase : MonoBehaviour
 
     [Header("Movements Settings")]
     [SerializeField] float _moveSpeed = 5f;
+    [SerializeField] float _rotateSpeed = 5f;
 
     float _moveAmountVertical = 0f;
     float _moveAmountHorizontal = 0f;
+
     private InventoryController _inventory;
 
     public GameObject _adjacentNPC = null;
@@ -260,7 +262,9 @@ public class CharacterControllerBase : MonoBehaviour
         _playerRb.AddForce(expectedVelocity - _playerRb.velocity, ForceMode.VelocityChange);
         if (expectedRotate != Vector3.zero)
         {
-            _playerArt.forward = expectedRotate;
+            Vector3 currentRotate = _playerArt.forward;
+
+            _playerArt.forward = Vector3.Lerp(currentRotate, expectedRotate, _rotateSpeed);
         }
     }
 
