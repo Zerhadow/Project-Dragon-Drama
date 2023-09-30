@@ -165,6 +165,12 @@ public class Player {
         #region Cutscene 8
         playerDiagBank.Add(idx++, "The what accident?");
         #endregion
+
+        #region Cutscene 9
+        playerDiagBank.Add(idx++, "That’s what she said");
+        playerDiagBank.Add(idx++, "Do they have any Exes");
+        playerDiagBank.Add(idx++, "Gotcha.");
+        #endregion
     }
 }
 
@@ -235,6 +241,16 @@ public class Friend {
         friendDiagBank.Add(idx++, "Uhoh. Smaugs at 6 o’clock");
         friendDiagBank.Add(idx++, "Hey what was that at the start of class?");
         friendDiagBank.Add(idx++, "What? This is perfect! Now you can figure out who has the Horn job.");
+        #endregion
+
+        #region Cutscene 9
+        friendDiagBank.Add(idx++, "One week?");
+        friendDiagBank.Add(idx++, "She’s totally lying, it takes a least a Month to get one to grow back.");
+        friendDiagBank.Add(idx++, "Plus with the fact of visiting her cornologist. Which one is it?");
+        friendDiagBank.Add(idx++, "So since it’s obviously Jassica, where could we start?");
+        friendDiagBank.Add(idx++, "Girl. How, you know what I’m thinkin’?");
+        friendDiagBank.Add(idx++, "I know she has one ex, but I Don’t know much about him, try talking around.");
+        friendDiagBank.Add(idx++, "And remember, find anything juicy and come talk to me!!");
         #endregion
     }
 }
@@ -320,6 +336,8 @@ public class DialogueOptionsText {
     public Dictionary<int, string> dialogueOptionsBank1 = new Dictionary<int, string>();
     public Dictionary<int, string> dialogueOptionsBank2 = new Dictionary<int, string>();
     public Dictionary<int, string> dialogueOptionsBank3 = new Dictionary<int, string>();
+    public Dictionary<int, string> dialogueOptionsBank4 = new Dictionary<int, string>();
+    
 
     public void fillBank1() { // for cutscene 7
 
@@ -338,6 +356,12 @@ public class DialogueOptionsText {
         dialogueOptionsBank3.Add(0, "Yes");
         dialogueOptionsBank3.Add(1, "No");
         dialogueOptionsBank3.Add(2, "I thought I told you to stop talking to me");
+    }
+
+    public void fillBank4() {
+        dialogueOptionsBank4.Add(0, "Jassica");
+        dialogueOptionsBank4.Add(1, "Nataly");
+        dialogueOptionsBank4.Add(2, "Sam");
     }
 
 
