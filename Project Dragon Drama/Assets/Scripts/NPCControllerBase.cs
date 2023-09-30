@@ -19,6 +19,11 @@ public class NPCControllerBase : MonoBehaviour
         //Find and set object references
         _characterController = GameObject.Find("CharacterController");
         pressETextBox = GameObject.Find("PressE");
+
+        //Rotate to face camera (set text manually because I am fucking done with this shit)
+        _npc.transform.Find("NPCName").transform.forward = new Vector3(35, -50, 0);
+
+
     }
 
     private void OnTriggerEnter(Collider other)
@@ -28,7 +33,7 @@ public class NPCControllerBase : MonoBehaviour
             _characterController.GetComponent<CharacterControllerBase>().setAdjacentNPC(_npc); //Set this NPC as adjacentNPC on Character Controller
 
             /*For Debug Tesing*/
-            _npc.GetComponent<Renderer>().material.SetColor("_Color", Color.magenta);
+            //_npc.GetComponent<Renderer>().material.SetColor("_Color", Color.magenta);
             Debug.Log("Player in talking range of " + _npc.name);
             pressETextBox.SetActive(true);
         }
@@ -41,7 +46,7 @@ public class NPCControllerBase : MonoBehaviour
             _characterController.GetComponent<CharacterControllerBase>().setAdjacentNPC(null); //Set adjacentNPC as null on CharacterController
 
             /*For Debug Tesing*/
-            _npc.GetComponent<Renderer>().material.SetColor("_Color", Color.yellow);
+            //_npc.GetComponent<Renderer>().material.SetColor("_Color", Color.yellow);
             Debug.Log("Player has left talking range of " + _npc.name);
             pressETextBox.SetActive(false);
         }

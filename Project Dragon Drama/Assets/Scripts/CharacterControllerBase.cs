@@ -25,6 +25,7 @@ public class CharacterControllerBase : MonoBehaviour
 
     private GameObject _playerObj;
     private Rigidbody _playerRb;
+    private Transform _playerArt;
     private GameObject pressETextBox;
     public GameObject dialogueTextBox;
     private GameObject continueTextBox;
@@ -70,6 +71,7 @@ public class CharacterControllerBase : MonoBehaviour
         //Find and set object references
         _playerObj = GameObject.Find("Player");
         _playerRb = _playerObj.GetComponent<Rigidbody>();
+        _playerArt = _playerObj.transform.Find("PlayerArt");
         _inventory = this.GetComponent<InventoryController>();
         pressETextBox = GameObject.Find("PressE");
         dialogueTextBox = GameObject.Find("DialogBar");
@@ -93,7 +95,7 @@ public class CharacterControllerBase : MonoBehaviour
 
     private void Update()
     {
-        /* --- For Test Only --- */
+        /* --- For Test Only --- 
         if (Input.GetKeyDown(KeyCode.U))
             _state = PlayerState.Menu;
         else if (Input.GetKeyDown(KeyCode.I))
@@ -104,7 +106,7 @@ public class CharacterControllerBase : MonoBehaviour
             _state = PlayerState.Dialogue;
         else if (Input.GetKeyDown(KeyCode.L))
             SceneManager.LoadScene("SchoolLevelTest", LoadSceneMode.Single); //go to SchoolLevelTest
-        /* --- For Test Only --- */
+           --- For Test Only --- */
 
         switch (_state)
         {
@@ -119,7 +121,7 @@ public class CharacterControllerBase : MonoBehaviour
                     }
 
                     /*Debug for state change*/
-                    DebugColorUpdate(_playerObj, Color.red);
+                    //DebugColorUpdate(_playerObj, Color.red);
                     Debug.Log("Menu State");
                 }
                 break;
@@ -172,7 +174,7 @@ public class CharacterControllerBase : MonoBehaviour
                     }
 
                     /*Debug for state change*/
-                    DebugColorUpdate(_playerObj, Color.blue);
+                    //DebugColorUpdate(_playerObj, Color.blue);
                     // Debug.Log("Moving State");
                 }
                 break;
@@ -201,7 +203,7 @@ public class CharacterControllerBase : MonoBehaviour
                     }
 
                     /*Debug for state change*/
-                    DebugColorUpdate(_playerObj, Color.yellow);
+                    //DebugColorUpdate(_playerObj, Color.yellow);
                     // Debug.Log("NPCTalk State");
                 }
                 break;
@@ -229,8 +231,8 @@ public class CharacterControllerBase : MonoBehaviour
                     }
 
                     /*Debug for state change*/
-                    DebugColorUpdate(_playerObj, Color.green);
-                    // Debug.Log("Dialogue State");
+                    //DebugColorUpdate(_playerObj, Color.green);
+                    //Debug.Log("Dialogue State");
                 }
                 break;
             default:
@@ -254,7 +256,12 @@ public class CharacterControllerBase : MonoBehaviour
     private void MovePlayer()
     {
         Vector3 expectedVelocity = new Vector3(_moveAmountVertical, 0, -_moveAmountHorizontal);
+        Vector3 expectedRotate = new Vector3(-_moveAmountVertical, 0, _moveAmountHorizontal);
         _playerRb.AddForce(expectedVelocity - _playerRb.velocity, ForceMode.VelocityChange);
+        if (expectedRotate != Vector3.zero)
+        {
+            _playerArt.forward = expectedRotate;
+        }
     }
 
     //Halts player movement
