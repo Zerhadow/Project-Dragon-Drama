@@ -390,7 +390,7 @@ public class CutsceneManager : MonoBehaviour
 
         public string GetOptionResponse(int idx) {
             if(idx == 1) {
-                return "Perfect I was hoping You would say that.";
+                return "Perfect I was hoping you would say that.";
             } else if(idx == 2) {
                 return "It’s too late to back out. I think if you don’t take them out, now. You might have to move again.";
             } else if(idx == 3) {
@@ -675,9 +675,9 @@ public class CutsceneManager : MonoBehaviour
 
         public string GetOptionResponse2(int idx) {
             if(idx == 1) {
-                return "No, please stay";
+                return "No, please stay.";
             } else if(idx == 2) {
-                return "Alright fine";
+                return "Alright fine.";
             } else if(idx == 3) {
                 return "… Ok.";
             } else {

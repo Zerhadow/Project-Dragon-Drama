@@ -28,7 +28,7 @@ public class Narrator {
         narratorDiagBank.Add(idx++, "The teacher in the front of the classroom, going off on a long lecture");
         narratorDiagBank.Add(idx++, "She pauses from taking notes and looks around the room");
         narratorDiagBank.Add(idx++, "To her surprise there actually is one person staring at her, the girl sitting right next to her.");
-        narratorDiagBank.Add(idx++, "Bailey Jumps at little when their gazes meet");
+        narratorDiagBank.Add(idx++, "Bailey jumps at little when their gazes meet");
         narratorDiagBank.Add(idx++, "A dragon roars and the students get out of their seats and start to move, class is over.");
         narratorDiagBank.Add(idx++, "The two move move into the hallway");
         narratorDiagBank.Add(idx++, "Three girls are walking in the hallway. They catch Bailey's eye.");
@@ -36,7 +36,7 @@ public class Narrator {
 
         # region Cutscene 3
         narratorDiagBank.Add(idx++, "With this new found knowledge you go back to Sam.");
-        narratorDiagBank.Add(idx++, "The Dragon roar is heard again and students are moving to class.");
+        narratorDiagBank.Add(idx++, "The dragon roar is heard again and students are moving to class.");
         #endregion
 
         # region Cutscene 4
@@ -45,27 +45,27 @@ public class Narrator {
 
         # region Cutscene 5
         narratorDiagBank.Add(idx++, "You give Sam a note from Persia's Father");
-        narratorDiagBank.Add(idx++, "The note details how much in debt their family is and how she needs to quit spending her money on such frivolous things, , and assist in helping the family.");
+        narratorDiagBank.Add(idx++, "The note details how much in debt their family is and how she needs to quit spending her money on such frivolous things, and assist in helping the family.");
         narratorDiagBank.Add(idx++, "A few hours pass. Suddenly an uproar of noise comes from the hallways.");
         #endregion
 
         # region Cutscene 6
         narratorDiagBank.Add(idx++, "As you walk away to leave the commotion you get a faint look of Persia in the distance. She’s broken, running away, attempting to escape from the truth that’s come to bite her.");
-        narratorDiagBank.Add(idx++, "Persia Approaches You");
+        narratorDiagBank.Add(idx++, "Persia approaches you");
         narratorDiagBank.Add(idx++, "Persia dashes away. Leaving Bailey befuddled with that last line. It couldn’t just mean nothing. Could it?");
         #endregion
 
         # region Cutscene 7
         narratorDiagBank.Add(idx++, "The next day, Sam approaches you again.");
-        narratorDiagBank.Add(idx++, "Sam quickly moves away from Bailey as Jassica one of the Smaugs approaches.");
-        narratorDiagBank.Add(idx++, "The literary teacher spouts something on and on about some book called “The Art of War, by Sun who or something”, although");
-        narratorDiagBank.Add(idx++, "although the only thing you could think about was the opportunity that came into your lap.");
+        narratorDiagBank.Add(idx++, "Sam quickly moves away from Bailey as Jassica, one of the Smaugs, approaches.");
+        narratorDiagBank.Add(idx++, "The literary teacher spouts something on and on about some book called “The Art of War, by Sun who or something”, although...");
+        narratorDiagBank.Add(idx++, "...the only thing you could think about was the opportunity that came into your lap.");
         narratorDiagBank.Add(idx++, "The only line you can remember from the lecture was “The opportunity of defeating the enemy is provided by the enemy himself”");
         narratorDiagBank.Add(idx++, "After class, Sam approaches you.");
         #endregion
 
         # region Cutscene 8
-        narratorDiagBank.Add(idx++, "Nataly mentions something about how one of her horns has been acting up recently and she needs to schedule her monthly Horn visit at her cornologist.");
+        narratorDiagBank.Add(idx++, "Nataly mentions something about how one of her horns has been acting up recently and she needs to schedule her monthly horn visit at her cornologist.");
         #endregion
 
         # region Cutscene 10
@@ -135,7 +135,7 @@ public class Player {
         playerDiagBank.Add(idx++, "…And?");
         playerDiagBank.Add(idx++, "Nice to meet you.");
         playerDiagBank.Add(idx++, "It’s Bailey");
-        playerDiagBank.Add(idx++, "I think I have Gold Hoarding.");
+        playerDiagBank.Add(idx++, "I think I have Gold Hoarding 101.");
         playerDiagBank.Add(idx++, "Who are they?");
         playerDiagBank.Add(idx++, "Smaugs?");
         playerDiagBank.Add(idx++, "Then why do they get so much attention?");
@@ -190,7 +190,7 @@ public class Player {
         playerDiagBank.Add(idx++, "What?");
         playerDiagBank.Add(idx++, "Those are REAL??");
         playerDiagBank.Add(idx++, "It’s Bailey, and what do you want?");
-        playerDiagBank.Add(idx++, "Jassica invited me to sit with them at lunch");
+        playerDiagBank.Add(idx++, "Jassica invited me to sit with them at lunch.");
         #endregion
 
         #region Cutscene 8
@@ -198,8 +198,8 @@ public class Player {
         #endregion
 
         #region Cutscene 9
-        playerDiagBank.Add(idx++, "That’s what she said");
-        playerDiagBank.Add(idx++, "Do they have any Exes");
+        playerDiagBank.Add(idx++, "That’s what she said.");
+        playerDiagBank.Add(idx++, "Do they have any exes?");
         playerDiagBank.Add(idx++, "Gotcha.");
         #endregion
 
@@ -217,7 +217,7 @@ public class Player {
         playerDiagBank.Add(idx++, "Why?");
         playerDiagBank.Add(idx++, "From cream?");
         playerDiagBank.Add(idx++, "Sure, whatever you say.");
-        playerDiagBank.Add(idx++, "Oh my god. I’m so sorry");
+        playerDiagBank.Add(idx++, "Oh my god. I’m so sorry.");
         playerDiagBank.Add(idx++, "Look, I-");
         playerDiagBank.Add(idx++, "I- I don’t know what to say.");
         playerDiagBank.Add(idx++, "I don’t even know how though.");
@@ -268,14 +268,14 @@ public class Friend {
         friendDiagBank.Add(idx++, "You’re weird.");
         friendDiagBank.Add(idx++, "Name’s Sam by the way.");
         friendDiagBank.Add(idx++, "So you got a name Newbie?");
-        friendDiagBank.Add(idx++, "Well Baily What class do you have next?");
+        friendDiagBank.Add(idx++, "Well Baily, what class do you have next?");
         friendDiagBank.Add(idx++, "Oh! I know exactly where that is!");
         friendDiagBank.Add(idx++, "That one should be at the end of the hall on the left.");
         friendDiagBank.Add(idx++, "Oh! Those are the Smaugs.");
         friendDiagBank.Add(idx++, "Basically they think that they run the School, but no one really cares.");
         friendDiagBank.Add(idx++, "Because they’re the Smaugs. What else is there to know?");
-        friendDiagBank.Add(idx++, "God. How much I’d love to tear them Down off of their high horse.");
-        friendDiagBank.Add(idx++, "I’m sure others agree with me. If you don’t believe me, go on ahead and Chat with other people.");
+        friendDiagBank.Add(idx++, "God. How much I’d love to tear them down off of their high horse.");
+        friendDiagBank.Add(idx++, "I’m sure others agree with me. If you don’t believe me, go on ahead and chat with other people.");
         # endregion
 
         #region Cutscene 3
@@ -291,12 +291,12 @@ public class Friend {
         friendDiagBank.Add(idx++, "No!... Kinda…");
         friendDiagBank.Add(idx++, "I spent most of the night thinking about What the thing she might have.");
         friendDiagBank.Add(idx++, "If you just go looking around her stuff I’m sure you’ll find it.");
-        friendDiagBank.Add(idx++, "Nope! But you’re a social butterfly, Seeing how you got the biggest Tea this school has seen on your Very first day.");
+        friendDiagBank.Add(idx++, "Nope! But you’re a social butterfly, Seeing how you got the biggest Tea this school has seen on your very first day.");
         friendDiagBank.Add(idx++, "I’m sure you’ll figure it out. Now go, I got some snoring to do.");
         #endregion
 
         #region Cutscene 5
-        friendDiagBank.Add(idx++, "Oh totally! You find anything");
+        friendDiagBank.Add(idx++, "Oh totally! You find anything?");
         friendDiagBank.Add(idx++, "Oh my god, the rumor is true!");
         friendDiagBank.Add(idx++, "Oh I could care less how you found it. Let’s just go show this off to people and everyone will See how much of a liar she is!");
         friendDiagBank.Add(idx++, "Oh it’s fine, I’ll just make a few copies and post this everywhere. Thanks! You did good!");
@@ -313,34 +313,34 @@ public class Friend {
         friendDiagBank.Add(idx++, "Honestly? She was the best.");
         friendDiagBank.Add(idx++, "So what do you say? Wanna take them out?");
         friendDiagBank.Add(idx++, "You’re coming along then.");
-        friendDiagBank.Add(idx++, "Well, are you sure she didn’t mention anything off? She always had a loose tongue");
+        friendDiagBank.Add(idx++, "Well, are you sure she didn’t mention anything off? She always had a loose tongue.");
         friendDiagBank.Add(idx++, "A fake horn?");
         friendDiagBank.Add(idx++, "Bailey.");
         friendDiagBank.Add(idx++, "You do know what a horn job is? Don’t you?");
-        friendDiagBank.Add(idx++, "Of course they’re real, they aren’t like unicorns");
-        friendDiagBank.Add(idx++, "Uhoh. Smaugs at 6 o’clock");
+        friendDiagBank.Add(idx++, "Of course they’re real, they aren’t like unicorns.");
+        friendDiagBank.Add(idx++, "Uh-oh. Smaugs at 6 o’clock");
         friendDiagBank.Add(idx++, "Hey what was that at the start of class?");
-        friendDiagBank.Add(idx++, "What? This is perfect! Now you can figure out who has the Horn job.");
+        friendDiagBank.Add(idx++, "What? This is perfect! Now you can figure out who has the horn job.");
         #endregion
 
         #region Cutscene 9
         friendDiagBank.Add(idx++, "One week?");
-        friendDiagBank.Add(idx++, "She’s totally lying, it takes a least a Month to get one to grow back.");
+        friendDiagBank.Add(idx++, "She’s totally lying, it takes a least a month to get one to grow back.");
         friendDiagBank.Add(idx++, "Plus with the fact of visiting her cornologist. Which one is it?");
         friendDiagBank.Add(idx++, "So since it’s obviously Jassica, where could we start?");
-        friendDiagBank.Add(idx++, "Girl. How, you know what I’m thinkin’?");
-        friendDiagBank.Add(idx++, "I know she has one ex, but I Don’t know much about him, try talking around.");
+        friendDiagBank.Add(idx++, "Girl. How you know what I’m thinkin’?");
+        friendDiagBank.Add(idx++, "I know she has one ex, but I don’t know much about him, try talking around.");
         friendDiagBank.Add(idx++, "And remember, find anything juicy and come talk to me!!");
         #endregion
 
         #region Cutscene 10
         friendDiagBank.Add(idx++, "Holy cow! You are good at this!");
         friendDiagBank.Add(idx++, "Doesn’t matter! We’re going to use this against her!");
-        friendDiagBank.Add(idx++, "Because, this is undeniable proof, that Jassica Got a horn job.");
+        friendDiagBank.Add(idx++, "Because, this is undeniable proof, that Jassica got a horn job.");
         friendDiagBank.Add(idx++, "Believe me. It will work.");
         friendDiagBank.Add(idx++, "Jassica!");
         friendDiagBank.Add(idx++, "Why did this slip out of your bag!");
-        friendDiagBank.Add(idx++, "Anti-Itch Horn cream? Why would you need that?");
+        friendDiagBank.Add(idx++, "Anti-Itch Horn Cream? Why would you need that?");
         #endregion
 
         #region Cutscene 11
@@ -396,7 +396,7 @@ public class Meangirl2 { //Jassica
 
         # region Cutscene 8
         meangirl2DiagBank.Add(idx++, "Why do you need to see a farmer?");
-        meangirl2DiagBank.Add(idx++, "Yeah, ever since that Football accident.");
+        meangirl2DiagBank.Add(idx++, "Yeah, ever since that football accident.");
         meangirl2DiagBank.Add(idx++, "Yeah my horn grew back in like a week. must be blessed By the genes of my ancestry. Or something.");
         #endregion
 
@@ -416,8 +416,8 @@ public class Meangirl2 { //Jassica
         meangirl2DiagBank.Add(idx++, "Look. He’s a good guy. He doesn’t deserve Nataly, or me, but you. You might just be what he needs.");
         meangirl2DiagBank.Add(idx++, "You’re welcome.");
         meangirl2DiagBank.Add(idx++, "Put it in his locker dummy. He’ll read it eventually, and in 20 minutes, he'll be yours guaranteed.");
-        meangirl2DiagBank.Add(idx++, "That’s how long it takes him to Read one page of paper.");
-        meangirl2DiagBank.Add(idx++, "Look, just don’t mess up tomorrow and By the end of the day, Nataly will be history.");
+        meangirl2DiagBank.Add(idx++, "That’s how long it takes him to read one page of paper.");
+        meangirl2DiagBank.Add(idx++, "Look, just don’t mess up tomorrow and by the end of the day, Nataly will be history.");
         #endregion
     }
 }
@@ -429,9 +429,9 @@ public class Meangirl3 { // Nataly
         int idx = 0;
 
         # region Cutscene 8
-        meangirl3DiagBank.Add(idx++, "They’re the doctor’s that take care of your horn oooh yeah I forgot, you haven’t gone to one in ages.");
+        meangirl3DiagBank.Add(idx++, "They’re the doctors that take care of your horn. Oh yeah I forgot, you haven’t gone to one in ages.");
         meangirl3DiagBank.Add(idx++, "Oh yeah you’re new, you weren’t there.");
-        meangirl3DiagBank.Add(idx++, "Or Something.");
+        meangirl3DiagBank.Add(idx++, "Or something.");
         # endregion
 
         # region Cutscene 10
@@ -476,16 +476,16 @@ public class HotGuy {
 
     public void fillBank() {
         int idx = 0;
-        hotGuyDiagBank.Add(idx++, "Oh, Hey! You’re the new girl right?");
+        hotGuyDiagBank.Add(idx++, "Oh, hey! You’re the new girl right?");
         hotGuyDiagBank.Add(idx++, "Not surprised. You get involved with the Smaugs and suddenly everyone knows about you.");
-        hotGuyDiagBank.Add(idx++, "Don’t be. Everyone already know’s your name Bailey");
+        hotGuyDiagBank.Add(idx++, "Don’t be. Everyone already know’s your name Bailey.");
         hotGuyDiagBank.Add(idx++, "Joking, just heard it from Nataly.");
         hotGuyDiagBank.Add(idx++, "It’s alright I guess. I still feel bad for Jassica though.");
         hotGuyDiagBank.Add(idx++, "Well, I can’t be alone in the same room with both of them If that’s what you mean.");
         hotGuyDiagBank.Add(idx++, "She disappeared for a week and when she came back, it was all grown back.");
         hotGuyDiagBank.Add(idx++, "Well… she kept this cream around for her horn. I never really asked about it, but after we broke up I kept some of it.");
         hotGuyDiagBank.Add(idx++, "It’s not a creepy memento! It just gives my horns a nice feeling.");
-        hotGuyDiagBank.Add(idx++, "I’d be happy to give some to you, Trust me. It’s one of the best feelings Ever! Especially after a good trimming.");
+        hotGuyDiagBank.Add(idx++, "I’d be happy to give some to you, Trust me. It’s one of the best feelings ever! Especially after a good trimming.");
         hotGuyDiagBank.Add(idx++, "Absolutely! I’ve already got some more at my house. I faked a doctor’s note. Pretty sweet right?");
 
         # region Cutscene 12
