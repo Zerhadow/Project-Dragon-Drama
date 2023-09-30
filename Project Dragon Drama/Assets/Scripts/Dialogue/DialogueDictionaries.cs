@@ -93,6 +93,13 @@ public class Narrator {
         narratorDiagBank.Add(idx++, "When you approach Nataly, she immediately starts acting buddy buddy with you.");
         narratorDiagBank.Add(idx++, "You put the love note in Ken's locker. You find Sam. afterwards");
         narratorDiagBank.Add(idx++, "Nataly is in a fury! She’s screaming, running around, and just acting like a toddler who lost their sippy cup on the floor. You and Sam see her on her rampage.");
+        narratorDiagBank.Add(idx++, "Sam looks over, in awe.");
+        narratorDiagBank.Add(idx++, "Sam skips off gleefully only turning around to wink at you.");
+        
+        #endregion
+
+        # region Cutscene 13
+        narratorDiagBank.Add(idx++, "The next day, you find Sam in the Library");
         #endregion
     }
 }
@@ -233,13 +240,15 @@ public class Player {
         playerDiagBank.Add(idx++, "Hi Nataly!");
         playerDiagBank.Add(idx++, "It’s finished");
         playerDiagBank.Add(idx++, "It’s only 10 days, There’s not a whole lot we can do.");
+        playerDiagBank.Add(idx++, "I just did what I needed to.");
+        playerDiagBank.Add(idx++, "Oh, I totally did.");
+        playerDiagBank.Add(idx++, "What’s up?");
+        playerDiagBank.Add(idx++, "Really?");
         #endregion
     }
 }
 
 public class Friend {
-    int index;
-    string text;
     public Dictionary<int, string> friendDiagBank = new Dictionary<int, string>();
 
     public void fillBank() {
@@ -338,6 +347,10 @@ public class Friend {
         #region Cutscene 12
         friendDiagBank.Add(idx++, "Really? Already? No big grand finale? Nothing?");
         friendDiagBank.Add(idx++, "Fine, I guess that’s fair.");
+        friendDiagBank.Add(idx++, "Oh my god. What did you do?");
+        friendDiagBank.Add(idx++, "You didn’t!");
+        friendDiagBank.Add(idx++, "You homewrecker! I couldn’t be more proud of you!");
+        friendDiagBank.Add(idx++, "Not at all!");
         #endregion
     }
 }
@@ -466,6 +479,13 @@ public class HotGuy {
         hotGuyDiagBank.Add(idx++, "It’s not a creepy memento! It just gives my horns a nice feeling.");
         hotGuyDiagBank.Add(idx++, "I’d be happy to give some to you, Trust me. It’s one of the best feelings Ever! Especially after a good trimming.");
         hotGuyDiagBank.Add(idx++, "Absolutely! I’ve already got some more at my house. I faked a doctor’s note. Pretty sweet right?");
+
+        # region Cutscene 12
+        hotGuyDiagBank.Add(idx++, "Bailey!");
+        hotGuyDiagBank.Add(idx++, "Uh.. Am I interrupting something?");
+        hotGuyDiagBank.Add(idx++, "I broke up with Nataly");
+        hotGuyDiagBank.Add(idx++, "Yeah, she was a newt.");
+        #endregion
         
     }
 }
