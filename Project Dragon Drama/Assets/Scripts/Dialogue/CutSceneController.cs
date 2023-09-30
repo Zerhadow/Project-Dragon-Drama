@@ -62,6 +62,7 @@ public class CutSceneController : MonoBehaviour
         cutsceneManager.cutscene7.fillBank(dialogueDictionaries);
         cutsceneManager.cutscene8.fillBank(dialogueDictionaries);
         cutsceneManager.cutscene9.fillBank(dialogueDictionaries);
+        cutsceneManager.cutscene10.fillBank(dialogueDictionaries);
 
         chapterIdx = 0;
         pageIdx = 0;
@@ -79,7 +80,7 @@ public class CutSceneController : MonoBehaviour
         dialogueTextBox.text = cutsceneManager.cutscene1.diagBank[pageIdx];
 
         //Current Cutscene Under Test:
-        chapterIdx = 6;
+        chapterIdx = 7;
     }
 
     // Update is called once per frame
@@ -526,6 +527,35 @@ public class CutSceneController : MonoBehaviour
             skipButton.SetActive(true);
             changePortriat(cutsceneManager.cutscene9.portraitBank[pageIdx]);
             dialogueTextBox.text = cutsceneManager.cutscene9.diagBank[pageIdx++];
+        }
+    }
+
+    private void LoadCutscene10() {
+        Debug.Log("Load Cutscene 10");
+        skipButton.SetActive(true);
+        changePortriat(cutsceneManager.cutscene10.portraitBank[pageIdx]);
+        dialogueTextBox.text = cutsceneManager.cutscene10.diagBank[0];
+    }
+
+    private void Cutscene10() {
+        if(pageIdx == cutsceneManager.cutscene10.diagBank.Count) {
+            Debug.Log("End of Cutscene");
+            characterControllerBase.endofDialogue = true;
+            continueTextBox.SetActive(true);
+            skipButton.SetActive(false);
+            pageIdx = 0;
+            chapterIdx++;
+            cutsceneStart = false;
+            characterControllerBase.gossipSearch = true;
+        } else if(pageIdx == diagOptIdx1) { //hard coding when the dialogue option is supposed to start
+            dialogueOptions.SetActive(true);
+            diagOptions.SetOptions(dialogueDictionaries.diagOptions.dialogueOptionsBank1[0],
+                dialogueDictionaries.diagOptions.dialogueOptionsBank1[1], dialogueDictionaries.diagOptions.dialogueOptionsBank1[2]);
+            skipButton.SetActive(false);
+        } else {
+            skipButton.SetActive(true);
+            changePortriat(cutsceneManager.cutscene10.portraitBank[pageIdx]);
+            dialogueTextBox.text = cutsceneManager.cutscene10.diagBank[pageIdx++];
         }
     }
 }

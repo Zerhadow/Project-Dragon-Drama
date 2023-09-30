@@ -63,7 +63,10 @@ public class Narrator {
         narratorDiagBank.Add(idx++, "although the only thing you could think about was the opportunity that came into your lap.");
         narratorDiagBank.Add(idx++, "The only line you can remember from the lecture was “The opportunity of defeating the enemy is provided by the enemy himself”");
         narratorDiagBank.Add(idx++, "After class, Sam approaches you.");
-        
+        #endregion
+
+        # region Cutscene 8
+        narratorDiagBank.Add(idx++, "Nataly mentions something about how one of her horns has been acting up recently and she needs to schedule her monthly Horn visit at her cornologist.");
         #endregion
     }
 }
@@ -157,7 +160,10 @@ public class Player {
         playerDiagBank.Add(idx++, "Those are REAL??");
         playerDiagBank.Add(idx++, "It’s Bailey, and what do you want?");
         playerDiagBank.Add(idx++, "Jassica invited me to sit with them at lunch");
-        
+        #endregion
+
+        #region Cutscene 8
+        playerDiagBank.Add(idx++, "The what accident?");
         #endregion
     }
 }
@@ -263,19 +269,25 @@ public class Meangirl2 { //Jassica
         meangirl2DiagBank.Add(idx++, "And who better than the very girl who took her down. What do you say? Care to join?");
         meangirl2DiagBank.Add(idx++, "See you there!");
         # endregion
+
+        # region Cutscene 8
+        meangirl2DiagBank.Add(idx++, "Why do you need to see a farmer?");
+        meangirl2DiagBank.Add(idx++, "Yeah, ever since that Football accident.");
+        meangirl2DiagBank.Add(idx++, "Yeah my horn grew back in like a week. must be blessed By the genes of my ancestry. Or something.");
+        #endregion
     }
 }
 
-public class Meangirl3 {
-    int index;
-    string text;
+public class Meangirl3 { // Nataly
     public Dictionary<int, string> meangirl3DiagBank = new Dictionary<int, string>();
 
     public void fillBank() {
-        # region Cutscene 2
-        meangirl3DiagBank.Add(0, "Hello, I am the player.");
-        meangirl3DiagBank.Add(1, "I am a player.");
-        meangirl3DiagBank.Add(2, "I am a player.");
+        int idx = 0;
+
+        # region Cutscene 8
+        meangirl3DiagBank.Add(idx++, "They’re the doctor’s that take care of your horn oooh yeah I forgot, you haven’t gone to one in ages.");
+        meangirl3DiagBank.Add(idx++, "Oh yeah you’re new, you weren’t there.");
+        meangirl3DiagBank.Add(idx++, "Or Something.");
         # endregion
     }
 }

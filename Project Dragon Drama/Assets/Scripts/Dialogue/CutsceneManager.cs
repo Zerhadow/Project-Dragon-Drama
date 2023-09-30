@@ -13,6 +13,7 @@ public class CutsceneManager : MonoBehaviour
     public Cutscene7 cutscene7 = new Cutscene7();
     public Cutscene8 cutscene8 = new Cutscene8();
     public Cutscene9 cutscene9 = new Cutscene9();
+    public Cutscene10 cutscene10 = new Cutscene10();
 
     int narratorIdx = 0, playerIdx = 0, friendIdx = 0, teacherIdx = 0, keyStudentIdx = 0, meangirl1Idx = 0, meangirl2Idx = 0, meangirl3Idx = 0;
 
@@ -414,9 +415,27 @@ public class CutsceneManager : MonoBehaviour
         public void fillBank (DialogueDictionaries diagDict) {
             int idx = 0, narratorIdx = 22, playerIdx = 44, friendIdx = 46, meangirl1Idx = 0, meangirl2Idx = 5, meangirl3Idx = 0;
 
-            diagBank.Add(idx++, diagDict.meangirl1.meangirl1DiagBank[meangirl1Idx++]);
-            portraitBank.Add(1);
-            
+            diagBank.Add(idx++, diagDict.narrator.narratorDiagBank[narratorIdx++]);
+            portraitBank.Add(-1);
+            diagBank.Add(idx++, diagDict.meangirl2.meangirl2DiagBank[meangirl2Idx++]);
+            portraitBank.Add(2);
+            diagBank.Add(idx++, diagDict.meangirl3.meangirl3DiagBank[meangirl3Idx++]);
+            portraitBank.Add(3);
+            diagBank.Add(idx++, diagDict.meangirl2.meangirl2DiagBank[meangirl2Idx++]);
+            portraitBank.Add(2);
+            diagBank.Add(idx++, diagDict.player.playerDiagBank[playerIdx++]);
+            portraitBank.Add(0);
+            diagBank.Add(idx++, diagDict.meangirl3.meangirl3DiagBank[meangirl3Idx++]);
+            portraitBank.Add(3);
+            diagBank.Add(idx++, diagDict.meangirl2.meangirl2DiagBank[meangirl2Idx++]);
+            portraitBank.Add(2);
+            diagBank.Add(idx++, diagDict.meangirl3.meangirl3DiagBank[meangirl3Idx++]);
+            portraitBank.Add(3);
+            // Debug.Log("meangirl2Idx: " + meangirl2Idx); // 8
+            // Debug.Log("meangirl3Idx: " + meangirl3Idx); // 3
+            // Debug.Log("playerIdx: " + playerIdx); // 45
+            // Debug.Log("friendIdx: " + friendIdx); // 46
+            // Debug.Log("narratorIdx: " + narratorIdx); // 23
         }
     }
 
@@ -430,6 +449,15 @@ public class CutsceneManager : MonoBehaviour
             diagBank.Add(idx++, diagDict.meangirl1.meangirl1DiagBank[meangirl1Idx++]);
             portraitBank.Add(1);
             
+        }
+    }
+
+    public class Cutscene10 {
+        public Dictionary<int, string> diagBank = new Dictionary<int, string>();
+        public List<int> portraitBank = new List<int>();
+
+        public void fillBank (DialogueDictionaries diagDict) {
+
         }
     }
 }
