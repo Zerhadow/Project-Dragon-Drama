@@ -316,6 +316,7 @@ public class CutSceneController : MonoBehaviour
         pageIdx = 0;
         chapterIdx++;
         characterControllerBase.gossipSearch = true;
+        characterControllerBase._state = PlayerState.Moving;
     }
 
     public void StartCutscene() {
