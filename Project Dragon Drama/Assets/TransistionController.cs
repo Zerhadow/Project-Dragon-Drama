@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class TransistionController : MonoBehaviour
 {
@@ -23,11 +24,13 @@ public class TransistionController : MonoBehaviour
     {
         StartCoroutine(LoadLevel(SceneManager.GetActiveScene().buildIndex + 1));
     }
+
     IEnumerator LoadLevel(int levelindex)
     {
         transistion.SetTrigger("Start");
 
         yield return new WaitForSeconds(transistionTime);
+
 
         SceneManager.LoadScene(levelindex);
     }
