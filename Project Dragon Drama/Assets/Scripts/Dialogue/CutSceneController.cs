@@ -251,6 +251,10 @@ public class CutSceneController : MonoBehaviour
                     Cutscene11();
                 } else if(chapterIdx == 11) {
                     Cutscene12();
+                } else if(chapterIdx == 12) {
+                    GoodEnding();
+                } else if(chapterIdx == 13) {
+                    BadEnding();
                 }
             }
         }
@@ -386,6 +390,10 @@ public class CutSceneController : MonoBehaviour
             LoadCutscene11();
         } else if(chapterIdx == 11) {
             LoadCutscene12();
+        } else if(chapterIdx == 12) {
+            LoadGoodEnding();
+        } else if(chapterIdx == 13) {
+            LoadBadEnding();
         }
 
         //load next scene in build index
@@ -734,6 +742,54 @@ public class CutSceneController : MonoBehaviour
             skipButton.SetActive(true);
             changePortriat(cutsceneManager.cutscene12.portraitBank[pageIdx]);
             dialogueTextBox.text = cutsceneManager.cutscene12.diagBank[pageIdx++];
+        }
+    }
+
+    private void LoadGoodEnding() {
+        Debug.Log("Load Good Ending");
+        skipButton.SetActive(true);
+        changePortriat(cutsceneManager.goodEnding.portraitBank[pageIdx]);
+        dialogueTextBox.text = cutsceneManager.goodEnding.diagBank[0];
+    }
+
+    private void GoodEnding() {
+        if(pageIdx == cutsceneManager.goodEnding.diagBank.Count) {
+            Debug.Log("End of Cutscene");
+            characterControllerBase.endofDialogue = true;
+            // continueTextBox.SetActive(true);
+            skipButton.SetActive(false);
+            pageIdx = 0;
+            chapterIdx++;
+            cutsceneStart = false;
+            characterControllerBase.gossipSearch = false;
+        } else {
+            skipButton.SetActive(true);
+            changePortriat(cutsceneManager.goodEnding.portraitBank[pageIdx]);
+            dialogueTextBox.text = cutsceneManager.goodEnding.diagBank[pageIdx++];
+        }
+    }
+
+    private void LoadBadEnding() {
+        Debug.Log("Load Bad Ending");
+        skipButton.SetActive(true);
+        changePortriat(cutsceneManager.badEnding.portraitBank[pageIdx]);
+        dialogueTextBox.text = cutsceneManager.badEnding.diagBank[0];
+    }
+
+    private void BadEnding() {
+        if(pageIdx == cutsceneManager.badEnding.diagBank.Count) {
+            Debug.Log("End of Cutscene");
+            characterControllerBase.endofDialogue = true;
+            // continueTextBox.SetActive(true);
+            skipButton.SetActive(false);
+            pageIdx = 0;
+            chapterIdx++;
+            cutsceneStart = false;
+            characterControllerBase.gossipSearch = false;
+        } else {
+            skipButton.SetActive(true);
+            changePortriat(cutsceneManager.badEnding.portraitBank[pageIdx]);
+            dialogueTextBox.text = cutsceneManager.badEnding.diagBank[pageIdx++];
         }
     }
 }
