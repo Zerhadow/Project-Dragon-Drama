@@ -88,7 +88,7 @@ public class CutSceneController : MonoBehaviour
         dialogueTextBox.text = cutsceneManager.cutscene1.diagBank[pageIdx];
 
         //Current Cutscene Under Test:
-        chapterIdx = 9;
+        chapterIdx = 0;
     }
 
     // Update is called once per frame
