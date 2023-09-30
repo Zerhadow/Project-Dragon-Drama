@@ -77,10 +77,10 @@ public class CharacterControllerBase : MonoBehaviour
         cutSceneController = GameObject.Find("Canvas").GetComponent<CutSceneController>();
         dialogueTextBox.SetActive(false);
         continueTextBox.SetActive(false);
-        Debug.Log("CharController: " + pressETextBox.name.ToString() + " is linked");
-        Debug.Log("CharController: " + dialogueTextBox.name.ToString() + " is linked");
-        Debug.Log("CharController: " + continueTextBox.name.ToString() + " is linked");
-        Debug.Log("CharController: " + cutSceneController.name.ToString() + " is linked");
+        // Debug.Log("CharController: " + pressETextBox.name.ToString() + " is linked");
+        // Debug.Log("CharController: " + dialogueTextBox.name.ToString() + " is linked");
+        // Debug.Log("CharController: " + continueTextBox.name.ToString() + " is linked");
+        // Debug.Log("CharController: " + cutSceneController.name.ToString() + " is linked");
 
         //initial scene setup
         _state = PlayerState.Moving;
@@ -148,7 +148,11 @@ public class CharacterControllerBase : MonoBehaviour
                             cutSceneController.StartCutscene();
 
                             _state = PlayerState.Dialogue;
-                        } else {
+                        } else if(gossipSearch && _adjacentNPC.name == "Key") {
+                            Debug.Log("Found Key");
+                        } 
+                        
+                        else {
                             npcObj = _adjacentNPC.transform.Find("Talk Range").gameObject.GetComponent<NPCControllerBase>();
                             // Open dialogue popup tied to adjacentNPC;
                             cutSceneController.NPCtalk(npcObj);
@@ -164,7 +168,7 @@ public class CharacterControllerBase : MonoBehaviour
 
                         /*For Testing. Disable once implemented*/
                         DebugColorUpdate(_adjacentNPC, Color.green);
-                        Debug.Log("Player talking to " + _adjacentNPC.name);
+                        // Debug.Log("Player talking to " + _adjacentNPC.name);
                     }
 
                     /*Debug for state change*/
@@ -191,7 +195,7 @@ public class CharacterControllerBase : MonoBehaviour
 
                         /*For Testing. Disable once implemented*/
                         DebugColorUpdate(_adjacentNPC, Color.magenta);
-                        Debug.Log(_adjacentNPC.name + " has stopped talking");
+                        // Debug.Log(_adjacentNPC.name + " has stopped talking");
 
                         _state = PlayerState.Moving;
                     }
@@ -219,7 +223,7 @@ public class CharacterControllerBase : MonoBehaviour
 
                         /*For Testing. Disable once implemented*/
                         DebugColorUpdate(_adjacentNPC, Color.magenta);
-                        Debug.Log(_adjacentNPC.name + " has stopped talking");
+                        // Debug.Log(_adjacentNPC.name + " has stopped talking");
 
                         _state = PlayerState.Moving;
                     }
