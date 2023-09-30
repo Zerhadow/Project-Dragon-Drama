@@ -43,6 +43,13 @@ public class Narrator {
         # region Cutscene 4
         narratorDiagBank.Add(idx++, "The next day, you find Sam in the Library");
         #endregion
+
+        # region Cutscene 5
+        narratorDiagBank.Add(idx++, "You give Sam a note from Persia's Father");
+        narratorDiagBank.Add(idx++, "The note details how much in debt their family is and how she needs to quit spending her money on such frivolous things, , and assist in helping the family.");
+        narratorDiagBank.Add(idx++, "A few hours pass. Suddenly an uproar of noise comes from the hallways.");
+        
+        #endregion
     }
 }
 
@@ -105,6 +112,14 @@ public class Player {
         playerDiagBank.Add(idx++, "That’s it? That’s what you spent the whole night working on?");
         playerDiagBank.Add(idx++, "You wouldn’t happen to know where her stuff is would you?");
         #endregion
+
+        #region Cutscene 5
+        playerDiagBank.Add(idx++, "Sleep well?");
+        playerDiagBank.Add(idx++, "Don’t you want to know how I found it?");
+        playerDiagBank.Add(idx++, "I don’t think I want to do that.");
+        playerDiagBank.Add(idx++, "Did we really do something good?");
+        playerDiagBank.Add(idx++, "Ok…");
+        #endregion
     }
 }
 
@@ -147,6 +162,15 @@ public class Friend {
         friendDiagBank.Add(idx++, "If you just go looking around her stuff I’m sure you’ll find it.");
         friendDiagBank.Add(idx++, "Nope! But you’re a social butterfly, Seeing how you got the biggest Tea this school has seen on your Very first day.");
         friendDiagBank.Add(idx++, "I’m sure you’ll figure it out. Now go, I got some snoring to do.");
+        #endregion
+
+        #region Cutscene 5
+        friendDiagBank.Add(idx++, "Oh totally! You find anything");
+        friendDiagBank.Add(idx++, "Oh my god, the rumor is true!");
+        friendDiagBank.Add(idx++, "Oh I could care less how you found it. Let’s just go show this off to people and everyone will See how much of a liar she is!");
+        friendDiagBank.Add(idx++, "Oh it’s fine, I’ll just make a few copies and post this everywhere. Thanks! You did good!");
+        friendDiagBank.Add(idx++, "And now we watch.");
+        friendDiagBank.Add(idx++, "Of course we did! They’re bitches.");
         
         #endregion
     }
