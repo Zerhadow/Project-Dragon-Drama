@@ -25,6 +25,7 @@ public class CharacterControllerBase : MonoBehaviour
 
     private GameObject _playerObj;
     private Rigidbody _playerRb;
+    private Transform _playerArt;
     private GameObject pressETextBox;
     public GameObject dialogueTextBox;
     private GameObject continueTextBox;
@@ -69,6 +70,7 @@ public class CharacterControllerBase : MonoBehaviour
         //Find and set object references
         _playerObj = GameObject.Find("Player");
         _playerRb = _playerObj.GetComponent<Rigidbody>();
+        _playerArt = _playerObj.transform.Find("PlayerArt");
         _inventory = this.GetComponent<InventoryController>();
         pressETextBox = GameObject.Find("PressE");
         dialogueTextBox = GameObject.Find("DialogBar");
@@ -235,7 +237,12 @@ public class CharacterControllerBase : MonoBehaviour
     private void MovePlayer()
     {
         Vector3 expectedVelocity = new Vector3(_moveAmountVertical, 0, -_moveAmountHorizontal);
+        Vector3 expectedRotate = new Vector3(-_moveAmountVertical, 0, _moveAmountHorizontal);
         _playerRb.AddForce(expectedVelocity - _playerRb.velocity, ForceMode.VelocityChange);
+        if (expectedRotate != Vector3.zero)
+        {
+            _playerArt.forward = expectedRotate;
+        }
     }
 
     //Halts player movement
