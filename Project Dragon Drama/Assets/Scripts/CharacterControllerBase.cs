@@ -94,7 +94,7 @@ public class CharacterControllerBase : MonoBehaviour
 
     private void Update()
     {
-        /* --- For Test Only --- */
+        /* --- For Test Only --- 
         if (Input.GetKeyDown(KeyCode.U))
             _state = PlayerState.Menu;
         else if (Input.GetKeyDown(KeyCode.I))
@@ -105,7 +105,7 @@ public class CharacterControllerBase : MonoBehaviour
             _state = PlayerState.Dialogue;
         else if (Input.GetKeyDown(KeyCode.L))
             SceneManager.LoadScene("SchoolLevelTest", LoadSceneMode.Single); //go to SchoolLevelTest
-        /* --- For Test Only --- */
+           --- For Test Only --- */
 
         switch (_state)
         {
@@ -120,7 +120,7 @@ public class CharacterControllerBase : MonoBehaviour
                     }
 
                     /*Debug for state change*/
-                    DebugColorUpdate(_playerObj, Color.red);
+                    //DebugColorUpdate(_playerObj, Color.red);
                     Debug.Log("Menu State");
                 }
                 break;
@@ -168,7 +168,7 @@ public class CharacterControllerBase : MonoBehaviour
                     }
 
                     /*Debug for state change*/
-                    DebugColorUpdate(_playerObj, Color.blue);
+                    //DebugColorUpdate(_playerObj, Color.blue);
                     // Debug.Log("Moving State");
                 }
                 break;
@@ -196,7 +196,7 @@ public class CharacterControllerBase : MonoBehaviour
                     }
 
                     /*Debug for state change*/
-                    DebugColorUpdate(_playerObj, Color.yellow);
+                    //DebugColorUpdate(_playerObj, Color.yellow);
                     // Debug.Log("NPCTalk State");
                 }
                 break;
@@ -212,8 +212,8 @@ public class CharacterControllerBase : MonoBehaviour
                     }
 
                     /*Debug for state change*/
-                    DebugColorUpdate(_playerObj, Color.green);
-                    Debug.Log("Dialogue State");
+                    //DebugColorUpdate(_playerObj, Color.green);
+                    //Debug.Log("Dialogue State");
                 }
                 break;
             default:
