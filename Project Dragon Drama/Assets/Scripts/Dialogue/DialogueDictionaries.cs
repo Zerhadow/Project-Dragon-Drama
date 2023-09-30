@@ -12,6 +12,7 @@ public class DialogueDictionaries : MonoBehaviour {
 
     public Narrator narrator = new Narrator();
     public Teacher teacher = new Teacher();
+    public KeyStudent keyStudent = new KeyStudent();
 }
 
 public class Narrator {
@@ -24,7 +25,7 @@ public class Narrator {
     public void fillBank() {
         int idx = 0;
 
-        # region Chapter 1
+        # region Cutscene 1
 
         narratorDiagBank.Add(idx++, "The teacher in the front of the classroom, going off on a long lecture");
         narratorDiagBank.Add(idx++, "She pauses from taking notes and looks around the room");
@@ -46,7 +47,7 @@ public class Teacher {
     public void fillBank() {
         int idx = 0;
 
-        # region Chapter 1
+        # region Cutscene 1
 
         teacherDiagBank.Add(index++, "Teacher: And here's a hint to the book we’ll be talking about! “The supreme art of war is to subdue the enemy without fighting”");
 
@@ -64,7 +65,7 @@ public class Player {
     public void fillBank() {
         int idx = 0;
 
-        # region Chapter 1
+        # region Cutscene 1
         playerDiagBank.Add(idx++, "*Today is my first day at Dragon High. And since the start of the day, I've been nothing but a nervous wreck*");
         playerDiagBank.Add(idx++, "*It feels like everyone’s always staring at me. Even if they actually aren’t.*");
         playerDiagBank.Add(idx++, "What is?");
@@ -78,8 +79,13 @@ public class Player {
         playerDiagBank.Add(idx++, "Ok then…");
         # endregion
 
-        #region Chapter 2
-        playerDiagBank.Add(idx++, "You didn’t sleep?");
+        #region Cutscene 2
+        playerDiagBank.Add(idx++, "Hi!");
+        playerDiagBank.Add(idx++, "Yup! You wouldn’t happen to know anything about the Smaugs would you?");
+        playerDiagBank.Add(idx++, "You’re sleeping with one of them?");
+        playerDiagBank.Add(idx++, "So… blackmail");
+        playerDiagBank.Add(idx++, "Wouldn’t that go against what you’re doing?");
+        playerDiagBank.Add(idx++, "What?");
 
         #endregion
     }
@@ -93,7 +99,7 @@ public class Friend {
     public void fillBank() {
         int idx = 0;
 
-        # region Chapter 1
+        # region Cutscene 1
         friendDiagBank.Add(idx++, "That's crazy...");
         friendDiagBank.Add(idx++, "You’ve been completely focused, the entire class.");
         friendDiagBank.Add(idx++, "You’re weird.");
@@ -109,7 +115,7 @@ public class Friend {
         friendDiagBank.Add(idx++, "I’m sure others agree with me. If you don’t believe me, go on ahead and Chat with other people.");
         # endregion
 
-        #region Chapter 2
+        #region Cutscene 2
         friendDiagBank.Add(idx++, "I have spent the entire night planning how to take her down.");
         friendDiagBank.Add(idx++, "No. Not really, so I’m gonna need\nYou to take care of it for us.");
 
@@ -123,7 +129,7 @@ public class Meangirl1 {
     public Dictionary<int, string> meangirl1DiagBank = new Dictionary<int, string>();
 
     public void fillBank() {
-        # region Chapter 1
+        # region Custscene 2
         meangirl1DiagBank.Add(0, "I am Regina George.");
         meangirl1DiagBank.Add(1, "Well that's a weird thing to say.");
         meangirl1DiagBank.Add(2, "You’re weird.");
@@ -137,7 +143,7 @@ public class Meangirl2 {
     public Dictionary<int, string> meangirl2DiagBank = new Dictionary<int, string>();
 
     public void fillBank() {
-        # region Chapter 1
+        # region Cutscene 2
         meangirl2DiagBank.Add(0, "Hello, I am ");
         meangirl2DiagBank.Add(1, "I am a player.");
         meangirl2DiagBank.Add(2, "I am a player.");
@@ -151,10 +157,34 @@ public class Meangirl3 {
     public Dictionary<int, string> meangirl3DiagBank = new Dictionary<int, string>();
 
     public void fillBank() {
-        # region Chapter 1
+        # region Cutscene 2
         meangirl3DiagBank.Add(0, "Hello, I am the player.");
         meangirl3DiagBank.Add(1, "I am a player.");
         meangirl3DiagBank.Add(2, "I am a player.");
+        # endregion
+    }
+}
+
+public class KeyStudent {
+    int index;
+    string text;
+    public Dictionary<int, string> keyStudentDiagBank = new Dictionary<int, string>();
+
+    public void fillBank() {
+        int idx = 0;
+
+        # region Key 1
+        keyStudentDiagBank.Add(idx++, "Oh hi! You’re the new one right?");
+        keyStudentDiagBank.Add(idx++, "The Smaugs! Oh…");
+        keyStudentDiagBank.Add(idx++, "I’ve got a little piece of info that one of them is keeping me on the hush-hush if you know what I mean.");
+        keyStudentDiagBank.Add(idx++, "God no! What the hell?? One of them is paying me to not say anything.");
+        keyStudentDiagBank.Add(idx++, "Pretty Much!");
+        keyStudentDiagBank.Add(idx++, "You wanna know it?");
+        keyStudentDiagBank.Add(idx++, "I don’t care, I’ve already got all the money I want.");
+        keyStudentDiagBank.Add(idx++, "Besides, she’s broke as shit.");
+        keyStudentDiagBank.Add(idx++, "Whoops…");
+        keyStudentDiagBank.Add(idx++, "Let’s just leave it at that shall we.");
+        
         # endregion
     }
 }
@@ -165,8 +195,12 @@ public class DialogueOptionsText {
     public Dictionary<int, string> dialogueOptionsBank1 = new Dictionary<int, string>();
 
     public void fillBank1() {
+
+        # region Cutscene 2
+        
         dialogueOptionsBank1.Add(0, "Buy apple");
         dialogueOptionsBank1.Add(1, "Buy orange");
         dialogueOptionsBank1.Add(2, "Buy banana");
+        #endregion
     }
 }
