@@ -28,7 +28,7 @@ public class CutSceneController : MonoBehaviour
     bool diagOptReady = false;
     public GameObject skipButton;
     private int diagOptIdx1 = 14, diagOptIdx2 = 30, diagOptIdx3 = 32;
-    private int diagOptIdx4 = 4, diagOptIdx5 = 12, diagOptIdx6 = 47, diagOptIdx7 = 63;
+    private int diagOptIdx4 = 4, diagOptIdx5 = 12, diagOptIdx6 = 49, diagOptIdx7 = 65;
     private bool holdCutscene = false;
 
     //public CharacterControllerBase characterControllerBase;

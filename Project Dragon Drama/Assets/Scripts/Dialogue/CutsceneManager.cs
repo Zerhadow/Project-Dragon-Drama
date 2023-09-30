@@ -524,6 +524,10 @@ public class CutsceneManager : MonoBehaviour
             //Response to Diag Option
             diagBank.Add(idx++, diagDict.hotGuy.hotGuyDiagBank[hotGuyIdx++]);
             portraitBank.Add(5);
+            diagBank.Add(idx++, diagDict.player.playerDiagBank[playerIdx++]); 
+            portraitBank.Add(0);
+            diagBank.Add(idx++, diagDict.hotGuy.hotGuyDiagBank[hotGuyIdx++]);
+            portraitBank.Add(5);
             diagBank.Add(idx++, diagDict.player.playerDiagBank[playerIdx++]);
             portraitBank.Add(0);
             diagBank.Add(idx++, diagDict.hotGuy.hotGuyDiagBank[hotGuyIdx++]);
@@ -600,17 +604,17 @@ public class CutsceneManager : MonoBehaviour
             portraitBank.Add(-1);
             diagBank.Add(idx++, diagDict.meangirl2.meangirl2DiagBank[meangirl2Idx++]);
             portraitBank.Add(2);
-            diagBank.Add(idx++, diagDict.player.playerDiagBank[playerIdx++]); //oh my God
+            diagBank.Add(idx++, diagDict.player.playerDiagBank[playerIdx++]); 
             portraitBank.Add(0);
-            diagBank.Add(idx++, diagDict.meangirl2.meangirl2DiagBank[meangirl2Idx++]); //yeah, but you
+            diagBank.Add(idx++, diagDict.meangirl2.meangirl2DiagBank[meangirl2Idx++]); 
             portraitBank.Add(2);
-            diagBank.Add(idx++, diagDict.player.playerDiagBank[playerIdx++]); // look, I
+            diagBank.Add(idx++, diagDict.player.playerDiagBank[playerIdx++]); 
             portraitBank.Add(0);
             diagBank.Add(idx++, diagDict.meangirl2.meangirl2DiagBank[meangirl2Idx++]);
             portraitBank.Add(2);
             diagBank.Add(idx++, diagDict.player.playerDiagBank[playerIdx++]);
             portraitBank.Add(0);
-            diagBank.Add(idx++, diagDict.meangirl2.meangirl2DiagBank[meangirl2Idx++]); // trust
+            diagBank.Add(idx++, diagDict.meangirl2.meangirl2DiagBank[meangirl2Idx++]); 
             portraitBank.Add(2);
             diagBank.Add(idx++, diagDict.player.playerDiagBank[playerIdx++]);
             portraitBank.Add(0);
@@ -633,6 +637,26 @@ public class CutsceneManager : MonoBehaviour
             portraitBank.Add(2);
             diagBank.Add(idx++, diagDict.player.playerDiagBank[playerIdx++]);
             portraitBank.Add(0);
+            diagBank.Add(idx++, diagDict.meangirl2.meangirl2DiagBank[meangirl2Idx++]);
+            portraitBank.Add(2);
+            diagBank.Add(idx++, diagDict.player.playerDiagBank[playerIdx++]);
+            portraitBank.Add(0);
+            diagBank.Add(idx++, diagDict.meangirl2.meangirl2DiagBank[meangirl2Idx++]);
+            portraitBank.Add(2);
+            diagBank.Add(idx++, diagDict.player.playerDiagBank[playerIdx++]);
+            portraitBank.Add(0);
+            diagBank.Add(idx++, diagDict.meangirl2.meangirl2DiagBank[meangirl2Idx++]);
+            portraitBank.Add(2);
+            diagBank.Add(idx++, diagDict.player.playerDiagBank[playerIdx++]);
+            portraitBank.Add(0);
+            diagBank.Add(idx++, diagDict.meangirl2.meangirl2DiagBank[meangirl2Idx++]);
+            portraitBank.Add(2);
+            // Debug.Log("FriendIdx: " + friendIdx); // 60
+            // Debug.Log("PlayerIdx: " + playerIdx); // 71
+            // Debug.Log("NarratorIdx: " + narratorIdx); // 35
+            // Debug.Log("Meangirl2Idx: " + meangirl2Idx); // 25
+            // Debug.Log("Meangirl3Idx: " + meangirl3Idx); // 7
+            // Debug.Log("HotGuyIdx: " + hotGuyIdx); // 11
         }
 
         public string GetOptionResponse(int idx) {
@@ -641,7 +665,7 @@ public class CutsceneManager : MonoBehaviour
             } else if(idx == 2) {
                 return "I think Jassica maybe";
             } else if(idx == 3) {
-                return "Yeah her horn. I was with her when she broke it. She disappeared for a week and when she came back, it was all grown back.";
+                return "Yeah her horn. I was with her when she broke it.";
             } else {
                 return "I’m sorry, I didn’t mean to stare.";
             }
@@ -677,7 +701,9 @@ public class CutsceneManager : MonoBehaviour
         public List<int> portraitBank = new List<int>();
 
         public void fillBank (DialogueDictionaries diagDict) {
+            int idx = 0, playerIdx = 71, friendIdx = 60, meangirl1Idx = 0, meangirl2Idx = 25, meangirl3Idx = 7, narratorIdx = 35, hotGuyIdx = 11;
 
+            // diagBank.Add(idx++, diagDict.meangirl2.meangirl2DiagBank[meangirl2Idx++]);
         }
     }
 

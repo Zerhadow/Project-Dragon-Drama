@@ -206,6 +206,9 @@ public class Player {
         playerDiagBank.Add(idx++, "What is it?");
         playerDiagBank.Add(idx++, "Why do you have this?");
         playerDiagBank.Add(idx++, "Thank you.");
+        playerDiagBank.Add(idx++, "So what should I do with it?");
+        playerDiagBank.Add(idx++, "Why 20 minutes?");
+        playerDiagBank.Add(idx++, "Oh.");
         #endregion
     }
 }
@@ -352,6 +355,10 @@ public class Meangirl2 { //Jassica
         meangirl2DiagBank.Add(idx++, "It’s a love note, one I wrote for Ken.");
         meangirl2DiagBank.Add(idx++, "After Nataly stole him from me. Right before we broke up. I wrote this as a last ditch effort to try and keep him.");
         meangirl2DiagBank.Add(idx++, "Look. He’s a good guy. He doesn’t deserve Nataly, or me, but you. You might just be what he needs.");
+        meangirl2DiagBank.Add(idx++, "You’re welcome.");
+        meangirl2DiagBank.Add(idx++, "Put it in his locker dummy. He’ll read it eventually, and in 20 minutes, he'll be yours guaranteed.");
+        meangirl2DiagBank.Add(idx++, "That’s how long it takes him to Read one page of paper.");
+        meangirl2DiagBank.Add(idx++, "Look, just don’t mess up tomorrow and By the end of the day, Nataly will be history.");
         
         #endregion
     }
@@ -410,6 +417,7 @@ public class HotGuy {
         hotGuyDiagBank.Add(idx++, "Joking, just heard it from Nataly.");
         hotGuyDiagBank.Add(idx++, "It’s alright I guess. I still feel bad for Jassica though.");
         hotGuyDiagBank.Add(idx++, "Well, I can’t be alone in the same room with both of them If that’s what you mean.");
+        hotGuyDiagBank.Add(idx++, "She disappeared for a week and when she came back, it was all grown back.");
         hotGuyDiagBank.Add(idx++, "Well… she kept this cream around for her horn. I never really asked about it, but after we broke up I kept some of it.");
         hotGuyDiagBank.Add(idx++, "It’s not a creepy memento! It just gives my horns a nice feeling.");
         hotGuyDiagBank.Add(idx++, "I’d be happy to give some to you, Trust me. It’s one of the best feelings Ever! Especially after a good trimming.");
