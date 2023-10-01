@@ -4808,7 +4808,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueTextBox: {fileID: 780285624}
-  chapterIdx: 0
+  chapterIdx: 10
   pageIdx: 0
   playerPFP: {fileID: 771338427}
   mg1PFP: {fileID: 1457895941}
@@ -4820,7 +4820,7 @@ MonoBehaviour:
   continueTextBox: {fileID: 1627057808}
   pressETextBox: {fileID: 1985225823}
   nextCutsceneBtn: {fileID: 2082936106}
-  _tranController: {fileID: 1940954606}
+  _tranController: {fileID: 555952102}
   dialogueOptions: {fileID: 849279331}
   diagOptions: {fileID: 0}
   skipButton: {fileID: 1335567465}
@@ -4916,7 +4916,7 @@ Canvas:
   m_GameObject: {fileID: 147336134}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
+  m_RenderMode: 1
   m_Camera: {fileID: 0}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
@@ -17366,6 +17366,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4579544744216733230, guid: 38391a33f3537024c8c598398f2844fd, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8787294975022477231, guid: 38391a33f3537024c8c598398f2844fd, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -17381,6 +17385,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 1978902746612921717, guid: 38391a33f3537024c8c598398f2844fd, type: 3}
   m_PrefabInstance: {fileID: 555952100}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &555952102 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8776190793663707004, guid: 38391a33f3537024c8c598398f2844fd, type: 3}
+  m_PrefabInstance: {fileID: 555952100}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd4b7277ae98e8547a0dc80e49ff563a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &557099733
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -57034,17 +57049,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6451839666132181603, guid: e92c43b2c6456df448c25d9ea4cd9021, type: 3}
   m_PrefabInstance: {fileID: 470178764}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1940954606 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8776190793663707004, guid: 38391a33f3537024c8c598398f2844fd, type: 3}
-  m_PrefabInstance: {fileID: 555952100}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dd4b7277ae98e8547a0dc80e49ff563a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &1941197441 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6451839666132181603, guid: fc5028afe175c3444aee31df2a11e9cf, type: 3}

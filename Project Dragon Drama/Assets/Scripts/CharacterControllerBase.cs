@@ -92,7 +92,8 @@ public class CharacterControllerBase : MonoBehaviour
     private void  Start() {
         pressETextBox.SetActive(false);
 
-        cutSceneController.StartCutscene();
+
+        //cutSceneController.StartCutscene();
         _state = PlayerState.Dialogue;
     }
 
@@ -235,6 +236,13 @@ public class CharacterControllerBase : MonoBehaviour
                         // Close dialogue popup
                         dialogueTextBox.SetActive(false);
                         continueTextBox.SetActive(false);
+                        
+                        if ((cutSceneController.chapterIdx == 3) || (cutSceneController.chapterIdx == 10))
+                        {
+                            cutSceneController.TriggerNextCutscene();
+                            cutSceneController._tranController.LoadNextLevel();
+                        }
+                        
 
                         /*For Testing. Disable once implemented*/
                         // DebugColorUpdate(_adjacentNPC, Color.magenta);

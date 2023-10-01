@@ -14,8 +14,8 @@ public class CutSceneController : MonoBehaviour
     public TMP_Text dialogueTextBox;
     List<Entry> entryList = new List<Entry>();
     Entry entry;
-    public int chapterIdx;
-    public int pageIdx;
+    public int chapterIdx = 0;
+    public int pageIdx = 0;
     private int diagCntrlIdx = 0;
     public GameObject playerPFP, mg1PFP, mg2PFP, mg3PFP, friendPFP; // UI Images for each character
     public bool cutsceneStart = false;
@@ -25,6 +25,8 @@ public class CutSceneController : MonoBehaviour
     public GameObject continueTextBox;
     public GameObject pressETextBox;
     public GameObject nextCutsceneBtn;
+
+    public TransistionController _tranController;
     
     public GameObject dialogueOptions;
     public DiagOptions diagOptions;
@@ -96,8 +98,8 @@ public class CutSceneController : MonoBehaviour
         cutsceneManager.goodEnding.fillBank(dialogueDictionaries);
         cutsceneManager.badEnding.fillBank(dialogueDictionaries);
 
-        chapterIdx = 0;
-        pageIdx = 0;
+        // chapterIdx = 0;
+        // pageIdx = 0;
 
         diagOptions = this.GetComponent<DiagOptions>();
 
@@ -106,7 +108,7 @@ public class CutSceneController : MonoBehaviour
         dialogueTextBox.text = cutsceneManager.cutscene1.diagBank[pageIdx];
 
         //Current Cutscene Under Test:
-        chapterIdx = 0;
+        // chapterIdx = 0;
     }
 
     private void Start()
@@ -116,10 +118,24 @@ public class CutSceneController : MonoBehaviour
         dialogueOptions.SetActive(false);
         skipButton.SetActive(false);
         nextCutsceneBtn.SetActive(false);
+
+        StartCutscene();
+        if (chapterIdx == 0)
+        {
+            Cutscene1();
+        }
+        else if (chapterIdx == 4)
+        {
+            Cutscene4();
+        }
+        if (chapterIdx == 10)
+        {
+            Cutscene10();
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+        // Update is called once per frame
+        void Update()
     {   
         /* ---Deprecated---
         if(characterControllerBase.gossipSearch) {
@@ -412,6 +428,11 @@ public class CutSceneController : MonoBehaviour
         chapterIdx++;
         characterControllerBase.gossipSearch = true;
         characterControllerBase._state = PlayerState.Moving;
+        if ((chapterIdx == 3) || (chapterIdx == 10))
+        {
+            TriggerNextCutscene();
+            _tranController.LoadNextLevel();
+        }
     }
 
     public void StartCutscene() {
