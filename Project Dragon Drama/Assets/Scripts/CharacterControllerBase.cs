@@ -237,7 +237,7 @@ public class CharacterControllerBase : MonoBehaviour
                         dialogueTextBox.SetActive(false);
                         continueTextBox.SetActive(false);
                         
-                        if ((cutSceneController.chapterIdx == 3) || (cutSceneController.chapterIdx == 9))
+                        if ((cutSceneController.chapterIdx == 3) || (cutSceneController.chapterIdx == 10))
                         {
                             cutSceneController.TriggerNextCutscene();
                             cutSceneController._tranController.LoadNextLevel();

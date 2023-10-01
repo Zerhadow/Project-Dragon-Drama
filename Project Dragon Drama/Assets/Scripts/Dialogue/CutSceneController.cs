@@ -428,6 +428,11 @@ public class CutSceneController : MonoBehaviour
         chapterIdx++;
         characterControllerBase.gossipSearch = true;
         characterControllerBase._state = PlayerState.Moving;
+        if ((chapterIdx == 3) || (chapterIdx == 10))
+        {
+            TriggerNextCutscene();
+            _tranController.LoadNextLevel();
+        }
     }
 
     public void StartCutscene() {
