@@ -25,7 +25,7 @@ public class Narrator {
         int idx = 0;
 
         # region Cutscene 1
-        narratorDiagBank.Add(idx++, "The teacher in the front of the classroom, going off on a long lecture");
+        narratorDiagBank.Add(idx++, "The teacher is in the front of the classroom, going off on a long lecture");
         narratorDiagBank.Add(idx++, "She pauses from taking notes and looks around the room");
         narratorDiagBank.Add(idx++, "To her surprise there actually is one person staring at her, the girl sitting right next to her.");
         narratorDiagBank.Add(idx++, "Bailey jumps at little when their gazes meet");
@@ -75,7 +75,7 @@ public class Narrator {
         narratorDiagBank.Add(idx++, "Towards the end of the day Sam is walking past Jassica, when suddenly something small slips out of her bag.");
         narratorDiagBank.Add(idx++, "Sam picks up the cream and turns around, she then loudly and audibly gasps in shock at the contents.");
         narratorDiagBank.Add(idx++, "Jassica looks at the cream in Sam’s hand and swipes at Sam’s hand, Sam narrowly avoids the swipe and reads the label aloud.");
-        narratorDiagBank.Add(idx++, "Murmurs and whispers begin to fill the hallway. Jassica is stunned in awe at what’s happening.s");
+        narratorDiagBank.Add(idx++, "Murmurs and whispers begin to fill the hallway. Jassica is stunned in awe at what’s happening.");
         narratorDiagBank.Add(idx++, "Tears begin to flow down Jassica’s eyes as she runs through the hallway and disappears around a corner.");
         narratorDiagBank.Add(idx++, "As you walk to your next class, you get the feeling to check the bathroom. As you enter you hear sobbing from one of the stalls. And hear faintly");
         narratorDiagBank.Add(idx++, "You knock on the door.");
@@ -91,7 +91,7 @@ public class Narrator {
 
         # region Cutscene 12
         narratorDiagBank.Add(idx++, "When you approach Nataly, she immediately starts acting buddy buddy with you.");
-        narratorDiagBank.Add(idx++, "You put the love note in Ken's locker. You find Sam. afterwards");
+        narratorDiagBank.Add(idx++, "You put the love note in Ken's locker. You find Sam afterwards");
         narratorDiagBank.Add(idx++, "Nataly is in a fury! She’s screaming, running around, and just acting like a toddler who lost their sippy cup on the floor. You and Sam see her on her rampage.");
         narratorDiagBank.Add(idx++, "Sam looks over, in awe.");
         narratorDiagBank.Add(idx++, "Sam skips off gleefully only turning around to wink at you.");
@@ -287,7 +287,7 @@ public class Friend {
         friendDiagBank.Add(idx++, "Oh! Those are the Smaugs.");
         friendDiagBank.Add(idx++, "Basically they think that they run the School, but no one really cares.");
         friendDiagBank.Add(idx++, "Because they’re the Smaugs. What else is there to know?");
-        friendDiagBank.Add(idx++, "God. How much I’d love to tear them down off of their high horse.");
+        friendDiagBank.Add(idx++, "God. How much I’d love to tear them down off of their high horses.");
         friendDiagBank.Add(idx++, "I’m sure others agree with me. If you don’t believe me, go on ahead and chat with other people.");
         # endregion
 
@@ -304,14 +304,14 @@ public class Friend {
         friendDiagBank.Add(idx++, "No!... Kinda…");
         friendDiagBank.Add(idx++, "I spent most of the night thinking about What the thing she might have.");
         friendDiagBank.Add(idx++, "If you just go looking around her stuff I’m sure you’ll find it.");
-        friendDiagBank.Add(idx++, "Nope! But you’re a social butterfly, Seeing how you got the biggest Tea this school has seen on your very first day.");
+        friendDiagBank.Add(idx++, "Nope! But you’re a social butterfly, Seeing how you got the biggest tea this school has seen on your very first day.");
         friendDiagBank.Add(idx++, "I’m sure you’ll figure it out. Now go, I got some snoring to do.");
         #endregion
 
         #region Cutscene 5
         friendDiagBank.Add(idx++, "Oh totally! You find anything?");
         friendDiagBank.Add(idx++, "Oh my god, the rumor is true!");
-        friendDiagBank.Add(idx++, "Oh I could care less how you found it. Let’s just go show this off to people and everyone will See how much of a liar she is!");
+        friendDiagBank.Add(idx++, "Oh I could care less how you found it. Let’s just go show this off to people and everyone will see how much of a liar she is!");
         friendDiagBank.Add(idx++, "Oh it’s fine, I’ll just make a few copies and post this everywhere. Thanks! You did good!");
         friendDiagBank.Add(idx++, "And now we watch.");
         friendDiagBank.Add(idx++, "Of course we did! They’re bitches.");
@@ -319,7 +319,7 @@ public class Friend {
 
         #region Cutscene 7
         friendDiagBank.Add(idx++, "Sooooo?");
-        friendDiagBank.Add(idx++, "Oh come on, we took down one of the Smaugs in one day, and your just going to quit there?");
+        friendDiagBank.Add(idx++, "Oh come on, we took down one of the Smaugs in one day, and you're just going to quit there?");
         friendDiagBank.Add(idx++, "Plus, I saw Persia talking to you yesterday");
         friendDiagBank.Add(idx++, "What did she say?");
         friendDiagBank.Add(idx++, "See what I mean? Girl has 2000 years left and she thinks that her world’s over when she’s 25.");
