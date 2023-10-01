@@ -9,14 +9,14 @@ EditorBuildSettings:
     path: Assets/Scenes/Title Menu.unity
     guid: f2292980a79bbae4397ba114090d24a7
   - enabled: 1
-    path: Assets/Scenes/GS 1.unity
-    guid: 4ac3cdd0e2fd9a44abcd570e851c3f17
+    path: Assets/Scenes/GS 1.1.unity
+    guid: c6e87b3c98ae21d40a0079c066f61825
   - enabled: 1
-    path: Assets/Scenes/GS 2.unity
-    guid: ba7851dabc9289e45b3e44f2731b194e
+    path: Assets/Scenes/GS 2.1.unity
+    guid: 3bee314b08542234fb336c4a76d04f56
   - enabled: 1
-    path: Assets/Scenes/GS 3.unity
-    guid: ea04ac3dfe9ce834daa44073438aa9c8
+    path: Assets/Scenes/GS 3.1.unity
+    guid: 765b5367ace8dc947968f8517c38eb1e
   - enabled: 1
     path: Assets/Scenes/Win Screen.unity
     guid: 63446e39ae0fc254eab07bfe5e4a1ba2
