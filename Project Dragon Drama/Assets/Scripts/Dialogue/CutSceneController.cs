@@ -6,6 +6,9 @@ using UnityEngine.SceneManagement;
 
 public class CutSceneController : MonoBehaviour
 {
+    //Singleton
+    public static CutSceneController Instance;
+
     DialogueDictionaries dialogueDictionaries = new DialogueDictionaries();
     CutsceneManager cutsceneManager = new CutsceneManager();
     public TMP_Text dialogueTextBox;
@@ -37,6 +40,19 @@ public class CutSceneController : MonoBehaviour
 
 
     void Awake() {
+        //Singleton check: if there exists an instance and it isn't this, delete this.
+        if ((Instance != null) && (Instance != this))
+        {
+            Destroy(this);
+            Debug.Log("CutSceneCtrlrController: There can be only one");
+        }
+        else
+        {
+            Instance = this;
+            DontDestroyOnLoad(Instance);
+            Debug.Log("CutSceneCtrlrController: I am the one");
+        }
+
         //find CharacterControllerBase in scene
         characterControllerBase = GameObject.Find("CharacterController").GetComponent<CharacterControllerBase>();
 
@@ -99,11 +115,13 @@ public class CutSceneController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {   
+        /* ---Deprecated---
         if(characterControllerBase.gossipSearch) {
             nextCutsceneBtn.SetActive(true);
         } else {
             nextCutsceneBtn.SetActive(false);
         }
+        */
         
         if(Input.GetKeyDown(KeyCode.E) && cutsceneStart) { // if the player presses E and the cutscene is playing
             if(diagOptReady) { // after the player chooses an option
@@ -359,6 +377,7 @@ public class CutSceneController : MonoBehaviour
         pageIdx = 0;
         chapterIdx++;
         characterControllerBase.gossipSearch = true;
+        characterControllerBase._state = PlayerState.Moving;
     }
 
     public void StartCutscene() {
