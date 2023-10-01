@@ -205,7 +205,7 @@ public class CharacterControllerBase : MonoBehaviour
                         continueTextBox.SetActive(false);
 
                         /*For Testing. Disable once implemented*/
-                        DebugColorUpdate(_adjacentNPC, Color.magenta);
+                        // DebugColorUpdate(_adjacentNPC, Color.magenta);
                         // Debug.Log(_adjacentNPC.name + " has stopped talking");
 
                         _state = PlayerState.Moving;
@@ -233,7 +233,7 @@ public class CharacterControllerBase : MonoBehaviour
                         continueTextBox.SetActive(false);
 
                         /*For Testing. Disable once implemented*/
-                        DebugColorUpdate(_adjacentNPC, Color.magenta);
+                        // DebugColorUpdate(_adjacentNPC, Color.magenta);
                         // Debug.Log(_adjacentNPC.name + " has stopped talking");
 
                         _state = PlayerState.Moving;
