@@ -147,6 +147,8 @@ public class CharacterControllerBase : MonoBehaviour
                             if(_inventory.GetSize() > 1) {
                                 cutSceneController.dialoguePts++;
                             }
+
+                            _inventory.Clear();
                         }
 
                         if(!gossipSearch && _adjacentNPC.name == "Sam") { //start cutscene
