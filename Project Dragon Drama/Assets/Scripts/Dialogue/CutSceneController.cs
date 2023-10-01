@@ -38,6 +38,8 @@ public class CutSceneController : MonoBehaviour
     //public CharacterControllerBase characterControllerBase;
     private CharacterControllerBase characterControllerBase;
 
+    public int dialoguePts;
+
 
     void Awake() {
         //Singleton check: if there exists an instance and it isn't this, delete this.
@@ -132,25 +134,38 @@ public class CutSceneController : MonoBehaviour
                         if(diagOptions.optionNum == 1) {
                             dialogueTextBox.text = cutsceneManager.cutscene7.GetOptionResponse(1);
                             changePortriat(cutsceneManager.cutscene7.portraitBank[pageIdx]);
+                            dialoguePts--; // goes down bad path
                         } else if(diagOptions.optionNum == 2) {
                             dialogueTextBox.text = cutsceneManager.cutscene7.GetOptionResponse(2);
                             changePortriat(cutsceneManager.cutscene7.portraitBank[pageIdx]);
+                            dialoguePts++; //illustrates hesitation
                         } else if(diagOptions.optionNum == 3) {
                             dialogueTextBox.text = cutsceneManager.cutscene7.GetOptionResponse(3);
                             changePortriat(cutsceneManager.cutscene7.portraitBank[pageIdx]);
                         }
                     } else if(diagCntrlIdx == 1) {
                         Cutscene7();
+
+                        if(diagOptions.optionNum == 1) {
+                            dialoguePts--; // doesn't hide it. Kinda owns up to it
+                        } else if(diagOptions.optionNum == 2) {
+                            dialoguePts++; // portrays innocence
+                        } else if(diagOptions.optionNum == 3) {
+                            dialoguePts--; // denies it
+                        }
                     } else if(diagCntrlIdx == 2) {
                         if(diagOptions.optionNum == 1) {
                             dialogueTextBox.text = cutsceneManager.cutscene7.GetOptionResponse2(1);
                             changePortriat(cutsceneManager.cutscene7.portraitBank[pageIdx]);
+                            dialoguePts--; // art of war
                         } else if(diagOptions.optionNum == 2) {
                             dialogueTextBox.text = cutsceneManager.cutscene7.GetOptionResponse2(2);
                             changePortriat(cutsceneManager.cutscene7.portraitBank[pageIdx]);
+                            dialoguePts++; // shows disinterest to group
                         } else if(diagOptions.optionNum == 3) {
                             dialogueTextBox.text = cutsceneManager.cutscene7.GetOptionResponse2(3);
                             changePortriat(cutsceneManager.cutscene7.portraitBank[pageIdx]);
+                            dialoguePts++; // shows disinterest to group
                         }
                     }
                     diagCntrlIdx++;
@@ -163,12 +178,15 @@ public class CutSceneController : MonoBehaviour
                         if(diagOptions.optionNum == 1) {
                             dialogueTextBox.text = cutsceneManager.cutscene9.GetOptionResponse(1);
                             changePortriat(cutsceneManager.cutscene9.portraitBank[pageIdx]);
+                            dialoguePts++; // shows disinterest to group
                         } else if(diagOptions.optionNum == 2) {
                             dialogueTextBox.text = cutsceneManager.cutscene9.GetOptionResponse(2);
                             changePortriat(cutsceneManager.cutscene9.portraitBank[pageIdx]);
+                            dialoguePts--; // wrong choice
                         } else if(diagOptions.optionNum == 3) {
                             dialogueTextBox.text = cutsceneManager.cutscene9.GetOptionResponse(3);
                             changePortriat(cutsceneManager.cutscene9.portraitBank[pageIdx]);
+                            dialoguePts-=5; // Sam will remember that
                         }
                     }
                     diagCntrlIdx++;
@@ -181,34 +199,43 @@ public class CutSceneController : MonoBehaviour
                         if(diagOptions.optionNum == 1) {
                             dialogueTextBox.text = cutsceneManager.cutscene10.GetOptionResponse(1);
                             changePortriat(cutsceneManager.cutscene10.portraitBank[pageIdx]);
+                            dialoguePts-=3; // a clinging to Ken are we
                         } else if(diagOptions.optionNum == 2) {
                             dialogueTextBox.text = cutsceneManager.cutscene10.GetOptionResponse(2);
                             changePortriat(cutsceneManager.cutscene10.portraitBank[pageIdx]);
+                            dialoguePts++; // right choice
                         } else if(diagOptions.optionNum == 3) {
                             dialogueTextBox.text = cutsceneManager.cutscene10.GetOptionResponse(3);
                             changePortriat(cutsceneManager.cutscene10.portraitBank[pageIdx]);
+                            dialoguePts++; // right choice
                         }
                     } else if(diagCntrlIdx == 1) {
                         if (diagOptions.optionNum == 1) {
                             dialogueTextBox.text = cutsceneManager.cutscene10.GetOptionResponse2(1);
                             changePortriat(cutsceneManager.cutscene10.portraitBank[pageIdx]);
+                            dialoguePts--; //meanie
                         } else if (diagOptions.optionNum == 2) {
                             dialogueTextBox.text = cutsceneManager.cutscene10.GetOptionResponse2(2);
                             changePortriat(cutsceneManager.cutscene10.portraitBank[pageIdx]);
+                            dialoguePts++; // right choice
                         } else if (diagOptions.optionNum == 3) {
                             dialogueTextBox.text = cutsceneManager.cutscene10.GetOptionResponse2(3);
                             changePortriat(cutsceneManager.cutscene10.portraitBank[pageIdx]);
+                            dialoguePts++; // weird choice. Maybe rand to decide
                         }
                     } else if(diagCntrlIdx == 2) {
                         if (diagOptions.optionNum == 1) {
                             dialogueTextBox.text = cutsceneManager.cutscene10.GetOptionResponse3(1);
                             changePortriat(cutsceneManager.cutscene10.portraitBank[pageIdx]);
+                            dialoguePts++; // right choice
                         } else if (diagOptions.optionNum == 2) {
                             dialogueTextBox.text = cutsceneManager.cutscene10.GetOptionResponse3(2);
                             changePortriat(cutsceneManager.cutscene10.portraitBank[pageIdx]);
+                            dialoguePts--; // dumb question
                         } else if (diagOptions.optionNum == 3) {
                             dialogueTextBox.text = cutsceneManager.cutscene10.GetOptionResponse3(3);
                             changePortriat(cutsceneManager.cutscene10.portraitBank[pageIdx]);
+                            dialoguePts--; // rude
                         }
                     }
                     diagCntrlIdx++;
@@ -224,9 +251,11 @@ public class CutSceneController : MonoBehaviour
                         } else if(diagOptions.optionNum == 2) {
                             dialogueTextBox.text = cutsceneManager.cutscene12.GetOptionResponse(2);
                             changePortriat(cutsceneManager.cutscene12.portraitBank[pageIdx]);
+                            dialoguePts++; // gush queen
                         } else if(diagOptions.optionNum == 3) {
                             dialogueTextBox.text = cutsceneManager.cutscene12.GetOptionResponse(3);
                             changePortriat(cutsceneManager.cutscene12.portraitBank[pageIdx]);
+                            dialoguePts--; // too blunt
                         }
                     } else if(diagCntrlIdx == 1) {
                         if (diagOptions.optionNum == 1) {
@@ -235,9 +264,11 @@ public class CutSceneController : MonoBehaviour
                         } else if (diagOptions.optionNum == 2) {
                             dialogueTextBox.text = cutsceneManager.cutscene12.GetOptionResponse2(2);
                             changePortriat(cutsceneManager.cutscene12.portraitBank[pageIdx]);
+                            dialoguePts-=2; // too blunt
                         } else if (diagOptions.optionNum == 3) {
                             dialogueTextBox.text = cutsceneManager.cutscene12.GetOptionResponse2(3);
                             changePortriat(cutsceneManager.cutscene12.portraitBank[pageIdx]);
+                            dialoguePts--; // risky arent we
                         }
                     }
                     diagCntrlIdx++;
