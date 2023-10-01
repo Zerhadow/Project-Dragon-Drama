@@ -17,7 +17,7 @@ public class CutSceneController : MonoBehaviour
     public int chapterIdx = 0;
     public int pageIdx = 0;
     private int diagCntrlIdx = 0;
-    public GameObject playerPFP, mg1PFP, mg2PFP, mg3PFP, friendPFP; // UI Images for each character
+    public GameObject playerPFP, mg1PFP, mg2PFP, mg3PFP, friendPFP, kenPFP; // UI Images for each character
     public bool cutsceneStart = false;
     // public CharacterControllerBase characterControllerBase;
     
@@ -364,36 +364,42 @@ public class CutSceneController : MonoBehaviour
             mg2PFP.SetActive(false);
             mg3PFP.SetActive(false);
             friendPFP.SetActive(false);
+            kenPFP.SetActive(false);
         } else if (idx == 1) { //mg1
             playerPFP.SetActive(false);
             mg1PFP.SetActive(true);
             mg2PFP.SetActive(false);
             mg3PFP.SetActive(false);
             friendPFP.SetActive(false);
+            kenPFP.SetActive(false);
         } else if(idx == 2) { //mg2
             playerPFP.SetActive(false);
             mg1PFP.SetActive(false);
             mg2PFP.SetActive(true);
             mg3PFP.SetActive(false);
             friendPFP.SetActive(false);
+            kenPFP.SetActive(false);
         } else if(idx == 3) { //mg3
             playerPFP.SetActive(false);
             mg1PFP.SetActive(false);
             mg2PFP.SetActive(false);
             mg3PFP.SetActive(true);
             friendPFP.SetActive(false);
+            kenPFP.SetActive(false);
         } else if(idx == 4) { //friend
             playerPFP.SetActive(false);
             mg1PFP.SetActive(false);
             mg2PFP.SetActive(false);
             mg3PFP.SetActive(false);
             friendPFP.SetActive(true);
+            kenPFP.SetActive(false);
         } else if(idx == 5) { //Ken
             playerPFP.SetActive(false);
             mg1PFP.SetActive(false);
             mg2PFP.SetActive(false);
             mg3PFP.SetActive(false);
             friendPFP.SetActive(false);
+            kenPFP.SetActive(true);
         } else {
             npcPotriat();
         }
@@ -405,6 +411,7 @@ public class CutSceneController : MonoBehaviour
         mg2PFP.SetActive(false);
         mg3PFP.SetActive(false);
         friendPFP.SetActive(false);
+        kenPFP.SetActive(false);
     }
 
     public void NPCtalk(NPCControllerBase npc) {
