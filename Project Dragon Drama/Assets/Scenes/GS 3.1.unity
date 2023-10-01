@@ -4972,7 +4972,7 @@ MonoBehaviour:
   continueTextBox: {fileID: 1627057808}
   pressETextBox: {fileID: 1985225823}
   nextCutsceneBtn: {fileID: 2082936106}
-  _tranController: {fileID: 0}
+  _tranController: {fileID: 555952103}
   dialogueOptions: {fileID: 849279331}
   diagOptions: {fileID: 0}
   skipButton: {fileID: 1335567465}
@@ -5925,7 +5925,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &169693394
 RectTransform:
   m_ObjectHideFlags: 0
@@ -17676,6 +17676,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 2448497508833761238, guid: 38391a33f3537024c8c598398f2844fd, type: 3}
   m_PrefabInstance: {fileID: 555952100}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &555952103 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8776190793663707004, guid: 38391a33f3537024c8c598398f2844fd, type: 3}
+  m_PrefabInstance: {fileID: 555952100}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd4b7277ae98e8547a0dc80e49ff563a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &557099733
 PrefabInstance:
   m_ObjectHideFlags: 0
