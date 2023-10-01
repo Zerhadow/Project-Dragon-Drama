@@ -163,7 +163,7 @@ GameObject:
   - component: {fileID: 6135786754913949655}
   - component: {fileID: 1210830285248229383}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: CrossFadeCanva
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
