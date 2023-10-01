@@ -91,8 +91,10 @@ public class CharacterControllerBase : MonoBehaviour
 
     private void  Start() {
         pressETextBox.SetActive(false);
-        dialogueTextBox.SetActive(false);
-        continueTextBox.SetActive(false);
+
+
+        cutSceneController.StartCutscene();
+        _state = PlayerState.Dialogue;
     }
 
     private void Update()
