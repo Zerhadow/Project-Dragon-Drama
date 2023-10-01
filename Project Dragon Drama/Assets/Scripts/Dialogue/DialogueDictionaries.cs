@@ -98,8 +98,11 @@ public class Narrator {
         
         #endregion
 
-        # region Cutscene 13
-        narratorDiagBank.Add(idx++, "The next day, you find Sam in the Library");
+        # region Cutscene Bad Ending
+        narratorDiagBank.Add(idx++, "Sam violently appears.");
+        narratorDiagBank.Add(idx++, "Sam takes Bailey away from Ken to talk to her.");
+        narratorDiagBank.Add(idx++, "Sam walks away to leave Bailey in peace.");
+        narratorDiagBank.Add(idx++, "What did she do? More importantly. What did you make her do?");
         #endregion
     }
 }
@@ -253,6 +256,16 @@ public class Player {
         playerDiagBank.Add(idx++, "Pancakes?");
         playerDiagBank.Add(idx++, "Ok sure, but it’ll be casual. No need to wear make up.");
         #endregion
+
+        # region Bad Ending
+        playerDiagBank.Add(idx++, "What? Uh- no.");
+        playerDiagBank.Add(idx++, "The Smaugs?");
+        playerDiagBank.Add(idx++, "What?");
+        playerDiagBank.Add(idx++, "I don’t understand.");
+        playerDiagBank.Add(idx++, "I- no.");
+        playerDiagBank.Add(idx++, "I don’t understand.");
+        playerDiagBank.Add(idx++, "What did you do?");
+        #endregion
     }
 }
 
@@ -359,6 +372,18 @@ public class Friend {
         friendDiagBank.Add(idx++, "You didn’t!");
         friendDiagBank.Add(idx++, "You homewrecker! I couldn’t be more proud of you!");
         friendDiagBank.Add(idx++, "Not at all!");
+        #endregion
+
+        # region Bad Ending
+        friendDiagBank.Add(idx++, "You guys finished yet?");
+        friendDiagBank.Add(idx++, "Too bad");
+        friendDiagBank.Add(idx++, "Thanks for taking care of them!");
+        friendDiagBank.Add(idx++, "Absolutely. I’ve been wanting them out of the picture for ages.");
+        friendDiagBank.Add(idx++, "You never had to do any of this did you? You were just following what I was telling you.");
+        friendDiagBank.Add(idx++, "You wanted to do all of those horrible things didn’t you?");
+        friendDiagBank.Add(idx++, "You were so easy to convince too!");
+        friendDiagBank.Add(idx++, "Bailey. I think the real question is. What did you do?");
+
         #endregion
     }
 }

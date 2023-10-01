@@ -251,10 +251,15 @@ public class CutSceneController : MonoBehaviour
                     Cutscene11();
                 } else if(chapterIdx == 11) {
                     Cutscene12();
-                } else if(chapterIdx == 12) {
-                    GoodEnding();
-                } else if(chapterIdx == 13) {
-                    BadEnding();
+                } 
+                
+                else if(chapterIdx == 12) {
+                    bool endingTest = false;
+                    if(endingTest) { // if score is higher than requirment
+                        GoodEnding();
+                    } else {
+                        BadEnding();
+                    }
                 }
             }
         }
