@@ -79,8 +79,6 @@ public class CharacterControllerBase : MonoBehaviour
         dialogueTextBox = GameObject.Find("DialogBar");
         continueTextBox = GameObject.Find("Continue");
         cutSceneController = GameObject.Find("Canvas").GetComponent<CutSceneController>();
-        dialogueTextBox.SetActive(false);
-        continueTextBox.SetActive(false);
         // Debug.Log("CharController: " + pressETextBox.name.ToString() + " is linked");
         // Debug.Log("CharController: " + dialogueTextBox.name.ToString() + " is linked");
         // Debug.Log("CharController: " + continueTextBox.name.ToString() + " is linked");
@@ -93,6 +91,8 @@ public class CharacterControllerBase : MonoBehaviour
 
     private void  Start() {
         pressETextBox.SetActive(false);
+        dialogueTextBox.SetActive(false);
+        continueTextBox.SetActive(false);
     }
 
     private void Update()
@@ -205,7 +205,7 @@ public class CharacterControllerBase : MonoBehaviour
                         continueTextBox.SetActive(false);
 
                         /*For Testing. Disable once implemented*/
-                        DebugColorUpdate(_adjacentNPC, Color.magenta);
+                        // DebugColorUpdate(_adjacentNPC, Color.magenta);
                         // Debug.Log(_adjacentNPC.name + " has stopped talking");
 
                         _state = PlayerState.Moving;
@@ -233,7 +233,7 @@ public class CharacterControllerBase : MonoBehaviour
                         continueTextBox.SetActive(false);
 
                         /*For Testing. Disable once implemented*/
-                        DebugColorUpdate(_adjacentNPC, Color.magenta);
+                        // DebugColorUpdate(_adjacentNPC, Color.magenta);
                         // Debug.Log(_adjacentNPC.name + " has stopped talking");
 
                         _state = PlayerState.Moving;

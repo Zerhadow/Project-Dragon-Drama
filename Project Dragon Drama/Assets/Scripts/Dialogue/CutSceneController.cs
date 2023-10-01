@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class CutSceneController : MonoBehaviour
 {
     //Singleton
-    public static CutSceneController Instance;
+    public static GameObject Instance;
 
     DialogueDictionaries dialogueDictionaries = new DialogueDictionaries();
     CutsceneManager cutsceneManager = new CutsceneManager();
@@ -43,14 +43,14 @@ public class CutSceneController : MonoBehaviour
 
     void Awake() {
         //Singleton check: if there exists an instance and it isn't this, delete this.
-        if ((Instance != null) && (Instance != this))
+        if ((Instance != null) && (Instance != this.gameObject))
         {
-            Destroy(this);
+            Destroy(this.gameObject);
             Debug.Log("CutSceneCtrlrController: There can be only one");
         }
         else
         {
-            Instance = this;
+            Instance = this.gameObject;
             DontDestroyOnLoad(Instance);
             Debug.Log("CutSceneCtrlrController: I am the one");
         }
@@ -98,12 +98,6 @@ public class CutSceneController : MonoBehaviour
         chapterIdx = 0;
         pageIdx = 0;
 
-        playerPFP.SetActive(false);
-        //continueTextBox.SetActive(false);
-        dialogueOptions.SetActive(false);
-        skipButton.SetActive(false);
-        nextCutsceneBtn.SetActive(false);
-
         diagOptions = this.GetComponent<DiagOptions>();
 
         skipButton.SetActive(true);
@@ -112,6 +106,15 @@ public class CutSceneController : MonoBehaviour
 
         //Current Cutscene Under Test:
         chapterIdx = 0;
+    }
+
+    private void Start()
+    {
+        playerPFP.SetActive(false);
+        //continueTextBox.SetActive(false);
+        dialogueOptions.SetActive(false);
+        skipButton.SetActive(false);
+        nextCutsceneBtn.SetActive(false);
     }
 
     // Update is called once per frame
