@@ -9379,6 +9379,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Regina G
       objectReference: {fileID: 0}
+    - target: {fileID: 6628751063905248279, guid: 0d6a127b1cb4b7644971bcde74e491c8, type: 3}
+      propertyPath: gossipText
+      value: Ugh, don't wear sweatpants more than once a week
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -12260,6 +12264,10 @@ PrefabInstance:
     - target: {fileID: 5610758805107239361, guid: 0d94a69056c86f344ac58d92c342888a, type: 3}
       propertyPath: m_Name
       value: Chewy
+      objectReference: {fileID: 0}
+    - target: {fileID: 6628751063905248279, guid: 0d94a69056c86f344ac58d92c342888a, type: 3}
+      propertyPath: _givesKeyGossip
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -17601,6 +17609,75 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 98e84ffc1d39c314a941cc381af5de85, type: 3}
+--- !u!1001 &557881524
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1791335064}
+    m_Modifications:
+    - target: {fileID: 1074152602508093232, guid: 0d6a127b1cb4b7644971bcde74e491c8, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -96.59071
+      objectReference: {fileID: 0}
+    - target: {fileID: 1074152602508093232, guid: 0d6a127b1cb4b7644971bcde74e491c8, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 56.374863
+      objectReference: {fileID: 0}
+    - target: {fileID: 1074152602508093232, guid: 0d6a127b1cb4b7644971bcde74e491c8, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -57.587044
+      objectReference: {fileID: 0}
+    - target: {fileID: 1074152602508093232, guid: 0d6a127b1cb4b7644971bcde74e491c8, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.41596344
+      objectReference: {fileID: 0}
+    - target: {fileID: 1074152602508093232, guid: 0d6a127b1cb4b7644971bcde74e491c8, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1074152602508093232, guid: 0d6a127b1cb4b7644971bcde74e491c8, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.9093814
+      objectReference: {fileID: 0}
+    - target: {fileID: 1074152602508093232, guid: 0d6a127b1cb4b7644971bcde74e491c8, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1074152602508093232, guid: 0d6a127b1cb4b7644971bcde74e491c8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1074152602508093232, guid: 0d6a127b1cb4b7644971bcde74e491c8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 130.84
+      objectReference: {fileID: 0}
+    - target: {fileID: 1074152602508093232, guid: 0d6a127b1cb4b7644971bcde74e491c8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4715997203187407386, guid: 0d6a127b1cb4b7644971bcde74e491c8, type: 3}
+      propertyPath: m_text
+      value: Steven
+      objectReference: {fileID: 0}
+    - target: {fileID: 5610758805107239361, guid: 0d6a127b1cb4b7644971bcde74e491c8, type: 3}
+      propertyPath: m_Name
+      value: Steven
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 9100056136652684876, guid: 0d6a127b1cb4b7644971bcde74e491c8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
+  m_SourcePrefab: {fileID: 100100000, guid: 0d6a127b1cb4b7644971bcde74e491c8, type: 3}
+--- !u!4 &557881525 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1074152602508093232, guid: 0d6a127b1cb4b7644971bcde74e491c8, type: 3}
+  m_PrefabInstance: {fileID: 557881524}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &559759049
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -36095,6 +36172,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TheRat
       objectReference: {fileID: 0}
+    - target: {fileID: 6628751063905248279, guid: 91ff3fc48a218054d905a4fb766d51c2, type: 3}
+      propertyPath: gossipText
+      value: I make all of da rulez
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -42171,6 +42252,10 @@ PrefabInstance:
     - target: {fileID: 5610758805107239361, guid: 91ff3fc48a218054d905a4fb766d51c2, type: 3}
       propertyPath: m_Name
       value: Gretchen W
+      objectReference: {fileID: 0}
+    - target: {fileID: 6628751063905248279, guid: 91ff3fc48a218054d905a4fb766d51c2, type: 3}
+      propertyPath: gossipText
+      value: Do you think Regina's mad at me?
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -53932,6 +54017,7 @@ Transform:
   - {fileID: 1407952135}
   - {fileID: 1983546233}
   - {fileID: 1633468522}
+  - {fileID: 557881525}
   - {fileID: 1074152601969347005}
   - {fileID: 1628903122}
   - {fileID: 1715716453}
@@ -59786,6 +59872,14 @@ PrefabInstance:
     - target: {fileID: 5610758805107239361, guid: c9953d46ce49e6b4580e9677deeb9918, type: 3}
       propertyPath: m_Name
       value: Janis Ian
+      objectReference: {fileID: 0}
+    - target: {fileID: 6628751063905248279, guid: c9953d46ce49e6b4580e9677deeb9918, type: 3}
+      propertyPath: gossipText
+      value: Wanna Watch me put my whole fist in my mouth?
+      objectReference: {fileID: 0}
+    - target: {fileID: 6628751063905248279, guid: c9953d46ce49e6b4580e9677deeb9918, type: 3}
+      propertyPath: _givesKeyGossip
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -66725,8 +66819,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Chuck
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: f802b1deb5d70df459bdf918cfb715e5, type: 2}
+  m_sharedMaterial: {fileID: -7562909620605391470, guid: f802b1deb5d70df459bdf918cfb715e5, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -67230,7 +67324,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  - {fileID: -7562909620605391470, guid: f802b1deb5d70df459bdf918cfb715e5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -67550,7 +67644,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _npc: {fileID: 5610758803502942028}
   _givesKeyGossip: 1
-  gossipText: This is a test gossip text
+  gossipText: WASSSSSSSSUUUUUUPPPPPPPP
 --- !u!114 &6628751064017631313
 MonoBehaviour:
   m_ObjectHideFlags: 0
