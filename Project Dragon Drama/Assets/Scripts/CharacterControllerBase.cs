@@ -61,13 +61,13 @@ public class CharacterControllerBase : MonoBehaviour
         if ((Instance != null) && (Instance != this))
         {
             Destroy(this);
-            Debug.Log("CharController: There can be only one");
+            //Debug.Log("CharController: There can be only one");
         }
         else
         {
             Instance = this;
             DontDestroyOnLoad(Instance);
-            Debug.Log("CharController: I am the one");
+            //Debug.Log("CharController: I am the one");
         }
 
         //Find and set object references
@@ -139,8 +139,15 @@ public class CharacterControllerBase : MonoBehaviour
                     }
                     else if ((Input.GetKeyDown(KeyCode.E)) && (_adjacentNPC != null)) //Talk to NPC, GoTo NPCTalk
                     {
+                        if((_adjacentNPC.name == "Sam") && _inventory.GetSize() > 0)
+                        {
+                            cutSceneController.TriggerNextCutscene();
+                        }
+
                         if(!gossipSearch && _adjacentNPC.name == "Sam") { //start cutscene
                             // Open dialogue popup tied to adjacentNPC
+                            
+                            /* ---Deprecated---
                             if(_inventory.GetSize() > 0) {
                                 playerPoints++;
                             } else {
@@ -148,14 +155,14 @@ public class CharacterControllerBase : MonoBehaviour
                             }
 
                             Debug.Log("Points: " + playerPoints);
+                            */
 
                             cutSceneController.StartCutscene();
 
                             _state = PlayerState.Dialogue;
                         } else if(gossipSearch && _adjacentNPC.name == "Key") {
                             Debug.Log("Found Key");
-                        } 
-                        
+                        }
                         else {
                             npcObj = _adjacentNPC.transform.Find("Talk Range").gameObject.GetComponent<NPCControllerBase>();
                             // Open dialogue popup tied to adjacentNPC;
