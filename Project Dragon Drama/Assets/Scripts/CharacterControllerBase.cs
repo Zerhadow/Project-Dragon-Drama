@@ -93,7 +93,7 @@ public class CharacterControllerBase : MonoBehaviour
         pressETextBox.SetActive(false);
 
 
-        cutSceneController.StartCutscene();
+        //cutSceneController.StartCutscene();
         _state = PlayerState.Dialogue;
     }
 
@@ -144,6 +144,9 @@ public class CharacterControllerBase : MonoBehaviour
                         if((_adjacentNPC.name == "Sam") && _inventory.GetSize() > 0)
                         {
                             cutSceneController.TriggerNextCutscene();
+                            
+                            //after you add points
+                            _inventory.Clear();
                         }
 
                         if(!gossipSearch && _adjacentNPC.name == "Sam") { //start cutscene
@@ -233,6 +236,13 @@ public class CharacterControllerBase : MonoBehaviour
                         // Close dialogue popup
                         dialogueTextBox.SetActive(false);
                         continueTextBox.SetActive(false);
+                        
+                        if ((cutSceneController.chapterIdx == 3) || (cutSceneController.chapterIdx == 9))
+                        {
+                            cutSceneController.TriggerNextCutscene();
+                            cutSceneController._tranController.LoadNextLevel();
+                        }
+                        
 
                         /*For Testing. Disable once implemented*/
                         // DebugColorUpdate(_adjacentNPC, Color.magenta);
