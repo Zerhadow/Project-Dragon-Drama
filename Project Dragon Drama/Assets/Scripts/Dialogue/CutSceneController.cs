@@ -39,6 +39,7 @@ public class CutSceneController : MonoBehaviour
     private CharacterControllerBase characterControllerBase;
 
     public int dialoguePts;
+    private int winNum = -5;
 
 
     void Awake() {
@@ -306,8 +307,7 @@ public class CutSceneController : MonoBehaviour
                 } 
                 
                 else if(chapterIdx == 12) {
-                    bool endingTest = false;
-                    if(endingTest) { // if score is higher than requirment
+                    if(dialoguePts >= winNum) { // if score is higher than requirment
                         GoodEnding();
                     } else {
                         BadEnding();
@@ -448,10 +448,14 @@ public class CutSceneController : MonoBehaviour
             LoadCutscene11();
         } else if(chapterIdx == 11) {
             LoadCutscene12();
-        } else if(chapterIdx == 12) {
-            LoadGoodEnding();
-        } else if(chapterIdx == 13) {
-            LoadBadEnding();
+        } 
+        
+        else if(chapterIdx == 12) {
+            if(dialoguePts >= winNum) {
+                LoadGoodEnding();
+            } else {
+                LoadBadEnding();
+            }
         }
 
         //load next scene in build index
@@ -779,8 +783,9 @@ public class CutSceneController : MonoBehaviour
             skipButton.SetActive(false);
             pageIdx = 0;
             chapterIdx++;
-            cutsceneStart = false;
-            characterControllerBase.gossipSearch = false;
+            // cutsceneStart = false;
+            // characterControllerBase.gossipSearch = false;
+            //call corresponding ending
         } else if(pageIdx == diagOptIdx8) { //hard coding when the dialogue option is supposed to start
             diagOptIdx8 = -1;
             holdCutscene = true;
@@ -813,13 +818,8 @@ public class CutSceneController : MonoBehaviour
     private void GoodEnding() {
         if(pageIdx == cutsceneManager.goodEnding.diagBank.Count) {
             Debug.Log("End of Cutscene");
-            characterControllerBase.endofDialogue = true;
-            // continueTextBox.SetActive(true);
-            skipButton.SetActive(false);
-            pageIdx = 0;
-            chapterIdx++;
-            cutsceneStart = false;
-            characterControllerBase.gossipSearch = false;
+            // find scene called win screen
+            SceneManager.LoadScene("Win Screen");
         } else {
             skipButton.SetActive(true);
             changePortriat(cutsceneManager.goodEnding.portraitBank[pageIdx]);
@@ -837,13 +837,8 @@ public class CutSceneController : MonoBehaviour
     private void BadEnding() {
         if(pageIdx == cutsceneManager.badEnding.diagBank.Count) {
             Debug.Log("End of Cutscene");
-            characterControllerBase.endofDialogue = true;
-            // continueTextBox.SetActive(true);
-            skipButton.SetActive(false);
-            pageIdx = 0;
-            chapterIdx++;
-            cutsceneStart = false;
-            characterControllerBase.gossipSearch = false;
+            // find scene called lose screen
+            SceneManager.LoadScene("Lose Screen");
         } else {
             skipButton.SetActive(true);
             changePortriat(cutsceneManager.badEnding.portraitBank[pageIdx]);

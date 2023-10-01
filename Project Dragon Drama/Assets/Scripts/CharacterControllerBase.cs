@@ -51,7 +51,7 @@ public class CharacterControllerBase : MonoBehaviour
 
     public NPCControllerBase npcObj;
 
-    private int playerPoints = 1;
+    public int playerPoints = 1;
     public int pageIdx = 0;
     // set an if statement to know if its the last chapter to check player points
 
@@ -91,8 +91,9 @@ public class CharacterControllerBase : MonoBehaviour
 
     private void  Start() {
         pressETextBox.SetActive(false);
-        dialogueTextBox.SetActive(false);
-        continueTextBox.SetActive(false);
+
+        cutSceneController.StartCutscene();
+        _state = PlayerState.Dialogue;
     }
 
     private void Update()
@@ -142,6 +143,9 @@ public class CharacterControllerBase : MonoBehaviour
                         if((_adjacentNPC.name == "Sam") && _inventory.GetSize() > 0)
                         {
                             cutSceneController.TriggerNextCutscene();
+                            if(_inventory.GetSize() > 1) {
+                                cutSceneController.dialoguePts++;
+                            }
                         }
 
                         if(!gossipSearch && _adjacentNPC.name == "Sam") { //start cutscene
