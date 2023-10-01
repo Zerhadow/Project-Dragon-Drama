@@ -281,7 +281,7 @@ public class Friend {
         friendDiagBank.Add(idx++, "You’re weird.");
         friendDiagBank.Add(idx++, "Name’s Sam by the way.");
         friendDiagBank.Add(idx++, "So you got a name Newbie?");
-        friendDiagBank.Add(idx++, "Well Baily, what class do you have next?");
+        friendDiagBank.Add(idx++, "Well Bailey, what class do you have next?");
         friendDiagBank.Add(idx++, "Oh! I know exactly where that is!");
         friendDiagBank.Add(idx++, "That one should be at the end of the hall on the left.");
         friendDiagBank.Add(idx++, "Oh! Those are the Smaugs.");
