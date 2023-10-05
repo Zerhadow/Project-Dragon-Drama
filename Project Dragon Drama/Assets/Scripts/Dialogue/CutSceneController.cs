@@ -6,8 +6,10 @@ using UnityEngine.SceneManagement;
 
 public class CutSceneController : MonoBehaviour
 {
+    /*
     //Singleton
     public static GameObject Instance;
+    */
 
     DialogueDictionaries dialogueDictionaries = new DialogueDictionaries();
     CutsceneManager cutsceneManager = new CutsceneManager();
@@ -45,6 +47,7 @@ public class CutSceneController : MonoBehaviour
 
 
     void Awake() {
+        /*
         //Singleton check: if there exists an instance and it isn't this, delete this.
         if ((Instance != null) && (Instance != this.gameObject))
         {
@@ -57,6 +60,7 @@ public class CutSceneController : MonoBehaviour
             DontDestroyOnLoad(Instance);
             Debug.Log("CutSceneCtrlrController: I am the one");
         }
+        */
 
         //find CharacterControllerBase in scene
         characterControllerBase = GameObject.Find("CharacterController").GetComponent<CharacterControllerBase>();
@@ -99,13 +103,12 @@ public class CutSceneController : MonoBehaviour
         cutsceneManager.badEnding.fillBank(dialogueDictionaries);
 
         // chapterIdx = 0;
-        // pageIdx = 0;
+        pageIdx = 0;
 
         diagOptions = this.GetComponent<DiagOptions>();
 
         skipButton.SetActive(true);
-        changePortriat(cutsceneManager.cutscene1.portraitBank[pageIdx]);
-        dialogueTextBox.text = cutsceneManager.cutscene1.diagBank[pageIdx];
+
 
         //Current Cutscene Under Test:
         // chapterIdx = 0;
@@ -118,19 +121,32 @@ public class CutSceneController : MonoBehaviour
         dialogueOptions.SetActive(false);
         skipButton.SetActive(false);
         nextCutsceneBtn.SetActive(false);
+        pressETextBox.SetActive(false);
 
         StartCutscene();
         if (chapterIdx == 0)
         {
             Cutscene1();
+            changePortriat(cutsceneManager.cutscene1.portraitBank[pageIdx]);
+            dialogueTextBox.text = cutsceneManager.cutscene1.diagBank[pageIdx];
         }
-        else if (chapterIdx == 4)
+        else if (chapterIdx == 3)
         {
-            Cutscene4();
+            Cutscene3();
+            changePortriat(cutsceneManager.cutscene4.portraitBank[0]);
+            dialogueTextBox.text = cutsceneManager.cutscene4.diagBank[0];
         }
-        if (chapterIdx == 10)
+        else if (chapterIdx == 6)
+        {
+            Cutscene6();
+            changePortriat(cutsceneManager.cutscene7.portraitBank[0]);
+            dialogueTextBox.text = cutsceneManager.cutscene7.diagBank[0];
+        }
+        else if (chapterIdx == 10)
         {
             Cutscene10();
+            changePortriat(cutsceneManager.cutscene11.portraitBank[0]);
+            dialogueTextBox.text = cutsceneManager.cutscene11.diagBank[0];
         }
     }
 
@@ -433,16 +449,26 @@ public class CutSceneController : MonoBehaviour
         characterControllerBase.endofDialogue = true;
         pageIdx = 0;
         chapterIdx++;
-        characterControllerBase.gossipSearch = true;
-        characterControllerBase._state = PlayerState.Moving;
-        if ((chapterIdx == 3) || (chapterIdx == 10))
+
+        //set next cutscene character
+        characterControllerBase.SetCutsceneNPC(chapterIdx);
+
+        if (chapterIdx == 4)
+            characterControllerBase.gossipSearch = true;
+        if ((chapterIdx == 3) || (chapterIdx == 6) || (chapterIdx == 10))
         {
-            TriggerNextCutscene();
             _tranController.LoadNextLevel();
+            TriggerNextCutscene();
         }
+        else
+        {
+            characterControllerBase._objectives.EnableObjectives();
+            characterControllerBase._state = PlayerState.Moving;
+        }        
     }
 
     public void StartCutscene() {
+        pageIdx = 0;
         pressETextBox.SetActive(false);
         dialogueTextObj.SetActive(true);
         cutsceneStart = true;
@@ -500,7 +526,7 @@ public class CutSceneController : MonoBehaviour
             skipButton.SetActive(false);
             chapterIdx++; 
             cutsceneStart = false;
-            characterControllerBase.gossipSearch = true; // allow player to talk with other NPCs
+            //characterControllerBase.gossipSearch = true; // allow player to talk with other NPCs
         } else { // each E press will go to the next index of the cutscene dialogue bank
             skipButton.SetActive(true);
             changePortriat(cutsceneManager.cutscene1.portraitBank[pageIdx]);
@@ -524,7 +550,7 @@ public class CutSceneController : MonoBehaviour
             pageIdx = 0;
             chapterIdx++;
             cutsceneStart = false;
-            characterControllerBase.gossipSearch = true;
+            //characterControllerBase.gossipSearch = true;
         } else {
             skipButton.SetActive(true);
             changePortriat(cutsceneManager.cutscene2.portraitBank[pageIdx]);
@@ -548,7 +574,7 @@ public class CutSceneController : MonoBehaviour
             pageIdx = 0;
             chapterIdx++;
             cutsceneStart = false;
-            characterControllerBase.gossipSearch = true;
+            //characterControllerBase.gossipSearch = true;
         } else {
             skipButton.SetActive(true);
             changePortriat(cutsceneManager.cutscene3.portraitBank[pageIdx]);
@@ -595,7 +621,7 @@ public class CutSceneController : MonoBehaviour
             pageIdx = 0;
             chapterIdx++;
             cutsceneStart = false;
-            characterControllerBase.gossipSearch = true;
+            //characterControllerBase.gossipSearch = true;
         } else {
             skipButton.SetActive(true);
             changePortriat(cutsceneManager.cutscene5.portraitBank[pageIdx]);
@@ -619,7 +645,7 @@ public class CutSceneController : MonoBehaviour
             pageIdx = 0;
             chapterIdx++;
             cutsceneStart = false;
-            characterControllerBase.gossipSearch = true;
+            //characterControllerBase.gossipSearch = true;
         } else {
             skipButton.SetActive(true);
             changePortriat(cutsceneManager.cutscene6.portraitBank[pageIdx]);
@@ -643,7 +669,7 @@ public class CutSceneController : MonoBehaviour
             pageIdx = 0;
             chapterIdx++;
             cutsceneStart = false;
-            characterControllerBase.gossipSearch = true;
+            //characterControllerBase.gossipSearch = true;
         } else if(pageIdx == diagOptIdx1) { //hard coding when the dialogue option is supposed to start
             diagOptIdx1 = -1;
             holdCutscene = true;
@@ -688,7 +714,7 @@ public class CutSceneController : MonoBehaviour
             pageIdx = 0;
             chapterIdx++;
             cutsceneStart = false;
-            characterControllerBase.gossipSearch = true;
+            //characterControllerBase.gossipSearch = true;
         } else {
             skipButton.SetActive(true);
             changePortriat(cutsceneManager.cutscene8.portraitBank[pageIdx]);
@@ -712,7 +738,7 @@ public class CutSceneController : MonoBehaviour
             pageIdx = 0;
             chapterIdx++;
             cutsceneStart = false;
-            characterControllerBase.gossipSearch = true;
+            //characterControllerBase.gossipSearch = true;
         } else if(pageIdx == diagOptIdx4) { //hard coding when the dialogue option is supposed to start
             diagOptIdx4 = -1;
             holdCutscene = true;
@@ -743,7 +769,7 @@ public class CutSceneController : MonoBehaviour
             pageIdx = 0;
             chapterIdx++;
             cutsceneStart = false;
-            characterControllerBase.gossipSearch = true;
+            //characterControllerBase.gossipSearch = true;
         } else if(pageIdx == diagOptIdx5) { //hard coding when the dialogue option is supposed to start
             diagOptIdx5 = -1;
             holdCutscene = true;
@@ -788,7 +814,7 @@ public class CutSceneController : MonoBehaviour
             pageIdx = 0;
             chapterIdx++;
             cutsceneStart = false;
-            characterControllerBase.gossipSearch = false;
+            //characterControllerBase.gossipSearch = false;
         } else {
             skipButton.SetActive(true);
             changePortriat(cutsceneManager.cutscene11.portraitBank[pageIdx]);
