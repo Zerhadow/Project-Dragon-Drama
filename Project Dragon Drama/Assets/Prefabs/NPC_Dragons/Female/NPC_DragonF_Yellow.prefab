@@ -256,7 +256,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7679282991259738774}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -558,6 +558,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -5313698120735155401, guid: 86a46236234cb684e8236ee7b96de339, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 86d74e212fb153c4984ac51d3a34176e, type: 2}
     - target: {fileID: -5030252598152738825, guid: 86a46236234cb684e8236ee7b96de339, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -571,6 +575,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2100000, guid: 86d74e212fb153c4984ac51d3a34176e, type: 2}
     - target: {fileID: 6486312564829927682, guid: 86a46236234cb684e8236ee7b96de339, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 86d74e212fb153c4984ac51d3a34176e, type: 2}
+    - target: {fileID: 6835558816887061742, guid: 86a46236234cb684e8236ee7b96de339, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 86d74e212fb153c4984ac51d3a34176e, type: 2}
