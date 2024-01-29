@@ -30,20 +30,30 @@ public class WordToJSONConverter1 : MonoBehaviour
     }
     
     public string inputFilePath;
+    List<string> fileLines = new List<string>();
+
     
     void Awake() {
         if (inputFilePath != null) {
-            StreamReader reader = new StreamReader(inputFilePath);
-            Debug.Log(reader.ReadToEnd());
-            reader.Close();
-            // ConvertToJSON(inputFilePath);
+            ReadFile(); //results in a filled fileLines list
         } else {
             Debug.LogError("No input file path specified");
         }
+
+        // interpret fileLines list
     }
 
     public void ReadFile() {
-
+        StreamReader reader = new StreamReader(inputFilePath);
+        string line;
+        while ((line = reader.ReadLine()) != null) {
+            fileLines.Add(line);
+        }
+        // print fileLines
+        foreach (string fileLine in fileLines) {
+            Debug.Log(fileLine);
+        }
+        reader.Close();
     }
 
     public static void ConvertToJSON(string inputFilePath) {
