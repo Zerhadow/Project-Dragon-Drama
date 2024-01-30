@@ -20,6 +20,7 @@ public class ImportFile : MonoBehaviour
     
     public string inputFilePath; // may turn into list of file paths
     List<string> fileLines = new List<string>();
+    public List<DialogueEntry> dialogueNodes = new List<DialogueEntry>();
     
     void Awake() {
         //may make foreach for each file path
@@ -30,7 +31,8 @@ public class ImportFile : MonoBehaviour
         }
 
         // interpret fileLines list
-        InterpretList(fileLines);
+        CreateNode(fileLines);
+        // InterpretList(fileLines);
     }
 
     public void ReadFile() {
@@ -50,6 +52,7 @@ public class ImportFile : MonoBehaviour
         List<DialogueEntry> dialogueEntries = new List<DialogueEntry>();
 
         DialogueEntry currentEntry = null;
+        DialogueOption currentOption = null;
 
         for(int i = 0; i < fileLines.Count; i++) {
             string fileLine = fileLines[i];
@@ -78,21 +81,29 @@ public class ImportFile : MonoBehaviour
             }
 
             if(fileLine.StartsWith("1 ->") || fileLine.StartsWith("2 ->") || fileLine.StartsWith("3 ->")) {
-                currentEntry.options.Add(new DialogueOption {
+                // start of a new option
+
+                if(currentOption != null) { currentEntry.options.Add(currentOption); } // errors
+                
+                currentOption = new DialogueOption {
                     identifier = fileLine.Substring(0, 1),
                     text = fileLine.Substring(4).Trim(),
                     responses = new List<DialogueEntry>()
-                });
+                };
 
                 continue;
             }
 
             if(fileLine.StartsWith("Option")) {
-                // start new entry
+                // start new entry based off the response
                 DialogueEntry responseEntry = new DialogueEntry {
                     speaker = fileLine.Trim().Trim(':'),
                     text = fileLines[++i],
                 };
+
+                currentOption.responses.Add(responseEntry);
+            } else if (currentOption != null) {
+                // continue adding lines to the current response
                 
             }
 
@@ -102,5 +113,50 @@ public class ImportFile : MonoBehaviour
                 return;
             }
         }
+
+        // Add the last entry and option
+        
+    }
+
+    public void CreateNode(List<string> fileLines) {
+
+        DialogueEntry currentEntry = null;
+
+        for(int i = 0; i < fileLines.Count; i++) {
+            string fileLine = fileLines[i]; //reads current line
+
+            if(string.IsNullOrEmpty(fileLine)) { // ignores whitespace between words
+                continue;
+            }
+
+            if (fileLine.Trim().EndsWith(':')) // if the line ends with a colon, it's a speaker
+            {
+                // Start of a new dialogue entry
+                if (currentEntry != null)
+                {
+                    dialogueNodes.Add(currentEntry);
+                }
+
+                currentEntry = new DialogueEntry
+                {
+                    speaker = fileLine.Trim().Trim(':'),
+                };
+
+                continue;
+            } else {
+                currentEntry.text += fileLine.Trim() + " ";
+            }
+
+            // print each dialogue entry
+            // Debug.Log(currentEntry.speaker + ": " + currentEntry.text);
+        }
+
+        // Add last entry
+        if (currentEntry != null)
+        {
+            dialogueNodes.Add(currentEntry);
+        }
+
+        Debug.Log(dialogueNodes.Count);
     }
 }

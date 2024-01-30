@@ -1,7 +1,8 @@
 Player: 
 Hi, is this hunters guild? 
 NPC: 
-Yes! How can I help you today? 
+Yes! How can I help you today?
+Start Branch 
 Player: 
 1 -> Ask about the quest 
 2 -> Inquire about the town 
@@ -15,3 +16,7 @@ Player:
 Tell me more about the town 
 NPC: 
 (talks about town)
+End of Branch
+Player: 
+Cool
+
