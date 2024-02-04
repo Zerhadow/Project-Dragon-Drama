@@ -1,46 +1,36 @@
-// using UnityEngine;
-// using System.IO;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using TMPro;
+using static ImportFile;
 
-// public class DialogueManager : MonoBehaviour
-// {
-//     public TextAsset dialogueJson; // Reference to your JSON file
+public class DialogueManager : MonoBehaviour
+{    
+    public ImportFile importFile;
+    public TMP_Text nameBoxTxt;
+    public TMP_Text bodyTxt;
+    private int currIdx = 0;
 
-//     private void Start()
-//     {
-//         if (dialogueJson != null)
-//         {
-//             // Get the path to a temporary file for storing the converted JSON
-//             string tempFilePath = Path.Combine(Application.persistentDataPath, "temp.json");
+    // Start is called before the first frame update
+    void Start()
+    {
+        List<DialogueEntry> dialogueNodes = importFile.dialogueNodes;
 
-//             // Convert the text file to JSON
-//             WordToJSONConverter.ConvertToJSON(dialogueJson.text, tempFilePath);
+        DialogueEntry node = dialogueNodes[currIdx];
+        nameBoxTxt.text = node.speaker;
+        bodyTxt.text = node.text;
+        currIdx++;
+    }
 
-//             // Read the JSON file and parse the dialogue            
-//             string jsonText = dialogueJson.text;
-//             DialogueData dialogueData = JsonUtility.FromJson<DialogueData>(jsonText);
+    public void ReadNextNode() {
+        List<DialogueEntry> dialogueNodes = importFile.dialogueNodes;
 
-//             // Now you can access the dialogueData object to get your character dialogue
-//             foreach (var dialogueEntry in dialogueData.dialogue)
-//             {
-//                 Debug.Log($"{dialogueEntry.character}: {dialogueEntry.text}");
-//             }
-//         }
-//         else
-//         {
-//             Debug.LogError("No dialogue JSON file assigned!");
-//         }
-//     }
-// }
+        if(dialogueNodes[currIdx] != null && currIdx >= 0 && currIdx < dialogueNodes.Count) {
+            DialogueEntry node = dialogueNodes[currIdx];
+            nameBoxTxt.text = node.speaker;
+            bodyTxt.text = node.text;
 
-// [System.Serializable]
-// public class DialogueData
-// {
-//     public DialogueEntry[] dialogue;
-// }
-
-// [System.Serializable]
-// public class DialogueEntry
-// {
-//     public string character;
-//     public string text;
-// }
+            currIdx++;
+        }
+    }
+}

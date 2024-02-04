@@ -159,4 +159,81 @@ public class ImportFile : MonoBehaviour
 
         Debug.Log(dialogueNodes.Count);
     }
+
+    public void ReadList(List<string> fileLines) {
+
+        DialogueEntry currentEntry = null;
+
+        for(int i = 0; i < fileLines.Count; i++) {
+            string fileLine = fileLines[i]; //reads current line
+
+            if(string.IsNullOrEmpty(fileLine)) { // ignores whitespace between words
+                continue;
+            }
+
+            if (fileLine.Trim().EndsWith(':')) // if the line ends with a colon, it's a speaker
+            {
+                // Start of a new dialogue entry
+                if (currentEntry != null)
+                {
+                    dialogueNodes.Add(currentEntry);
+                }
+
+                currentEntry = new DialogueEntry
+                {
+                    speaker = fileLine.Trim().Trim(':'),
+                };
+
+                continue;
+            } else if(fileLine.Trim().StartsWith("Start Branch")) { //starts branch procedures
+                
+            } 
+            
+            else {
+                currentEntry.text += fileLine.Trim() + " ";
+            }
+
+            // print each dialogue entry
+            // Debug.Log(currentEntry.speaker + ": " + currentEntry.text);
+        }
+
+        // Add last entry
+        if (currentEntry != null)
+        {
+            dialogueNodes.Add(currentEntry);
+        }
+
+        Debug.Log(dialogueNodes.Count);
+    }
+
+    public void CreateResponse(List<string> fileLines, int listIdxStart, int listIdxEnd) {
+        DialogueEntry currentEntry = null;
+        DialogueOption currentOption = null;
+
+        for(int i = listIdxStart; i < fileLines.Count; i++) {
+            string fileLine = fileLines[i];
+        
+            if(fileLine.StartsWith("1 ->") || fileLine.StartsWith("2 ->") || fileLine.StartsWith("3 ->")) { // start of a new option
+
+                if(currentOption != null) { currentEntry.options.Add(currentOption); }
+                
+                currentOption = new DialogueOption {
+                    identifier = fileLine.Substring(0, 1),
+                    text = fileLine.Substring(4).Trim(),
+                    responses = new List<DialogueEntry>()
+                };
+
+                continue;
+            }
+
+            // if(fileLine.StartsWith("Option")) {
+            //     // start new entry based off the response
+            //     DialogueEntry responseEntry = new DialogueEntry {
+            //         speaker = fileLine.Trim().Trim(':'),
+            //         text = fileLines[++i],
+            //     };
+            //     currentOption.responses.Add(responseEntry);
+            // }
+        }
+    }
 }
