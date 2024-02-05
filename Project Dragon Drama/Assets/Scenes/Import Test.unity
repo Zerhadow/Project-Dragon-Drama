@@ -404,6 +404,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inputFilePath: Assets/Narrative/Example Script Type 2 Base.txt
+  dialogueNodes: []
 --- !u!1 &843700265
 GameObject:
   m_ObjectHideFlags: 0

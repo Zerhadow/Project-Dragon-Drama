@@ -5,12 +5,14 @@ using UnityEngine;
 
 public class ImportFile : MonoBehaviour
 {
+    [System.Serializable]
     public class DialogueEntry {
         public string speaker;
         public string text;
         public List<DialogueOption> options;
     }
 
+    [System.Serializable]
     public class DialogueOption
     {
         public string identifier;
@@ -20,7 +22,7 @@ public class ImportFile : MonoBehaviour
     
     public string inputFilePath; // may turn into list of file paths
     List<string> fileLines = new List<string>();
-    public List<DialogueEntry> dialogueNodes = new List<DialogueEntry>();
+    [SerializeField] public List<DialogueEntry> dialogueNodes = new List<DialogueEntry>();
     
     void Awake() {
         //may make foreach for each file path
