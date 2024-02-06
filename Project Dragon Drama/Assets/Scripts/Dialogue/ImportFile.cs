@@ -159,7 +159,7 @@ public class ImportFile : MonoBehaviour
             dialogueNodes.Add(currentEntry);
         }
 
-        Debug.Log(dialogueNodes.Count);
+        // Debug.Log(dialogueNodes.Count);
     }
 
     public void ReadList(List<string> fileLines) {

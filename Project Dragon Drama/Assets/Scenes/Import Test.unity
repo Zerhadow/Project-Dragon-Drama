@@ -525,9 +525,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 929532001}
-        m_TargetAssemblyTypeName: DialogueManager2, Assembly-CSharp
-        m_MethodName: ReadNextNode
+      - m_Target: {fileID: 1915932033}
+        m_TargetAssemblyTypeName: DialogueManagerManual, Assembly-CSharp
+        m_MethodName: ReadList
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -561,7 +561,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 929532000}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: afe8482355a139d439b281cf1fa4364f, type: 3}
   m_Name: 
@@ -972,6 +972,65 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1915932030
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1915932032}
+  - component: {fileID: 1915932033}
+  m_Layer: 0
+  m_Name: DialogueManagerM
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1915932032
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1915932030}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1915932033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1915932030}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a53aba5ba6d8ab48af9fbb9e8ab1216, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nameBoxTxt: {fileID: 1046437897}
+  bodyTxt: {fileID: 145909473}
+  nodeList:
+  - type: 0
+    dialogueNode:
+      speaker: Player
+      text: 'Hi, is this hunters guild? '
+    branchNode:
+      responses: []
+  - type: 0
+    dialogueNode:
+      speaker: NPC
+      text: Yes! How can I help you today?
+    branchNode:
+      responses: []
 --- !u!1 &2126622096
 GameObject:
   m_ObjectHideFlags: 0
@@ -1018,5 +1077,6 @@ SceneRoots:
   - {fileID: 1079908602}
   - {fileID: 187192210}
   - {fileID: 801262972}
+  - {fileID: 1915932032}
   - {fileID: 929532002}
   - {fileID: 1757018740}
