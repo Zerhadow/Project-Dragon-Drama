@@ -1,0 +1,40 @@
+{
+    "dialogue": [
+        {
+            "character": "Girl in seat",
+            "text": "That’s crazy…"
+        },
+        {
+            "character": "Bailey",
+            "text": "What is?"
+        },
+        {
+            "character": "Girl in seat",
+            "text": "You’ve been completely focused, the entire class."
+        },
+        {
+            "character": "Bailey",
+            "text": "…And?"
+        },
+        {
+            "character": "Girl in seat",
+            "text": "You’re weird."
+        },
+        {
+            "character": "SAM",
+            "text": "Name’s Sam by the way."
+        },
+        {
+            "character": "Bailey",
+            "text": "Nice to meet you."
+        },
+        {
+            "character": "SAM",
+            "text": "So you got a name Newbie?"
+        },
+        {
+            "character": "Bailey",
+            "text": "It’s Bailey"
+        }
+    ]
+}  
