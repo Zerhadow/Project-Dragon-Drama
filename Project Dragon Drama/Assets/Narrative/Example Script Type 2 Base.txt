@@ -1,0 +1,7 @@
+Player: 
+Hi, is this hunters guild? 
+NPC: 
+Yes! How can I help you today?
+Player: 
+Tell me more about the quest
+

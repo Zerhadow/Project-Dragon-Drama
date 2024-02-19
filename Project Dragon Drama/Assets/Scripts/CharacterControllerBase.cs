@@ -31,6 +31,8 @@ public class CharacterControllerBase : MonoBehaviour
     private GameObject continueTextBox;
     private CutSceneController cutSceneController;
 
+    public ObjectivesController _objectives;
+
     [Header("Movements Settings")]
     [SerializeField] float _moveSpeed = 5f;
     [SerializeField] float _rotateSpeed = 5f;
@@ -50,6 +52,8 @@ public class CharacterControllerBase : MonoBehaviour
     public bool NPCTalking = false;
 
     public NPCControllerBase npcObj;
+
+    public string _chapterNPC = "Chuck";
 
     public int playerPoints = 1;
     public int pageIdx = 0;
@@ -84,6 +88,8 @@ public class CharacterControllerBase : MonoBehaviour
         // Debug.Log("CharController: " + continueTextBox.name.ToString() + " is linked");
         // Debug.Log("CharController: " + cutSceneController.name.ToString() + " is linked");
 
+        _objectives = GameObject.Find("Objectives").GetComponent<ObjectivesController>();
+
         //initial scene setup
         _state = PlayerState.Moving;
         _inventory.Clear();
@@ -91,8 +97,9 @@ public class CharacterControllerBase : MonoBehaviour
 
     private void  Start() {
         pressETextBox.SetActive(false);
+        _objectives.DisableObjectives();
 
-        cutSceneController.StartCutscene();
+        //cutSceneController.StartCutscene();
         _state = PlayerState.Dialogue;
     }
 
@@ -133,6 +140,9 @@ public class CharacterControllerBase : MonoBehaviour
                     //Go to NPCTalk, Dialogue, Menu
                     MovementInput();
 
+                    //Update Objectives. Note: doing this every update is really bad design, but our code is really choppy so this is the only way to ensure objectives are always accurate...
+                    _objectives.SetObjectiveText(!gossipSearch, cutSceneController.chapterIdx);
+
                     if (Input.GetKeyDown(KeyCode.Escape)) //GoTo Pause
                     {
                         _prevState = _state;
@@ -140,17 +150,9 @@ public class CharacterControllerBase : MonoBehaviour
                     }
                     else if ((Input.GetKeyDown(KeyCode.E)) && (_adjacentNPC != null)) //Talk to NPC, GoTo NPCTalk
                     {
-                        if((_adjacentNPC.name == "Sam") && _inventory.GetSize() > 0)
-                        {
-                            cutSceneController.TriggerNextCutscene();
-                            if(_inventory.GetSize() > 1) {
-                                cutSceneController.dialoguePts++;
-                            }
-                        }
+                        if(!gossipSearch && _adjacentNPC.name == _chapterNPC) { //start cutscene
+                                                                          // Open dialogue popup tied to adjacentNPC
 
-                        if(!gossipSearch && _adjacentNPC.name == "Sam") { //start cutscene
-                            // Open dialogue popup tied to adjacentNPC
-                            
                             /* ---Deprecated---
                             if(_inventory.GetSize() > 0) {
                                 playerPoints++;
@@ -161,16 +163,28 @@ public class CharacterControllerBase : MonoBehaviour
                             Debug.Log("Points: " + playerPoints);
                             */
 
+                            cutSceneController.TriggerNextCutscene();
+                            /* Deprecated FOR NOW
+                            if (_inventory.GetSize() > 1)
+                            {
+                                cutSceneController.dialoguePts++;
+                            }
+                            */
+
+                            _inventory.Clear();
+
                             cutSceneController.StartCutscene();
 
+                            _objectives.DisableObjectives();
                             _state = PlayerState.Dialogue;
-                        } else if(gossipSearch && _adjacentNPC.name == "Key") {
-                            Debug.Log("Found Key");
                         }
-                        else {
+                        else
+                        {
                             npcObj = _adjacentNPC.transform.Find("Talk Range").gameObject.GetComponent<NPCControllerBase>();
                             // Open dialogue popup tied to adjacentNPC;
                             cutSceneController.NPCtalk(npcObj);
+                            if (_adjacentNPC.transform.Find("Talk Range").gameObject.GetComponent<NPCControllerBase>().GiveKeyGossip())
+                                gossipSearch = false;
                             _state = PlayerState.NPCTalk;
                         }
 
@@ -235,12 +249,23 @@ public class CharacterControllerBase : MonoBehaviour
                         // Close dialogue popup
                         dialogueTextBox.SetActive(false);
                         continueTextBox.SetActive(false);
+                        
+                        if ((cutSceneController.chapterIdx == 3) || (cutSceneController.chapterIdx == 6) || (cutSceneController.chapterIdx == 10))
+                        {
+                            cutSceneController._tranController.LoadNextLevel();
+                            cutSceneController.TriggerNextCutscene();
+                        }
+                        else
+                        {
+                            SetCutsceneNPC(cutSceneController.chapterIdx);
+                            _objectives.EnableObjectives();
+                            _state = PlayerState.Moving;
+                        }
+
 
                         /*For Testing. Disable once implemented*/
                         // DebugColorUpdate(_adjacentNPC, Color.magenta);
                         // Debug.Log(_adjacentNPC.name + " has stopped talking");
-
-                        _state = PlayerState.Moving;
                     }
 
                     /*Debug for state change*/
@@ -290,6 +315,52 @@ public class CharacterControllerBase : MonoBehaviour
     public void setAdjacentNPC(GameObject adjacent)
     {
         _adjacentNPC = adjacent;
+    }
+
+    //Set cutscene npc to talk to
+    public void SetCutsceneNPC(int chapter)
+    {
+        switch (chapter)
+        {
+            case 1:
+                _chapterNPC = "Chuck";
+                break;
+            case 2:
+                _chapterNPC = "Sam";
+                break;
+            case 3:
+                _chapterNPC = "Sam";
+                break;
+            case 4:
+                _chapterNPC = "Sam";
+                break;
+            case 5:
+                _chapterNPC = "Persia";
+                break;
+            case 6:
+                _chapterNPC = "Sam";
+                break;
+            case 7:
+                _chapterNPC = "Nataly";
+                break;
+            case 8:
+                _chapterNPC = "Sam";
+                break;
+            case 9:
+                _chapterNPC = "Ken";
+                break;
+            case 10:
+                _chapterNPC = "Sam";
+                break;
+            case 11:
+                _chapterNPC = "Nataly";
+                break;
+            case 12:
+                _chapterNPC = "Ken";
+                break;
+            default:
+                break;
+        }
     }
 
     //Visuals for testing
