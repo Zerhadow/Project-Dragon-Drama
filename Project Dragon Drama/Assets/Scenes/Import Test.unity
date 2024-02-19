@@ -1867,8 +1867,9 @@ MonoBehaviour:
   nodeList:
   - type: 0
     dialogueNode:
-      speaker: Player
-      text: 'Hi, is this hunters guild? '
+      speaker: HomeroomTeacher
+      text: 'Using the substitution method, we can substitute c for x to determine
+        the limit of the function. '
     branchNode:
       options: []
       responses1: []
@@ -1884,6 +1885,19 @@ MonoBehaviour:
       responses2: []
       responses3: []
   - type: 1
+    dialogueNode:
+      speaker: NPC
+      text: Yes! How can I help you today?
+    branchNode:
+      options:
+      - Pay Attention to Class
+      - The Pizza Squares
+      responses1:
+      - speaker: NPC
+        text: Rad
+      responses2: []
+      responses3: []
+  - type: 0
     dialogueNode:
       speaker: NPC
       text: Yes! How can I help you today?
