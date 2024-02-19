@@ -1875,6 +1875,11 @@ MonoBehaviour:
       responses1: []
       responses2: []
       responses3: []
+    connectNode:
+      check: 0
+      responseIdx: 0
+      responses1: []
+      responses2: []
   - type: 0
     dialogueNode:
       speaker: NPC
@@ -1884,6 +1889,11 @@ MonoBehaviour:
       responses1: []
       responses2: []
       responses3: []
+    connectNode:
+      check: 0
+      responseIdx: 0
+      responses1: []
+      responses2: []
   - type: 1
     dialogueNode:
       speaker: NPC
@@ -1895,12 +1905,21 @@ MonoBehaviour:
       responses1:
       - speaker: NPC
         text: Rad
+      - speaker: Player
+        text: 8 ball scks
+      - speaker: NPC
+        text: Who you
       responses2: []
       responses3: []
+    connectNode:
+      check: 0
+      responseIdx: 0
+      responses1: []
+      responses2: []
   - type: 0
     dialogueNode:
-      speaker: NPC
-      text: Yes! How can I help you today?
+      speaker: Player
+      text: Zach is muted
     branchNode:
       options:
       - Option 1
@@ -1910,6 +1929,11 @@ MonoBehaviour:
         text: Rad
       responses2: []
       responses3: []
+    connectNode:
+      check: 0
+      responseIdx: 0
+      responses1: []
+      responses2: []
 --- !u!1 &2126622096
 GameObject:
   m_ObjectHideFlags: 0

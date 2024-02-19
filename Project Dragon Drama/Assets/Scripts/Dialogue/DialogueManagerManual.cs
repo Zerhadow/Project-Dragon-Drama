@@ -25,17 +25,28 @@ public class DialogueManagerManual : MonoBehaviour
     }
 
     [System.Serializable]
+    public class ConnectNode
+    {
+        public bool check;
+        public int responseIdx = 0;
+        public List<DialogueNode> responses1;
+        public List<DialogueNode> responses2;
+    }
+
+    [System.Serializable]
     public class CompositeNode
     {
         public enum NodeType
         {
             Dialogue,
-            Branch
+            Branch,
+            ConnectNode
         }
 
         public NodeType type;
         public DialogueNode dialogueNode;
         public BranchNode branchNode;
+        public ConnectNode connectNode;
     }
 
     [Header("DialogueNode Variables")]
@@ -165,7 +176,42 @@ public class DialogueManagerManual : MonoBehaviour
                     }
                 }
             }
-            Debug.Log("Idx: " + currIdx);
+
+            if(node.type == CompositeNode.NodeType.ConnectNode) {
+                ConnectNode cNode = node.connectNode;
+
+                if(cNode.check) {
+                    if(inBranch) {
+                        if(cNode.responses1 != null) {
+                            if(cNode.responseIdx < cNode.responses1.Count) {
+                                DialogueNode dNode = cNode.responses1[cNode.responseIdx];
+
+                                nameBoxTxt.text = dNode.speaker;
+                                bodyTxt.text = dNode.text;
+                                cNode.responseIdx++;
+                            }
+
+                            if(reponseIdx < cNode.responses1.Count) { inBranch = false; }
+                        }
+                    
+                    } else { Debug.LogError("Connect responses are empty"); }
+                } else {
+                    if(inBranch) {
+                        if(cNode.responses2 != null) {
+                            if(cNode.responseIdx < cNode.responses2.Count) {
+                                DialogueNode dNode = cNode.responses2[cNode.responseIdx];
+
+                                nameBoxTxt.text = dNode.speaker;
+                                bodyTxt.text = dNode.text;
+                                cNode.responseIdx++;
+                            }
+
+                            if(reponseIdx < cNode.responses2.Count) { inBranch = false; }
+                        }
+                    
+                    } else { Debug.LogError("Connect responses are empty"); }
+                }
+            }
         } else { Debug.LogError("Node List is complete"); } // do next thing
     }
 
