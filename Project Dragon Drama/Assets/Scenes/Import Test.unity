@@ -1142,10 +1142,17 @@ MonoBehaviour:
   nameBoxTxt: {fileID: 1046437897}
   bodyTxt: {fileID: 145909473}
   dialogueOptionsObj: {fileID: 30118650}
+  options3GameObj: {fileID: 636753147}
   option1: {fileID: 126243445}
   option2: {fileID: 564082088}
   option3: {fileID: 1781874527}
   nodeList:
+  - type: 0
+    dNodeList: {fileID: 11400000, guid: 44c86381ed8e87643959438c72edf444, type: 2}
+    bNodelist: {fileID: 0}
+  - type: 1
+    dNodeList: {fileID: 0}
+    bNodelist: {fileID: 11400000, guid: e570a2dcc0fceb7479064f3cffa30be9, type: 2}
   - type: 0
     dNodeList: {fileID: 11400000, guid: 44c86381ed8e87643959438c72edf444, type: 2}
     bNodelist: {fileID: 0}
@@ -1180,7 +1187,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &929532001
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1882,7 +1889,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1915932032
 Transform:
   m_ObjectHideFlags: 0

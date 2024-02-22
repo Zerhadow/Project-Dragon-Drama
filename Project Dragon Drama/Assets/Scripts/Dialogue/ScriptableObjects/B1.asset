@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f1f4a953a5262a4d85d01d6521ff31b, type: 3}
   m_Name: B1
   m_EditorClassIdentifier: 
-  nodeList:
-  - options: []
-    dlist1: {fileID: 0}
-    dlist2: {fileID: 0}
-    dlist3: {fileID: 0}
+  options:
+  - Opt 1
+  - Opt 2
+  dlist1: {fileID: 11400000, guid: 44c86381ed8e87643959438c72edf444, type: 2}
+  dlist2: {fileID: 0}
+  dlist3: {fileID: 0}
