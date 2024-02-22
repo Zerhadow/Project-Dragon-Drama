@@ -1877,17 +1877,18 @@ MonoBehaviour:
       responses3: []
   - type: 0
     dialogueNode:
-      speaker: NPC
-      text: Yes! How can I help you today?
+      speaker: 'HomeroomTeacher:'
+      text: 'This will be faster than the factoring method we covered earlier this
+        week, but can only be used if- '
     branchNode:
       options: []
       responses1: []
       responses2: []
       responses3: []
-  - type: 1
+  - type: 0
     dialogueNode:
-      speaker: NPC
-      text: Yes! How can I help you today?
+      speaker: 'Sam:'
+      text: '<*Psst*> '
     branchNode:
       options:
       - Pay Attention to Class
@@ -1899,8 +1900,8 @@ MonoBehaviour:
       responses3: []
   - type: 0
     dialogueNode:
-      speaker: NPC
-      text: Yes! How can I help you today?
+      speaker: 'HomeroomTeacher: '
+      text: '-along with the example on the board- '
     branchNode:
       options:
       - Option 1
@@ -1909,6 +1910,297 @@ MonoBehaviour:
       - speaker: NPC
         text: Rad
       responses2: []
+      responses3: []
+  - type: 0
+    dialogueNode:
+      speaker: 'Sam: '
+      text: '<*Psst, Bailey. Hey.*> '
+    branchNode:
+      options:
+      - Option 1
+      - Option 2
+      responses1:
+      - speaker: NPC
+        text: Rad
+      responses2: []
+      responses3: []
+  - type: 0
+    dialogueNode:
+      speaker: 'Bailey: '
+      text: '<What?> '
+    branchNode:
+      options:
+      - Option 1
+      - Option 2
+      responses1:
+      - speaker: NPC
+        text: Rad
+      responses2: []
+      responses3: []
+  - type: 0
+    dialogueNode:
+      speaker: 'Sam: '
+      text: Did you do the homework?
+    branchNode:
+      options:
+      - Pay Attention to Class
+      - The Pizza Squares
+      responses1:
+      - speaker: 'Bailey:'
+        text: "We\u2019ll figure it out later. I need to take notes on this"
+      - speaker: Sam
+        text: "Okay nerd. I\u2019ll meet you in the cafeteria later"
+      - speaker: Sam
+        text: Mr. HomeroomTeacher, can I go to the restroom?
+      - speaker: 'HomeroomTeacher:'
+        text: "Just try to be back before the end of class this time\u2026"
+      - speaker: 'Sam: '
+        text: Of course <*not.*>
+      - speaker: HomeroomTeacher
+        text: "<Sigh> Back to the example on the board, as we solve for the limit
+          of x\u2026"
+      responses2:
+      - speaker: Bailey
+        text: Hopefully they have those pizza squares againHopefully they have those
+          pizza squares again
+      - speaker: Sam
+        text: You like those?*>
+      - speaker: Bailey
+        text: "They\u2019re better than the enchiladas"
+      - speaker: Sam
+        text: Hard disagree. The pizza is spicier than the enchiladas!*>
+      - speaker: Sam
+        text: Hard disagree. The pizza is spicier than the enchiladas!*>
+      - speaker: Bailey
+        text: Pepperoni is supposed to be spicy
+      - speaker: Sam
+        text: I was talking about the cheese
+      - speaker: HomeroomTeacher
+        text: Would the two of you like to join the rest of us?
+      - speaker: Bailey
+        text: Sorry Mr. HomeroomTeacher.
+      - speaker: Sam
+        text: Yeah, sorry Mr. HT.
+      - speaker: HomeroomTeacher
+        text: I expected better from you Bailey.
+      - speaker: 'Sam: '
+        text: 'What about me!?! '
+      - speaker: HomeroomTeacher
+        text: This is about exactly what I expect from you
+      - speaker: HomeroomTeacher
+        text: This is about exactly what I expect from you
+      - speaker: Sam
+        text: '<Eyeroll> . . . . . . '
+      - speaker: HomeroomTeacher
+        text: I hope everyone else was following along because we will not be going
+          back over this
+      - speaker: Sam
+        text: I hope everyone else was following along because we will not be going
+          back over this
+      responses3: []
+  - type: 0
+    dialogueNode:
+      speaker: 'Bailey: '
+      text: "<*Yeah. You didn\u2019t?*> "
+    branchNode:
+      options:
+      - Option 1
+      - Option 2
+      responses1:
+      - speaker: NPC
+        text: Rad
+      responses2: []
+      responses3: []
+  - type: 0
+    dialogueNode:
+      speaker: 'Sam: '
+      text: '<*I was hungry.*> '
+    branchNode:
+      options:
+      - Option 1
+      - Option 2
+      responses1:
+      - speaker: NPC
+        text: Rad
+      responses2: []
+      responses3: []
+  - type: 0
+    dialogueNode:
+      speaker: 'Bailey: '
+      text: "<*That\u2019s\u2026 not an excuse\u2026*>"
+    branchNode:
+      options:
+      - Option 1
+      - Option 2
+      responses1:
+      - speaker: NPC
+        text: Rad
+      responses2: []
+      responses3: []
+  - type: 0
+    dialogueNode:
+      speaker: 'HomeroomTeacher: '
+      text: -we can derive that the limit is-
+    branchNode:
+      options:
+      - Option 1
+      - Option 2
+      responses1:
+      - speaker: NPC
+        text: Rad
+      responses2: []
+      responses3: []
+  - type: 0
+    dialogueNode:
+      speaker: 'Sam: '
+      text: "<*I\u2019m getting it done now.*>"
+    branchNode:
+      options:
+      - Option 1
+      - Option 2
+      responses1:
+      - speaker: NPC
+        text: Rad
+      responses2: []
+      responses3: []
+  - type: 0
+    dialogueNode:
+      speaker: 'Bailey: '
+      text: "<*Okay\u2026 Why are you telling me?*>"
+    branchNode:
+      options:
+      - Option 1
+      - Option 2
+      responses1:
+      - speaker: NPC
+        text: Rad
+      responses2: []
+      responses3: []
+  - type: 0
+    dialogueNode:
+      speaker: 'Sam: '
+      text: "<*I\u2019m too hungry to finish it\u2026*>"
+    branchNode:
+      options:
+      - Option 1
+      - Option 2
+      responses1:
+      - speaker: NPC
+        text: Rad
+      responses2: []
+      responses3: []
+  - type: 0
+    dialogueNode:
+      speaker: 'Bailey:'
+      text: . . . . . .
+    branchNode:
+      options:
+      - Option 1
+      - Option 2
+      responses1:
+      - speaker: NPC
+        text: Rad
+      responses2: []
+      responses3: []
+  - type: 0
+    dialogueNode:
+      speaker: 'Sam: '
+      text: What are we getting for lunch today?
+    branchNode:
+      options:
+      - Option 1
+      - Option 2
+      responses1:
+      - speaker: NPC
+        text: Rad
+      responses2: []
+      responses3: []
+  - type: 0
+    dialogueNode:
+      speaker: 'HomeroomTeacher: '
+      text: "-will be on the test, so follow closely on this next problem\u2026"
+    branchNode:
+      options:
+      - Option 1
+      - Option 2
+      responses1:
+      - speaker: NPC
+        text: Rad
+      responses2: []
+      responses3: []
+  - type: 0
+    dialogueNode:
+      speaker: 'Sam: '
+      text: Well?
+    branchNode:
+      options:
+      - Option 1
+      - Option 2
+      responses1:
+      - speaker: NPC
+        text: Rad
+      responses2: []
+      responses3: []
+  - type: 1
+    dialogueNode:
+      speaker: 'Sam: '
+      text: Well?
+    branchNode:
+      options:
+      - Pay Attention to Class
+      - The Pizza Squares
+      responses1:
+      - speaker: 'Bailey:'
+        text: "We\u2019ll figure it out later. I need to take notes on this"
+      - speaker: Sam
+        text: "Okay nerd. I\u2019ll meet you in the cafeteria later"
+      - speaker: Sam
+        text: Mr. HomeroomTeacher, can I go to the restroom?
+      - speaker: 'HomeroomTeacher:'
+        text: "Just try to be back before the end of class this time\u2026"
+      - speaker: 'Sam: '
+        text: Of course <*not.*>
+      - speaker: HomeroomTeacher
+        text: "<Sigh> Back to the example on the board, as we solve for the limit
+          of x\u2026"
+      responses2:
+      - speaker: Bailey
+        text: Hopefully they have those pizza squares againHopefully they have those
+          pizza squares again
+      - speaker: Sam
+        text: You like those?*>
+      - speaker: Bailey
+        text: "They\u2019re better than the enchiladas"
+      - speaker: Sam
+        text: Hard disagree. The pizza is spicier than the enchiladas!*>
+      - speaker: Sam
+        text: Hard disagree. The pizza is spicier than the enchiladas!*>
+      - speaker: Bailey
+        text: Pepperoni is supposed to be spicy
+      - speaker: Sam
+        text: I was talking about the cheese
+      - speaker: HomeroomTeacher
+        text: Would the two of you like to join the rest of us?
+      - speaker: Bailey
+        text: Sorry Mr. HomeroomTeacher.
+      - speaker: Sam
+        text: Yeah, sorry Mr. HT.
+      - speaker: HomeroomTeacher
+        text: I expected better from you Bailey.
+      - speaker: 'Sam: '
+        text: 'What about me!?! '
+      - speaker: HomeroomTeacher
+        text: This is about exactly what I expect from you
+      - speaker: HomeroomTeacher
+        text: This is about exactly what I expect from you
+      - speaker: Sam
+        text: '<Eyeroll> . . . . . . '
+      - speaker: HomeroomTeacher
+        text: I hope everyone else was following along because we will not be going
+          back over this
+      - speaker: Sam
+        text: I hope everyone else was following along because we will not be going
+          back over this
       responses3: []
 --- !u!1 &2126622096
 GameObject:
