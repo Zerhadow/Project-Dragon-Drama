@@ -244,8 +244,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1915932033}
-        m_TargetAssemblyTypeName: DialogueManagerManual, Assembly-CSharp
+      - m_Target: {fileID: 920294053}
+        m_TargetAssemblyTypeName: DialogueController, Assembly-CSharp
         m_MethodName: Option1
         m_Mode: 1
         m_Arguments:
@@ -882,8 +882,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1915932033}
-        m_TargetAssemblyTypeName: DialogueManagerManual, Assembly-CSharp
+      - m_Target: {fileID: 920294053}
+        m_TargetAssemblyTypeName: DialogueController, Assembly-CSharp
         m_MethodName: Option3
         m_Mode: 1
         m_Arguments:
@@ -1529,8 +1529,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1915932033}
-        m_TargetAssemblyTypeName: DialogueManagerManual, Assembly-CSharp
+      - m_Target: {fileID: 920294053}
+        m_TargetAssemblyTypeName: DialogueController, Assembly-CSharp
         m_MethodName: Option2
         m_Mode: 1
         m_Arguments:

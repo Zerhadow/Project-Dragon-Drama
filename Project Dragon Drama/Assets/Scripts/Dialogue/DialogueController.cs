@@ -66,17 +66,7 @@ public class DialogueController : MonoBehaviour
 
             if(node.dNodeList != null) { // means that its a dialogue node list
                 DialogueNodeList dialogueNodeList = node.dNodeList;
-
-                // Debug.Log("Idx: " + dialogueNodeList.idx);
-                // Debug.Log("Count: " + dialogueNodeList.nodeList.Count);
-                if(dialogueNodeList.idx < dialogueNodeList.nodeList.Count) {
-                    nameBoxTxt.text = dialogueNodeList.nodeList[dialogueNodeList.idx].speaker;
-                    bodyTxt.text = dialogueNodeList.nodeList[dialogueNodeList.idx].text;
-                    dialogueNodeList.idx += 1;
-                } else { // move onto next composite node
-                    Debug.Log("DList done");
-                    currIdx++;
-                }
+                GetDialogueNode(dialogueNodeList);
             } else if(node.bNodelist != null) { // means that its a dialogue node list
                 BranchNodeList branchNodeList = node.bNodelist;
 
@@ -115,27 +105,42 @@ public class DialogueController : MonoBehaviour
             Debug.Log("Idx: " + dialogueNodeList.idx);
 
             if(dialogueNodeList != null) {
-                if(dialogueNodeList.idx < dialogueNodeList.nodeList.Count) {
-                    nameBoxTxt.text = dialogueNodeList.nodeList[dialogueNodeList.idx].speaker;
-                    bodyTxt.text = dialogueNodeList.nodeList[dialogueNodeList.idx].text;
-                    dialogueNodeList.idx += 1;
-                } else { // move onto next composite node
-                    Debug.Log("DList done");
-                    inBranch = false;
-                    currIdx++;
-                }
+                GetDialogueNode(dialogueNodeList);
             } else { Debug.LogError("Branch response empty"); }
         }
     
         if(playerChoice == 2) {
+            DialogueNodeList dialogueNodeList = branchNodeList.dlist2;
+            Debug.Log("Idx: " + dialogueNodeList.idx);
 
+            if(dialogueNodeList != null) {
+                GetDialogueNode(dialogueNodeList);
+            } else { Debug.LogError("Branch response empty"); }
         }
 
         if(playerChoice == 3) {
+            DialogueNodeList dialogueNodeList = branchNodeList.dlist3;
+            Debug.Log("Idx: " + dialogueNodeList.idx);
 
+            if(dialogueNodeList != null) {
+                GetDialogueNode(dialogueNodeList);
+            } else { Debug.LogError("Branch response empty"); }
         }
     }
 
+    public void GetDialogueNode(DialogueNodeList dialogueNodeList) {
+        if(dialogueNodeList.idx < dialogueNodeList.nodeList.Count) {
+            nameBoxTxt.text = dialogueNodeList.nodeList[dialogueNodeList.idx].speaker;
+            bodyTxt.text = dialogueNodeList.nodeList[dialogueNodeList.idx].text;
+            dialogueNodeList.idx += 1;
+        } else { // move onto next composite node
+            Debug.Log("DList done");
+            dialogueNodeList.idx = 0;
+            if(inBranch) inBranch = false;
+            currIdx++;
+        }
+    }
+    
     public void Option1() {
         playerChoice = 1;
         // deactivate UI
