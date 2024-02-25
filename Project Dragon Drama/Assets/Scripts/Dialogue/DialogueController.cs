@@ -21,6 +21,8 @@ public class DialogueController : MonoBehaviour
         // public ConnectNode connectNode;
     }
     
+    [Header("Game System Dependencies")]
+    public GameController gameController;
     [Header("DialogueNode Variables")]
     public TMP_Text nameBoxTxt;
     public TMP_Text bodyTxt;
@@ -33,6 +35,7 @@ public class DialogueController : MonoBehaviour
     public TMP_Text option1;
     public TMP_Text option2;
     public TMP_Text option3;
+    [Header("Other Stuff")]
 
     private int currIdx = 0; //idx for composite list
     private int playerChoice = 0;
@@ -92,7 +95,11 @@ public class DialogueController : MonoBehaviour
                     }
                 } else { Debug.LogError("Fill options list"); }
             } else { Debug.LogError("Dialogue Node List is empty"); }
-        } else { Debug.Log("Node List is complete"); } // do next thing
+        } else { 
+            Debug.Log("Node List is complete");
+            // Change states so player can do next thing
+            gameController._stateMachine.ChangeState(gameController._stateMachine.SetupState);
+        } 
     }
 
     public void ReadBranchDialogueList() {
