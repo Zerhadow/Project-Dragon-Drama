@@ -942,13 +942,14 @@ GameObject:
   m_Component:
   - component: {fileID: 801262972}
   - component: {fileID: 801262973}
+  - component: {fileID: 801262974}
   m_Layer: 0
   m_Name: ImportController
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &801262972
 Transform:
   m_ObjectHideFlags: 0
@@ -978,6 +979,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inputFilePath: Assets/Narrative/Example Script Type 2 Base.txt
   dialogueNodes: []
+--- !u!114 &801262974
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 801262971}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81ff4bbe6d460ea4fb8f322f9f2a40fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inputFilePaths:
+  - Assets/Narrative/Example Script Type 2 Base.txt
+  dialogueNodeLists:
+  - {fileID: 11400000, guid: 3ff9458d506182d4c82204d23af2ccb9, type: 2}
 --- !u!1 &843700265
 GameObject:
   m_ObjectHideFlags: 0
