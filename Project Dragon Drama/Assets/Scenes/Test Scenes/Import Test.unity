@@ -244,8 +244,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1915932033}
-        m_TargetAssemblyTypeName: DialogueManagerManual, Assembly-CSharp
+      - m_Target: {fileID: 920294053}
+        m_TargetAssemblyTypeName: DialogueController, Assembly-CSharp
         m_MethodName: Option1
         m_Mode: 1
         m_Arguments:
@@ -882,8 +882,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1915932033}
-        m_TargetAssemblyTypeName: DialogueManagerManual, Assembly-CSharp
+      - m_Target: {fileID: 920294053}
+        m_TargetAssemblyTypeName: DialogueController, Assembly-CSharp
         m_MethodName: Option3
         m_Mode: 1
         m_Arguments:
@@ -942,13 +942,14 @@ GameObject:
   m_Component:
   - component: {fileID: 801262972}
   - component: {fileID: 801262973}
+  - component: {fileID: 801262974}
   m_Layer: 0
   m_Name: ImportController
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &801262972
 Transform:
   m_ObjectHideFlags: 0
@@ -978,6 +979,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inputFilePath: Assets/Narrative/Example Script Type 2 Base.txt
   dialogueNodes: []
+--- !u!114 &801262974
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 801262971}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81ff4bbe6d460ea4fb8f322f9f2a40fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inputFilePaths:
+  - Assets/Narrative/Example Script Type 2 Base.txt
+  dialogueNodeLists:
+  - {fileID: 11400000, guid: 3ff9458d506182d4c82204d23af2ccb9, type: 2}
 --- !u!1 &843700265
 GameObject:
   m_ObjectHideFlags: 0
@@ -1098,8 +1115,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1915932033}
-        m_TargetAssemblyTypeName: DialogueManagerManual, Assembly-CSharp
+      - m_Target: {fileID: 920294053}
+        m_TargetAssemblyTypeName: DialogueController, Assembly-CSharp
         m_MethodName: ReadList
         m_Mode: 1
         m_Arguments:
@@ -1110,6 +1127,67 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!1 &920294052
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 920294054}
+  - component: {fileID: 920294053}
+  m_Layer: 0
+  m_Name: DialogueController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &920294053
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 920294052}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fbf61163e6747e43b3c35d76748edb9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nameBoxTxt: {fileID: 1046437897}
+  bodyTxt: {fileID: 145909473}
+  dialogueOptionsObj: {fileID: 30118650}
+  options3GameObj: {fileID: 636753147}
+  option1: {fileID: 126243445}
+  option2: {fileID: 564082088}
+  option3: {fileID: 1781874527}
+  nodeList:
+  - type: 0
+    dNodeList: {fileID: 11400000, guid: 44c86381ed8e87643959438c72edf444, type: 2}
+    bNodelist: {fileID: 0}
+  - type: 1
+    dNodeList: {fileID: 0}
+    bNodelist: {fileID: 11400000, guid: e570a2dcc0fceb7479064f3cffa30be9, type: 2}
+  - type: 0
+    dNodeList: {fileID: 11400000, guid: 44c86381ed8e87643959438c72edf444, type: 2}
+    bNodelist: {fileID: 0}
+--- !u!4 &920294054
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 920294052}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &929532000
 GameObject:
   m_ObjectHideFlags: 0
@@ -1126,7 +1204,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &929532001
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1468,8 +1546,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1915932033}
-        m_TargetAssemblyTypeName: DialogueManagerManual, Assembly-CSharp
+      - m_Target: {fileID: 920294053}
+        m_TargetAssemblyTypeName: DialogueController, Assembly-CSharp
         m_MethodName: Option2
         m_Mode: 1
         m_Arguments:
@@ -1828,7 +1906,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1915932032
 Transform:
   m_ObjectHideFlags: 0
@@ -1875,6 +1953,11 @@ MonoBehaviour:
       responses1: []
       responses2: []
       responses3: []
+    connectNode:
+      check: 0
+      responseIdx: 0
+      responses1: []
+      responses2: []
   - type: 0
     dialogueNode:
       speaker: NPC
@@ -1884,6 +1967,11 @@ MonoBehaviour:
       responses1: []
       responses2: []
       responses3: []
+    connectNode:
+      check: 0
+      responseIdx: 0
+      responses1: []
+      responses2: []
   - type: 1
     dialogueNode:
       speaker: NPC
@@ -1895,12 +1983,21 @@ MonoBehaviour:
       responses1:
       - speaker: NPC
         text: Rad
+      - speaker: Player
+        text: 8 ball scks
+      - speaker: NPC
+        text: Who you
       responses2: []
       responses3: []
+    connectNode:
+      check: 0
+      responseIdx: 0
+      responses1: []
+      responses2: []
   - type: 0
     dialogueNode:
-      speaker: NPC
-      text: Yes! How can I help you today?
+      speaker: Player
+      text: Zach is muted
     branchNode:
       options:
       - Option 1
@@ -1910,6 +2007,11 @@ MonoBehaviour:
         text: Rad
       responses2: []
       responses3: []
+    connectNode:
+      check: 0
+      responseIdx: 0
+      responses1: []
+      responses2: []
 --- !u!1 &2126622096
 GameObject:
   m_ObjectHideFlags: 0
@@ -1956,6 +2058,7 @@ SceneRoots:
   - {fileID: 1079908602}
   - {fileID: 187192210}
   - {fileID: 801262972}
+  - {fileID: 920294054}
   - {fileID: 1915932032}
   - {fileID: 929532002}
   - {fileID: 1757018740}
