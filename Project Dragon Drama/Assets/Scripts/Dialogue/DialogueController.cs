@@ -98,7 +98,7 @@ public class DialogueController : MonoBehaviour
         } else { 
             Debug.Log("Node List is complete");
             // Change states so player can do next thing
-            gameController._stateMachine.ChangeState(gameController._stateMachine.SetupState);
+            gameController._stateMachine.ChangeState(gameController._stateMachine.PlayState);
         } 
     }
 

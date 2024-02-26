@@ -2,12 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameDialogueState : State
+public class GamePlayState : State
 {
     private GameFSM _stateMachine;
     private GameController _controller;
 
-    public GameDialogueState(GameFSM stateMachine, GameController controller)
+    public GamePlayState(GameFSM stateMachine, GameController controller)
     {
         _stateMachine = stateMachine;
         _controller = controller;
@@ -16,9 +16,10 @@ public class GameDialogueState : State
         public override void Enter() {
         base.Enter();
 
-        Debug.Log("STATE: Game Dialogue State");
+        Debug.Log("STATE: Game Play State");
 
         // Activate UI Elems
+        _controller.UI.DialogueObj.SetActive(true);
         
         // Don't allow player to move char
         // _controller.playerController.LockMovement();
@@ -37,6 +38,7 @@ public class GameDialogueState : State
         base.Exit();
 
         // Deactivate UI Elems
+        _controller.UI.DialogueObj.SetActive(false);
 
         // Return movement to char
         // _controller.playerController.UnlockMovement();
