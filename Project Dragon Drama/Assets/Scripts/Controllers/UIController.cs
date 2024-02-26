@@ -6,4 +6,5 @@ public class UIController : MonoBehaviour
 {
     public GameObject canvas;
     public GameObject DialogueObj;
+    public GameObject pauseMenuObj;
 }

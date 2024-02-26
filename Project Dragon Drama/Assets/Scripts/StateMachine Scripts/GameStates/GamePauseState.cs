@@ -19,6 +19,7 @@ public class GamePauseState : State
         Debug.Log("STATE: Game Paused");
 
         // Activate UI Elems
+        _controller.UI.pauseMenuObj.SetActive(true);
 
         // Don't allow player to move char
         // _controller.playerController.LockMovement();
@@ -36,6 +37,7 @@ public class GamePauseState : State
         base.Exit();
         
         // Deactivate UI Elems
+        _controller.UI.pauseMenuObj.SetActive(false);
 
         // Return movement to char
         // _controller.playerController.UnlockMovement();
