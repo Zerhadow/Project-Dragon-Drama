@@ -1,0 +1,22 @@
+Player: 
+Hi, is this hunters guild? 
+NPC: 
+Yes! How can I help you today?
+Start Branch 
+Player: 
+1 -> Ask about the quest 
+2 -> Inquire about the town 
+Option 1 
+Player: 
+Tell me more about the quest 
+NPC: 
+(talks about quest details) 
+Option 2 
+Player: 
+Tell me more about the town 
+NPC: 
+(talks about town)
+End of Branch
+Player: 
+Cool
+
