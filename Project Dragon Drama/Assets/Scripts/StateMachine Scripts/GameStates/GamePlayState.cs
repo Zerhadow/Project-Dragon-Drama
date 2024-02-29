@@ -13,15 +13,14 @@ public class GamePlayState : State
         _controller = controller;
     }
 
-        public override void Enter() {
+    public override void Enter() {
         base.Enter();
 
         Debug.Log("STATE: Game Play State");
 
         // Activate UI Elems
-        _controller.UI.DialogueObj.SetActive(true);
         
-        // Don't allow player to move char
+        // Allow player movement
         // _controller.playerController.LockMovement();
     }
 
@@ -32,15 +31,16 @@ public class GamePlayState : State
         // if player presses pause key, go to pause state
         // Hard input for now
         if(Input.GetKeyDown(KeyCode.Escape)) { _stateMachine.ChangeState(_stateMachine.PauseState); }
+
+        // Check for player interaction with NPC
+        // if interact if NPC, then
+        // _stateMachine.ChangeState(_stateMachine.PauseState);
     }
 
     public override void Exit() {
         base.Exit();
 
         // Deactivate UI Elems
-        _controller.UI.DialogueObj.SetActive(false);
 
-        // Return movement to char
-        // _controller.playerController.UnlockMovement();
     }
 }

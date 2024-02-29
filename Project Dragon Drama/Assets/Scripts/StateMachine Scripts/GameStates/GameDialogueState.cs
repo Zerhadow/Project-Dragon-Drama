@@ -13,15 +13,19 @@ public class GameDialogueState : State
         _controller = controller;
     }
 
-        public override void Enter() {
+    public override void Enter() {
         base.Enter();
 
         Debug.Log("STATE: Game Dialogue State");
 
         // Activate UI Elems
+        _controller.UI.DialogueObj.SetActive(true);
         
         // Don't allow player to move char
         // _controller.playerController.LockMovement();
+
+        // Set first index of dialogue
+        _controller.dialogueController.SetFirstNode();
     }
 
     public override void Update()
@@ -37,8 +41,13 @@ public class GameDialogueState : State
         base.Exit();
 
         // Deactivate UI Elems
+        _controller.UI.DialogueObj.SetActive(false);
 
         // Return movement to char
         // _controller.playerController.UnlockMovement();
+
+        // Remove text & name info
+        _controller.UI.nameBoxTxt.text = null;
+        _controller.UI.bodyTxt.text = null;
     }
 }

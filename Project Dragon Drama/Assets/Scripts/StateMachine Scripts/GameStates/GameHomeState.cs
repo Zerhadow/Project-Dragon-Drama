@@ -13,13 +13,12 @@ public class GameHomeState : State
         _controller = controller;
     }
 
-        public override void Enter() {
+    public override void Enter() {
         base.Enter();
 
         Debug.Log("STATE: Game Home State");
 
         // Activate UI Elems
-        _controller.UI.DialogueObj.SetActive(true);
         
         // Don't allow player to move char
         // _controller.playerController.LockMovement();
@@ -38,7 +37,6 @@ public class GameHomeState : State
         base.Exit();
 
         // Deactivate UI Elems
-        _controller.UI.DialogueObj.SetActive(false);
 
         // Return movement to char
         // _controller.playerController.UnlockMovement();

@@ -23,42 +23,31 @@ public class DialogueController : MonoBehaviour
     
     [Header("Game System Dependencies")]
     public GameController gameController;
-    [Header("DialogueNode Variables")]
-    public TMP_Text nameBoxTxt;
-    public TMP_Text bodyTxt;
-
-    [Header("BranchNode Object Variables")]
-    public GameObject dialogueOptionsObj;
-    public GameObject options3GameObj;
-
-    [Header("BranchNode Text Variables")]
-    public TMP_Text option1;
-    public TMP_Text option2;
-    public TMP_Text option3;
     [Header("Other Stuff")]
-
-    private int currIdx = 0; //idx for composite list
+    public int currIdx = 0; //idx for composite list
     private int playerChoice = 0;
     private bool inBranch = false;
 
     [SerializeField] public List<CompositeNode> nodeList = new List<CompositeNode>();
 
     private void Awake() {
-        dialogueOptionsObj.SetActive(false);
+        gameController.UI.dialogueOptionsObj.SetActive(false);
+    }
 
+    public void SetFirstNode() {
         // make sure nodelist isnt empty
         if (nodeList != null) {
             // show first node
             CompositeNode node = nodeList[currIdx];
             
             if(node.dNodeList != null) { // means that its a dialogue node list
-                nameBoxTxt.text = node.dNodeList.nodeList[0].speaker;
-                bodyTxt.text = node.dNodeList.nodeList[0].text;
+                gameController.UI.nameBoxTxt.text = node.dNodeList.nodeList[0].speaker;
+                gameController.UI.bodyTxt.text = node.dNodeList.nodeList[0].text;
                 node.dNodeList.idx = 0;
             }
         } else { Debug.LogError("Node List is empty"); }
     }
-
+    
     public void ReadList() {
         if(inBranch) {
             ReadBranchDialogueList(); // indicates we are inside branch dialogue list
@@ -77,21 +66,21 @@ public class DialogueController : MonoBehaviour
                     inBranch = true;
 
                     if(branchNodeList.options.Count == 2) {
-                        dialogueOptionsObj.SetActive(true);
-                        options3GameObj.SetActive(false);
+                        gameController.UI.dialogueOptionsObj.SetActive(true);
+                        gameController.UI.options3GameObj.SetActive(false);
 
                         // Set Option Texts
-                        option1.text = branchNodeList.options[0];
-                        option2.text = branchNodeList.options[1];
+                        gameController.UI.option1.text = branchNodeList.options[0];
+                        gameController.UI.option2.text = branchNodeList.options[1];
                     }
 
                     if(branchNodeList.options.Count == 3) {
-                        dialogueOptionsObj.SetActive(true);
+                        gameController.UI.dialogueOptionsObj.SetActive(true);
 
                         //Set Option texts
-                        option1.text = branchNodeList.options[0];
-                        option2.text = branchNodeList.options[1];
-                        option3.text = branchNodeList.options[2];
+                        gameController.UI.option1.text = branchNodeList.options[0];
+                        gameController.UI.option2.text = branchNodeList.options[1];
+                        gameController.UI.option3.text = branchNodeList.options[2];
                     }
                 } else { Debug.LogError("Fill options list"); }
             } else { Debug.LogError("Dialogue Node List is empty"); }
@@ -137,8 +126,8 @@ public class DialogueController : MonoBehaviour
 
     public void GetDialogueNode(DialogueNodeList dialogueNodeList) {
         if(dialogueNodeList.idx < dialogueNodeList.nodeList.Count) {
-            nameBoxTxt.text = dialogueNodeList.nodeList[dialogueNodeList.idx].speaker;
-            bodyTxt.text = dialogueNodeList.nodeList[dialogueNodeList.idx].text;
+            gameController.UI.nameBoxTxt.text = dialogueNodeList.nodeList[dialogueNodeList.idx].speaker;
+            gameController.UI.bodyTxt.text = dialogueNodeList.nodeList[dialogueNodeList.idx].text;
             dialogueNodeList.idx += 1;
         } else { // move onto next composite node
             Debug.Log("DList done");
@@ -151,30 +140,30 @@ public class DialogueController : MonoBehaviour
     public void Option1() {
         playerChoice = 1;
         // deactivate UI
-        dialogueOptionsObj.SetActive(false);
+        gameController.UI.dialogueOptionsObj.SetActive(false);
         
         // Show players reponse
-        nameBoxTxt.text = "Bailey";
-        bodyTxt.text = option1.text;
+        // nameBoxTxt.text = "Bailey";
+        // bodyTxt.text = option1.text;
     }
 
     public void Option2() {
         playerChoice = 2;
         // deactivate UI
-        dialogueOptionsObj.SetActive(false);
+        gameController.UI.dialogueOptionsObj.SetActive(false);
         
         // Show players reponse
-        nameBoxTxt.text = "Bailey";
-        bodyTxt.text = option2.text;
+        // nameBoxTxt.text = "Bailey";
+        // bodyTxt.text = option2.text;
     }
     
     public void Option3() {
         playerChoice = 3;
         // deactivate UI
-        dialogueOptionsObj.SetActive(false);
+        gameController.UI.dialogueOptionsObj.SetActive(false);
         
         // Show players reponse
-        nameBoxTxt.text = "Bailey";
-        bodyTxt.text = option3.text;
+        // nameBoxTxt.text = "Bailey";
+        // bodyTxt.text = option3.text;
     }
 }
