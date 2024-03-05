@@ -4,23 +4,7 @@ using TMPro;
 using UnityEngine;
 
 public class DialogueController : MonoBehaviour
-{
-    [System.Serializable]
-    public class CompositeNode
-    {
-        public enum NodeType
-        {
-            Dialogue,
-            Branch,
-            ConnectNode
-        }
-
-        public NodeType type;
-        public DialogueNodeList dNodeList;
-        public BranchNodeList bNodelist;
-        // public ConnectNode connectNode;
-    }
-    
+{    
     [Header("Game System Dependencies")]
     public GameController gameController;
     [Header("Other Stuff")]
