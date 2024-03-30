@@ -1,5 +1,7 @@
+FOLDER
+Wednesday Classroom VN (Wednesday)
 BEGIN DIALOGUE NODE
-DNN_Beginnings
+DNN_ Beginnings_1
 HomeroomTeacher:
 Using the substitution method, we can substitute c for x to determine the limit of the function.
 HomeroomTeacher:

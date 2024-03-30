@@ -978,8 +978,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inputFilePaths:
   - Assets/Narrative/Example Script Type 2 Base.txt
-  dialogueNodeLists:
-  - {fileID: 11400000, guid: 3ff9458d506182d4c82204d23af2ccb9, type: 2}
+  dialogueNodeLists: []
 --- !u!1 &843700265
 GameObject:
   m_ObjectHideFlags: 0

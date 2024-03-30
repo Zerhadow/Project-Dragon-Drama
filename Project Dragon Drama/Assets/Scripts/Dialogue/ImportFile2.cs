@@ -18,10 +18,7 @@ public class ImportFile2 : MonoBehaviour
         foreach (string filePath in inputFilePaths) {
             if( filePath != null) {
                 ReadFileToList(filePath);
-                
-                foreach(DialogueNodeList list in dialogueNodeLists) {
-                    ImportToNodeList();
-                }
+                ImportToNodeList();
             } else { Debug.LogError("No input file path specified");}
         }
     }
@@ -34,16 +31,14 @@ public class ImportFile2 : MonoBehaviour
             fileLines.Add(line);
         }
 
-        // print fileLines
-        // foreach (string fileLine in fileLines) {
-        //     Debug.Log(fileLine);
-        // }
+        // DebugPrint();
         reader.Close();
     }
     
     // [MenuItem("Window/Do Something")]
     public void ImportToNodeList() {
-        for(int i = 0; i <= fileLines.Count; i++) {
+        // DebugPrint();
+        for(int i = 0; i < fileLines.Count; i++) {
             // Debug.Log("Idx: " + i);
             string fileLine = fileLines[i];
             string fileLine2 = fileLines[++i]; // gets the corresponding text from speaker
@@ -59,7 +54,7 @@ public class ImportFile2 : MonoBehaviour
             }
 
             // Ex: "FOLDER"
-            if(fileLine.Trim().StartsWith("FOLDER")) {
+            if(fileLine.Trim().StartsWith("FOLDER")) { // its not making folder
                 // create folder
                 Debug.Log("plz: " + fileLine2.Trim());
                 if(fileLine2.Trim() != null) {
@@ -92,6 +87,12 @@ public class ImportFile2 : MonoBehaviour
                 // create Branch node
                 bNode = ScriptableObject.CreateInstance<BranchNodeList>();
             }
+        }
+    }
+
+    private void DebugPrint() {
+        foreach (string fileLine in fileLines) {
+            Debug.Log(fileLine);
         }
     }
 }
