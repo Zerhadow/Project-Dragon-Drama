@@ -45,6 +45,7 @@ public class ImportFile2 : MonoBehaviour
             // ignore the index error
 
             // create empty nodes
+            SceneNode sNode = null;
             DialogueNodeList dNode = null;
             BranchNodeList bNode = null;
 
@@ -59,6 +60,19 @@ public class ImportFile2 : MonoBehaviour
                 Debug.Log("plz: " + fileLine2.Trim());
                 if(fileLine2.Trim() != null) {
                     AssetDatabase.CreateFolder("Assets/Scripts/Dialogue/ScriptableObjects/", fileLine2.Trim());
+                }
+            }
+
+            // Ex: "CREATE SCENE"
+            if(fileLine.Trim().StartsWith("CREATE SCENE")) { // its not making folder
+                // create scene so
+                sNode = ScriptableObject.CreateInstance<SceneNode>();
+
+                if(fileLine2.Trim() != null) {
+                    string soName = fileLine2.Trim();
+
+                    // creates scene node
+                    UnityEditor.AssetDatabase.CreateAsset(sNode, "Assets/Scripts/Dialogue/ScriptableObjects/SceneNodes/" + soName + ".asset");
                 }
             }
 
@@ -79,7 +93,7 @@ public class ImportFile2 : MonoBehaviour
             if (fileLine.Trim().EndsWith(':')) { // A speaker is about to say something 
                 string speaker = fileLine.Trim().Trim(':');
                 string text = fileLine2.Trim();
-                // dialogueNodeList.AddNode(speaker, text, dialogueNodeList);
+                dNode.AddNode(speaker, text, dNode);
             }
 
             // Ex: "BRANCH BEGINS"
