@@ -18,8 +18,9 @@ public class ImportFile2 : MonoBehaviour
         foreach (string filePath in inputFilePaths) {
             if( filePath != null) {
                 ReadFileToList(filePath);
+                
                 foreach(DialogueNodeList list in dialogueNodeLists) {
-                    ImportToNodeList(list);
+                    ImportToNodeList();
                 }
             } else { Debug.LogError("No input file path specified");}
         }
@@ -41,21 +42,55 @@ public class ImportFile2 : MonoBehaviour
     }
     
     // [MenuItem("Window/Do Something")]
-    public void ImportToNodeList(DialogueNodeList dialogueNodeList) {
+    public void ImportToNodeList() {
         for(int i = 0; i <= fileLines.Count; i++) {
-            Debug.Log("Idx: " + i);
+            // Debug.Log("Idx: " + i);
             string fileLine = fileLines[i];
             string fileLine2 = fileLines[++i]; // gets the corresponding text from speaker
             // ignore the index error
+
+            // create empty nodes
+            DialogueNodeList dNode = null;
+            BranchNodeList bNode = null;
+
 
             if(string.IsNullOrEmpty(fileLine)) {
                 continue;
             }
 
+            // Ex: "FOLDER"
+            if(fileLine.Trim().StartsWith("FOLDER")) {
+                // create folder
+                Debug.Log("plz: " + fileLine2.Trim());
+                if(fileLine2.Trim() != null) {
+                    AssetDatabase.CreateFolder("Assets/Scripts/Dialogue/ScriptableObjects/", fileLine2.Trim());
+                }
+            }
+
+            // Ex: "BEGIN DIALOGUE NODE"
+            if(fileLine.Trim().StartsWith("BEGIN DIALOGUE NODE")) {
+                // create Dialogue node
+                dNode = ScriptableObject.CreateInstance<DialogueNodeList>();
+                // get name of file
+                if( fileLine2 != null && fileLine2.Trim().StartsWith("DNN")) {
+                    string soName = fileLine2.Trim();
+                    // Debug.Log("SO: " + soName);
+                    // creates dialogue node
+                    UnityEditor.AssetDatabase.CreateAsset(dNode, "Assets/Scripts/Dialogue/ScriptableObjects/" + soName + ".asset");
+                }
+            }
+            
+            // Ex: "Bailey:"
             if (fileLine.Trim().EndsWith(':')) { // A speaker is about to say something 
                 string speaker = fileLine.Trim().Trim(':');
                 string text = fileLine2.Trim();
-                dialogueNodeList.AddNode(speaker, text, dialogueNodeList);
+                // dialogueNodeList.AddNode(speaker, text, dialogueNodeList);
+            }
+
+            // Ex: "BRANCH BEGINS"
+            if(fileLine.Trim().StartsWith("BEGIN BRANCH NODE")) {
+                // create Branch node
+                bNode = ScriptableObject.CreateInstance<BranchNodeList>();
             }
         }
     }

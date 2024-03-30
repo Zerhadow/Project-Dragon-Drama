@@ -1,6 +1,6 @@
-Player: 
-Hi, is this hunters guild? 
-NPC: 
-Yes! How can I help you today?
-Player: 
-Tell me more about the quest
+BEGIN DIALOGUE NODE
+DNN_Beginnings
+HomeroomTeacher:
+Using the substitution method, we can substitute c for x to determine the limit of the function.
+HomeroomTeacher:
+	This will be faster than the factoring method we covered earlier this week, but can only be used if-
