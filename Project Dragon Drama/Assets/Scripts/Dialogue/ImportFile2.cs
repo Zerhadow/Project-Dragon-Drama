@@ -15,6 +15,8 @@ public class ImportFile2 : MonoBehaviour
     void Awake() {
         // testing purposes: Clear test node lists before running script
         
+        // wipe out stuff under relevant folders
+        
         foreach (string filePath in inputFilePaths) {
             if( filePath != null) {
                 ReadFileToList(filePath);
