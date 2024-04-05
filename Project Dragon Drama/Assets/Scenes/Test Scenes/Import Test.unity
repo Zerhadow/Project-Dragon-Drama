@@ -977,7 +977,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inputFilePaths:
-  - Assets/Narrative/Example DNodeList.txt
+  - Assets/Narrative/Tests/Example BNodeList.txt
   dialogueNodeLists:
   - {fileID: 11400000, guid: 3ff9458d506182d4c82204d23af2ccb9, type: 2}
 --- !u!1 &843700265
@@ -1128,7 +1128,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &920294053
 MonoBehaviour:
   m_ObjectHideFlags: 0

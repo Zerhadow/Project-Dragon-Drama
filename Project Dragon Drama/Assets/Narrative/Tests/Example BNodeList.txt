@@ -1,0 +1,20 @@
+Sam:
+			Baka.
+BRANCH START
+		1 -> Pay Attention to Class
+		{+1 Nerd}
+		Bailey:
+			We’ll figure it out later. I need to take notes.
+		Sam:
+			Okay nerd.
+Sam:
+ I’ll meet you in the cafeteria then.
+		Sam:
+			Mr. HomeroomTeacher, can I go to the restroom?
+		HomeroomTeacher:
+Yes, Sam. Just try to be back before the end of class this time…
+		Sam:
+			Of course (not).
+		HomeroomTeacher:
+<Sigh> Back to the example on the board, as we solve for the limit of x…
+BRANCH END
