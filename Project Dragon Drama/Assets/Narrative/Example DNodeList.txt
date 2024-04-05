@@ -1,0 +1,36 @@
+HomeroomTeacher:
+Using the substitution method, we can substitute c for x to determine the limit of the function.
+HomeroomTeacher:
+	This will be faster than the factoring method we covered earlier this week, but can only be used if-
+Sam:
+Psst
+HomeroomTeacher:
+	-along with the example on the board-
+Sam:
+	Psst, Bailey. Hey.
+Bailey:
+	<What?>
+Sam:
+	Did you do the homework?
+Bailey:
+	Yes. Did you?
+Sam:
+	I was hungry.
+Bailey:
+	That’s… not an excuse…
+HomeroomTeacher:
+	-we can derive that the limit is-
+Sam:
+	I’m getting it done now.
+Bailey:
+	And you're telling me because?
+Sam:
+	I’m too hungry to finish it…
+Bailey:
+	. . . . . .
+Sam:
+	What are we getting for lunch today?
+HomeroomTeacher:
+	-will be on the test, so follow closely on this next problem…
+Sam:
+	Well?

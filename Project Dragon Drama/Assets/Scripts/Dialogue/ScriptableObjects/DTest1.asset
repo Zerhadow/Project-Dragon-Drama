@@ -13,13 +13,4 @@ MonoBehaviour:
   m_Name: DTest1
   m_EditorClassIdentifier: 
   idx: 0
-  nodeList:
-  - emotion: 0
-    speaker: Player
-    text: Hi, is this hunters guild?
-  - emotion: 0
-    speaker: NPC
-    text: Yes! How can I help you today?
-  - emotion: 0
-    speaker: Player
-    text: Tell me more about the quest
+  nodeList: []

@@ -941,7 +941,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 801262972}
-  - component: {fileID: 801262973}
   - component: {fileID: 801262974}
   m_Layer: 0
   m_Name: ImportController
@@ -965,20 +964,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &801262973
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 801262971}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 03b575bc305f0344a814edb03ff04a30, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  inputFilePath: Assets/Narrative/Example Script Type 2 Base.txt
-  dialogueNodes: []
 --- !u!114 &801262974
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -992,7 +977,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inputFilePaths:
-  - Assets/Narrative/Example Script Type 2 Base.txt
+  - Assets/Narrative/Example DNodeList.txt
   dialogueNodeLists:
   - {fileID: 11400000, guid: 3ff9458d506182d4c82204d23af2ccb9, type: 2}
 --- !u!1 &843700265
@@ -1156,6 +1141,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1fbf61163e6747e43b3c35d76748edb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameController: {fileID: 0}
   nameBoxTxt: {fileID: 1046437897}
   bodyTxt: {fileID: 145909473}
   dialogueOptionsObj: {fileID: 30118650}
@@ -1217,7 +1203,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afe8482355a139d439b281cf1fa4364f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  importFile: {fileID: 801262973}
+  importFile: {fileID: 0}
   nameBoxTxt: {fileID: 1046437897}
   bodyTxt: {fileID: 145909473}
 --- !u!4 &929532002
