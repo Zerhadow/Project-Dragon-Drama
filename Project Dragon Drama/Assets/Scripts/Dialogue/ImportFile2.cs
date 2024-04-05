@@ -33,17 +33,38 @@ public class ImportFile2 : MonoBehaviour
             fileLines.Add(line);
         }
 
-        // print fileLines
-        // foreach (string fileLine in fileLines) {
-        //     Debug.Log(fileLine);
-        // }
         reader.Close();
     }
     
     [MenuItem("Node/Create Empty Node Lists")]
-    static void CreateScriptableObjects() {
+    private void CreateScriptableObjects() {
+        // add fill path
+        List<string> inputFilePaths = new List<string>();
+        inputFilePaths.Add("Assets/Narrative/Example DNodeList.txt");
+
         // read file
+        foreach (string filePath in inputFilePaths) {
+            if( filePath != null) {
+                List<string> fileLines = ReadFile(filePath);
+                DebugPrint(fileLines);
+                // create objs from fileLines
+            } else { Debug.LogError("No input file path specified");}
+        }
+
         // create objects based off commands
+    }
+
+    private List<string> ReadFile(string pathName) {
+        List<string> fileLines = new List<string>();;
+        StreamReader reader = new StreamReader(pathName);
+        string line;
+
+        while ((line = reader.ReadLine()) != null) {
+            fileLines.Add(line);
+        }
+
+        reader.Close();
+        return fileLines;
     }
 
     [MenuItem("Node/Fill DNodList")]
@@ -72,5 +93,9 @@ public class ImportFile2 : MonoBehaviour
         }
     }
 
-
+    private void DebugPrint(List<string> fileLines) {
+        foreach (string fileLine in fileLines) {
+            Debug.Log(fileLine);
+        }
+    }
 }
