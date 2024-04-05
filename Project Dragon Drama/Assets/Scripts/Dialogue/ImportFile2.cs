@@ -51,13 +51,14 @@ public class ImportFile2 : MonoBehaviour
             if (fileLine.Trim().EndsWith(':')) { // A speaker is about to say something 
                 string speaker = fileLine.Trim().Trim(':');
                 string text = fileLine2.Trim();
-                dialogueNodeList.AddNode(speaker, text, dialogueNodeList);
+                // dialogueNodeList.AddNode(speaker, text, dialogueNodeList);
             }
 
             // Ex: "BRANCH START"
             if(fileLine.Trim().StartsWith("BRANCH START")) {
                 // create Branch node
                 BranchNodeList bNodeList = ScriptableObject.CreateInstance<BranchNodeList>();
+                bNodeList.Init();
                 // UnityEditor.AssetDatabase.CreateAsset(dNode, "Assets/Scripts/Dialogue/ScriptableObjects/" + soName + ".asset");
                 i = FillBranchNodeList(bNodeList, i);
             }
@@ -70,8 +71,9 @@ public class ImportFile2 : MonoBehaviour
 
             if(fileLine.StartsWith("1 ->")) { // start of a new option
                 string optionText = fileLine.Substring(4);
-                Debug.Log("OT: " + optionText);
-                bNodeList.options[0] = optionText; // null ref exception
+                // Debug.Log("OT: " + optionText);
+                bNodeList.FillOption(0, optionText);
+                Debug.Log("Text: " + bNodeList.options[0]);
             }
 
             if(fileLine.StartsWith("{")) { // checks for stat modification

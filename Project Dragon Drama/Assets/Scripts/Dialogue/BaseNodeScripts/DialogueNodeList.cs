@@ -25,11 +25,15 @@ public class DialogueNodeList : ScriptableObject
 
     [SerializeField] public List<DialogueNode> nodeList;
 
-    public void AddNode(string speaker, string text, DialogueNodeList dialogueNodeList) {
-        DialogueNode dNode = new DialogueNode();
-        // set emotion in editor
-        dNode.speaker = speaker;
-        dNode.text = text;
-        dialogueNodeList.nodeList.Add(dNode);
+    // public void AddNode(string speaker, string text, DialogueNodeList dialogueNodeList) {
+    //     DialogueNode dNode = new DialogueNode();
+    //     // set emotion in editor
+    //     dNode.speaker = speaker;
+    //     dNode.text = text;
+    //     dialogueNodeList.nodeList.Add(dNode);
+    // }
+
+    public void Init() {
+        nodeList = new List<DialogueNode>();
     }
 }
