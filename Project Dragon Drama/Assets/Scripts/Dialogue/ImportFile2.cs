@@ -40,6 +40,18 @@ public class ImportFile2 : MonoBehaviour
         reader.Close();
     }
     
+    [MenuItem("Node/Create Empty Node Lists")]
+    static void CreateScriptableObjects() {
+        // read file
+        // create objects based off commands
+    }
+
+    [MenuItem("Node/Fill DNodList")]
+    static void FillDialogueNodeList() {
+        // read file
+        // fill DNodeList
+    }
+    
     // [MenuItem("Window/Do Something")]
     public void ImportToNodeList(DialogueNodeList dialogueNodeList) {
         for(int i = 0; i < fileLines.Count; i++) {
@@ -59,4 +71,6 @@ public class ImportFile2 : MonoBehaviour
             }
         }
     }
+
+
 }
