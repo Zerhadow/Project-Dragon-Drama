@@ -57,8 +57,8 @@ public class ImportFile2 : MonoBehaviour
             // Ex: "BRANCH START"
             if(fileLine.Trim().StartsWith("BRANCH START")) {
                 // create Branch node
-                // bNode = ScriptableObject.CreateInstance<BranchNodeList>();
-                BranchNodeList bNodeList = ScriptableObject.CreateInstance<BranchNodeList>();;
+                BranchNodeList bNodeList = ScriptableObject.CreateInstance<BranchNodeList>();
+                // UnityEditor.AssetDatabase.CreateAsset(dNode, "Assets/Scripts/Dialogue/ScriptableObjects/" + soName + ".asset");
                 i = FillBranchNodeList(bNodeList, i);
             }
         }
