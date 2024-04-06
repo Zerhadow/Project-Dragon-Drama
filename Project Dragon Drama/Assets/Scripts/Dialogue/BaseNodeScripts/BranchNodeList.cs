@@ -47,14 +47,14 @@ public class BranchNode : ScriptableObject
                 this.dlist1 = dNodeList1;
                 Debug.Log("text: " + fileLines[i].Trim());
 
-                DialogueNodeList dNodeList2 = ScriptableObject.CreateInstance<DialogueNodeList>();
-                // get name of node
-                name  = fileLines[++i].Trim();
-                dNodeList2.Init(name);
-                // fill node & update idx i
-                i = dNodeList2.FillDialogueNodeList(fileLines, ++i);
-                // add dNode to Branch
-                this.dlist2 = dNodeList2;
+                // DialogueNodeList dNodeList2 = ScriptableObject.CreateInstance<DialogueNodeList>();
+                // // get name of node
+                // name  = fileLines[++i].Trim();
+                // dNodeList2.Init(name);
+                // // fill node & update idx i
+                // i = dNodeList2.FillDialogueNodeList(fileLines, ++i);
+                // // add dNode to Branch
+                // this.dlist2 = dNodeList2;
 
                 // if(this.options.Count == 3) {
                 //     i = dNodeList1.FillDialogueNodeList(fileLines, ++i);
