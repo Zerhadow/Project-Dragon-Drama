@@ -42,8 +42,8 @@ public class ImportFile2 : MonoBehaviour
     
     // [MenuItem("Window/Do Something")]
     public void ImportToNodeList(DialogueNodeList dialogueNodeList) {
-        for(int i = 0; i <= fileLines.Count; i++) {
-            Debug.Log("Idx: " + i);
+        for(int i = 0; i < fileLines.Count; i++) {
+            // Debug.Log("Idx: " + i);
             string fileLine = fileLines[i];
             string fileLine2 = fileLines[++i]; // gets the corresponding text from speaker
             // ignore the index error
