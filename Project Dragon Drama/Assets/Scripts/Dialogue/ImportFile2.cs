@@ -36,25 +36,25 @@ public class ImportFile2 : MonoBehaviour
         reader.Close();
     }
     
-    [MenuItem("Node/Create Empty Node Lists")]
-    private void CreateScriptableObjects() {
+    [MenuItem("Node/Import Files")]
+    static void Import() {
         // add fill path
         List<string> inputFilePaths = new List<string>();
         inputFilePaths.Add("Assets/Narrative/Example DNodeList.txt");
+        // inputFilePaths.Add("Assets/Narrative/Example BNodeList.txt");
 
         // read file
         foreach (string filePath in inputFilePaths) {
             if( filePath != null) {
                 List<string> fileLines = ReadFile(filePath);
-                DebugPrint(fileLines);
+                // DebugPrint(fileLines);
                 // create objs from fileLines
+                InterpretStringList(fileLines);
             } else { Debug.LogError("No input file path specified");}
         }
-
-        // create objects based off commands
     }
 
-    private List<string> ReadFile(string pathName) {
+    private static List<string> ReadFile(string pathName) {
         List<string> fileLines = new List<string>();;
         StreamReader reader = new StreamReader(pathName);
         string line;
@@ -67,19 +67,30 @@ public class ImportFile2 : MonoBehaviour
         return fileLines;
     }
 
-    [MenuItem("Node/Fill DNodList")]
-    static void FillDialogueNodeList() {
-        // read file
-        // fill DNodeList
+    private static void InterpretStringList(List<string> fileLines) {
+        for(int i = 0; i < fileLines.Count; i++) { 
+            string fileLine = fileLines[i].Trim();
+
+            if(string.IsNullOrEmpty(fileLine)) {
+                continue;
+            }
+
+            if(fileLine.StartsWith("BEGIN DIALOGUE NODE")) { 
+                DialogueNodeList dNodeList = ScriptableObject.CreateInstance<DialogueNodeList>();
+                // get name of node
+                string name  = fileLines[++i].Trim();
+                dNodeList.Init(name);
+                // fill node & update idx i
+                i = dNodeList.FillDialogueNodeList(fileLines, i);
+            }
+        }
     }
-    
-    // [MenuItem("Window/Do Something")]
+
     public void ImportToNodeList(DialogueNodeList dialogueNodeList) {
         for(int i = 0; i < fileLines.Count; i++) {
             // Debug.Log("Idx: " + i);
             string fileLine = fileLines[i];
             string fileLine2 = fileLines[++i]; // gets the corresponding text from speaker
-            // ignore the index error
 
             if(string.IsNullOrEmpty(fileLine)) {
                 continue;
@@ -88,7 +99,7 @@ public class ImportFile2 : MonoBehaviour
             if (fileLine.Trim().EndsWith(':')) { // A speaker is about to say something 
                 string speaker = fileLine.Trim().Trim(':');
                 string text = fileLine2.Trim();
-                dialogueNodeList.AddNode(speaker, text, dialogueNodeList);
+                // dialogueNodeList.AddNode(speaker, text, dialogueNodeList);
             }
         }
     }

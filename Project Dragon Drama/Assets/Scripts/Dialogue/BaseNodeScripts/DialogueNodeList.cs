@@ -24,12 +24,36 @@ public class DialogueNodeList : ScriptableObject
     public int idx = 0;
 
     [SerializeField] public List<DialogueNode> nodeList;
+    [SerializeField] string assetName;
 
-    public void AddNode(string speaker, string text, DialogueNodeList dialogueNodeList) {
-        DialogueNode dNode = new DialogueNode();
-        // set emotion in editor
-        dNode.speaker = speaker;
-        dNode.text = text;
-        dialogueNodeList.nodeList.Add(dNode);
+    public void Init(string name) {
+        nodeList = new List<DialogueNode>();
+        this.assetName = name;
+    }
+
+    public int FillDialogueNodeList(List<string> fileLines, int idx) {
+        for(int i = idx; i < fileLines.Count; i++) { 
+            string fileLine = fileLines[i].Trim();
+            
+            if(string.IsNullOrEmpty(fileLine)) {
+                continue;
+            }
+
+            if (fileLine.Trim().EndsWith(':')) { // A speaker is about to say something 
+                string speaker = fileLine.Trim().Trim(':');
+                string text = fileLines[++i].Trim();
+                DialogueNode dNode = new DialogueNode();
+                dNode.speaker = speaker;
+                dNode.text = text;
+                this.nodeList.Add(dNode);
+            }
+
+            if(fileLine.StartsWith("END DIALOGUE NODE LIST")) { 
+                UnityEditor.AssetDatabase.CreateAsset(this, "Assets/Scripts/Dialogue/ScriptableObjects/" + this.assetName + ".asset");
+                return i;
+            }
+        }
+
+        return 0;
     }
 }
