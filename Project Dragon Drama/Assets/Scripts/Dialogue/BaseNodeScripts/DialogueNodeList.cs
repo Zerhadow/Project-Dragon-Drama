@@ -24,7 +24,7 @@ public class DialogueNodeList : ScriptableObject
     public int idx = 0;
 
     [SerializeField] public List<DialogueNode> nodeList;
-    [SerializeField] string assetName;
+    private string assetName;
 
     public void Init(string name) {
         nodeList = new List<DialogueNode>();
@@ -49,6 +49,11 @@ public class DialogueNodeList : ScriptableObject
             }
 
             if(fileLine.StartsWith("END DIALOGUE NODE LIST")) { 
+                UnityEditor.AssetDatabase.CreateAsset(this, "Assets/Scripts/Dialogue/ScriptableObjects/" + this.assetName + ".asset");
+                return i;
+            }
+
+            if(fileLine.StartsWith("DNN")) {
                 UnityEditor.AssetDatabase.CreateAsset(this, "Assets/Scripts/Dialogue/ScriptableObjects/" + this.assetName + ".asset");
                 return i;
             }

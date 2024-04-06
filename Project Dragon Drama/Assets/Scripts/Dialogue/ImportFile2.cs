@@ -5,6 +5,7 @@ using System.Reflection;
 using Palmmedia.ReportGenerator.Core.Reporting.Builders.Rendering;
 using UnityEditor;
 using UnityEngine;
+using System;
 
 public class ImportFile2 : MonoBehaviour
 {    
@@ -40,8 +41,8 @@ public class ImportFile2 : MonoBehaviour
     static void Import() {
         // add fill path
         List<string> inputFilePaths = new List<string>();
-        inputFilePaths.Add("Assets/Narrative/Example DNodeList.txt");
-        // inputFilePaths.Add("Assets/Narrative/Example BNodeList.txt");
+        // inputFilePaths.Add("Assets/Narrative/Example DNodeList.txt");
+        inputFilePaths.Add("Assets/Narrative/Example BNodeList.txt");
 
         // read file
         foreach (string filePath in inputFilePaths) {
@@ -82,6 +83,36 @@ public class ImportFile2 : MonoBehaviour
                 dNodeList.Init(name);
                 // fill node & update idx i
                 i = dNodeList.FillDialogueNodeList(fileLines, i);
+            }
+
+            if(fileLine.StartsWith("BEGIN BRANCH NODE")) {
+                BranchNode bNode = ScriptableObject.CreateInstance<BranchNode>();
+                // get name of node
+                string name  = fileLines[++i].Trim();
+                bNode.Init(name);
+
+                int j = 0;
+                try {
+                    j = int.Parse(fileLines[++i].Trim());
+                } catch(FormatException) {
+                    Debug.LogError("Unable to get number of options");
+                }
+
+                // get options strings
+                string opt1 = "", opt2 = "", opt3 = "";
+                if(j == 2) {
+                    opt1 = fileLines[++i].Trim().Substring(4);
+                    opt2 = fileLines[++i].Trim().Substring(4);
+                } else if(j == 3) {
+                    opt1 = fileLines[++i].Trim().Substring(4);
+                    opt2 = fileLines[++i].Trim().Substring(4);
+                    opt3 = fileLines[++i].Trim().Substring(4);
+                }
+
+                bNode.FillOption(opt1, opt2, opt3);
+                
+                // fill node & update idx i
+                i = bNode.FillBranchNode(fileLines, i);
             }
         }
     }
