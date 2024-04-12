@@ -28,7 +28,7 @@ public class DialogueNodeList : ScriptableObject
 
     public void Init(string name) {
         nodeList = new List<DialogueNode>();
-        this.assetName = name;
+        assetName = name;
     }
 
     public int FillDialogueNodeList(List<string> fileLines, int idx) {
@@ -42,10 +42,12 @@ public class DialogueNodeList : ScriptableObject
             if (fileLine.Trim().EndsWith(':')) { // A speaker is about to say something 
                 string speaker = fileLine.Trim().Trim(':');
                 string text = fileLines[++i].Trim();
-                DialogueNode dNode = new DialogueNode();
-                dNode.speaker = speaker;
-                dNode.text = text;
-                this.nodeList.Add(dNode);
+                DialogueNode dNode = new DialogueNode
+                {
+                    speaker = speaker,
+                    text = text
+                };
+                nodeList.Add(dNode);
             }
 
             if(fileLine.StartsWith("END DIALOGUE NODE LIST")) { 

@@ -53,4 +53,5 @@ Yeah, sorry Mr. HT.
 I hope everyone else was following along because I will not be going back over this.
 		Sam:
 			I’ll meet you in the cafeteria at lunch…
-	END OF BRANCH
+END DIALOGUE NODE LIST
+END OF BRANCH
