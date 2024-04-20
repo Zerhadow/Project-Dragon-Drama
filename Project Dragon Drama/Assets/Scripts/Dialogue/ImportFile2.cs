@@ -58,6 +58,13 @@ public class ImportFile2 : MonoBehaviour
                 continue;
             }
 
+            if(fileLines[i].Trim().StartsWith("BEGIN CNL")) {
+                CompositeNodeList cNodeList = ScriptableObject.CreateInstance<CompositeNodeList>();
+                // get name of node
+                string name  = fileLines[++i].Trim();
+                cNodeList.Init(name);
+            }
+
             if(fileLines[i].Trim().StartsWith("BEGIN DNL")) { 
                 DialogueNodeList dNodeList = ScriptableObject.CreateInstance<DialogueNodeList>();
                 // get name of node
