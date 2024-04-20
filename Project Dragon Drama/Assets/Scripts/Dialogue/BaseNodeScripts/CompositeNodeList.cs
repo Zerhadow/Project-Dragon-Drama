@@ -6,7 +6,7 @@ using UnityEngine;
 public class CompositeNodeList : ScriptableObject
 {
     [SerializeField] public List<CompositeNode> nodeList = new List<CompositeNode>();
-    private string assetName;
+    public string assetName;
     private int idx; // keeps track of asset number
 
     public void Init(string name) {
@@ -15,7 +15,12 @@ public class CompositeNodeList : ScriptableObject
     }
 
     public void AddCompositeNode(DialogueNodeList dialogueNodeList, BranchNode bNode) {
+        // Debug.Log("dnl: " + dialogueNodeList);
+        // Debug.Log("bn: " + bNode);
         CompositeNode cNode = ScriptableObject.CreateInstance<CompositeNode>();
-        string name = assetName + idx;
+        cNode.Init();
+        cNode.FillNode(dialogueNodeList, bNode);
+        UnityEditor.AssetDatabase.CreateAsset(cNode, "Assets/Scripts/Dialogue/ScriptableObjects/" + this.assetName + " C_" + idx + ".asset");
+        nodeList.Add(cNode);
     }
 }

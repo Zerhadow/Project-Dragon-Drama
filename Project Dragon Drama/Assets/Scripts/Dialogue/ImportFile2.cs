@@ -63,6 +63,7 @@ public class ImportFile2 : MonoBehaviour
             if(fileLines[i].Trim().StartsWith("BEGIN CNL")) {
                 // get name of node
                 string name  = fileLines[++i].Trim();
+                Debug.Log("Name: " + name);
                 cNodeList.Init(name);
             }
 
@@ -107,6 +108,11 @@ public class ImportFile2 : MonoBehaviour
                 // fill node & update idx i
                 i = bNode.FillBranchNode(fileLines, i, cNodeList);
                 // Debug.Log("text: " + fileLines[i].Trim());
+            }
+
+            if(fileLines[i].Trim().StartsWith("ED")) {
+                UnityEditor.AssetDatabase.CreateAsset(cNodeList, "Assets/Scripts/Dialogue/ScriptableObjects/" + cNodeList.assetName + ".asset");
+                Debug.Log("Created: " + cNodeList.assetName);
             }
         }
     }

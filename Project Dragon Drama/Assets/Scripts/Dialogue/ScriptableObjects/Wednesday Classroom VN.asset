@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 411934c9b89f0c54594c99c25bedc669, type: 3}
+  m_Name: Wednesday Classroom VN
+  m_EditorClassIdentifier: 
+  nodeList:
+  - {fileID: 0}
+  - {fileID: 11400000, guid: cb1d4d1b4ac9cd746b8dd7a1b53d8e5f, type: 2}
+  assetName: Wednesday Classroom VN

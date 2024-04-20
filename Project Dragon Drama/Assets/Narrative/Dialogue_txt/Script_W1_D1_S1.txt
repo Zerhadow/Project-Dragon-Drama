@@ -1,4 +1,4 @@
-Begin CNL
+BEGIN CNL
 Wednesday Classroom VN
 BEGIN DNL
 DN_Intro_1
@@ -101,3 +101,4 @@ Bailey:
 	<I guess Sam already went to the cafeteria…>
 END DNL
 END BRANCH
+ED

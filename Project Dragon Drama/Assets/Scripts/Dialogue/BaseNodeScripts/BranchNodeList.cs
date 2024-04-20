@@ -88,6 +88,7 @@ public class BranchNode : ScriptableObject
                     cNodeList.AddCompositeNode(null, this);
                 }
                 UnityEditor.AssetDatabase.CreateAsset(this, "Assets/Scripts/Dialogue/ScriptableObjects/" + assetName + ".asset");
+                Debug.Log("Created: " + assetName);
                 return i;
             }
         }
