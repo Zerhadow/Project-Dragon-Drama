@@ -89,6 +89,8 @@ BDN_IntroQuest_1_BO2
 		Bailey:
 			Oh, uh, no thank you…
 END BRANCH
+BEGIN DNL
+DN_IntroQuest_1
 Kaylee:
 	OKAY THEN!! WE HOPE YOU ENJOY THE DANCE!!!
 Kyle:
