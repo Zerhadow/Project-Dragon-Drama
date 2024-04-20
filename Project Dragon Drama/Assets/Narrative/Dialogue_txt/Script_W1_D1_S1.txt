@@ -57,6 +57,7 @@ Yes, Sam. Just try to be back before the end of class this time…
 			Of course (not).
 		HomeroomTeacher:
 		<Sigh> Back to the example on the board, as we solve for the limit of x…
+END DNL
 BEGIN DNL
 BDN_Intro_1_BO2
 		Bailey:
