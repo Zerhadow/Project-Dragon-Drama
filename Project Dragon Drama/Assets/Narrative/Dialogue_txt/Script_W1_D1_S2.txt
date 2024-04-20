@@ -43,6 +43,8 @@ BDN_Intro_2_BO2
 			Whatever…
 END DNL
 END BRANCH
+BEGIN DNL
+DN_Intro_2_1
 Nataly:
 <Satisfied Hmph>
 Interupt:
