@@ -1,0 +1,97 @@
+BEGIN DNL
+Kaylee:
+	COME JOIN THE DANCE PLANNING COMMITTEE FOR HOMECOMING!
+Kaylee:
+	FREE ADMISSION TO THE DANCE FOR THOSE ON THE COMMITTEE!
+Kyle:
+	The dance is free to everyone…
+Bailey:
+	Um, excuse me?
+Kaylee:
+	HELLO! ARE YOU HERE TO VOLUNTEER?
+Bailey:
+	<scared> Uh… actually… I, uh…
+Kyle:
+	Kaylee, you’re going to keep scaring everyone off if you don’t stop yelling…
+Kaylee:
+	BUT THIS IS SO EXCITING Kyle!!!
+Bailey:
+	I just had a quick question actually.
+Kaylee:
+	IS IT ABOUT THE HOMECOMING DANCE?
+Bailey:
+	Yes? Um…
+Kyle:
+	Ignore Kaylee. What’s the question?
+Bailey:
+	How were you going to do the voting for the dance?
+Bailey:
+	For King and Queen I mean.
+Kaylee:
+	PEOPLE WILL VOTE ON WHO THEY WANT AND THE PERSON WITH THE MOST VOTES WINS!
+Kyle:
+	We’ll let people start voting next week up until the dance.
+BEGIN BRANCH
+BN_IntroQuest_1
+2
+	1 -> [REQ: 3 NERD] There’s a Flaw…
+	2 -> Could You Change That…
+BDN_IntroQuest_1_BO1
+		Bailey:
+			But don’t people usually vote for the quarterback and his girlfriend?
+		Kaylee:
+			SO?
+		Bailey:
+			Well what if they were broken up before the dance?
+		Bailey:
+			I mean what if they choose to break up? Hypothetically?
+		Kyle:
+			Why? Is something up with Ken and Nataly?
+		Bailey:
+			No…
+		Bailey:
+			Just hypothetically…
+		Kaylee:
+			THAT WOULD BE SOO AWKWARD! COULD YOU EVEN IMAGINE???
+		Kyle:
+			I guess it would be weird.
+		Kyle:
+			But we can’t wait until the night of the dance. There wouldn’t be enough time for people to vote.
+		Bailey:
+			A lot can change in a month, though. You should at least wait until homecoming week.
+		Bailey:
+			That way you can remind people about the upcoming vote and still account for if… something… happens.
+		Kaylee:
+			THAT SOUNDS LIKE A GREAT IDEA!
+		Kyle:
+			We’d have to set up the voting table for the whole day instead of just during lunch periods, but I think we could manage that.
+		{COMPLETE QUEST: TUTORIAL}
+		Kaylee:
+			ARE YOU SURE YOU DON’T WANT TO VOLUNTEER? YOU’RE REALLY GOOD AT THIS!
+		Bailey:
+			Oh, um, no thanks.
+		Bailey:
+			Good luck though! <smiling>
+BDN_IntroQuest_1_BO2
+		Bailey:
+			Do you think you could move back when people are able to vote?
+		Kaylee:
+			NOPE!
+		Kyle:
+			We need to give everyone time to vote and the Planning Committee will need time to count all the votes before the dance.
+		Bailey:
+			Oh, right…
+		Kaylee:
+			SORRY!
+		Head Planner:
+			BUT IF YOU HAVE OTHER IDEAS, MAYBE YOU SHOULD VOLUNTEER!!!
+		Bailey:
+			Oh, uh, no thank you…
+END BRANCH
+Kaylee:
+	OKAY THEN!! WE HOPE YOU ENJOY THE DANCE!!!
+Kyle:
+	Seriously, you have to stop yelling at everyone…
+Kaylee:
+	OKAY Kyle!!!
+END DNL
