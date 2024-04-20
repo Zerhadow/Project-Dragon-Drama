@@ -57,7 +57,6 @@ BDN_Intro_3_BO1
 			<laughing> That’s still not a good insult.
 Bailey:
 Give me a slice of the pepperoni.
-BEGIN DNL
 BDN_Intro_3_BO2
 		Bailey:
 			Jass and her made a comment about my weight.
@@ -102,6 +101,8 @@ BDN_Intro_3_BO3
 			<laughing> It is not better cold!!!
 END DNL
 END BRANCH
+BEGIN DNL
+DN_Intro_3_1
 Interrupt:
 	CROSSFADE THROUGH BLACK
 Bailey:

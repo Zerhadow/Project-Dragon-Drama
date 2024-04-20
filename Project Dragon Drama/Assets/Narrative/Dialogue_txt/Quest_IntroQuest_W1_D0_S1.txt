@@ -36,6 +36,7 @@ BEGIN BRANCH
 BN_IntroQuest_1
 	1 -> [REQ: 3 NERD] There’s a Flaw…
 	2 -> Could You Change That…
+BEGIN DNL
 BDN_IntroQuest_1_BO1
 		Bailey:
 			But don’t people usually vote for the quarterback and his girlfriend?
@@ -88,6 +89,8 @@ BDN_IntroQuest_1_BO2
 		Bailey:
 			Oh, uh, no thank you…
 END BRANCH
+BEGIN DNL
+DN_IntroQuest_1
 Kaylee:
 	OKAY THEN!! WE HOPE YOU ENJOY THE DANCE!!!
 Kyle:
