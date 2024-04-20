@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3f1f4a953a5262a4d85d01d6521ff31b, type: 3}
-  m_Name: BN_Intro_0
+  m_Name: BN_HistoryTeacher_W1
   m_EditorClassIdentifier: 
   options:
-  - ' Pay Attention to Class'
-  - ' The Pizza Squares'
+  - ' The School Dance?'
+  - ' [FLAG: Talked with Sam && REQ: 1 NERD] Voting Issues'
   - 
-  dlist1: {fileID: 11400000, guid: d625806b1e0e4b14ebeb106b26642709, type: 2}
+  dlist1: {fileID: 11400000, guid: 8b16a453ae52ef140a9781a229698a73, type: 2}
   dlist2: {fileID: 0}
-  dlist3: {fileID: 11400000, guid: c2de7ad245c99e34c8c88dc25a6ae99b, type: 2}
+  dlist3: {fileID: 11400000, guid: c488685bfe97c2a4ea3a41cd45eaa978, type: 2}

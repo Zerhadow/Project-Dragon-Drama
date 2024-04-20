@@ -1,0 +1,72 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1bc4f5e2712d82469185e222f07eab5, type: 3}
+  m_Name: DN_W1_D2_S1
+  m_EditorClassIdentifier: 
+  idx: 0
+  nodeList:
+  - emotion: 0
+    speaker: Sam
+    text: Hey! Bailey!
+  - emotion: 0
+    speaker: Sam
+    text: You ready for  today?
+  - emotion: 0
+    speaker: Bailey
+    text: I guess.
+  - emotion: 0
+    speaker: Sam
+    text: "Sweet! Let\u2019s get started now!"
+  - emotion: 0
+    speaker: Bailey
+    text: After class.
+  - emotion: 0
+    speaker: Sam
+    text: Fiiine, after class.
+  - emotion: 0
+    speaker: Bailey
+    text: <Eyeroll>
+  - emotion: 0
+    speaker: HomeroomTeacher
+    text: "All right students, open to the start of the chapter and let\u2019s review\u2026"
+  - emotion: 0
+    speaker: Interrupt
+    text: CROSSFADE THROUGH BLACK
+  - emotion: 0
+    speaker: HomeroomTeacher
+    text: Before the bell rings, remember to finish-
+  - emotion: 0
+    speaker: Interrupt
+    text: BELL RINGS
+  - emotion: 0
+    speaker: HomeroomTeacher
+    text: -anyhomeworkbeforethetesttomorrow!
+  - emotion: 0
+    speaker: HomeroomTeach
+    text: Class dismissed.
+  - emotion: 0
+    speaker: Sam
+    text: Finally!!! I thought class would never end.
+  - emotion: 0
+    speaker: Sam
+    text: "We\u2019ve got all of lunch and free period to see what we can do. Let\u2019s
+      meet back here when you're done."
+  - emotion: 0
+    speaker: Bailey
+    text: Sounds like a plan!
+  - emotion: 0
+    speaker: Sam
+    text: "And remember, we need to convince the Planning Committee by tomorrow or
+      they\u2019ll start taking votes next Monday."
+  - emotion: 0
+    speaker: Bailey
+    text: Right.

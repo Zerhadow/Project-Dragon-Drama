@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1bc4f5e2712d82469185e222f07eab5, type: 3}
+  m_Name: DN_W1_D3_S1
+  m_EditorClassIdentifier: 
+  idx: 0
+  nodeList:
+  - emotion: 0
+    speaker: HomeroomTeacher
+    text: Pencils down everyone. Pass your tests up to the front.
+  - emotion: 0
+    speaker: Interrupt
+    text: BELL RINGS
+  - emotion: 0
+    speaker: HomeroomTeacher
+    text: Turn in your tests before leaving for lunch!
+  - emotion: 0
+    speaker: Bailey
+    text: So how do you think you did on the test, Sam?
+  - emotion: 0
+    speaker: Sam
+    text: "Pfft. That wasn\u2019t that tough. I don\u2019t get why they force us
+      to spend so much time studying for these."
+  - emotion: 0
+    speaker: Bailey
+    text: "Probably so that it \u201Cisn\u2019t that tough\u201D when you have to
+      do it\u2026"
+  - emotion: 0
+    speaker: Sam
+    text: "Yeah yeah. Well I\u2019m going to go grab some lunch. You?"
+  - emotion: 0
+    speaker: Bailey
+    text: "I\u2019m going to go explore for a bit. I\u2019ll meet you back here before
+      next class."
