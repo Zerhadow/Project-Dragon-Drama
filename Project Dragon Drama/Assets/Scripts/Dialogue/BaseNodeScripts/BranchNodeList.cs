@@ -54,13 +54,14 @@ public class BranchNode : ScriptableObject
 
                 // add dNode to Branch
                 dlist1 = dNodeList1;
-                Debug.Log("text: " + fileLines[i].Trim());
+                // Debug.Log("text: " + fileLines[i].Trim());
 
                 // get name of node
-                name2  = fileLines[i].Trim();
+                name2  = fileLines[i++].Trim();
                 dNodeList2.Init(name2);
 
                  // fill node & update idx i
+                Debug.Log("text: " + fileLines[i].Trim());
                 i = dNodeList2.FillDialogueNodeList(fileLines, i);
 
                 // add dNode to Branch
