@@ -37,6 +37,7 @@ BDN_Intro_2_BO1
 		{-1 Relationship with Jassica & Persia}
 		Bailey:
 			Screw you. 
+END DNL
 BEGIN DNL
 BDN_Intro_2_BO2
 		Bailey:
