@@ -1,6 +1,5 @@
 BEGIN BRANCH
 BN_Intro_5
-2
 	1 -> Study
 	2 -> Phone Sam
 BEGIN DNLS

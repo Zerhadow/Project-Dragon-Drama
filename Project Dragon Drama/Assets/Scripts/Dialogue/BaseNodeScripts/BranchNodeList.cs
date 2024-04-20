@@ -36,7 +36,7 @@ public class BranchNode : ScriptableObject
                 continue;
             }
 
-            if(fileLine.StartsWith("BEGIN DIALOGUE NODE")) {
+            if(fileLines[i].Trim().StartsWith("BEGIN DNL")) {
                 // creates SOs
                 DialogueNodeList dNodeList1 = ScriptableObject.CreateInstance<DialogueNodeList>();
                 DialogueNodeList dNodeList2 = ScriptableObject.CreateInstance<DialogueNodeList>();
@@ -54,34 +54,35 @@ public class BranchNode : ScriptableObject
 
                 // add dNode to Branch
                 dlist1 = dNodeList1;
-                // Debug.Log("text: " + fileLines[i].Trim());
+                Debug.Log("text: " + fileLines[i].Trim());
 
-                // get name of node
-                name2  = fileLines[i].Trim();
-                dNodeList2.Init(name2);
+                // // get name of node
+                // name2  = fileLines[i].Trim();
+                // dNodeList2.Init(name2);
 
-                 // fill node & update idx i
-                i = dNodeList2.FillDialogueNodeList(fileLines, ++i);
+                //  // fill node & update idx i
+                // i = dNodeList2.FillDialogueNodeList(fileLines, ++i);
 
-                // add dNode to Branch
-                dlist2 = dNodeList2;
+                // // add dNode to Branch
+                // dlist2 = dNodeList2;
 
-                if(options.Count == 3) {
-                    // Debug.Log("text: " + fileLines[i].Trim());
+                // if(options.Count == 3) {
+                //     // Debug.Log("text: " + fileLines[i].Trim());
                     
-                    // get name of node
-                    name3  = fileLines[i].Trim();
-                    dNodeList3.Init(name3);
+                //     // get name of node
+                //     name3  = fileLines[i].Trim();
+                //     dNodeList3.Init(name3);
 
-                    // fill node & update idx i
-                    i = dNodeList3.FillDialogueNodeList(fileLines, ++i);
+                //     // fill node & update idx i
+                //     i = dNodeList3.FillDialogueNodeList(fileLines, ++i);
 
-                    // add dNode to Branch
-                    dlist3 = dNodeList3;
-                }
+                //     // add dNode to Branch
+                //     dlist3 = dNodeList3;
+                // }
             }
 
-            if(fileLine.StartsWith("END OF BRANCH")) {
+            if(fileLines[i].Trim().StartsWith("END BRANCH") 
+            || fileLines[i].Trim().StartsWith("END DNL")) {
                 UnityEditor.AssetDatabase.CreateAsset(this, "Assets/Scripts/Dialogue/ScriptableObjects/" + assetName + ".asset");
                 return i;
             }

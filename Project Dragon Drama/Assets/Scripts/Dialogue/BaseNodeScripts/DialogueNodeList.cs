@@ -35,11 +35,11 @@ public class DialogueNodeList : ScriptableObject
         for(int i = idx; i < fileLines.Count; i++) { 
             string fileLine = fileLines[i].Trim();
             
-            if(string.IsNullOrEmpty(fileLine)) {
+            if(string.IsNullOrEmpty(fileLines[i].Trim())) {
                 continue;
             }
 
-            if (fileLine.Trim().EndsWith(':')) { // A speaker is about to say something 
+            if (fileLines[i].Trim().EndsWith(':')) { // A speaker is about to say something 
                 string speaker = fileLine.Trim().Trim(':');
                 string text = fileLines[++i].Trim();
                 DialogueNode dNode = new DialogueNode
@@ -50,13 +50,12 @@ public class DialogueNodeList : ScriptableObject
                 nodeList.Add(dNode);
             }
 
-            if(fileLine.StartsWith("END DIALOGUE NODE LIST")) { 
+            if(fileLines[i].Trim().StartsWith("BEGIN BRANCH")
+            || fileLines[i].Trim().StartsWith("END DNL")
+            || fileLines[i].Trim().StartsWith("BDN")) { 
                 UnityEditor.AssetDatabase.CreateAsset(this, "Assets/Scripts/Dialogue/ScriptableObjects/" + this.assetName + ".asset");
-                return i;
-            }
-
-            if(fileLine.StartsWith("DNN")) { // checks for other option path
-                UnityEditor.AssetDatabase.CreateAsset(this, "Assets/Scripts/Dialogue/ScriptableObjects/" + this.assetName + ".asset");
+                Debug.Log("Created: " + assetName);
+                // Debug.Log("Exit idx txt: " + fileLines[i].Trim());
                 return i;
             }
         }

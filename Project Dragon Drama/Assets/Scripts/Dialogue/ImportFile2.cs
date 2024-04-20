@@ -8,41 +8,24 @@ using UnityEngine;
 using System;
 
 public class ImportFile2 : MonoBehaviour
-{    
-    public List<string> inputFilePaths;
-    List<string> fileLines = new List<string>();
-    [SerializeField] public List<DialogueNodeList> dialogueNodeLists = new List<DialogueNodeList>();
-    
-    void Awake() {
-        // testing purposes: Clear test node lists before running script
-        
-        foreach (string filePath in inputFilePaths) {
-            if( filePath != null) {
-                ReadFileToList(filePath);
-                foreach(DialogueNodeList list in dialogueNodeLists) {
-                    ImportToNodeList(list);
-                }
-            } else { Debug.LogError("No input file path specified");}
-        }
-    }
-
-    public void ReadFileToList(string pathName) {
-        StreamReader reader = new StreamReader(pathName);
-        string line;
-
-        while ((line = reader.ReadLine()) != null) {
-            fileLines.Add(line);
-        }
-
-        reader.Close();
-    }
-    
+{        
     [MenuItem("Node/Import Files")]
     static void Import() {
         // add fill path
         List<string> inputFilePaths = new List<string>();
         // inputFilePaths.Add("Assets/Narrative/Example DNodeList.txt");
-        inputFilePaths.Add("Assets/Narrative/Example BNodeList.txt");
+        inputFilePaths.Add("Assets/Narrative/Dialogue_txt/Script_W1_D1_S1.txt");
+        inputFilePaths.Add("Assets/Narrative/Dialogue_txt/Script_W1_D1_S2.txt");
+        // inputFilePaths.Add("Assets/Narrative/Dialogue_txt/Script_W1_D1_S3.txt");
+        // inputFilePaths.Add("Assets/Narrative/Dialogue_txt/Script_W1_D1_S4.txt");
+        // inputFilePaths.Add("Assets/Narrative/Dialogue_txt/Script_W1_D1_S5.txt");
+        // inputFilePaths.Add("Assets/Narrative/Dialogue_txt/Script_W1_D2_S1.txt");
+        // inputFilePaths.Add("Assets/Narrative/Dialogue_txt/Script_W1_D2_S2.txt");
+        // inputFilePaths.Add("Assets/Narrative/Dialogue_txt/Script_W1_D3_S1.txt");
+        // inputFilePaths.Add("Assets/Narrative/Dialogue_txt/Script_W1_D3_S2.txt");
+        // inputFilePaths.Add("Assets/Narrative/Dialogue_txt/Quest_IntroQuest_W1_D0_S1.txt");
+        // inputFilePaths.Add("Assets/Narrative/Dialogue_txt/Gossip_Janitor_W1_D0_S1.txt");
+        // inputFilePaths.Add("Assets/Narrative/Dialogue_txt/Gossip_HistoryTeacher_W1_D0_S1.txt");
 
         // read file
         foreach (string filePath in inputFilePaths) {
@@ -51,6 +34,7 @@ public class ImportFile2 : MonoBehaviour
                 // DebugPrint(fileLines);
                 // create objs from fileLines
                 InterpretStringList(fileLines);
+                Debug.Log("Finished import of " + fileLines);
             } else { Debug.LogError("No input file path specified");}
         }
     }
@@ -70,84 +54,49 @@ public class ImportFile2 : MonoBehaviour
 
     private static void InterpretStringList(List<string> fileLines) {
         for(int i = 0; i < fileLines.Count; i++) { 
-            string fileLine = fileLines[i].Trim();
-
-            if(fileLine == "END OF IMPORT") {
-                break;
-            }
-
-            if(string.IsNullOrEmpty(fileLine)) {
+            if(string.IsNullOrEmpty(fileLines[i])) {
                 continue;
             }
 
-            if(fileLine.StartsWith("BEGIN DIALOGUE NODE")) { 
+            if(fileLines[i].Trim().StartsWith("BEGIN DNL")) { 
                 DialogueNodeList dNodeList = ScriptableObject.CreateInstance<DialogueNodeList>();
                 // get name of node
                 string name  = fileLines[++i].Trim();
                 dNodeList.Init(name);
                 // fill node & update idx i
                 i = dNodeList.FillDialogueNodeList(fileLines, i);
+                // Debug.Log("Exit idx txt: " + fileLines[i].Trim());
             }
 
-            if(fileLine.StartsWith("BEGIN BRANCH NODE")) {
+            if(fileLines[i].Trim().StartsWith("BEGIN BRANCH")) {
                 BranchNode bNode = ScriptableObject.CreateInstance<BranchNode>();
                 // get name of node
                 string name  = fileLines[++i].Trim();
                 bNode.Init(name);
 
-                // int j = 0;
-                // try {
-                //     j = int.Parse(fileLines[++i].Trim());
-                // } catch(FormatException) {
-                //     Debug.LogError("Unable to get number of options");
-                // }
-
                 // get options strings
                 string opt1 = "", opt2 = "", opt3 = "";
 
+                // Debug.Log("txt: " + fileLines[++i].Trim());
+
                 if(fileLines[++i].Trim().StartsWith("1 ->")) {
                     opt1 = fileLines[i].Trim().Substring(4);
+                    // Debug.Log(opt1);
                 }
 
                 if(fileLines[++i].Trim().StartsWith("2 ->")) {
                     opt2 = fileLines[i].Trim().Substring(4);
+                    // Debug.Log(opt2);
                 }
 
                 if(fileLines[++i].Trim().StartsWith("3 ->")) {
-                    opt3 = fileLines[i].Trim().Substring(4);
+                    // opt3 = fileLines[i].Trim().Substring(4);
                 }
-
-                // if(j == 2) {
-                //     opt1 = fileLines[++i].Trim().Substring(4);
-                //     opt2 = fileLines[++i].Trim().Substring(4);
-                // } else if(j == 3) {
-                //     opt1 = fileLines[++i].Trim().Substring(4);
-                //     opt2 = fileLines[++i].Trim().Substring(4);
-                //     opt3 = fileLines[++i].Trim().Substring(4);
-                // }
 
                 bNode.FillOption(opt1, opt2, opt3);
                 
                 // fill node & update idx i
                 i = bNode.FillBranchNode(fileLines, i);
-            }
-        }
-    }
-
-    public void ImportToNodeList(DialogueNodeList dialogueNodeList) {
-        for(int i = 0; i < fileLines.Count; i++) {
-            // Debug.Log("Idx: " + i);
-            string fileLine = fileLines[i];
-            string fileLine2 = fileLines[++i]; // gets the corresponding text from speaker
-
-            if(string.IsNullOrEmpty(fileLine)) {
-                continue;
-            }
-
-            if (fileLine.Trim().EndsWith(':')) { // A speaker is about to say something 
-                string speaker = fileLine.Trim().Trim(':');
-                string text = fileLine2.Trim();
-                // dialogueNodeList.AddNode(speaker, text, dialogueNodeList);
             }
         }
     }

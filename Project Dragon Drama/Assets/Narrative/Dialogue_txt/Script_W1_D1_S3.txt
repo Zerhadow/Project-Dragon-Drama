@@ -30,7 +30,6 @@ Sam:
 	What did she even say?
 BEGIN BRANCH
 BN_Intro_3
-3
 	1 -> She Called Me a Bookworm
 	2 -> She Called Me Fat
 	3 -> It Doesn’t Matter
