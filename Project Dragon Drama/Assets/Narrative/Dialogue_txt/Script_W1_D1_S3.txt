@@ -57,6 +57,7 @@ BDN_Intro_3_BO1
 			<laughing> That’s still not a good insult.
 Bailey:
 Give me a slice of the pepperoni.
+BEGIN DNL
 BDN_Intro_3_BO2
 		Bailey:
 			Jass and her made a comment about my weight.
