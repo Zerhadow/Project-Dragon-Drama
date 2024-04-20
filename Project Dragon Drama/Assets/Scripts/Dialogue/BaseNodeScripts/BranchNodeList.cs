@@ -61,7 +61,7 @@ public class BranchNode : ScriptableObject
                 dNodeList2.Init(name2);
 
                  // fill node & update idx i
-                Debug.Log("text: " + fileLines[i].Trim());
+                // Debug.Log("text: " + fileLines[i].Trim());
                 i = dNodeList2.FillDialogueNodeList(fileLines, i);
 
                 // add dNode to Branch
@@ -71,7 +71,7 @@ public class BranchNode : ScriptableObject
                     // Debug.Log("text: " + fileLines[i].Trim());
                     
                     // get name of node
-                    name3  = fileLines[i].Trim();
+                    name3  = fileLines[i++].Trim();
                     dNodeList3.Init(name3);
 
                     // fill node & update idx i

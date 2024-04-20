@@ -88,16 +88,14 @@ BDN_Intro_1_BO2
 			I hope everyone else was following along because I will not be going back over this.
 		Sam:
 			I’ll meet you in the cafeteria at lunch…
-END DNL
-END BRANCH
-BEGIN DNL
 DN_Intro_1_2
-Interrupt:
+Interrupt
 	CROSSFADE THROUGH BLACK
-Interrupt:
+Interrupt
 	BELL RINGS
 HomeroomTeacher:
 	…Alright, before you are dismissed, remember that there will be a test Friday and to hand over your homework from last night if you did not do so at the start of class.
 Bailey:
 	<I guess Sam already went to the cafeteria…>
 END DNL
+END BRANCH

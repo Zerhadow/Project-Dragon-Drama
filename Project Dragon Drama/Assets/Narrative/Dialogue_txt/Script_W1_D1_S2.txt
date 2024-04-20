@@ -46,6 +46,6 @@ BEGIN DNL
 DN_Intro_2_1
 Nataly:
 <Satisfied Hmph>
-Interupt:
+Interupt
 	NATALY, JASSICA, AND PERSIA WALK OFF
 END DNL

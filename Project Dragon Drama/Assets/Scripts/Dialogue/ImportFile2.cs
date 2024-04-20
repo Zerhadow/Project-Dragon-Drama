@@ -15,8 +15,8 @@ public class ImportFile2 : MonoBehaviour
         List<string> inputFilePaths = new List<string>();
         // inputFilePaths.Add("Assets/Narrative/Example DNodeList.txt");
         inputFilePaths.Add("Assets/Narrative/Dialogue_txt/Script_W1_D1_S1.txt");
-        inputFilePaths.Add("Assets/Narrative/Dialogue_txt/Script_W1_D1_S2.txt");
-        inputFilePaths.Add("Assets/Narrative/Dialogue_txt/Script_W1_D1_S3.txt");
+        // inputFilePaths.Add("Assets/Narrative/Dialogue_txt/Script_W1_D1_S2.txt");
+        // inputFilePaths.Add("Assets/Narrative/Dialogue_txt/Script_W1_D1_S3.txt");
         // inputFilePaths.Add("Assets/Narrative/Dialogue_txt/Script_W1_D1_S4.txt");
         // inputFilePaths.Add("Assets/Narrative/Dialogue_txt/Script_W1_D1_S5.txt");
         // inputFilePaths.Add("Assets/Narrative/Dialogue_txt/Script_W1_D2_S1.txt");
@@ -69,6 +69,7 @@ public class ImportFile2 : MonoBehaviour
                 DialogueNodeList dNodeList = ScriptableObject.CreateInstance<DialogueNodeList>();
                 // get name of node
                 string name  = fileLines[++i].Trim();
+                // Debug.Log("Name: " + name);
                 dNodeList.Init(name);
                 // fill node & update idx i
                 i = dNodeList.FillDialogueNodeList(fileLines, i);
@@ -104,6 +105,7 @@ public class ImportFile2 : MonoBehaviour
                 
                 // fill node & update idx i
                 i = bNode.FillBranchNode(fileLines, i);
+                // Debug.Log("text: " + fileLines[i].Trim());
             }
         }
     }

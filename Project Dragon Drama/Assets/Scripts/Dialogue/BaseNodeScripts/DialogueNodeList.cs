@@ -29,6 +29,7 @@ public class DialogueNodeList : ScriptableObject
     public void Init(string name) {
         nodeList = new List<DialogueNode>();
         assetName = name;
+        // Debug.Log("Name: " + assetName);
     }
 
     public int FillDialogueNodeList(List<string> fileLines, int idx) {
@@ -52,7 +53,8 @@ public class DialogueNodeList : ScriptableObject
 
             if(fileLines[i].Trim().StartsWith("BEGIN BRANCH")
             || fileLines[i].Trim().StartsWith("END DNL")
-            || fileLines[i].Trim().StartsWith("BDN")) { 
+            || fileLines[i].Trim().StartsWith("BDN")
+            || fileLines[i].Trim().StartsWith("DN")) { 
                 UnityEditor.AssetDatabase.CreateAsset(this, "Assets/Scripts/Dialogue/ScriptableObjects/" + this.assetName + ".asset");
                 Debug.Log("Created: " + assetName);
                 // Debug.Log("Exit idx txt: " + fileLines[i].Trim());
