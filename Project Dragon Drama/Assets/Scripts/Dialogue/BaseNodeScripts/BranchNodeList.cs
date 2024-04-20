@@ -28,7 +28,7 @@ public class BranchNode : ScriptableObject
         }    
     }
 
-    public int FillBranchNode(List<string> fileLines, int idx) {
+    public int FillBranchNode(List<string> fileLines, int idx, CompositeNodeList cNodeList) {
         for(int i = idx; i < fileLines.Count; i++) {  
             string fileLine = fileLines[i].Trim();
             
@@ -50,7 +50,7 @@ public class BranchNode : ScriptableObject
                 dNodeList1.Init(name);
 
                 // fill node & update idx i
-                i = dNodeList1.FillDialogueNodeList(fileLines, ++i);
+                i = dNodeList1.FillDialogueNodeList(fileLines, ++i, null);
 
                 // add dNode to Branch
                 dlist1 = dNodeList1;
@@ -62,7 +62,7 @@ public class BranchNode : ScriptableObject
 
                  // fill node & update idx i
                 // Debug.Log("text: " + fileLines[i].Trim());
-                i = dNodeList2.FillDialogueNodeList(fileLines, i);
+                i = dNodeList2.FillDialogueNodeList(fileLines, i, null);
 
                 // add dNode to Branch
                 dlist2 = dNodeList2;
@@ -75,7 +75,7 @@ public class BranchNode : ScriptableObject
                     dNodeList3.Init(name3);
 
                     // fill node & update idx i
-                    i = dNodeList3.FillDialogueNodeList(fileLines, i);
+                    i = dNodeList3.FillDialogueNodeList(fileLines, i, null);
 
                     // add dNode to Branch
                     dlist3 = dNodeList3;
@@ -84,6 +84,9 @@ public class BranchNode : ScriptableObject
 
             if(fileLines[i].Trim().StartsWith("END BRANCH") 
             || fileLines[i].Trim().StartsWith("END DNL")) {
+                if(cNodeList != null) {
+                    cNodeList.AddCompositeNode(null, this);
+                }
                 UnityEditor.AssetDatabase.CreateAsset(this, "Assets/Scripts/Dialogue/ScriptableObjects/" + assetName + ".asset");
                 return i;
             }

@@ -14,7 +14,7 @@ public class CompositeNodeList : ScriptableObject
         assetName = name;
     }
 
-    public void CreateCompositeNode() {
+    public void AddCompositeNode(DialogueNodeList dialogueNodeList, BranchNode bNode) {
         CompositeNode cNode = ScriptableObject.CreateInstance<CompositeNode>();
         string name = assetName + idx;
     }

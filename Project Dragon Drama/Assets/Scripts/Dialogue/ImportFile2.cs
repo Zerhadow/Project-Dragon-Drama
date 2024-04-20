@@ -53,13 +53,14 @@ public class ImportFile2 : MonoBehaviour
     }
 
     private static void InterpretStringList(List<string> fileLines) {
+        CompositeNodeList cNodeList = ScriptableObject.CreateInstance<CompositeNodeList>();
+
         for(int i = 0; i < fileLines.Count; i++) { 
             if(string.IsNullOrEmpty(fileLines[i])) {
                 continue;
             }
 
             if(fileLines[i].Trim().StartsWith("BEGIN CNL")) {
-                CompositeNodeList cNodeList = ScriptableObject.CreateInstance<CompositeNodeList>();
                 // get name of node
                 string name  = fileLines[++i].Trim();
                 cNodeList.Init(name);
@@ -72,7 +73,7 @@ public class ImportFile2 : MonoBehaviour
                 // Debug.Log("Name: " + name);
                 dNodeList.Init(name);
                 // fill node & update idx i
-                i = dNodeList.FillDialogueNodeList(fileLines, i);
+                i = dNodeList.FillDialogueNodeList(fileLines, i, cNodeList);
                 // Debug.Log("Exit idx txt: " + fileLines[i].Trim());
             }
 
@@ -104,7 +105,7 @@ public class ImportFile2 : MonoBehaviour
                 bNode.FillOption(opt1, opt2, opt3);
                 
                 // fill node & update idx i
-                i = bNode.FillBranchNode(fileLines, i);
+                i = bNode.FillBranchNode(fileLines, i, cNodeList);
                 // Debug.Log("text: " + fileLines[i].Trim());
             }
         }
