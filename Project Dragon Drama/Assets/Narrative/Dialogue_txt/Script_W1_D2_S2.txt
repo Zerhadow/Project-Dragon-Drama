@@ -2,6 +2,7 @@ BEGIN BRANCH
 BN_W1_D2_S2
 	1 -> Study
 	2 -> Phone Sam
+BEGIN DNL
 BDN_W1_D2_S2_BO1
 		{+1 Nerd}
 BDN_W1_D2_S2_BO2
@@ -59,3 +60,4 @@ BDN_W1_D2_S2_BO2
 		Bailey:
 			Hahahaha.
 END DNL
+END BRANCH
