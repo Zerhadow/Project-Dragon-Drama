@@ -1,5 +1,3 @@
-Sam:
-			Baka.
 BEGIN BRANCH NODE
 BN_P_1
 2
@@ -55,3 +53,4 @@ I hope everyone else was following along because I will not be going back over t
 			I’ll meet you in the cafeteria at lunch…
 END DIALOGUE NODE LIST
 END OF BRANCH
+END OF IMPORT

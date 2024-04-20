@@ -72,6 +72,10 @@ public class ImportFile2 : MonoBehaviour
         for(int i = 0; i < fileLines.Count; i++) { 
             string fileLine = fileLines[i].Trim();
 
+            if(fileLine == "END OF IMPORT") {
+                break;
+            }
+
             if(string.IsNullOrEmpty(fileLine)) {
                 continue;
             }
@@ -91,23 +95,36 @@ public class ImportFile2 : MonoBehaviour
                 string name  = fileLines[++i].Trim();
                 bNode.Init(name);
 
-                int j = 0;
-                try {
-                    j = int.Parse(fileLines[++i].Trim());
-                } catch(FormatException) {
-                    Debug.LogError("Unable to get number of options");
-                }
+                // int j = 0;
+                // try {
+                //     j = int.Parse(fileLines[++i].Trim());
+                // } catch(FormatException) {
+                //     Debug.LogError("Unable to get number of options");
+                // }
 
                 // get options strings
                 string opt1 = "", opt2 = "", opt3 = "";
-                if(j == 2) {
-                    opt1 = fileLines[++i].Trim().Substring(4);
-                    opt2 = fileLines[++i].Trim().Substring(4);
-                } else if(j == 3) {
-                    opt1 = fileLines[++i].Trim().Substring(4);
-                    opt2 = fileLines[++i].Trim().Substring(4);
-                    opt3 = fileLines[++i].Trim().Substring(4);
+
+                if(fileLines[++i].Trim().StartsWith("1 ->")) {
+                    opt1 = fileLines[i].Trim().Substring(4);
                 }
+
+                if(fileLines[++i].Trim().StartsWith("2 ->")) {
+                    opt2 = fileLines[i].Trim().Substring(4);
+                }
+
+                if(fileLines[++i].Trim().StartsWith("3 ->")) {
+                    opt3 = fileLines[i].Trim().Substring(4);
+                }
+
+                // if(j == 2) {
+                //     opt1 = fileLines[++i].Trim().Substring(4);
+                //     opt2 = fileLines[++i].Trim().Substring(4);
+                // } else if(j == 3) {
+                //     opt1 = fileLines[++i].Trim().Substring(4);
+                //     opt2 = fileLines[++i].Trim().Substring(4);
+                //     opt3 = fileLines[++i].Trim().Substring(4);
+                // }
 
                 bNode.FillOption(opt1, opt2, opt3);
                 

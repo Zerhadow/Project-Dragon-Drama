@@ -55,7 +55,7 @@ public class DialogueNodeList : ScriptableObject
                 return i;
             }
 
-            if(fileLine.StartsWith("DNN")) {
+            if(fileLine.StartsWith("DNN")) { // checks for other option path
                 UnityEditor.AssetDatabase.CreateAsset(this, "Assets/Scripts/Dialogue/ScriptableObjects/" + this.assetName + ".asset");
                 return i;
             }
