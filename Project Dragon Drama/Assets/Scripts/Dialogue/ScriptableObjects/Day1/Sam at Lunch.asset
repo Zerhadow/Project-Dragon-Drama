@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 411934c9b89f0c54594c99c25bedc669, type: 3}
+  m_Name: Sam at Lunch
+  m_EditorClassIdentifier: 
+  nodeList:
+  - {fileID: 11400000, guid: 65787363bb18fd246bb61ad780eb5c49, type: 2}
+  - {fileID: 11400000, guid: f1e711fa71b3ca34989bf573dbda0c80, type: 2}
+  - {fileID: 11400000, guid: f1e711fa71b3ca34989bf573dbda0c80, type: 2}
