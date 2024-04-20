@@ -17,7 +17,7 @@ public class DialogueController : MonoBehaviour
 
         public NodeType type;
         public DialogueNodeList dNodeList;
-        public BranchNodeList bNodelist;
+        public BranchNode bNode;
         // public ConnectNode connectNode;
     }
     
@@ -70,8 +70,8 @@ public class DialogueController : MonoBehaviour
             if(node.dNodeList != null) { // means that its a dialogue node list
                 DialogueNodeList dialogueNodeList = node.dNodeList;
                 GetDialogueNode(dialogueNodeList);
-            } else if(node.bNodelist != null) { // means that its a dialogue node list
-                BranchNodeList branchNodeList = node.bNodelist;
+            } else if(node.bNode != null) { // means that its a dialogue node list
+                BranchNode branchNodeList = node.bNode;
 
                 if(branchNodeList.options != null) {
                     inBranch = true;
@@ -104,7 +104,7 @@ public class DialogueController : MonoBehaviour
 
     public void ReadBranchDialogueList() {
         CompositeNode node = nodeList[currIdx];
-        BranchNodeList branchNodeList = node.bNodelist;
+        BranchNode branchNodeList = node.bNode;
         Debug.Log("player choice: " + playerChoice);
 
         if(playerChoice == 1) {

@@ -4,7 +4,6 @@ Sam:
 	So? How did it go with the Planning Committee?
 BEGIN BRANCH
 BN_Intro_4
-2
 	1 -> [FLAG: Talked with Planning Committee] Not Well
 	2 -> Need Some More Time
 BEGIN DNL

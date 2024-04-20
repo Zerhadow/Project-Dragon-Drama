@@ -30,7 +30,6 @@ Jassica:
 	Do you really want us to stay here and keep mocking you?
 BEGIN BRANCH
 BN_Intro_2
-2
 	1 -> Screw you
 	2 -> Whatever
 BEGIN DNL

@@ -1,4 +1,5 @@
 BEGIN DNL
+DN_IntroQuest
 Kaylee:
 	COME JOIN THE DANCE PLANNING COMMITTEE FOR HOMECOMING!
 Kaylee:
@@ -33,7 +34,6 @@ Kyle:
 	We’ll let people start voting next week up until the dance.
 BEGIN BRANCH
 BN_IntroQuest_1
-2
 	1 -> [REQ: 3 NERD] There’s a Flaw…
 	2 -> Could You Change That…
 BDN_IntroQuest_1_BO1

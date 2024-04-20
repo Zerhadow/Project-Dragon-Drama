@@ -4,7 +4,6 @@ HistoryTeacher:
 	Hello Bailey. What can I help you with?
 BEGIN BRANCH
 BN_HistoryTeacher_W1
-2
 	1 -> The School Dance?
 	2 -> [FLAG: Talked with Sam && REQ: 1 NERD] Voting Issues
 BEGIN DNL

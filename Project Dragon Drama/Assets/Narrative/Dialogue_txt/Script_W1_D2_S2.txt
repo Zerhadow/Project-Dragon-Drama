@@ -1,6 +1,5 @@
 BEGIN BRANCH
 BN_W1_D2_S2
-2
 	1 -> Study
 	2 -> Phone Sam
 BDN_W1_D2_S2_BO1
