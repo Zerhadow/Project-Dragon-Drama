@@ -1,0 +1,174 @@
+BEGIN DNL
+DN_Intro_3
+Sam:
+	Finally! I thought you’d spend all lunch taking more notes or something.
+Bailey:
+	Well. Some of us wait for the class to be over before leaving.
+Sam:
+	And some of us get pizza while it’s still warm.
+Bailey:
+	<under her breath> But it’s better cold…
+Sam:
+	Speaking of which, I got some extra slices for you.
+Bailey:
+	I think I’m just going to have a light sandwich…
+Sam:
+	What’s up? I thought you liked the school pizzas?
+Bailey:
+	Yeah. It’s… nothing. Just something Nataly said…
+Sam:
+	Nataly? Why were you talking with Nataly? We hate Nataly.
+Bailey:
+	It wasn’t exactly by choice. She just bumped into me.
+Sam:
+	So you stopped to make some not-so-pleasant small talk?
+Bailey:
+	No, I mean she literally bumped into me. She walked right into me and then blamed ME for it.
+Sam:
+	Ugh. That is exactly something that smaug bitch would do.
+Sam:
+	What did she even say?
+BEGIN BRANCH
+BN_Intro_3
+	1 -> She Called Me a Bookworm
+	2 -> She Called Me Fat
+	3 -> It Doesn’t Matter
+BEGIN DNL
+BDN_Intro_3_BO1
+		Bailey:
+			She called me “Bookworm Bailey.”
+		Sam:
+			Seriously!? That’s not even a good insult.
+		Bailey:
+			That’s what I said!
+		Sam:
+			How are you going to let something like  that get to you?
+		Bailey:
+			I know. It’s dumb. Jassica and Persia were with her and it just got to me.
+		Sam:
+			Dude. Nataly wouldn’t be nothing without those two backing her up.
+		Bailey:
+			That’s a double negative. “wouldn’t be nothing” means she would still be something.
+		Sam:
+			Yeah, she’d still be a smug bitch.
+		Sam:
+			<laughing> And only a bookworm would point out a double negative, Bailey.
+		Bailey:
+			<laughing> That’s still not a good insult.
+Bailey:
+Give me a slice of the pepperoni.
+BDN_Intro_3_BO2
+		Bailey:
+			Jass and her made a comment about my weight.
+		Sam:
+			Bailey, you’re not fat.
+		Bailey:
+			I know…
+		Sam:
+			No, seriously. You’re practically a twig. If anything you need more pizza, not less.
+		Bailey:
+			I don’t think anyone has ever made a case for more pizza being the healthy choice.
+		Sam:
+			Screw the healthy choice.
+		Sam:
+			And screw Natlie’s little popular girl club. Who even cares what they think?
+		Bailey:
+			I mean, a lot of the rest of the school.
+		{-1 Relationship with School}
+		Sam:
+			Well we don’t. Here, just take a slice before it starts to get cold.
+		Bailey:
+			But it’s better co-
+		Sam:
+			<laughing> It is not better cold!!!
+BDN_Intro_3_BO3
+		Bailey:
+			It was dumb. It doesn’t really matter.
+		{+1 Relationship with Sam}
+		Sam:
+			Eyyy, that’s my girl!.
+		Sam:
+			Still though…
+		Sam:
+	 I hate that she just gets away with that crap.
+		Bailey:
+			I know, but she isn’t worth it. 
+		Sam:
+			Yeah, you’re right… maybe. Here, take a slice before it starts to get cold.
+		Bailey:
+			But it’s better co-
+		Sam:
+			<laughing> It is not better cold!!!
+END DNL
+END BRANCH
+Interrupt:
+	CROSSFADE THROUGH BLACK
+Bailey:
+	I don’t think I can eat another slice.
+Sam:
+	I’ve got it!
+Bailey:
+	Well okay, you can have the rest.
+Sam:
+	What?
+Sam:
+	Oh, no thanks. I was thinking about how we can get back at Nataly and her puppets.
+Bailey:
+	You really don’t have to keep comforting me. I’d rather just forget about what they said today.
+Sam:
+	No, not just for today, but for how they are all the time!
+Bailey:
+	Sam…
+Sam:
+	Come on! Trust me Bailey. It’ll be great!
+Bailey:
+	As long as it doesn’t involve anything that will get us in trouble.
+Sam:
+	No promises!
+Sam:
+	So, the upcoming homecoming dance…
+Bailey:
+	I don’t think I like where this is going.
+Sam:
+	Oh can it. You haven’t even heard the plan yet.
+Sam:
+	So long story short Nataly is obsessed with winning Homecoming Queen.
+Bailey:
+	Well yeah. Everyone knows that. 
+Sam:
+	And it’s pretty much a guarantee since Ken is her boyfriend. The quarterback is always voted for king.
+Bailey:
+	So?
+Sam:
+	So we’re going to break them up!
+Bailey:
+	What!?! Why!?!
+Sam:
+	Think about it. If Ken and Nataly aren’t together, then Homecoming Queen will be up for grabs!
+Sam:
+	And who’s going to vote for the quarterback’s ex?
+Bailey:
+	Ethical concerns aside, how would we even do that?
+Sam:
+	I have a few ideas… <evil grin>
+Sam:
+	I’ll work out the details, but I need you to talk to the Student Planning Committee first.
+Bailey:
+	You’re not wanting me to try and convince them to go along with this, are you?
+Sam:
+	We just need to confirm they’ll hold the vote separately and that they won’t take any votes until homecoming.
+Bailey:
+	Assuming I agree to do this, do I have to be the one to talk to the Planning Committee?
+Sam:
+	Has to be you. I still have to finish last night’s math homework, remember?
+Bailey:
+	That’s… at least a better excuse…
+Sam:
+	<laughing> I’ll be back in class after you talk to the dance committee.
+Sam:
+	Good luck!
+Bailey:
+	*long sigh* Okay…
+Interrupt:
+	SAM WALKS OFF OUT OF CAFETERIA
+END DNL

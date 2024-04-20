@@ -1,0 +1,75 @@
+BEGIN BRANCH
+BN_Intro_5
+	1 -> Study
+	2 -> Phone Sam
+BEGIN DNLS
+BDN_Intro_5_BO1
+		{+1 Nerd}
+BDN_Intro_5_BO2
+		{+1 Relationship with Sam}
+		Interrupt:
+			<Ring Ring. Ring Ring.>
+		Interrupt:
+			<Click.>
+		Sam:
+			HEYYY! BAILEEEY! 
+		Bailey:
+			Hey Sam. How’s the homework going?
+		Sam:
+			Eh, I’ll worry about that tomorrow.
+		Sam:
+			Have you put any thought into how to go about convincing the Dance Committee?
+		Bailey:
+			Oh, we’re going right into that.
+		Bailey:
+			What has you so invested in this?
+		Sam:
+			What do you mean!?!
+		Sam:
+			We’re literally plotting a social coup to overthrow the hierarchical status quo!
+		Sam:
+			How are you NOT excited by that?
+		Bailey:
+			<laughing> Okay, put that way it does sound fun.
+		Bailey:
+			But I don’t have any ideas yet for the Dance Committee.
+		Sam:
+			I don’t have anything iron yet either.
+		Sam:
+			But…
+		Sam:
+ 			I have been going through some old HighschoolName socials and might have something you can use.
+		Sam:
+			It looks like there was some drama about the couple that won king and queen a few years ago. Back when we were still in middle school.
+		Bailey:
+			How does old drama from before we were  even at HighschoolName help us?
+		Sam:
+			We weren’t there, but the teachers were.
+		Sam:
+			We just have to find one that will tell us what happened.
+		Bailey:
+			Well, that is a start, I guess.
+		Sam:
+			There’s probably other ways to get through to the Planning Committee too.
+		Sam:
+			If all else fails, you can always just talk to people and see where it goes.
+		Bailey:
+			Do I really have to talk to more people…
+		Sam:
+			It’ll be good for you! Besides, you’re better at it  than you think.
+		Bailey:
+			Wait. What are you going to be doing during all this?
+		Sam:
+			Finishing my homework.
+		Bailey:
+			It’s meant to be done at ho-
+		Sam:
+			Oop. Gotta go! Dinner’s ready!
+		Interrupt:
+			<CLICK>
+		Bailey:
+			Hello? Sam?
+		Bailey:
+			Sigh…
+END DNL
+END BRANCH
