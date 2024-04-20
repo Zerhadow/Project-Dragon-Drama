@@ -1,0 +1,50 @@
+BEGIN DNL
+DN_Intro_2
+Interrupt:
+	Nataly, JASSICA, AND PERSIA WALK OUT OF THE CAFETERIA AND BUMP INTO BAILEY
+Nataly:
+	Ugh. Watch where you’re going, whelp.
+Bailey:
+	You walked into me!?!
+Persia:
+	You should know better than to be where Nataly is walking.
+Nataly:
+	Leave it, Persia. Bookworm Bailey isn’t worth our time.
+Bailey:
+	That’s not even a good insult…
+Jassica:
+	We could just point out your weight. She just didn’t want to call out your weight.
+Nataly:
+	Right, what Jass said.
+Persia:
+	Yeah! What Nat said.
+Bailey:
+	. . . . . .
+Nataly:
+	Come on, we have better things to do than waste time on her.
+Bailey:
+	Right, because your time matters sooo much.
+Nataly:
+	Why yes. It does.
+Jassica:
+	Do you really want us to stay here and keep mocking you?
+BEGIN BRANCH
+BN_Intro_2
+2
+	1 -> Screw you
+	2 -> Whatever
+BEGIN DNL
+BDN_Intro_2_BO1
+		{-1 Relationship with Jassica & Persia}
+		Bailey:
+			Screw you. 
+BDN_Intro_2_BO2
+		Bailey:
+			Whatever…
+END DNL
+END BRANCH
+Nataly:
+<Satisfied Hmph>
+Interupt:
+	NATALY, JASSICA, AND PERSIA WALK OFF
+END DNL

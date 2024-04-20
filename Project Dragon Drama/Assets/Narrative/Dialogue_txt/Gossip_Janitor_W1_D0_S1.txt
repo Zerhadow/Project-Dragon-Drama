@@ -1,0 +1,29 @@
+BEGIN DNL
+Janitor:
+	You are Sam’s friend, yes?
+Bailey:
+	Yeah. My name is Bailey…
+Janitor:
+	Hello Bailey. Why are you not enjoying your school lunch meal?
+Bailey:
+	Oh, um. I’m trying to find a way to convince the Planning Committee to delay the vote for Homecoming Queen. And King.
+Janitor:
+	Ah, you are interested in changing the winner of the vote then?
+Bailey:
+	Sort of. It’s Sam’s idea mostly.
+Janitor:
+	I do not know how you can change the winner, but there has been problem with votes for the dance in past.
+Janitor:
+	One year a Sportsball player won Homecoming King but then got kicked from team for wrecking the Principal’s car. It caused much drama within school as students didn’t want someone off the team winning King.
+Bailey:
+	That actually is really useful information.
+Janitor:
+	Of course it is. That is why I tell you it.
+Bailey:
+	Thank you… um…
+Janitor:
+	My name is Janitor.
+Bailey:
+	Thank you Janitor.
+{SET FLAG: DANCE VOTE GOSSIP OBTAINED}
+END DNL
