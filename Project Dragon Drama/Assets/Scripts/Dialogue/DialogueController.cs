@@ -22,28 +22,72 @@ public class DialogueController : MonoBehaviour
     public TMP_Text option3;
     [Header("Other Stuff")]
 
-    private int currIdx = 0; //idx for composite list
+    private int currIdxDNList = 0; //idx for composite dnode list
+    private int currIdxBNList = 0; //idx for composite dnode list
     private int playerChoice = 0;
     private bool inBranch = false;
 
-    [SerializeField] public List<CompositeNode> nodeList = new List<CompositeNode>();
+    [SerializeField] public CompositeNode compositeNode;
 
     private void Awake() {
         dialogueOptionsObj.SetActive(false);
-
-        // make sure nodelist isnt empty
-        if (nodeList != null) {
-            // show first node
-            CompositeNode node = nodeList[currIdx];
-            
-            // if(node.dNodeList != null) { // means that its a dialogue node list
-            //     nameBoxTxt.text = node.dNodeList.nodeList[0].speaker;
-            //     bodyTxt.text = node.dNodeList.nodeList[0].text;
-            //     node.dNodeList.idx = 0;
-            // }
-        } else { Debug.LogError("Node List is empty"); }
     }
 
+    public void SetCompositeNode(CompositeNode compositeNode) {
+        if(compositeNode != null) {
+            this.compositeNode = compositeNode;
+        } else { Debug.LogError("Node empty"); }
+    }
+
+    public void ReadCompositeNode() {
+        if(currIdxBNList == 0 && currIdxDNList == 0) { // original start
+            if(!compositeNode.startWithBranch) { // start with DN1
+                if(compositeNode.dNode[0] != null) {
+                    DialogueNodeList DN = compositeNode.dNode[0];
+                    nameBoxTxt.text = DN.nodeList[0].speaker;
+                    bodyTxt.text = DN.nodeList[0].text;
+                    DN.idx++;
+                } else { Debug.LogError("1st DN of CN empty"); }
+            } else { // start with BN1
+                if(compositeNode.bNode != null) {
+                    BranchNode branchNodeList = compositeNode.bNode[0];
+                    ShowOptions(branchNodeList);
+                    inBranch = true;
+                }
+            }
+        }
+    }
+
+    private void UpdateScreen() {
+
+    }
+
+    private void ShowOptions(BranchNode branchNodeList) {
+        if(branchNodeList.options != null) {
+            if(branchNodeList.options.Count == 2) {
+                dialogueOptionsObj.SetActive(true);
+                options3GameObj.SetActive(false);
+
+                // Set Option Texts
+                option1.text = branchNodeList.options[0];
+                option2.text = branchNodeList.options[1];
+            }
+
+            if(branchNodeList.options.Count == 3) {
+                dialogueOptionsObj.SetActive(true);
+
+                //Set Option texts
+                option1.text = branchNodeList.options[0];
+                option2.text = branchNodeList.options[1];
+                option3.text = branchNodeList.options[2];
+            }
+        } else { Debug.LogError("Fill options list"); }
+    }
+
+    public void Skip() {
+
+    }
+    
     public void ReadList() {
         // if(inBranch) {
         //     ReadBranchDialogueList(); // indicates we are inside branch dialogue list
@@ -88,7 +132,7 @@ public class DialogueController : MonoBehaviour
     }
 
     public void ReadBranchDialogueList() {
-        CompositeNode node = nodeList[currIdx];
+        // CompositeNode node = nodeList[currIdx];
         // // BranchNode branchNodeList = node.bNode;
         // Debug.Log("player choice: " + playerChoice);
 
@@ -129,7 +173,7 @@ public class DialogueController : MonoBehaviour
             Debug.Log("DList done");
             dialogueNodeList.idx = 0;
             if(inBranch) inBranch = false;
-            currIdx++;
+            // currIdx++;
         }
     }
     
