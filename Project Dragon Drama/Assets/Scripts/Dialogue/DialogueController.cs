@@ -5,21 +5,6 @@ using UnityEngine;
 
 public class DialogueController : MonoBehaviour
 {
-    [System.Serializable]
-    public class CompositeNode
-    {
-        public enum NodeType
-        {
-            Dialogue,
-            Branch,
-            ConnectNode
-        }
-
-        public NodeType type;
-        public DialogueNodeList dNodeList;
-        public BranchNode bNode;
-        // public ConnectNode connectNode;
-    }
     
     [Header("Game System Dependencies")]
     public GameController gameController;
@@ -51,88 +36,88 @@ public class DialogueController : MonoBehaviour
             // show first node
             CompositeNode node = nodeList[currIdx];
             
-            if(node.dNodeList != null) { // means that its a dialogue node list
-                nameBoxTxt.text = node.dNodeList.nodeList[0].speaker;
-                bodyTxt.text = node.dNodeList.nodeList[0].text;
-                node.dNodeList.idx = 0;
-            }
+            // if(node.dNodeList != null) { // means that its a dialogue node list
+            //     nameBoxTxt.text = node.dNodeList.nodeList[0].speaker;
+            //     bodyTxt.text = node.dNodeList.nodeList[0].text;
+            //     node.dNodeList.idx = 0;
+            // }
         } else { Debug.LogError("Node List is empty"); }
     }
 
     public void ReadList() {
-        if(inBranch) {
-            ReadBranchDialogueList(); // indicates we are inside branch dialogue list
-        } else
+        // if(inBranch) {
+        //     ReadBranchDialogueList(); // indicates we are inside branch dialogue list
+        // } else
 
-        if(currIdx >= 0 && currIdx < nodeList.Count) {
-            CompositeNode node = nodeList[currIdx];
+        // if(currIdx >= 0 && currIdx < nodeList.Count) {
+        //     CompositeNode node = nodeList[currIdx];
 
-            if(node.dNodeList != null) { // means that its a dialogue node list
-                DialogueNodeList dialogueNodeList = node.dNodeList;
-                GetDialogueNode(dialogueNodeList);
-            } else if(node.bNode != null) { // means that its a dialogue node list
-                BranchNode branchNodeList = node.bNode;
+        //     if(node.dNodeList != null) { // means that its a dialogue node list
+        //         DialogueNodeList dialogueNodeList = node.dNodeList;
+        //         GetDialogueNode(dialogueNodeList);
+        //     } else if(node.bNode != null) { // means that its a dialogue node list
+        //         BranchNode branchNodeList = node.bNode;
 
-                if(branchNodeList.options != null) {
-                    inBranch = true;
+        //         if(branchNodeList.options != null) {
+        //             inBranch = true;
 
-                    if(branchNodeList.options.Count == 2) {
-                        dialogueOptionsObj.SetActive(true);
-                        options3GameObj.SetActive(false);
+        //             if(branchNodeList.options.Count == 2) {
+        //                 dialogueOptionsObj.SetActive(true);
+        //                 options3GameObj.SetActive(false);
 
-                        // Set Option Texts
-                        option1.text = branchNodeList.options[0];
-                        option2.text = branchNodeList.options[1];
-                    }
+        //                 // Set Option Texts
+        //                 option1.text = branchNodeList.options[0];
+        //                 option2.text = branchNodeList.options[1];
+        //             }
 
-                    if(branchNodeList.options.Count == 3) {
-                        dialogueOptionsObj.SetActive(true);
+        //             if(branchNodeList.options.Count == 3) {
+        //                 dialogueOptionsObj.SetActive(true);
 
-                        //Set Option texts
-                        option1.text = branchNodeList.options[0];
-                        option2.text = branchNodeList.options[1];
-                        option3.text = branchNodeList.options[2];
-                    }
-                } else { Debug.LogError("Fill options list"); }
-            } else { Debug.LogError("Dialogue Node List is empty"); }
-        } else { 
-            Debug.Log("Node List is complete");
-            // Change states so player can do next thing
-            gameController._stateMachine.ChangeState(gameController._stateMachine.PlayState);
-        } 
+        //                 //Set Option texts
+        //                 option1.text = branchNodeList.options[0];
+        //                 option2.text = branchNodeList.options[1];
+        //                 option3.text = branchNodeList.options[2];
+        //             }
+        //         } else { Debug.LogError("Fill options list"); }
+        //     } else { Debug.LogError("Dialogue Node List is empty"); }
+        // } else { 
+        //     Debug.Log("Node List is complete");
+        //     // Change states so player can do next thing
+        //     gameController._stateMachine.ChangeState(gameController._stateMachine.PlayState);
+        // } 
     }
 
     public void ReadBranchDialogueList() {
         CompositeNode node = nodeList[currIdx];
-        BranchNode branchNodeList = node.bNode;
-        Debug.Log("player choice: " + playerChoice);
+        // // BranchNode branchNodeList = node.bNode;
+        // Debug.Log("player choice: " + playerChoice);
 
-        if(playerChoice == 1) {
-            DialogueNodeList dialogueNodeList = branchNodeList.dlist1;
-            Debug.Log("Idx: " + dialogueNodeList.idx);
+        // if(playerChoice == 1) {
+        //     DialogueNodeList dialogueNodeList = branchNodeList.dlist1;
+        //     Debug.Log("Idx: " + dialogueNodeList.idx);
 
-            if(dialogueNodeList != null) {
-                GetDialogueNode(dialogueNodeList);
-            } else { Debug.LogError("Branch response empty"); }
-        }
+        //     if(dialogueNodeList != null) {
+        //         GetDialogueNode(dialogueNodeList);
+        //     } else { Debug.LogError("Branch response empty"); }
+        // }
     
-        if(playerChoice == 2) {
-            DialogueNodeList dialogueNodeList = branchNodeList.dlist2;
-            Debug.Log("Idx: " + dialogueNodeList.idx);
+        // if(playerChoice == 2) {
+        //     DialogueNodeList dialogueNodeList = branchNodeList.dlist2;
+        //     Debug.Log("Idx: " + dialogueNodeList.idx);
 
-            if(dialogueNodeList != null) {
-                GetDialogueNode(dialogueNodeList);
-            } else { Debug.LogError("Branch response empty"); }
-        }
+        //     if(dialogueNodeList != null) {
+        //         GetDialogueNode(dialogueNodeList);
+        //     } else { Debug.LogError("Branch response empty"); }
+        // }
 
-        if(playerChoice == 3) {
-            DialogueNodeList dialogueNodeList = branchNodeList.dlist3;
-            Debug.Log("Idx: " + dialogueNodeList.idx);
+        // if(playerChoice == 3) {
+        //     DialogueNodeList dialogueNodeList = branchNodeList.dlist3;
+        //     Debug.Log("Idx: " + dialogueNodeList.idx);
 
-            if(dialogueNodeList != null) {
-                GetDialogueNode(dialogueNodeList);
-            } else { Debug.LogError("Branch response empty"); }
-        }
+        //     if(dialogueNodeList != null) {
+        //         GetDialogueNode(dialogueNodeList);
+        //     } else { Debug.LogError("Branch response empty"); }
+        // }
     }
 
     public void GetDialogueNode(DialogueNodeList dialogueNodeList) {

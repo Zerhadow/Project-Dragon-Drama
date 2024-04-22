@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f1f4a953a5262a4d85d01d6521ff31b, type: 3}
+  m_Name: BN_Intro_2
+  m_EditorClassIdentifier: 
+  options:
+  - ' Screw you'
+  - ' Whatever'
+  - 
+  dlist1: {fileID: 11400000, guid: 5484f0caff1d3994cb8735c34281694c, type: 2}
+  dlist2: {fileID: 11400000, guid: 9d925bcebb908794fa448eeb03dfe4c4, type: 2}
+  dlist3: {fileID: 11400000, guid: 03c03f8d8b7579948800db266bc89eec, type: 2}

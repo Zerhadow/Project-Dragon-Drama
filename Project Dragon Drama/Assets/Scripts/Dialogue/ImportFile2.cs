@@ -13,19 +13,23 @@ public class ImportFile2 : MonoBehaviour
     static void Import() {
         // add fill path
         List<string> inputFilePaths = new List<string>();
-        // inputFilePaths.Add("Assets/Narrative/Example DNodeList.txt");
-        inputFilePaths.Add("Assets/Narrative/Dialogue_txt/Script_W1_D1_S1.txt");
-        inputFilePaths.Add("Assets/Narrative/Dialogue_txt/Script_W1_D1_S2.txt");
-        inputFilePaths.Add("Assets/Narrative/Dialogue_txt/Script_W1_D1_S3.txt");
+        
+        # region Completed files
+        // use text file 2 to compare formats
+        // inputFilePaths.Add("Assets/Narrative/Dialogue_txt/Script_W1_D1_S1.txt");
+        // inputFilePaths.Add("Assets/Narrative/Dialogue_txt/Script_W1_D1_S2.txt");
+        // inputFilePaths.Add("Assets/Narrative/Dialogue_txt/Script_W1_D1_S3.txt");
+        #endregion
+
         inputFilePaths.Add("Assets/Narrative/Dialogue_txt/Script_W1_D1_S4.txt");
-        inputFilePaths.Add("Assets/Narrative/Dialogue_txt/Script_W1_D1_S5.txt");
-        inputFilePaths.Add("Assets/Narrative/Dialogue_txt/Script_W1_D2_S1.txt");
-        inputFilePaths.Add("Assets/Narrative/Dialogue_txt/Script_W1_D2_S2.txt");
-        inputFilePaths.Add("Assets/Narrative/Dialogue_txt/Script_W1_D3_S1.txt");
-        inputFilePaths.Add("Assets/Narrative/Dialogue_txt/Script_W1_D3_S2.txt");
-        inputFilePaths.Add("Assets/Narrative/Dialogue_txt/Quest_IntroQuest_W1_D0_S1.txt");
-        inputFilePaths.Add("Assets/Narrative/Dialogue_txt/Gossip_Janitor_W1_D0_S1.txt");
-        inputFilePaths.Add("Assets/Narrative/Dialogue_txt/Gossip_HistoryTeacher_W1_D0_S1.txt");
+        // inputFilePaths.Add("Assets/Narrative/Dialogue_txt/Script_W1_D1_S5.txt");
+        // inputFilePaths.Add("Assets/Narrative/Dialogue_txt/Script_W1_D2_S1.txt");
+        // inputFilePaths.Add("Assets/Narrative/Dialogue_txt/Script_W1_D2_S2.txt");
+        // inputFilePaths.Add("Assets/Narrative/Dialogue_txt/Script_W1_D3_S1.txt");
+        // inputFilePaths.Add("Assets/Narrative/Dialogue_txt/Script_W1_D3_S2.txt");
+        // inputFilePaths.Add("Assets/Narrative/Dialogue_txt/Quest_IntroQuest_W1_D0_S1.txt");
+        // inputFilePaths.Add("Assets/Narrative/Dialogue_txt/Gossip_Janitor_W1_D0_S1.txt");
+        // inputFilePaths.Add("Assets/Narrative/Dialogue_txt/Gossip_HistoryTeacher_W1_D0_S1.txt");
 
         // read file
         foreach (string filePath in inputFilePaths) {
@@ -53,18 +57,28 @@ public class ImportFile2 : MonoBehaviour
     }
 
     private static void InterpretStringList(List<string> fileLines) {
+        CompositeNodeList cNodeList = ScriptableObject.CreateInstance<CompositeNodeList>();
+
         for(int i = 0; i < fileLines.Count; i++) { 
             if(string.IsNullOrEmpty(fileLines[i])) {
                 continue;
+            }
+
+            if(fileLines[i].Trim().StartsWith("BEGIN CNL")) {
+                // get name of node
+                string name  = fileLines[++i].Trim();
+                Debug.Log("Name: " + name);
+                cNodeList.Init(name);
             }
 
             if(fileLines[i].Trim().StartsWith("BEGIN DNL")) { 
                 DialogueNodeList dNodeList = ScriptableObject.CreateInstance<DialogueNodeList>();
                 // get name of node
                 string name  = fileLines[++i].Trim();
+                // Debug.Log("Name: " + name);
                 dNodeList.Init(name);
                 // fill node & update idx i
-                i = dNodeList.FillDialogueNodeList(fileLines, i);
+                i = dNodeList.FillDialogueNodeList(fileLines, i, cNodeList);
                 // Debug.Log("Exit idx txt: " + fileLines[i].Trim());
             }
 
@@ -96,8 +110,14 @@ public class ImportFile2 : MonoBehaviour
                 bNode.FillOption(opt1, opt2, opt3);
                 
                 // fill node & update idx i
-                i = bNode.FillBranchNode(fileLines, i);
+                i = bNode.FillBranchNode(fileLines, i, cNodeList);
+                // Debug.Log("text: " + fileLines[i].Trim());
             }
+
+            // if(fileLines[i].Trim().StartsWith("ED")) {
+            //     UnityEditor.AssetDatabase.CreateAsset(cNodeList, "Assets/Scripts/Dialogue/ScriptableObjects/" + cNodeList.assetName + ".asset");
+            //     Debug.Log("Created: " + cNodeList.assetName);
+            // }
         }
     }
 
