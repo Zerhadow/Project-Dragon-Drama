@@ -9,10 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 411934c9b89f0c54594c99c25bedc669, type: 3}
+  m_Script: {fileID: 11500000, guid: 542687f02121e384b97842de9a3d56de, type: 3}
   m_Name: Sam at Lunch
   m_EditorClassIdentifier: 
-  nodeList:
-  - {fileID: 11400000, guid: 65787363bb18fd246bb61ad780eb5c49, type: 2}
-  - {fileID: 11400000, guid: f1e711fa71b3ca34989bf573dbda0c80, type: 2}
-  - {fileID: 11400000, guid: f1e711fa71b3ca34989bf573dbda0c80, type: 2}
+  startWithBranch: 0
+  dNode:
+  - {fileID: 11400000, guid: 9b91155c3b6f15f4ab36817d41fc9730, type: 2}
+  bNode:
+  - {fileID: 11400000, guid: 986c2bbd0a2149949a64cf9bfb7b8fb6, type: 2}

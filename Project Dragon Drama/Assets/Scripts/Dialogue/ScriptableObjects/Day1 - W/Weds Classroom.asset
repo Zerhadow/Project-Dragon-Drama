@@ -10,8 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 542687f02121e384b97842de9a3d56de, type: 3}
-  m_Name: After School 1
+  m_Name: Weds Classroom
   m_EditorClassIdentifier: 
   startWithBranch: 0
-  dNode: []
-  bNode: []
+  dNode:
+  - {fileID: 11400000, guid: e8d61ba4d3d356449b5a3eb12c2cb6a9, type: 2}
+  - {fileID: 11400000, guid: fe79ccc06694a8340b844a0d20b19f21, type: 2}
+  bNode:
+  - {fileID: 11400000, guid: 5b6ae5b8d9ac85748a6f53947b372f61, type: 2}

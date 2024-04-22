@@ -13,11 +13,15 @@ public class ImportFile2 : MonoBehaviour
     static void Import() {
         // add fill path
         List<string> inputFilePaths = new List<string>();
-        // inputFilePaths.Add("Assets/Narrative/Example DNodeList.txt");
-        inputFilePaths.Add("Assets/Narrative/Dialogue_txt/Script_W1_D1_S1.txt");
+        
+        # region Completed files
+        // use text file 2 to compare formats
+        // inputFilePaths.Add("Assets/Narrative/Dialogue_txt/Script_W1_D1_S1.txt");
         // inputFilePaths.Add("Assets/Narrative/Dialogue_txt/Script_W1_D1_S2.txt");
         // inputFilePaths.Add("Assets/Narrative/Dialogue_txt/Script_W1_D1_S3.txt");
-        // inputFilePaths.Add("Assets/Narrative/Dialogue_txt/Script_W1_D1_S4.txt");
+        #endregion
+
+        inputFilePaths.Add("Assets/Narrative/Dialogue_txt/Script_W1_D1_S4.txt");
         // inputFilePaths.Add("Assets/Narrative/Dialogue_txt/Script_W1_D1_S5.txt");
         // inputFilePaths.Add("Assets/Narrative/Dialogue_txt/Script_W1_D2_S1.txt");
         // inputFilePaths.Add("Assets/Narrative/Dialogue_txt/Script_W1_D2_S2.txt");
@@ -110,10 +114,10 @@ public class ImportFile2 : MonoBehaviour
                 // Debug.Log("text: " + fileLines[i].Trim());
             }
 
-            if(fileLines[i].Trim().StartsWith("ED")) {
-                UnityEditor.AssetDatabase.CreateAsset(cNodeList, "Assets/Scripts/Dialogue/ScriptableObjects/" + cNodeList.assetName + ".asset");
-                Debug.Log("Created: " + cNodeList.assetName);
-            }
+            // if(fileLines[i].Trim().StartsWith("ED")) {
+            //     UnityEditor.AssetDatabase.CreateAsset(cNodeList, "Assets/Scripts/Dialogue/ScriptableObjects/" + cNodeList.assetName + ".asset");
+            //     Debug.Log("Created: " + cNodeList.assetName);
+            // }
         }
     }
 

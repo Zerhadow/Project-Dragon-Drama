@@ -66,6 +66,7 @@ public class BranchNode : ScriptableObject
 
                 // add dNode to Branch
                 dlist2 = dNodeList2;
+                // Debug.Log("text: " + fileLines[i].Trim());
 
                 if(options.Count == 3) {
                     // Debug.Log("text: " + fileLines[i].Trim());
@@ -79,6 +80,13 @@ public class BranchNode : ScriptableObject
 
                     // add dNode to Branch
                     dlist3 = dNodeList3;
+                }
+
+                if(fileLines[i].Trim() == "END BRANCH") {
+                    // Debug.Log("text: " + fileLines[i].Trim());
+                    UnityEditor.AssetDatabase.CreateAsset(this, "Assets/Scripts/Dialogue/ScriptableObjects/" + assetName + ".asset");
+                    Debug.Log("Created: " + assetName);
+                    return i;
                 }
             }
 

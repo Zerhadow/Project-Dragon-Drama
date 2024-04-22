@@ -17,10 +17,10 @@ public class CompositeNodeList : ScriptableObject
     public void AddCompositeNode(DialogueNodeList dialogueNodeList, BranchNode bNode) {
         // Debug.Log("dnl: " + dialogueNodeList);
         // Debug.Log("bn: " + bNode);
-        CompositeNode cNode = ScriptableObject.CreateInstance<CompositeNode>();
-        cNode.Init();
-        cNode.FillNode(dialogueNodeList, bNode);
-        UnityEditor.AssetDatabase.CreateAsset(cNode, "Assets/Scripts/Dialogue/ScriptableObjects/" + this.assetName + " C_" + idx + ".asset");
-        nodeList.Add(cNode);
+        // CompositeNode cNode = ScriptableObject.CreateInstance<CompositeNode>();
+        // // cNode.Init();
+        // // cNode.FillNode(dialogueNodeList, bNode);
+        // UnityEditor.AssetDatabase.CreateAsset(cNode, "Assets/Scripts/Dialogue/ScriptableObjects/" + this.assetName + " C_" + idx + ".asset");
+        // nodeList.Add(cNode);
     }
 }

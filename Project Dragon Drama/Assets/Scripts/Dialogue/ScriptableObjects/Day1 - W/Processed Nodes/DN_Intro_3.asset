@@ -9,10 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 411934c9b89f0c54594c99c25bedc669, type: 3}
-  m_Name: Wednesday Classroom VN
+  m_Script: {fileID: 11500000, guid: f1bc4f5e2712d82469185e222f07eab5, type: 3}
+  m_Name: DN_Intro_3
   m_EditorClassIdentifier: 
-  nodeList:
-  - {fileID: 0}
-  - {fileID: 11400000, guid: cb1d4d1b4ac9cd746b8dd7a1b53d8e5f, type: 2}
-  assetName: Wednesday Classroom VN
+  idx: 0
+  nodeList: []

@@ -99,9 +99,6 @@ BDN_Intro_3_BO3
 			But it’s better co-
 		Sam:
 			<laughing> It is not better cold!!!
-END DNL
-END BRANCH
-BEGIN DNL
 DN_Intro_3_1
 Interrupt:
 	CROSSFADE THROUGH BLACK
