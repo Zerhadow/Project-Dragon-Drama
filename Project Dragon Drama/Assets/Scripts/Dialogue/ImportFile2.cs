@@ -16,14 +16,14 @@ public class ImportFile2 : MonoBehaviour
         
         # region Completed files
         // use text file 2 to compare formats
-        // inputFilePaths.Add("Assets/Narrative/Dialogue_txt/Script_W1_D1_S1.txt");
+        inputFilePaths.Add("Assets/Narrative/Dialogue_txt/Script_W1_D1_S1.txt");
         // inputFilePaths.Add("Assets/Narrative/Dialogue_txt/Script_W1_D1_S2.txt");
         // inputFilePaths.Add("Assets/Narrative/Dialogue_txt/Script_W1_D1_S3.txt");
         // inputFilePaths.Add("Assets/Narrative/Dialogue_txt/Script_W1_D1_S4.txt");
 
         #endregion
 
-        inputFilePaths.Add("Assets/Narrative/Dialogue_txt/Script_W1_D1_S5.txt");
+        // inputFilePaths.Add("Assets/Narrative/Dialogue_txt/Script_W1_D1_S5.txt");
         // inputFilePaths.Add("Assets/Narrative/Dialogue_txt/Script_W1_D2_S1.txt");
         // inputFilePaths.Add("Assets/Narrative/Dialogue_txt/Script_W1_D2_S2.txt");
         // inputFilePaths.Add("Assets/Narrative/Dialogue_txt/Script_W1_D3_S1.txt");
@@ -79,7 +79,7 @@ public class ImportFile2 : MonoBehaviour
                 // Debug.Log("Name: " + name);
                 dNodeList.Init(name);
                 // fill node & update idx i
-                i = dNodeList.FillDialogueNodeList(fileLines, i, cNodeList);
+                i = dNodeList.FillDialogueNodeList(fileLines, ++i, cNodeList);
                 // Debug.Log("Exit idx txt: " + fileLines[i].Trim());
             }
 
@@ -111,8 +111,9 @@ public class ImportFile2 : MonoBehaviour
                 bNode.FillOption(opt1, opt2, opt3);
                 
                 // fill node & update idx i
+                // Debug.Log("enter text: " + fileLines[i].Trim());
                 i = bNode.FillBranchNode(fileLines, i, cNodeList);
-                // Debug.Log("text: " + fileLines[i].Trim());
+                // Debug.Log("exit text: " + fileLines[i].Trim());
             }
 
             // if(fileLines[i].Trim().StartsWith("ED")) {

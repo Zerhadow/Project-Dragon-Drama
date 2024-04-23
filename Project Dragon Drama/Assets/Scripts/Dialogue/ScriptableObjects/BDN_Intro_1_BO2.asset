@@ -15,9 +15,6 @@ MonoBehaviour:
   idx: 0
   nodeList:
   - emotion: 0
-    speaker: Bailey
-    text: Hopefully they have those pizza squares again
-  - emotion: 0
     speaker: Sam
     text: You actually like those?
   - emotion: 0

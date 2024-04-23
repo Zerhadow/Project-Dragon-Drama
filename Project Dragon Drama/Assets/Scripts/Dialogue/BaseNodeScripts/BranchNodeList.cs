@@ -62,7 +62,7 @@ public class BranchNode : ScriptableObject
 
                  // fill node & update idx i
                 // Debug.Log("text: " + fileLines[i].Trim());
-                i = dNodeList2.FillDialogueNodeList(fileLines, i, null);
+                i = dNodeList2.FillDialogueNodeList(fileLines, ++i, null);
 
                 // add dNode to Branch
                 dlist2 = dNodeList2;
