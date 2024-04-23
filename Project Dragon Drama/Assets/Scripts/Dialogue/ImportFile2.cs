@@ -105,6 +105,7 @@ public class ImportFile2 : MonoBehaviour
                 }
 
                 if(fileLines[++i].Trim().StartsWith("3 ->")) {
+                    opt3 = fileLines[i].Trim().Substring(4);
                     // opt3 = fileLines[i].Trim().Substring(4);
                 }
 
