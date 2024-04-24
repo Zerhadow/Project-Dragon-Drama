@@ -24,8 +24,8 @@ public class BranchNode : ScriptableObject
         options.Add(text2);
 
         if(text3 != null) {
-            options.Add(text3);       
-        }    
+            options.Add(text3);
+        }
     }
 
     public int FillBranchNode(List<string> fileLines, int idx, CompositeNodeList cNodeList) {
@@ -62,13 +62,13 @@ public class BranchNode : ScriptableObject
 
                  // fill node & update idx i
                 // Debug.Log("text: " + fileLines[i].Trim());
-                i = dNodeList2.FillDialogueNodeList(fileLines, i, null);
+                i = dNodeList2.FillDialogueNodeList(fileLines, ++i, null);
 
                 // add dNode to Branch
                 dlist2 = dNodeList2;
                 // Debug.Log("text: " + fileLines[i].Trim());
 
-                if(options.Count == 3) {
+                if(!string.IsNullOrWhiteSpace(options[2])) {
                     // Debug.Log("text: " + fileLines[i].Trim());
                     
                     // get name of node

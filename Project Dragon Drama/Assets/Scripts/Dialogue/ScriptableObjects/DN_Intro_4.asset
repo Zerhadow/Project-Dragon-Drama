@@ -10,19 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f1bc4f5e2712d82469185e222f07eab5, type: 3}
-  m_Name: BDN_Intro_4_BO2
+  m_Name: DN_Intro_4
   m_EditorClassIdentifier: 
   idx: 0
   nodeList:
   - emotion: 0
-    speaker: Bailey
-    text: I still need a little more time.
-  - emotion: 0
     speaker: Sam
-    text: "Okay. We\u2019ve still got some time before class starts."
-  - emotion: 0
-    speaker: Bailey
-    text: Enough time for your homework??
-  - emotion: 0
-    speaker: Sam
-    text: "Relax. I\u2019ll get it done."
+    text: So? How did it go with the Planning Committee?
