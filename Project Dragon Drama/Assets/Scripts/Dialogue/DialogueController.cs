@@ -43,27 +43,29 @@ public class DialogueController : MonoBehaviour
         if(inBranch) {
             // ReadBranchDialogueList();
         } else {
-            if(currIdxBNList == 0 && currIdxDNList == 0) { // original start
-                if(!compositeNode.startWithBranch) { // start with DN1
-                    if(compositeNode.dNode[0] != null) {
-                        DialogueNodeList DN = compositeNode.dNode[0];
-                        nameBoxTxt.text = DN.nodeList[0].speaker;
-                        bodyTxt.text = DN.nodeList[0].text;
-                        DN.idx++;
-                        startDn = true;
-                    } else { Debug.LogError("1st DN of CN empty"); }
-                } else { // start with BN1
-                    if(compositeNode.bNode != null) {
-                        BranchNode branchNodeList = compositeNode.bNode[0];
-                        ShowOptions(branchNodeList);
-                        inBranch = true;
-                    }
-                }
-            }
+
         }
 
         if(startDn && currIdxDNList > 0) {
 
+        }
+    }
+
+    public void ShowFirstDisplay() { // display first on state enter
+        if(!compositeNode.startWithBranch) { // start with DN1
+            if(compositeNode.dNode[0] != null) {
+                DialogueNodeList DN = compositeNode.dNode[0];
+                nameBoxTxt.text = DN.nodeList[0].speaker;
+                bodyTxt.text = DN.nodeList[0].text;
+                DN.idx++;
+                startDn = true;
+            } else { Debug.LogError("1st DN of CN empty"); }
+        } else { // start with BN1
+            if(compositeNode.bNode != null) {
+                BranchNode branchNodeList = compositeNode.bNode[0];
+                ShowOptions(branchNodeList);
+                inBranch = true;
+            }
         }
     }
 

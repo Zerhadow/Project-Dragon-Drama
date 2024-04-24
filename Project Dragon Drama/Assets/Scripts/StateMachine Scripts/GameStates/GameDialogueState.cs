@@ -22,6 +22,8 @@ public class GameDialogueState : State
         
         // Don't allow player to move char
         // _controller.playerController.LockMovement();
+
+        _controller.dialogueController.ShowFirstDisplay();
     }
 
     public override void Update()
