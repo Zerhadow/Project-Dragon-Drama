@@ -25,6 +25,7 @@ public class GameDialogueState : State
         // _controller.playerController.LockMovement();
 
         _controller.dialogueController.ShowFirstDisplay();
+        _controller.dialogueController.portraitController.ResetPortraits();
     }
 
     public override void Update()
