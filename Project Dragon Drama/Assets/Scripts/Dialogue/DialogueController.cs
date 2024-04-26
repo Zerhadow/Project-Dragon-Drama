@@ -7,7 +7,7 @@ public class DialogueController : MonoBehaviour
 {
     
     [Header("Game System Dependencies")]
-    public GameController gameController;
+    private GameController gameController;
     [Header("DialogueNode Variables")]
     public TMP_Text nameBoxTxt;
     public TMP_Text bodyTxt;
@@ -34,6 +34,7 @@ public class DialogueController : MonoBehaviour
 
     private void Awake() {
         dialogueOptionsObj.SetActive(false);
+        gameController = GetComponentInParent<GameController>();
     }
 
     public void SetCompositeNode(CompositeNode compositeNode) {
@@ -44,27 +45,36 @@ public class DialogueController : MonoBehaviour
 
     public void ReadCompositeNode() {
         if(inBranch) {
-            // ReadBranchDialogueList();
-
-        } else { // go through next DN idx
-        
+            if(currIdxDN >= currDN.nodeList.Count - 1) { // finished with branch DN
+                inBranch = false;
+                startDn = true;
+                currDN = compositeNode.dNode[currIdxDNList];
+                currIdxDN = 0;
+            } else {
+                UpdateScreen();
+            }
         }
 
-        if(startDn && currIdxDN >= currDN.nodeList.Count) { // get next branch node 
+        if(currIdxDNList >= compositeNode.dNode.Count - 1 
+        && currIdxBNList >= compositeNode.bNode.Count - 1
+        && currIdxDN >= currDN.nodeList.Count) {
+            Debug.Log("Completed composite node");
+            gameController.ChangeStates("Explore");
+            return;
+        }
+
+        if(startDn && currIdxDN >= currDN.nodeList.Count) { // get next branch node
+            currIdxDNList++;
             currBN = compositeNode.bNode[currIdxBNList];
             ShowOptions(currBN);
+            startDn = false;
+            currIdxDN = 0;
         }
 
         if(startDn && currIdxDNList >= 0 && currIdxDNList < compositeNode.dNode.Count) {
             if(currDN != null) {
-                if(currIdxDN < currDN.nodeList.Count) {
-                    UpdateScreen();
-                }
+                UpdateScreen();
             } else { Debug.LogError("Current DN is Null or empty");}
-        }
-
-        if(currIdxDNList == compositeNode.dNode.Count && currIdxBNList == compositeNode.bNode.Count) {
-            Debug.Log("Completed composite node");
         }
     }
 
@@ -85,10 +95,12 @@ public class DialogueController : MonoBehaviour
     }
 
     private void UpdateScreen() {
-        int idx = currIdxDN;
-        nameBoxTxt.text = currDN.nodeList[idx].speaker;
-        bodyTxt.text = currDN.nodeList[idx].text;
-        currIdxDN++;
+        if(currIdxDN < currDN.nodeList.Count) {
+            int idx = currIdxDN;
+            nameBoxTxt.text = currDN.nodeList[idx].speaker;
+            bodyTxt.text = currDN.nodeList[idx].text;
+            currIdxDN++;
+        } else {Debug.LogError("Idx error");}
     }
 
     private void ShowOptions(BranchNode branchNodeList) {
@@ -111,6 +123,8 @@ public class DialogueController : MonoBehaviour
                 option3.text = branchNodeList.options[2];
             }
         } else { Debug.LogError("Fill options list"); }
+        
+        inBranch = true;
     }
 
     public void Skip() { // shows last index of dn
@@ -217,6 +231,8 @@ public class DialogueController : MonoBehaviour
         // Show players reponse
         nameBoxTxt.text = "Bailey";
         bodyTxt.text = option1.text;
+
+        currIdxBNList++;
     }
 
     public void Option2() {
@@ -229,6 +245,8 @@ public class DialogueController : MonoBehaviour
         // Show players reponse
         nameBoxTxt.text = "Bailey";
         bodyTxt.text = option2.text;
+
+        currIdxBNList++;
     }
     
     public void Option3() {
@@ -241,5 +259,7 @@ public class DialogueController : MonoBehaviour
         // Show players reponse
         nameBoxTxt.text = "Bailey";
         bodyTxt.text = option3.text;
+
+        currIdxBNList++;
     }
 }
