@@ -30,10 +30,10 @@ public class StatController : MonoBehaviour
                 switch(parts[2]) {
                     case "Nerd":
                         nerd += int.Parse(valueString.TrimStart('+'));
-                        Debug.Log("Added: " + valueString + "to player");
+                        Debug.Log("Added: " + valueString + " to player");
                         break;
                 }
-            } Debug.LogError("Command doesnt say what stat to modifiy");
+            } else {Debug.LogError("Command doesnt say what stat to modifiy");}
         }
 
         if(typeString == "Relationship") {
