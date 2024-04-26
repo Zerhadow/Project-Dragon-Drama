@@ -42,7 +42,7 @@ BN_Intro_1
 	2 -> The Pizza Squares
 BEGIN DNL
 BDN_Intro_1_BO1
-		{+1 Nerd}
+		+1 Stat Nerd
 		Bailey:
 			We’ll figure it out later. I need to take notes.
 		Sam:

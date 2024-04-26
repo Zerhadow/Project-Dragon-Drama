@@ -9,6 +9,7 @@ public class DialogueController : MonoBehaviour
     [Header("Game System Dependencies")]
     private GameController gameController;
     public PortraitController portraitController;
+    public StatController statController;
     [Header("DialogueNode Variables")]
     public TMP_Text nameBoxTxt;
     public TMP_Text bodyTxt;
@@ -53,6 +54,11 @@ public class DialogueController : MonoBehaviour
                 currDN = compositeNode.dNode[currIdxDNList];
                 currIdxDN = 0;
             } else {
+                // check if curr dn has stat mod
+                if(currDN.nodeList[currIdxDN].speaker.Trim().StartsWith("+") ) {
+                    statController.ApplyModifier(currDN.nodeList[currIdxDN].speaker.Trim());
+                    currIdxDN++;
+                }
                 UpdateScreen();
             }
         }
