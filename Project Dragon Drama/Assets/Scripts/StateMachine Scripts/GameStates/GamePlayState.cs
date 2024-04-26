@@ -19,10 +19,9 @@ public class GamePlayState : State
         Debug.Log("STATE: Game Play State");
 
         // Activate UI Elems
-        _controller.UI.DialogueObj.SetActive(true);
         
-        // Don't allow player to move char
-        // _controller.playerController.LockMovement();
+        // Allow player to move char
+        // _controller.playerController.Movement();
     }
 
     public override void Update()
