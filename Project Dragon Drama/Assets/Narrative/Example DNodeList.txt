@@ -1,3 +1,5 @@
+BEGIN DIALOGUE NODE LIST
+DNN_ Beginnings_1
 HomeroomTeacher:
 Using the substitution method, we can substitute c for x to determine the limit of the function.
 HomeroomTeacher:
@@ -34,3 +36,5 @@ HomeroomTeacher:
 	-will be on the test, so follow closely on this next problem…
 Sam:
 	Well?
+END DIALOGUE NODE LIST
+END OF IMPORT
