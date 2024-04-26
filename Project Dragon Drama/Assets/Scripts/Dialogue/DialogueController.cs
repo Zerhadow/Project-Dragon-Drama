@@ -8,6 +8,7 @@ public class DialogueController : MonoBehaviour
     
     [Header("Game System Dependencies")]
     private GameController gameController;
+    public PortraitController portraitController;
     [Header("DialogueNode Variables")]
     public TMP_Text nameBoxTxt;
     public TMP_Text bodyTxt;
@@ -35,6 +36,7 @@ public class DialogueController : MonoBehaviour
     private void Awake() {
         dialogueOptionsObj.SetActive(false);
         gameController = GetComponentInParent<GameController>();
+        portraitController = this.GetComponent<PortraitController>();
     }
 
     public void SetCompositeNode(CompositeNode compositeNode) {
@@ -98,6 +100,7 @@ public class DialogueController : MonoBehaviour
         if(currIdxDN < currDN.nodeList.Count) {
             int idx = currIdxDN;
             nameBoxTxt.text = currDN.nodeList[idx].speaker;
+            portraitController.SetPortrait(currDN.nodeList[idx].speaker, 0);
             bodyTxt.text = currDN.nodeList[idx].text;
             currIdxDN++;
         } else {Debug.LogError("Idx error");}
