@@ -23,11 +23,14 @@ public class DialogueController : MonoBehaviour
     [Header("Other Stuff")]
 
     private int currIdxDNList = 0; //idx for composite dnode list
-    private int currIdxBNList = 0; //idx for composite dnode list
+    private int currIdxBNList = 0; //idx for composite bnode list
+    private int currIdxDN = 0; //idx for DN node list
     private int playerChoice = 0;
     private bool inBranch = false, startDn = false, startBn = false;
 
     [SerializeField] public CompositeNode compositeNode;
+    private DialogueNodeList currDN; // current dialogue node sys is going through
+    private BranchNode currBN; // current branch node sys is going through
 
     private void Awake() {
         dialogueOptionsObj.SetActive(false);
@@ -42,35 +45,50 @@ public class DialogueController : MonoBehaviour
     public void ReadCompositeNode() {
         if(inBranch) {
             // ReadBranchDialogueList();
-        } else {
 
+        } else { // go through next DN idx
+        
         }
 
-        if(startDn && currIdxDNList > 0) {
+        if(startDn && currIdxDN >= currDN.nodeList.Count) { // get next branch node 
+            currBN = compositeNode.bNode[currIdxBNList];
+            ShowOptions(currBN);
+        }
 
+        if(startDn && currIdxDNList >= 0 && currIdxDNList < compositeNode.dNode.Count) {
+            if(currDN != null) {
+                if(currIdxDN < currDN.nodeList.Count) {
+                    UpdateScreen();
+                }
+            } else { Debug.LogError("Current DN is Null or empty");}
+        }
+
+        if(currIdxDNList == compositeNode.dNode.Count && currIdxBNList == compositeNode.bNode.Count) {
+            Debug.Log("Completed composite node");
         }
     }
 
     public void ShowFirstDisplay() { // display first on state enter
         if(!compositeNode.startWithBranch) { // start with DN1
             if(compositeNode.dNode[0] != null) {
-                DialogueNodeList DN = compositeNode.dNode[0];
-                nameBoxTxt.text = DN.nodeList[0].speaker;
-                bodyTxt.text = DN.nodeList[0].text;
-                DN.idx++;
+                currDN = compositeNode.dNode[0];
+                UpdateScreen();
                 startDn = true;
             } else { Debug.LogError("1st DN of CN empty"); }
         } else { // start with BN1
             if(compositeNode.bNode != null) {
-                BranchNode branchNodeList = compositeNode.bNode[0];
-                ShowOptions(branchNodeList);
+                currBN = compositeNode.bNode[0];
+                ShowOptions(currBN);
                 inBranch = true;
             }
         }
     }
 
     private void UpdateScreen() {
-
+        int idx = currIdxDN;
+        nameBoxTxt.text = currDN.nodeList[idx].speaker;
+        bodyTxt.text = currDN.nodeList[idx].text;
+        currIdxDN++;
     }
 
     private void ShowOptions(BranchNode branchNodeList) {
@@ -95,8 +113,9 @@ public class DialogueController : MonoBehaviour
         } else { Debug.LogError("Fill options list"); }
     }
 
-    public void Skip() {
-
+    public void Skip() { // shows last index of dn
+        currIdxDN = currDN.nodeList.Count - 1;
+        UpdateScreen();
     }
     
     public void ReadList() {
@@ -175,21 +194,23 @@ public class DialogueController : MonoBehaviour
         // }
     }
 
-    public void GetDialogueNode(DialogueNodeList dialogueNodeList) {
-        if(dialogueNodeList.idx < dialogueNodeList.nodeList.Count) {
-            nameBoxTxt.text = dialogueNodeList.nodeList[dialogueNodeList.idx].speaker;
-            bodyTxt.text = dialogueNodeList.nodeList[dialogueNodeList.idx].text;
-            dialogueNodeList.idx += 1;
-        } else { // move onto next composite node
-            Debug.Log("DList done");
-            dialogueNodeList.idx = 0;
-            if(inBranch) inBranch = false;
-            // currIdx++;
-        }
-    }
+    // public void GetDialogueNode(DialogueNodeList dialogueNodeList) {
+    //     if(dialogueNodeList.idx < dialogueNodeList.nodeList.Count) {
+    //         nameBoxTxt.text = dialogueNodeList.nodeList[dialogueNodeList.idx].speaker;
+    //         bodyTxt.text = dialogueNodeList.nodeList[dialogueNodeList.idx].text;
+    //         dialogueNodeList.idx += 1;
+    //     } else { // move onto next composite node
+    //         Debug.Log("DList done");
+    //         dialogueNodeList.idx = 0;
+    //         if(inBranch) inBranch = false;
+    //         // currIdx++;
+    //     }
+    // }
     
     public void Option1() {
         playerChoice = 1;
+        currDN = compositeNode.bNode[currIdxBNList].dlist1;
+
         // deactivate UI
         dialogueOptionsObj.SetActive(false);
         
@@ -200,6 +221,8 @@ public class DialogueController : MonoBehaviour
 
     public void Option2() {
         playerChoice = 2;
+        currDN = compositeNode.bNode[currIdxBNList].dlist2;
+
         // deactivate UI
         dialogueOptionsObj.SetActive(false);
         
@@ -210,6 +233,8 @@ public class DialogueController : MonoBehaviour
     
     public void Option3() {
         playerChoice = 3;
+        currDN = compositeNode.bNode[currIdxBNList].dlist3;
+
         // deactivate UI
         dialogueOptionsObj.SetActive(false);
         
