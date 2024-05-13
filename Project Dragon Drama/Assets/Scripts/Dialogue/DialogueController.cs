@@ -45,6 +45,7 @@ public class DialogueController : MonoBehaviour
 
     public void SetCompositeNode() {
         compositeNode = cNodeList[cNodeListIdx];
+        Debug.Log("CN: " + compositeNode.name + "set");
     }
 
     public void ReadCompositeNode() {
@@ -73,7 +74,7 @@ public class DialogueController : MonoBehaviour
                 Debug.Log("sdasdas");
                 if(cNodeList.Count >= cNodeListIdx) {
                     cNodeListIdx++;
-                    Debug.Log("Added to idx");
+                    currIdxDN = 0; // resets dn idx counter
                     gameController.ChangeStates("Setup");
                 }
             } else { // change to explore state
@@ -115,6 +116,10 @@ public class DialogueController : MonoBehaviour
 
     private void UpdateScreen() {
         if(currIdxDN < currDN.nodeList.Count) {
+            if(currDN.nodeList[currIdxDN].speaker == "Interrupt") {
+                // do interrupt code
+                currIdxDN++;
+            }
             int idx = currIdxDN;
             nameBoxTxt.text = currDN.nodeList[idx].speaker;
             portraitController.SetPortrait(currDN.nodeList[idx].speaker, 0);

@@ -10,28 +10,31 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f1bc4f5e2712d82469185e222f07eab5, type: 3}
-  m_Name: BDN_Intro_1_BO1
+  m_Name: BDN_Intro_3_BO3
   m_EditorClassIdentifier: 
   nodeList:
   - emotion: 0
     speaker: Bailey
-    text: "We\u2019ll figure it out later. I need to take notes."
+    text: "It was dumb. It doesn\u2019t really matter."
   - emotion: 0
     speaker: Sam
-    text: Okay nerd.
+    text: "Eyyy, that\u2019s my girl!."
   - emotion: 0
     speaker: Sam
-    text: "I\u2019ll meet you in the cafeteria then."
+    text: "Still though\u2026"
   - emotion: 0
     speaker: Sam
-    text: Mr. HomeroomTeacher, can I go to the restroom?
+    text: I hate that she just gets away with that crap.
   - emotion: 0
-    speaker: HomeroomTeacher
-    text: "Yes, Sam. Just try to be back before the end of class this time\u2026"
+    speaker: Bailey
+    text: "I know, but she isn\u2019t worth it."
   - emotion: 0
     speaker: Sam
-    text: Of course (not).
+    text: "Yeah, you\u2019re right\u2026 maybe. Here, take a slice before it starts
+      to get cold."
   - emotion: 0
-    speaker: HomeroomTeacher
-    text: "<Sigh> Back to the example on the board, as we solve for the limit of
-      x\u2026"
+    speaker: Bailey
+    text: "But it\u2019s better co-"
+  - emotion: 0
+    speaker: Sam
+    text: <laughing> It is not better cold!!!
