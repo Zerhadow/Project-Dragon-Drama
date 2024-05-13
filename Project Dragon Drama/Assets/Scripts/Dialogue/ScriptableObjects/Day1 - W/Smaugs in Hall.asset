@@ -18,3 +18,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 03c03f8d8b7579948800db266bc89eec, type: 2}
   bNode:
   - {fileID: 11400000, guid: 4184da111162407448e3ec6c3090c464, type: 2}
+  linked: 1

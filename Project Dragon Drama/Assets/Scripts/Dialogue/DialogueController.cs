@@ -30,20 +30,21 @@ public class DialogueController : MonoBehaviour
     private int playerChoice = 0;
     private bool inBranch = false, startDn = false, startBn = false;
 
-    [SerializeField] public CompositeNode compositeNode;
+    private CompositeNode compositeNode;
+    private int cNodeListIdx = 0;
+    [SerializeField] public List<CompositeNode> cNodeList;
     private DialogueNodeList currDN; // current dialogue node sys is going through
     private BranchNode currBN; // current branch node sys is going through
 
     private void Awake() {
         dialogueOptionsObj.SetActive(false);
         gameController = GetComponentInParent<GameController>();
-        portraitController = this.GetComponent<PortraitController>();
+        portraitController = GetComponent<PortraitController>();
+        compositeNode = cNodeList[0];
     }
 
-    public void SetCompositeNode(CompositeNode compositeNode) {
-        if(compositeNode != null) {
-            this.compositeNode = compositeNode;
-        } else { Debug.LogError("Node empty"); }
+    public void SetCompositeNode() {
+        compositeNode = cNodeList[cNodeListIdx];
     }
 
     public void ReadCompositeNode() {
@@ -67,7 +68,17 @@ public class DialogueController : MonoBehaviour
         && currIdxBNList >= compositeNode.bNode.Count - 1
         && currIdxDN >= currDN.nodeList.Count) {
             Debug.Log("Completed composite node");
-            gameController.ChangeStates("Explore");
+
+            if(compositeNode.linked) { // if composite node is linked, start next node
+                Debug.Log("sdasdas");
+                if(cNodeList.Count >= cNodeListIdx) {
+                    cNodeListIdx++;
+                    Debug.Log("Added to idx");
+                    gameController.ChangeStates("Setup");
+                }
+            } else { // change to explore state
+                gameController.ChangeStates("Explore");
+            }
             return;
         }
 

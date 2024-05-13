@@ -29,6 +29,9 @@ public class GameController : MonoBehaviour
             case "Dialogue":
                 _stateMachine.ChangeState(_stateMachine.DialogueState);
                 break;
+            case "Setup":
+                _stateMachine.ChangeState(_stateMachine.SetupState);
+                break;
             default:
                 break;
         }

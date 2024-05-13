@@ -9,6 +9,7 @@ public class CompositeNode : ScriptableObject
     [SerializeField] public bool startWithBranch;
     [SerializeField] public List<DialogueNodeList> dNode;
     [SerializeField] public List<BranchNode> bNode;
+    public bool linked = false;
 
     // public void Init() {
     //     dNodeList = new DialogueNodeList();
