@@ -45,7 +45,7 @@ public class DialogueController : MonoBehaviour
 
     public void SetCompositeNode() {
         compositeNode = cNodeList[cNodeListIdx];
-        Debug.Log("CN: " + compositeNode.name + "set");
+        // Debug.Log("CN: " + compositeNode.name + " set");
     }
 
     public void ReadCompositeNode() {
@@ -75,6 +75,7 @@ public class DialogueController : MonoBehaviour
                 if(cNodeList.Count >= cNodeListIdx) {
                     cNodeListIdx++;
                     currIdxDN = 0; // resets dn idx counter
+                    currIdxDNList = 0; // resets dn idx list counter
                     gameController.ChangeStates("Setup");
                 }
             } else { // change to explore state

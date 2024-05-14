@@ -37,21 +37,22 @@ public class PortraitController : MonoBehaviour
                 currImg = b_neutral;
                 break;
             case "Sam":
-                // b_neutral.SetActive(true);
                 currImg = s1;
                 break;
             case "Persia":
-                // b_neutral.SetActive(true);
+                currImg = s2;
                 break;
             case "Jassica":
-                // b_neutral.SetActive(true);
+                currImg = s2;
                 break;
             case "Natalie":
+                currImg = s2;
                 break;
             case "HomeroomTeacher":
                 currImg = s2;
                 break;
             default:
+                currImg = s3;
                 break;
         }
 
