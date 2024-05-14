@@ -1,0 +1,58 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1bc4f5e2712d82469185e222f07eab5, type: 3}
+  m_Name: DN_Intro_3
+  m_EditorClassIdentifier: 
+  nodeList:
+  - emotion: 0
+    speaker: Sam
+    text: "Finally! I thought you\u2019d spend all lunch taking more notes or something."
+  - emotion: 0
+    speaker: Bailey
+    text: Well. Some of us wait for the class to be over before leaving.
+  - emotion: 0
+    speaker: Sam
+    text: "And some of us get pizza while it\u2019s still warm."
+  - emotion: 0
+    speaker: Bailey
+    text: "<under her breath> But it\u2019s better cold\u2026"
+  - emotion: 0
+    speaker: Sam
+    text: Speaking of which, I got some extra slices for you.
+  - emotion: 0
+    speaker: Bailey
+    text: "I think I\u2019m just going to have a light sandwich\u2026"
+  - emotion: 0
+    speaker: Sam
+    text: "What\u2019s up? I thought you liked the school pizzas?"
+  - emotion: 0
+    speaker: Bailey
+    text: "Yeah. It\u2019s\u2026 nothing. Just something Nataly said\u2026"
+  - emotion: 0
+    speaker: Sam
+    text: Nataly? Why were you talking with Nataly? We hate Nataly.
+  - emotion: 0
+    speaker: Bailey
+    text: "It wasn\u2019t exactly by choice. She just bumped into me."
+  - emotion: 0
+    speaker: Sam
+    text: So you stopped to make some not-so-pleasant small talk?
+  - emotion: 0
+    speaker: Bailey
+    text: No, I mean she literally bumped into me. She walked right into me and then
+      blamed ME for it.
+  - emotion: 0
+    speaker: Sam
+    text: Ugh. That is exactly something that smaug bitch would do.
+  - emotion: 0
+    speaker: Sam
+    text: What did she even say?

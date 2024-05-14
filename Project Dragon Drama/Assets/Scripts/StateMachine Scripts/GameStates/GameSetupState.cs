@@ -25,6 +25,9 @@ public class GameSetupState : State
             // Set each child GameObject to inactive
             child.gameObject.SetActive(false);
         }
+
+        _controller.dialogueController.SetCompositeNode();
+        // _stateMachine.ChangeState(_stateMachine.DialogueState);
     }
 
     public override void Update()

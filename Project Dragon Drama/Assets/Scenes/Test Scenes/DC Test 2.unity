@@ -1777,7 +1777,10 @@ MonoBehaviour:
   option1: {fileID: 420181255}
   option2: {fileID: 415641198}
   option3: {fileID: 2108251258}
-  compositeNode: {fileID: 11400000, guid: 0397f0bdf054fbe4886ad0634a2cfb53, type: 2}
+  cNodeList:
+  - {fileID: 11400000, guid: 0397f0bdf054fbe4886ad0634a2cfb53, type: 2}
+  - {fileID: 11400000, guid: 5e139d83a7827e042bab0a9a2d96960f, type: 2}
+  - {fileID: 11400000, guid: 0f8c5914d91728c4eb42c8abc7914045, type: 2}
 --- !u!4 &1241031350
 Transform:
   m_ObjectHideFlags: 0
