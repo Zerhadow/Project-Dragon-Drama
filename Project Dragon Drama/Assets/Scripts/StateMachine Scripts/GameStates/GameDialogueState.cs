@@ -19,9 +19,13 @@ public class GameDialogueState : State
         Debug.Log("STATE: Game Dialogue State");
 
         // Activate UI Elems
+        _controller.UI.DialogueObj.SetActive(true);
         
         // Don't allow player to move char
         // _controller.playerController.LockMovement();
+
+        _controller.dialogueController.ShowFirstDisplay();
+        _controller.dialogueController.portraitController.ResetPortraits();
     }
 
     public override void Update()
@@ -37,6 +41,7 @@ public class GameDialogueState : State
         base.Exit();
 
         // Deactivate UI Elems
+        _controller.UI.DialogueObj.SetActive(false);
 
         // Return movement to char
         // _controller.playerController.UnlockMovement();

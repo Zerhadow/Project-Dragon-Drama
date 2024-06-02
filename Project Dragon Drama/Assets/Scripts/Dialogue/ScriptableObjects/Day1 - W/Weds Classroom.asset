@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 542687f02121e384b97842de9a3d56de, type: 3}
+  m_Name: Weds Classroom
+  m_EditorClassIdentifier: 
+  startWithBranch: 0
+  dNode:
+  - {fileID: 11400000, guid: e52314e1e778be1448cd4da10788ed8d, type: 2}
+  - {fileID: 11400000, guid: 84778681dbc125547a3437992025cd0e, type: 2}
+  bNode:
+  - {fileID: 11400000, guid: 6b97c25b0e3e0c549ae5c924d255c7cf, type: 2}
+  linked: 1

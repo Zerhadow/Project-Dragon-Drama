@@ -19,4 +19,21 @@ public class GameController : MonoBehaviour
     private void Awake() {
         _stateMachine = GetComponent<GameFSM>();
     }
+
+    public void ChangeStates(string str) {
+        switch (str)
+        {
+            case "Explore":
+                _stateMachine.ChangeState(_stateMachine.PlayState);
+                break;
+            case "Dialogue":
+                _stateMachine.ChangeState(_stateMachine.DialogueState);
+                break;
+            case "Setup":
+                _stateMachine.ChangeState(_stateMachine.SetupState);
+                break;
+            default:
+                break;
+        }
+    }
 }

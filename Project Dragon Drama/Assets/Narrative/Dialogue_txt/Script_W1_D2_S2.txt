@@ -1,0 +1,63 @@
+BEGIN BRANCH
+BN_W1_D2_S2
+	1 -> Study
+	2 -> Phone Sam
+BEGIN DNL
+BDN_W1_D2_S2_BO1
+		{+1 Nerd}
+BDN_W1_D2_S2_BO2
+		{+1 Relationship with Sam}
+		Interrupt:
+			<Ring Ring. Ring Ring.>
+		Interrupt:
+			<Click.>
+		Sam:
+			Yo! Bailey! 
+		Bailey:
+			Hey Sam, how’s it going?
+		Sam:
+			Pretty good. Just trying to avoid studying for the test tomorrow.
+		Bailey:
+			…
+		Sam:
+			You still there?
+		Bailey:
+			Yes.
+		Sam:
+			By the ways, I was talking with Janitor about some stuff after lunch today and they’ve been at the school for quite a bit.
+		Bailey:
+			Who’s Janitor?
+		Sam:
+			They’re the school janitor. They usually hang around outside the cafeteria. Pretty cool guy honestly.
+		Bailey:
+			Oh, I didn’t think there was anyone on the school staff you liked.
+		Sam:
+			What are you talking about? There’s tons of people there I like!
+		Bailey:
+			Like Who?
+		Sam:
+			You know… the nurse… that one lunch lady that gives extra dessert… the art teacher…
+		Bailey:
+			So basically anyone that doesn’t give homework?
+		Sam:
+			Exactly!
+		Bailey:
+			<laughing> Of course.
+		Sam:
+			Speaking of homework, I need to get back to finishing the math stuff from today.
+		Bailey:
+			Wait. Are you actually doing your homework for once?
+		Sam:
+			Yes…
+		Sam:
+			Definitely…
+		Sam:
+			Probably…
+		Sam:
+			Bye!
+		Interrupt:
+			<Click>
+		Bailey:
+			Hahahaha.
+END DNL
+END BRANCH
