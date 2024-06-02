@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startWithBranch: 0
   dNode:
-  - {fileID: 11400000, guid: e8d61ba4d3d356449b5a3eb12c2cb6a9, type: 2}
-  - {fileID: 11400000, guid: fe79ccc06694a8340b844a0d20b19f21, type: 2}
+  - {fileID: 11400000, guid: e52314e1e778be1448cd4da10788ed8d, type: 2}
+  - {fileID: 11400000, guid: 84778681dbc125547a3437992025cd0e, type: 2}
   bNode:
-  - {fileID: 11400000, guid: 5b6ae5b8d9ac85748a6f53947b372f61, type: 2}
+  - {fileID: 11400000, guid: 6b97c25b0e3e0c549ae5c924d255c7cf, type: 2}
+  linked: 1

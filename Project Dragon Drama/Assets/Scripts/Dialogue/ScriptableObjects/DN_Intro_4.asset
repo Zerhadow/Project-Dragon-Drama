@@ -9,12 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 542687f02121e384b97842de9a3d56de, type: 3}
-  m_Name: Sam at Lunch
+  m_Script: {fileID: 11500000, guid: f1bc4f5e2712d82469185e222f07eab5, type: 3}
+  m_Name: DN_Intro_4
   m_EditorClassIdentifier: 
-  startWithBranch: 0
-  dNode:
-  - {fileID: 11400000, guid: 06e4ae9dbddbe25439924ec124b1746b, type: 2}
-  bNode:
-  - {fileID: 11400000, guid: a36e6dbaa2645c74eadc29884fd551b6, type: 2}
-  linked: 0
+  idx: 0
+  nodeList:
+  - emotion: 0
+    speaker: Sam
+    text: So? How did it go with the Planning Committee?

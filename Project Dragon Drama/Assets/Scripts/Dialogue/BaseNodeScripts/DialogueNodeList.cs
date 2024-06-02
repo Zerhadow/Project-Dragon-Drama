@@ -21,8 +21,6 @@ public class DialogueNodeList : ScriptableObject
         public string text;
     }
 
-    public int idx = 0;
-
     [SerializeField] public List<DialogueNode> nodeList;
     private string assetName;
 
