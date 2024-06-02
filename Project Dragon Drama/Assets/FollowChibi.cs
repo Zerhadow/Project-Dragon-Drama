@@ -5,9 +5,12 @@ public class FollowChibi : MonoBehaviour
 
     public Transform player;
 
-    // Update is called once per frame
+    private Vector3 offset = new Vector3(0, 7, -10); // Offset
+
     void Update()
     {
-        transform.position = player.transform.position + new Vector3(0, 1, -5);
+        transform.position = player.position + offset;
+        transform.LookAt(player.position + Vector3.up);
     }
+
 }
