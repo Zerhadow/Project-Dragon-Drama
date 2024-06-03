@@ -175,7 +175,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3165907054299937958}
-  - component: {fileID: 5033281173735827677}
   m_Layer: 0
   m_Name: PF_bookshelfVar1_HENRY
   m_TagString: Untagged
@@ -200,24 +199,3 @@ Transform:
   - {fileID: 266924242327829217}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &5033281173735827677
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2040645634081183287}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.11962221, y: 0.16493906, z: 0.042743742}
-  m_Center: {x: -0.00023220852, y: 0.08083028, z: 0.00024941564}

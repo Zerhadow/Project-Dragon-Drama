@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 2246320397101091890}
   - component: {fileID: 3516170785531407235}
   - component: {fileID: 4965234559413744376}
-  - component: {fileID: 5256971839859398087}
   m_Layer: 0
   m_Name: PF_teacherDesk_HENRY
   m_TagString: Untagged
@@ -28,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 3985608078116451565}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0.035397273, z: 0.00070619583}
+  m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -41,7 +40,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3985608078116451565}
-  m_Mesh: {fileID: 6497369021871885173, guid: d708aff114344c745998fb50106e4b6e, type: 3}
+  m_Mesh: {fileID: 4643166987788582157, guid: d3966f21a683abb468ef8f8841c9995b, type: 3}
 --- !u!23 &4965234559413744376
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -62,7 +61,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 4037cebdc17626641a792929ba748005, type: 2}
+  - {fileID: 2100000, guid: 8825786649108fc4caff1cbbc0fc0dfc, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -84,24 +83,3 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &5256971839859398087
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3985608078116451565}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.14014217, y: 0.070794545, z: 0.05001106}
-  m_Center: {x: 0, y: 0, z: 0}
