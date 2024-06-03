@@ -20,6 +20,7 @@ public class MoveDragon : MonoBehaviour
     {
         playerControls = new PlayerControls();
         move = playerControls.Player.Move;
+        dragonTransform = transform;
     }
 
     private void OnEnable()
