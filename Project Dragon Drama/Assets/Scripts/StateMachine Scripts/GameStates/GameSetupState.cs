@@ -27,6 +27,7 @@ public class GameSetupState : State
         }
 
         _controller.dialogueController.SetCompositeNode();
+        
         // _stateMachine.ChangeState(_stateMachine.DialogueState);
     }
 
