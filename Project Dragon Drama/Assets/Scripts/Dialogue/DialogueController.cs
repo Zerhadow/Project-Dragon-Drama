@@ -70,18 +70,26 @@ public class DialogueController : MonoBehaviour
         && currIdxDN >= currDN.nodeList.Count) {
             Debug.Log("Completed composite node");
 
-            if(compositeNode.linked) { // if composite node is linked, start next node
-                Debug.Log("sdasdas");
-                if(cNodeList.Count >= cNodeListIdx) {
-                    cNodeListIdx++;
-                    currIdxDN = 0; // resets dn idx counter
-                    currIdxDNList = 0; // resets dn idx list counter
-                    gameController.ChangeStates("Setup");
-                }
-            } else { // change to explore state
-                gameController.ChangeStates("Explore");
+        // Checks if time is supposed to pass
+        if(compositeNode.advanceTime) {
+            gameController.gameTimeController.AdvanceTime();
+            Debug.Log("New time: " + gameController.gameTimeController.GetCurrentTimeOfDay());
+        }
+
+        if(compositeNode.linked) { // if composite node is linked, start next node
+            // Debug.Log("sdasdas");
+            if(cNodeList.Count >= cNodeListIdx) {
+                cNodeListIdx++;
+                currIdxDN = 0; // resets dn idx counter
+                currIdxDNList = 0; // resets dn idx list counter
+                // gameController.ChangeStates("Setup");
+                SetCompositeNode();
             }
-            return;
+        }
+
+        gameController.ChangeStates("Explore");
+
+        return;
         }
 
         if(startDn && currIdxDN >= currDN.nodeList.Count) { // get next branch node

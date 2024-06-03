@@ -33,6 +33,8 @@ public class GamePlayState : State
         // if player presses pause key, go to pause state
         // Hard input for now
         if(Input.GetKeyDown(KeyCode.Escape)) { _stateMachine.ChangeState(_stateMachine.PauseState); }
+    
+        
     }
 
     public override void Exit() {
