@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2594814703074128088}
   - component: {fileID: 7246614032753316}
   - component: {fileID: 57054142097666993}
+  - component: {fileID: 6948258578954311629}
   m_Layer: 0
   m_Name: PF_teacherChair_HENRY
   m_TagString: Untagged
@@ -83,3 +84,24 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &6948258578954311629
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 385371494152395641}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.031878676, y: 0.008360737, z: 0.043961253}
+  m_Center: {x: 0, y: 0.0042464505, z: 0}

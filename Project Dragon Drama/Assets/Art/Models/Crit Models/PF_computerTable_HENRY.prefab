@@ -92,6 +92,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8050610308104924058}
+  - component: {fileID: 6810243338517548539}
   m_Layer: 0
   m_Name: PF_computerTable_HENRY
   m_TagString: Untagged
@@ -117,6 +118,27 @@ Transform:
   - {fileID: 6260682451587493672}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &6810243338517548539
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3301119490567751177}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.1322146, y: 0.06895368, z: 0.06553659}
+  m_Center: {x: -0.0026433617, y: 0.03376405, z: 0.0020496175}
 --- !u!1 &4394381152906354999
 GameObject:
   m_ObjectHideFlags: 0
