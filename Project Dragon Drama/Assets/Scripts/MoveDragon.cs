@@ -10,6 +10,7 @@ public class MoveDragon : MonoBehaviour
     public float speed = 3f;
     public PlayerControls playerControls;
     private InputAction move;
+    public bool canMove = true;
 
     public float minX = -5f; // minimum x-value of the plane
     public float maxX = 5f;  // maximum x-value of the plane
@@ -40,13 +41,15 @@ public class MoveDragon : MonoBehaviour
 
     private void FixedUpdate()
     {
-        float moveX = moveDirection.x * speed * Time.fixedDeltaTime;
-        float moveZ = moveDirection.y * speed * Time.fixedDeltaTime; 
+        if(canMove) {
+            float moveX = moveDirection.x * speed * Time.fixedDeltaTime;
+            float moveZ = moveDirection.y * speed * Time.fixedDeltaTime; 
 
-        Vector3 newPosition = dragonTransform.position + new Vector3(moveX, 0f, moveZ);
-        newPosition.x = Mathf.Clamp(newPosition.x, minX, maxX);
-        newPosition.z = Mathf.Clamp(newPosition.z, minZ, maxZ);
+            Vector3 newPosition = dragonTransform.position + new Vector3(moveX, 0f, moveZ);
+            newPosition.x = Mathf.Clamp(newPosition.x, minX, maxX);
+            newPosition.z = Mathf.Clamp(newPosition.z, minZ, maxZ);
 
-        dragonTransform.position = newPosition;
+            dragonTransform.position = newPosition;
+        }
     }
 }

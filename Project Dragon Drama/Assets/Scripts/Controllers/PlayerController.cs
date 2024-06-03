@@ -4,15 +4,9 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public MoveDragon dragonMovement;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    public void SetMovemovent(bool b) {
+        dragonMovement.canMove = b;
     }
 }

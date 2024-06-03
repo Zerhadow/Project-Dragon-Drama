@@ -21,7 +21,9 @@ public class GamePlayState : State
         // Activate UI Elems
         
         // Allow player to move char
-        // _controller.playerController.Movement();
+        // _controller.playerController.Movement();s
+        _controller.playerController.SetMovemovent(true);
+
     }
 
     public override void Update()
@@ -41,5 +43,6 @@ public class GamePlayState : State
 
         // Return movement to char
         // _controller.playerController.UnlockMovement();
+        _controller.playerController.SetMovemovent(false);
     }
 }
