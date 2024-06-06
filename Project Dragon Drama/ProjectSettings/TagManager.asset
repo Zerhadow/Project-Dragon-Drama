@@ -6,6 +6,7 @@ TagManager:
   tags:
   - 2F
   - Zone
+  - NPC
   layers:
   - Default
   - TransparentFX

@@ -33,7 +33,16 @@ public class GamePlayState : State
         // if player presses pause key, go to pause state
         // Hard input for now
         if(Input.GetKeyDown(KeyCode.Escape)) { _stateMachine.ChangeState(_stateMachine.PauseState); }
-    
+        if(Input.GetKeyDown(KeyCode.E)) {
+            // check what player is interacting with
+            NPCController npc = _controller.playerController.npc;
+
+            if(npc != null) { // they are currently in range to talk to npc
+                _controller.playerController.NPCInteract();
+            }
+
+            // they are currently in range to interact with item
+        }
         
     }
 

@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
     private GameController gameController;
     public MoveDragon dragonMovement;
     public AreaController playerAreaController;
+    public NPCController npc; // npc they are in range or talking too
 
     public void SetMovemovent(bool b) {
         dragonMovement.canMove = b;
@@ -34,5 +35,23 @@ public class PlayerController : MonoBehaviour
 
             playerAreaController.enteredHallway = false;
         }
+    }
+
+    public void NPCInteract() {
+        Debug.Log("Talking to NPC");
+
+        // get NPC info
+
+        // set composite node for dialogue controller
+        gameController.dialogueController.SetCompositeNode(npc.nodeList[npc.nodeIdx]);
+        npc.talkedToToday = true;
+        npc.pressETextBox.SetActive(false);
+
+        // go to dialogue controller
+        gameController.ChangeStates("Dialogue");
+    }
+
+    public void ItemInteract() {
+        Debug.Log("Interacting with item");
     }
 }

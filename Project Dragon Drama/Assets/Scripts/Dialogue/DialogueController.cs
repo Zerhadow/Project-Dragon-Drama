@@ -48,6 +48,11 @@ public class DialogueController : MonoBehaviour
         // Debug.Log("CN: " + compositeNode.name + " set");
     }
 
+    public void SetCompositeNode(CompositeNode NPCcn) {
+        compositeNode = NPCcn;
+        // Debug.Log("CN: " + compositeNode.name + " set");
+    }
+
     public void ReadCompositeNode() {
         if(inBranch) {
             if(currIdxDN >= currDN.nodeList.Count - 1) { // finished with branch DN
