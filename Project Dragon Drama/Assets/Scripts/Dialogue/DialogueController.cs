@@ -26,11 +26,11 @@ public class DialogueController : MonoBehaviour
 
     private int currIdxDNList = 0; //idx for composite dnode list
     private int currIdxBNList = 0; //idx for composite bnode list
-    private int currIdxDN = 0; //idx for DN node list
+    public int currIdxDN = 0; //idx for DN node list
     private int playerChoice = 0;
     private bool inBranch = false, startDn = false, startBn = false;
 
-    private CompositeNode compositeNode;
+    public CompositeNode compositeNode;
     private int cNodeListIdx = 0;
     [SerializeField] public List<CompositeNode> cNodeList;
     private DialogueNodeList currDN; // current dialogue node sys is going through
