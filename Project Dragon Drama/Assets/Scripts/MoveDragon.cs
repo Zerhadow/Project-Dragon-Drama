@@ -5,6 +5,14 @@ using UnityEngine.InputSystem;
 
 public class MoveDragon : MonoBehaviour
 {
+    /*
+     * 1. anim transparant background
+     * 2. anims for all 4 wasd
+     * 3. anims need to work for all modes not just PC
+     * 4. camera: boolean
+     * 5. interact
+     */
+    public Animator animator;
     public Transform dragonTransform; // for the dragon GameObject
     Vector2 moveDirection = Vector2.zero;
     public float speed = 3f;
@@ -35,6 +43,14 @@ public class MoveDragon : MonoBehaviour
     void Update()
     {
         moveDirection = move.ReadValue<Vector2>();
+        if(Input.GetKeyDown(KeyCode.A)) // need to fix this so it works joystick etc as well
+        {
+            animator.SetBool("Walking", true);
+        }
+        if(Input.GetKeyUp(KeyCode.A))
+        {
+            animator.SetBool("Walking", false);
+        }
     }
 
     private void FixedUpdate()
