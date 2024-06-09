@@ -10,6 +10,7 @@ public class CompositeNode : ScriptableObject
     [SerializeField] public List<DialogueNodeList> dNode;
     [SerializeField] public List<BranchNode> bNode;
     public bool linked = false;
+    public bool advanceTime = false;
 
     // public void Init() {
     //     dNodeList = new DialogueNodeList();

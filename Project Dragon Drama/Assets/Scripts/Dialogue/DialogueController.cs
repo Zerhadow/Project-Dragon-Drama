@@ -26,11 +26,11 @@ public class DialogueController : MonoBehaviour
 
     private int currIdxDNList = 0; //idx for composite dnode list
     private int currIdxBNList = 0; //idx for composite bnode list
-    private int currIdxDN = 0; //idx for DN node list
+    public int currIdxDN = 0; //idx for DN node list
     private int playerChoice = 0;
     private bool inBranch = false, startDn = false, startBn = false;
 
-    private CompositeNode compositeNode;
+    public CompositeNode compositeNode;
     private int cNodeListIdx = 0;
     [SerializeField] public List<CompositeNode> cNodeList;
     private DialogueNodeList currDN; // current dialogue node sys is going through
@@ -45,6 +45,11 @@ public class DialogueController : MonoBehaviour
 
     public void SetCompositeNode() {
         compositeNode = cNodeList[cNodeListIdx];
+        // Debug.Log("CN: " + compositeNode.name + " set");
+    }
+
+    public void SetCompositeNode(CompositeNode NPCcn) {
+        compositeNode = NPCcn;
         // Debug.Log("CN: " + compositeNode.name + " set");
     }
 
@@ -70,18 +75,26 @@ public class DialogueController : MonoBehaviour
         && currIdxDN >= currDN.nodeList.Count) {
             Debug.Log("Completed composite node");
 
-            if(compositeNode.linked) { // if composite node is linked, start next node
-                Debug.Log("sdasdas");
-                if(cNodeList.Count >= cNodeListIdx) {
-                    cNodeListIdx++;
-                    currIdxDN = 0; // resets dn idx counter
-                    currIdxDNList = 0; // resets dn idx list counter
-                    gameController.ChangeStates("Setup");
-                }
-            } else { // change to explore state
-                gameController.ChangeStates("Explore");
+        // Checks if time is supposed to pass
+        if(compositeNode.advanceTime) {
+            gameController.gameTimeController.AdvanceTime();
+            Debug.Log("New time: " + gameController.gameTimeController.GetCurrentTimeOfDay());
+        }
+
+        if(compositeNode.linked) { // if composite node is linked, start next node
+            // Debug.Log("sdasdas");
+            if(cNodeList.Count >= cNodeListIdx) {
+                cNodeListIdx++;
+                currIdxDN = 0; // resets dn idx counter
+                currIdxDNList = 0; // resets dn idx list counter
+                // gameController.ChangeStates("Setup");
+                SetCompositeNode();
             }
-            return;
+        }
+
+        gameController.ChangeStates("Explore");
+
+        return;
         }
 
         if(startDn && currIdxDN >= currDN.nodeList.Count) { // get next branch node
