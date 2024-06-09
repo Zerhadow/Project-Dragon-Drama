@@ -13,5 +13,10 @@ MonoBehaviour:
   m_Name: SPC 1
   m_EditorClassIdentifier: 
   startWithBranch: 0
-  dNode: []
-  bNode: []
+  dNode:
+  - {fileID: 11400000, guid: c30919641df38f94c9450997781bb193, type: 2}
+  - {fileID: 11400000, guid: d6fd14ac4c5092245a07ce15bb2955a7, type: 2}
+  bNode:
+  - {fileID: 11400000, guid: ab4cb3cbbde93f042961c4673cfc7263, type: 2}
+  linked: 0
+  advanceTime: 0

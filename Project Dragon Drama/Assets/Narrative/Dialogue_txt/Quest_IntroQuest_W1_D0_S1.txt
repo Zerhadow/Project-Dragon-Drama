@@ -88,8 +88,6 @@ BDN_IntroQuest_1_BO2
 			BUT IF YOU HAVE OTHER IDEAS, MAYBE YOU SHOULD VOLUNTEER!!!
 		Bailey:
 			Oh, uh, no thank you…
-END BRANCH
-BEGIN DNL
 DN_IntroQuest_1
 Kaylee:
 	OKAY THEN!! WE HOPE YOU ENJOY THE DANCE!!!

@@ -1,0 +1,64 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1bc4f5e2712d82469185e222f07eab5, type: 3}
+  m_Name: DN_IntroQuest
+  m_EditorClassIdentifier: 
+  nodeList:
+  - emotion: 0
+    speaker: Kaylee
+    text: COME JOIN THE DANCE PLANNING COMMITTEE FOR HOMECOMING!
+  - emotion: 0
+    speaker: Kaylee
+    text: FREE ADMISSION TO THE DANCE FOR THOSE ON THE COMMITTEE!
+  - emotion: 0
+    speaker: Kyle
+    text: "The dance is free to everyone\u2026"
+  - emotion: 0
+    speaker: Bailey
+    text: Um, excuse me?
+  - emotion: 0
+    speaker: Kaylee
+    text: HELLO! ARE YOU HERE TO VOLUNTEER?
+  - emotion: 0
+    speaker: Bailey
+    text: "<scared> Uh\u2026 actually\u2026 I, uh\u2026"
+  - emotion: 0
+    speaker: Kyle
+    text: "Kaylee, you\u2019re going to keep scaring everyone off if you don\u2019t
+      stop yelling\u2026"
+  - emotion: 0
+    speaker: Kaylee
+    text: BUT THIS IS SO EXCITING Kyle!!!
+  - emotion: 0
+    speaker: Bailey
+    text: I just had a quick question actually.
+  - emotion: 0
+    speaker: Kaylee
+    text: IS IT ABOUT THE HOMECOMING DANCE?
+  - emotion: 0
+    speaker: Bailey
+    text: "Yes? Um\u2026"
+  - emotion: 0
+    speaker: Kyle
+    text: "Ignore Kaylee. What\u2019s the question?"
+  - emotion: 0
+    speaker: Bailey
+    text: How were you going to do the voting for the dance?
+  - emotion: 0
+    speaker: Bailey
+    text: For King and Queen I mean.
+  - emotion: 0
+    speaker: Kaylee
+    text: PEOPLE WILL VOTE ON WHO THEY WANT AND THE PERSON WITH THE MOST VOTES WINS!
+  - emotion: 0
+    speaker: Kyle
+    text: "We\u2019ll let people start voting next week up until the dance."

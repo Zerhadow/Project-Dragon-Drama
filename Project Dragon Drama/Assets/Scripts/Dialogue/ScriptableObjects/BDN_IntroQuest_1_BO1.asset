@@ -1,0 +1,71 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1bc4f5e2712d82469185e222f07eab5, type: 3}
+  m_Name: BDN_IntroQuest_1_BO1
+  m_EditorClassIdentifier: 
+  nodeList:
+  - emotion: 0
+    speaker: Bailey
+    text: "But don\u2019t people usually vote for the quarterback and his girlfriend?"
+  - emotion: 0
+    speaker: Kaylee
+    text: SO?
+  - emotion: 0
+    speaker: Bailey
+    text: Well what if they were broken up before the dance?
+  - emotion: 0
+    speaker: Bailey
+    text: I mean what if they choose to break up? Hypothetically?
+  - emotion: 0
+    speaker: Kyle
+    text: Why? Is something up with Ken and Nataly?
+  - emotion: 0
+    speaker: Bailey
+    text: "No\u2026"
+  - emotion: 0
+    speaker: Bailey
+    text: "Just hypothetically\u2026"
+  - emotion: 0
+    speaker: Kaylee
+    text: THAT WOULD BE SOO AWKWARD! COULD YOU EVEN IMAGINE???
+  - emotion: 0
+    speaker: Kyle
+    text: I guess it would be weird.
+  - emotion: 0
+    speaker: Kyle
+    text: "But we can\u2019t wait until the night of the dance. There wouldn\u2019t
+      be enough time for people to vote."
+  - emotion: 0
+    speaker: Bailey
+    text: A lot can change in a month, though. You should at least wait until homecoming
+      week.
+  - emotion: 0
+    speaker: Bailey
+    text: "That way you can remind people about the upcoming vote and still account
+      for if\u2026 something\u2026 happens."
+  - emotion: 0
+    speaker: Kaylee
+    text: THAT SOUNDS LIKE A GREAT IDEA!
+  - emotion: 0
+    speaker: Kyle
+    text: "We\u2019d have to set up the voting table for the whole day instead of
+      just during lunch periods, but I think we could manage that."
+  - emotion: 0
+    speaker: Kaylee
+    text: "ARE YOU SURE YOU DON\u2019T WANT TO VOLUNTEER? YOU\u2019RE REALLY GOOD
+      AT THIS!"
+  - emotion: 0
+    speaker: Bailey
+    text: Oh, um, no thanks.
+  - emotion: 0
+    speaker: Bailey
+    text: Good luck though! <smiling>

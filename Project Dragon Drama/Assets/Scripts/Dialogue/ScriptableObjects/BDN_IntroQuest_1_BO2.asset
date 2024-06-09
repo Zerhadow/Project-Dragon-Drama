@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1bc4f5e2712d82469185e222f07eab5, type: 3}
+  m_Name: BDN_IntroQuest_1_BO2
+  m_EditorClassIdentifier: 
+  nodeList:
+  - emotion: 0
+    speaker: Kaylee
+    text: NOPE!
+  - emotion: 0
+    speaker: Kyle
+    text: We need to give everyone time to vote and the Planning Committee will need
+      time to count all the votes before the dance.
+  - emotion: 0
+    speaker: Bailey
+    text: "Oh, right\u2026"
+  - emotion: 0
+    speaker: Kaylee
+    text: SORRY!
+  - emotion: 0
+    speaker: Head Planner
+    text: BUT IF YOU HAVE OTHER IDEAS, MAYBE YOU SHOULD VOLUNTEER!!!
+  - emotion: 0
+    speaker: Bailey
+    text: "Oh, uh, no thank you\u2026"
