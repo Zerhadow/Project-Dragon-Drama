@@ -116,6 +116,7 @@ public class DialogueController : MonoBehaviour
     private void ResetIndexes() {
         currIdxDN = 0;
         currIdxDNList = 0;
+        currIdxBNList = 0;
     }
 
     private void StartBranchNode() {

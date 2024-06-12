@@ -61,7 +61,7 @@ public class GameTimeController : MonoBehaviour
         // Check if the timeInfo corresponds to week 1, Wednesday, and lunch time
         if (timeInfo.week == 1 && timeInfo.dayOfWeek == DayOfWeek.Wednesday && timeInfo.timeOfDay == TimeOfDay.Lunch)
         {
-            Debug.Log("It is week 1, Wednesday, and lunch time!");
+            // Debug.Log("It is week 1, Wednesday, and lunch time!");
             return true;
         } else {return false; }
     }
