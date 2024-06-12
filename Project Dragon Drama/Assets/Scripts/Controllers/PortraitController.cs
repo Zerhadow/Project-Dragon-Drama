@@ -18,11 +18,32 @@ public class PortraitController : MonoBehaviour
     public Sprite s_neutral;
     #endregion
 
-    public Sprite mg1PFP, mg2PFP, mg3PFP, kenPFP; // UI Images for each character
+    #region 
+    [Header("Persia Emotions")]
+    public Sprite persia_neutral;
+    #endregion
 
     #region 
-    [Header("Sam Silhouettes")]
-    public Sprite s1, s2, s3, s4;
+    [Header("Jassica Emotions")]
+    public Sprite jass_neutral;
+    #endregion
+
+    #region 
+    [Header("Natalie Emotions")]
+    public Sprite nat_neutral;
+    #endregion
+
+    #region 
+    [Header("Ken Emotions")]
+    public Sprite ken_neutral;
+    #endregion
+
+    #region 
+    [Header("Silhouettes")]
+    public Sprite s1;
+    public Sprite s2;
+    public Sprite s3;
+    public Sprite s4;
     #endregion
 
     public void ResetPortraits() {
@@ -37,16 +58,19 @@ public class PortraitController : MonoBehaviour
                 currImg = b_neutral;
                 break;
             case "Sam":
-                currImg = s1;
+                currImg = s_neutral;
                 break;
             case "Persia":
-                currImg = s2;
+                currImg = persia_neutral;
                 break;
             case "Jassica":
-                currImg = s2;
+                currImg = jass_neutral;
                 break;
             case "Natalie":
-                currImg = s2;
+                currImg = nat_neutral;
+                break;
+            case "Ken":
+                currImg = ken_neutral;
                 break;
             case "HomeroomTeacher":
                 currImg = s2;
