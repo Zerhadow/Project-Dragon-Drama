@@ -3,7 +3,20 @@ guid: 3ff57de6b3f3bc74aa26f386e0f92e08
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - currImg: {instanceID: 0}
+  - currPortraitObj: {instanceID: 0}
+  - currPortraitImg: {instanceID: 0}
+  - b_neutral: {fileID: 21300000, guid: e4f26d1dbcd77b244948225ec7c51e0f, type: 3}
+  - s_neutral: {fileID: 21300000, guid: 32ea76ad5b55b244c897ed32b82342aa, type: 3}
+  - persia_neutral: {fileID: 21300000, guid: 50ae420be7f0f9a4e84d3bc05b2d807b, type: 3}
+  - mg2PFP: {instanceID: 0}
+  - mg3PFP: {instanceID: 0}
+  - kenPFP: {instanceID: 0}
+  - s1: {instanceID: 0}
+  - s2: {instanceID: 0}
+  - s3: {instanceID: 0}
+  - s4: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
