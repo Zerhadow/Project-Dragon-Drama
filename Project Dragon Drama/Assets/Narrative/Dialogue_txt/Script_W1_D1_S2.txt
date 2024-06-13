@@ -32,7 +32,6 @@ BEGIN BRANCH
 BN_Intro_2
 	1 -> Screw you
 	2 -> Whatever
-BEGIN DNL
 BDN_Intro_2_BO1
 		{-1 Relationship with Jassica & Persia}
 		Bailey:

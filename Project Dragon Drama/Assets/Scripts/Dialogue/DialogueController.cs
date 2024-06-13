@@ -48,12 +48,15 @@ public class DialogueController : MonoBehaviour
     }
 
     public void ReadCompositeNode() { // method to be called by btn press
+        // Debug.Log("InBranch? " + inBranch);
         if (inBranch) { ProcessBranchNode(); }
         else { ProcessDialogueNode(); }
     }
 
     private void ProcessBranchNode() {
-        if (currIdxDN >= currDN.nodeList.Count - 1) { EndBranchNode(); }
+        // Debug.Log("CurrIdxDN: " + currIdxDN);
+        // Debug.Log("Count: " + currDN.nodeList.Count);
+        if (currIdxDN >= currDN.nodeList.Count) { EndBranchNode(); }
         else {
             if (CheckStatModifier(currDN.nodeList[currIdxDN].speaker)) {
                 currIdxDN++;
@@ -65,8 +68,14 @@ public class DialogueController : MonoBehaviour
     private void EndBranchNode() {
         inBranch = false;
         startDn = true;
-        currDN = compositeNode.dNode[currIdxDNList];
-        currIdxDN = 0;
+        // Debug.Log("CurrDN name: " + compositeNode.dNode[currIdxDNList]);
+        if(compositeNode.dNode[currIdxDNList] != null) { // if there is a dNode after BNode dNode
+            currDN = compositeNode.dNode[currIdxDNList];
+            currIdxDN = 0;
+            ProcessDialogueNode();
+        } else {
+            EndCompositeNode();
+        }
     }
 
     private bool CheckStatModifier(string speaker) {
@@ -78,8 +87,10 @@ public class DialogueController : MonoBehaviour
     }
 
     private void ProcessDialogueNode() {
+        // Debug.Log("CurrIdxDN: " + currIdxDN);
+        // Debug.Log("Count: " + currDN.nodeList.Count);
         if (IsEndOfCompositeNode()) { EndCompositeNode(); }
-        else if (startDn && currIdxDN >= currDN.nodeList.Count)
+        else if (currIdxDN >= currDN.nodeList.Count) // at end of dialogue node, if theres a branch node next in queue play it
         {
             StartBranchNode();
         }
@@ -91,8 +102,8 @@ public class DialogueController : MonoBehaviour
 
     private bool IsEndOfCompositeNode()
     {
-        return currIdxDNList >= compositeNode.dNode.Count - 1 
-            && currIdxBNList >= compositeNode.bNode.Count - 1
+        return currIdxDNList >= compositeNode.dNode.Count - 1
+            && currIdxBNList >= compositeNode.bNode.Count
             && currIdxDN >= currDN.nodeList.Count;
     }
 
@@ -222,8 +233,7 @@ public class DialogueController : MonoBehaviour
 
         dialogueOptionsObj.SetActive(false);
 
-        nameBoxTxt.text = "Bailey";
-        bodyTxt.text = optionText;
+        UpdateScreen();
 
         currIdxBNList++;
     }

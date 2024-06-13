@@ -17,7 +17,7 @@ public class AreaController : MonoBehaviour
                     Debug.Log("Player has entered hallway");
                     // inform player controller that player is in hallway
                     enteredHallway = true;
-                    // other.gameObject.SetActive(false); // hopefully the time stuff wont interfere with game progression
+                    other.gameObject.SetActive(false); // hopefully the time stuff wont interfere with game progression
                     break;
                 case "Hallway2":
                     Debug.Log("Player has entered hallway");
