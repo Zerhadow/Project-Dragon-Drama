@@ -25,6 +25,10 @@ public class GameSetupState : State
             // Set each child GameObject to inactive
             child.gameObject.SetActive(false);
         }
+
+        _controller.dialogueController.SetCompositeNode();
+        _controller.playerController.SetMovemovent(false);
+        // _stateMachine.ChangeState(_stateMachine.DialogueState);
     }
 
     public override void Update()
@@ -34,6 +38,7 @@ public class GameSetupState : State
         // Debug Purposes: Will do key inputs to switch
         if(Input.GetKeyDown(KeyCode.Escape)) { _stateMachine.ChangeState(_stateMachine.PauseState); }
         if(Input.GetKeyDown(KeyCode.D)) { _stateMachine.ChangeState(_stateMachine.DialogueState); }
+        if(Input.GetKeyDown(KeyCode.P)) { _stateMachine.ChangeState(_stateMachine.PlayState); }
     }
 
     public override void Exit() {

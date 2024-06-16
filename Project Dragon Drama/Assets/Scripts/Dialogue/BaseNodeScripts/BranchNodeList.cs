@@ -24,11 +24,11 @@ public class BranchNode : ScriptableObject
         options.Add(text2);
 
         if(text3 != null) {
-            options.Add(text3);       
-        }    
+            options.Add(text3);
+        }
     }
 
-    public int FillBranchNode(List<string> fileLines, int idx) {
+    public int FillBranchNode(List<string> fileLines, int idx, CompositeNodeList cNodeList) {
         for(int i = idx; i < fileLines.Count; i++) {  
             string fileLine = fileLines[i].Trim();
             
@@ -50,40 +50,53 @@ public class BranchNode : ScriptableObject
                 dNodeList1.Init(name);
 
                 // fill node & update idx i
-                i = dNodeList1.FillDialogueNodeList(fileLines, ++i);
+                i = dNodeList1.FillDialogueNodeList(fileLines, ++i, null);
 
                 // add dNode to Branch
                 dlist1 = dNodeList1;
-                Debug.Log("text: " + fileLines[i].Trim());
+                // Debug.Log("text: " + fileLines[i].Trim());
 
                 // get name of node
-                name2  = fileLines[i].Trim();
+                name2  = fileLines[i++].Trim();
                 dNodeList2.Init(name2);
 
                  // fill node & update idx i
-                i = dNodeList2.FillDialogueNodeList(fileLines, i);
+                // Debug.Log("text: " + fileLines[i].Trim());
+                i = dNodeList2.FillDialogueNodeList(fileLines, ++i, null);
 
                 // add dNode to Branch
                 dlist2 = dNodeList2;
+                // Debug.Log("text: " + fileLines[i].Trim());
 
-                if(options.Count == 3) {
+                if(!string.IsNullOrWhiteSpace(options[2])) {
                     // Debug.Log("text: " + fileLines[i].Trim());
                     
                     // get name of node
-                    name3  = fileLines[i].Trim();
+                    name3  = fileLines[i++].Trim();
                     dNodeList3.Init(name3);
 
                     // fill node & update idx i
-                    i = dNodeList3.FillDialogueNodeList(fileLines, i);
+                    i = dNodeList3.FillDialogueNodeList(fileLines, i, null);
 
                     // add dNode to Branch
                     dlist3 = dNodeList3;
+                }
+
+                if(fileLines[i].Trim() == "END BRANCH") {
+                    // Debug.Log("text: " + fileLines[i].Trim());
+                    UnityEditor.AssetDatabase.CreateAsset(this, "Assets/Scripts/Dialogue/ScriptableObjects/" + assetName + ".asset");
+                    Debug.Log("Created: " + assetName);
+                    return i;
                 }
             }
 
             if(fileLines[i].Trim().StartsWith("END BRANCH") 
             || fileLines[i].Trim().StartsWith("END DNL")) {
+                if(cNodeList != null) {
+                    cNodeList.AddCompositeNode(null, this);
+                }
                 UnityEditor.AssetDatabase.CreateAsset(this, "Assets/Scripts/Dialogue/ScriptableObjects/" + assetName + ".asset");
+                Debug.Log("Created: " + assetName);
                 return i;
             }
         }

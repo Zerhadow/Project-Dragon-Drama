@@ -2,7 +2,7 @@ BEGIN BRANCH
 BN_Intro_5
 	1 -> Study
 	2 -> Phone Sam
-BEGIN DNLS
+BEGIN DNL
 BDN_Intro_5_BO1
 		{+1 Nerd}
 BDN_Intro_5_BO2

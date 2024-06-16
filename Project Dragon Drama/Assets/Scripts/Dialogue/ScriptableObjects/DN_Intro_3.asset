@@ -12,7 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1bc4f5e2712d82469185e222f07eab5, type: 3}
   m_Name: DN_Intro_3
   m_EditorClassIdentifier: 
-  idx: 0
   nodeList:
   - emotion: 0
     speaker: Sam

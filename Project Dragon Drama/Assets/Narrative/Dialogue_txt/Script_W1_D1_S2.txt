@@ -32,7 +32,6 @@ BEGIN BRANCH
 BN_Intro_2
 	1 -> Screw you
 	2 -> Whatever
-BEGIN DNL
 BDN_Intro_2_BO1
 		{-1 Relationship with Jassica & Persia}
 		Bailey:
@@ -40,10 +39,9 @@ BDN_Intro_2_BO1
 BDN_Intro_2_BO2
 		Bailey:
 			Whatever…
-END DNL
-END BRANCH
+DN_Intro_2_1
 Nataly:
 <Satisfied Hmph>
-Interupt:
+Interupt
 	NATALY, JASSICA, AND PERSIA WALK OFF
 END DNL

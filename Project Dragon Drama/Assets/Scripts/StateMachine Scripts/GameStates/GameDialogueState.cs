@@ -13,15 +13,26 @@ public class GameDialogueState : State
         _controller = controller;
     }
 
-        public override void Enter() {
+    public override void Enter() {
         base.Enter();
 
         Debug.Log("STATE: Game Dialogue State");
 
         // Activate UI Elems
+        _controller.UI.DialogueObj.SetActive(true);
         
         // Don't allow player to move char
-        // _controller.playerController.LockMovement();
+        _controller.playerController.SetMovemovent(false);
+
+        // check if composite node has something
+        if(_controller.dialogueController.compositeNode == null) {
+            // fill node with current index of composite node list
+            _controller.dialogueController.SetCompositeNode();
+
+        }
+
+        _controller.dialogueController.ShowFirstDisplay();
+        _controller.dialogueController.portraitController.ResetPortraits();
     }
 
     public override void Update()
@@ -37,8 +48,12 @@ public class GameDialogueState : State
         base.Exit();
 
         // Deactivate UI Elems
+        _controller.UI.DialogueObj.SetActive(false);
 
         // Return movement to char
-        // _controller.playerController.UnlockMovement();
+        _controller.playerController.SetMovemovent(true);
+
+        // Reset CurrDNIdx
+        _controller.dialogueController.currIdxDN = 0;
     }
 }

@@ -13,4 +13,13 @@ MonoBehaviour:
   m_Name: BDN_Intro_4_BO2
   m_EditorClassIdentifier: 
   idx: 0
-  nodeList: []
+  nodeList:
+  - emotion: 0
+    speaker: Sam
+    text: "Okay. We\u2019ve still got some time before class starts."
+  - emotion: 0
+    speaker: Bailey
+    text: Enough time for your homework??
+  - emotion: 0
+    speaker: Sam
+    text: "Relax. I\u2019ll get it done."

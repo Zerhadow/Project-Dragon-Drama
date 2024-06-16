@@ -1,28 +1,14 @@
-using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
 public class DialogueController : MonoBehaviour
 {
-    [System.Serializable]
-    public class CompositeNode
-    {
-        public enum NodeType
-        {
-            Dialogue,
-            Branch,
-            ConnectNode
-        }
-
-        public NodeType type;
-        public DialogueNodeList dNodeList;
-        public BranchNode bNode;
-        // public ConnectNode connectNode;
-    }
-    
     [Header("Game System Dependencies")]
-    public GameController gameController;
+    private GameController gameController;
+    public PortraitController portraitController;
+    public StatController statController;
+
     [Header("DialogueNode Variables")]
     public TMP_Text nameBoxTxt;
     public TMP_Text bodyTxt;
@@ -35,146 +21,220 @@ public class DialogueController : MonoBehaviour
     public TMP_Text option1;
     public TMP_Text option2;
     public TMP_Text option3;
+
     [Header("Other Stuff")]
-
-    private int currIdx = 0; //idx for composite list
+    private int currIdxDNList = 0; // idx for composite dnode list
+    private int currIdxBNList = 0; // idx for composite bnode list
+    public int currIdxDN = 0; // idx for DN node list
     private int playerChoice = 0;
-    private bool inBranch = false;
+    private bool inBranch = false, startDn = false, startBn = false;
 
-    [SerializeField] public List<CompositeNode> nodeList = new List<CompositeNode>();
+    public CompositeNode compositeNode;
+    private int cNodeListIdx = 0;
+    [SerializeField] public List<CompositeNode> cNodeList;
+    private DialogueNodeList currDN; // current dialogue node sys is going through
+    private BranchNode currBN; // current branch node sys is going through
 
     private void Awake() {
         dialogueOptionsObj.SetActive(false);
+        gameController = GetComponentInParent<GameController>();
+        portraitController = GetComponent<PortraitController>();
+        SetCompositeNode(cNodeList[0]);
+    }
 
-        // make sure nodelist isnt empty
-        if (nodeList != null) {
-            // show first node
-            CompositeNode node = nodeList[currIdx];
-            
-            if(node.dNodeList != null) { // means that its a dialogue node list
-                nameBoxTxt.text = node.dNodeList.nodeList[0].speaker;
-                bodyTxt.text = node.dNodeList.nodeList[0].text;
-                node.dNodeList.idx = 0;
+    public void SetCompositeNode(CompositeNode node = null) {
+        compositeNode = node ?? cNodeList[cNodeListIdx];
+        // Debug.Log("Composite Node set to: " + compositeNode.name);
+    }
+
+    public void ReadCompositeNode() { // method to be called by btn press
+        // Debug.Log("InBranch? " + inBranch);
+        if (inBranch) { ProcessBranchNode(); }
+        else { ProcessDialogueNode(); }
+    }
+
+    private void ProcessBranchNode() {
+        // Debug.Log("CurrIdxDN: " + currIdxDN);
+        // Debug.Log("Count: " + currDN.nodeList.Count);
+        if (currIdxDN >= currDN.nodeList.Count) { EndBranchNode(); }
+        else {
+            if (CheckStatModifier(currDN.nodeList[currIdxDN].speaker)) {
+                currIdxDN++;
             }
-        } else { Debug.LogError("Node List is empty"); }
+            UpdateScreen();
+        }
     }
 
-    public void ReadList() {
-        if(inBranch) {
-            ReadBranchDialogueList(); // indicates we are inside branch dialogue list
-        } else
+    private void EndBranchNode() {
+        inBranch = false;
+        startDn = true;
+        // Debug.Log("CurrDN name: " + compositeNode.dNode[currIdxDNList]);
+        if(compositeNode.dNode[currIdxDNList] != null) { // if there is a dNode after BNode dNode
+            currDN = compositeNode.dNode[currIdxDNList];
+            currIdxDN = 0;
+            ProcessDialogueNode();
+        } else {
+            EndCompositeNode();
+        }
+    }
 
-        if(currIdx >= 0 && currIdx < nodeList.Count) {
-            CompositeNode node = nodeList[currIdx];
+    private bool CheckStatModifier(string speaker) {
+        if (speaker.Trim().StartsWith("+")) {
+            statController.ApplyModifier(speaker.Trim());
+            return true;
+        }
+        return false;
+    }
 
-            if(node.dNodeList != null) { // means that its a dialogue node list
-                DialogueNodeList dialogueNodeList = node.dNodeList;
-                GetDialogueNode(dialogueNodeList);
-            } else if(node.bNode != null) { // means that its a dialogue node list
-                BranchNode branchNodeList = node.bNode;
+    private void ProcessDialogueNode() {
+        // Debug.Log("CurrIdxDN: " + currIdxDN);
+        // Debug.Log("Count: " + currDN.nodeList.Count);
+        if (IsEndOfCompositeNode()) { EndCompositeNode(); }
+        else if (currIdxDN >= currDN.nodeList.Count) // at end of dialogue node, if theres a branch node next in queue play it
+        {
+            StartBranchNode();
+        }
+        else if (startDn && currIdxDNList >= 0 && currIdxDNList < compositeNode.dNode.Count)
+        {
+            UpdateScreen();
+        }
+    }
 
-                if(branchNodeList.options != null) {
-                    inBranch = true;
+    private bool IsEndOfCompositeNode()
+    {
+        return currIdxDNList >= compositeNode.dNode.Count - 1
+            && currIdxBNList >= compositeNode.bNode.Count
+            && currIdxDN >= currDN.nodeList.Count;
+    }
 
-                    if(branchNodeList.options.Count == 2) {
-                        dialogueOptionsObj.SetActive(true);
-                        options3GameObj.SetActive(false);
+    private void EndCompositeNode() {
+        Debug.Log("Completed composite node");
+        if (compositeNode.advanceTime) {
+            gameController.gameTimeController.AdvanceTime();
+            Debug.Log("New time: " + gameController.gameTimeController.GetCurrentTimeOfDay());
+        }
 
-                        // Set Option Texts
-                        option1.text = branchNodeList.options[0];
-                        option2.text = branchNodeList.options[1];
-                    }
+        if (compositeNode.linked && cNodeList.Count > cNodeListIdx) {
+            cNodeListIdx++;
+            ResetIndexes();
+            SetCompositeNode();
+        }
 
-                    if(branchNodeList.options.Count == 3) {
-                        dialogueOptionsObj.SetActive(true);
+        gameController.ChangeStates("Explore");
+        return;
+    }
 
-                        //Set Option texts
-                        option1.text = branchNodeList.options[0];
-                        option2.text = branchNodeList.options[1];
-                        option3.text = branchNodeList.options[2];
-                    }
-                } else { Debug.LogError("Fill options list"); }
-            } else { Debug.LogError("Dialogue Node List is empty"); }
-        } else { 
-            Debug.Log("Node List is complete");
-            // Change states so player can do next thing
-            gameController._stateMachine.ChangeState(gameController._stateMachine.PlayState);
+    private void ResetIndexes() {
+        currIdxDN = 0;
+        currIdxDNList = 0;
+        currIdxBNList = 0;
+    }
+
+    private void StartBranchNode() {
+        currIdxDNList++;
+        currBN = compositeNode.bNode[currIdxBNList];
+        ShowOptions(currBN);
+        startDn = false;
+        currIdxDN = 0;
+    }
+
+    public void ShowFirstDisplay() {
+        if (!compositeNode.startWithBranch) { StartDialogueNode();
+        } else { StartBranchNode(); }
+    }
+
+    private void StartDialogueNode() {
+        if (compositeNode.dNode[0] != null) {
+            currDN = compositeNode.dNode[0];
+            UpdateScreen();
+            startDn = true;
+        } else {
+            Debug.LogError("First Dialogue Node of Composite Node is empty");
+        }
+    }
+
+    private void UpdateScreen() {
+        if (currIdxDN < currDN.nodeList.Count) {
+            ProcessDialogueContent();
+        } else {
+            Debug.LogError("Index out of range");
+        }
+    }
+
+    private void ProcessDialogueContent() {
+        if (currDN.nodeList[currIdxDN].speaker == "Interrupt") {
+            // do interrupt code
+            currIdxDN++;
+        }
+
+        int idx = currIdxDN;
+        nameBoxTxt.text = currDN.nodeList[idx].speaker;
+        portraitController.SetPortrait(currDN.nodeList[idx].speaker, 0);
+        bodyTxt.text = currDN.nodeList[idx].text;
+        currIdxDN++;
+    }
+
+    private void ShowOptions(BranchNode branchNode) {
+        if (branchNode.options != null) 
+        {
+            SetupBranchNodeOptions(branchNode);
+            inBranch = true;
         } 
-    }
-
-    public void ReadBranchDialogueList() {
-        CompositeNode node = nodeList[currIdx];
-        BranchNode branchNodeList = node.bNode;
-        Debug.Log("player choice: " + playerChoice);
-
-        if(playerChoice == 1) {
-            DialogueNodeList dialogueNodeList = branchNodeList.dlist1;
-            Debug.Log("Idx: " + dialogueNodeList.idx);
-
-            if(dialogueNodeList != null) {
-                GetDialogueNode(dialogueNodeList);
-            } else { Debug.LogError("Branch response empty"); }
-        }
-    
-        if(playerChoice == 2) {
-            DialogueNodeList dialogueNodeList = branchNodeList.dlist2;
-            Debug.Log("Idx: " + dialogueNodeList.idx);
-
-            if(dialogueNodeList != null) {
-                GetDialogueNode(dialogueNodeList);
-            } else { Debug.LogError("Branch response empty"); }
-        }
-
-        if(playerChoice == 3) {
-            DialogueNodeList dialogueNodeList = branchNodeList.dlist3;
-            Debug.Log("Idx: " + dialogueNodeList.idx);
-
-            if(dialogueNodeList != null) {
-                GetDialogueNode(dialogueNodeList);
-            } else { Debug.LogError("Branch response empty"); }
+        else 
+        {
+            Debug.LogError("Fill options list");
         }
     }
 
-    public void GetDialogueNode(DialogueNodeList dialogueNodeList) {
-        if(dialogueNodeList.idx < dialogueNodeList.nodeList.Count) {
-            nameBoxTxt.text = dialogueNodeList.nodeList[dialogueNodeList.idx].speaker;
-            bodyTxt.text = dialogueNodeList.nodeList[dialogueNodeList.idx].text;
-            dialogueNodeList.idx += 1;
-        } else { // move onto next composite node
-            Debug.Log("DList done");
-            dialogueNodeList.idx = 0;
-            if(inBranch) inBranch = false;
-            currIdx++;
+    private void SetupBranchNodeOptions(BranchNode branchNode) {
+        if (branchNode.options.Count == 2) 
+        {
+            SetBranchNodeOptions(branchNode, false);
+        } 
+        else if (branchNode.options.Count == 3) 
+        {
+            SetBranchNodeOptions(branchNode, true);
         }
     }
-    
+
+    private void SetBranchNodeOptions(BranchNode branchNode, bool showThirdOption) {
+        dialogueOptionsObj.SetActive(true);
+        options3GameObj.SetActive(showThirdOption);
+
+        option1.text = branchNode.options[0];
+        option2.text = branchNode.options[1];
+        if (showThirdOption) 
+        {
+            option3.text = branchNode.options[2];
+        }
+    }
+
+    public void Skip() {
+        currIdxDN = currDN.nodeList.Count - 1;
+        UpdateScreen();
+        // Debug.Log("Player skipped dialogue node contents");
+    }
+
     public void Option1() {
-        playerChoice = 1;
-        // deactivate UI
-        dialogueOptionsObj.SetActive(false);
-        
-        // Show players reponse
-        nameBoxTxt.text = "Bailey";
-        bodyTxt.text = option1.text;
+        HandleOptionSelection(1, currBN.dlist1, option1.text);
     }
 
     public void Option2() {
-        playerChoice = 2;
-        // deactivate UI
-        dialogueOptionsObj.SetActive(false);
-        
-        // Show players reponse
-        nameBoxTxt.text = "Bailey";
-        bodyTxt.text = option2.text;
+        HandleOptionSelection(2, currBN.dlist2, option2.text);
     }
-    
+
     public void Option3() {
-        playerChoice = 3;
-        // deactivate UI
+        HandleOptionSelection(3, currBN.dlist3, option3.text);
+    }
+
+    private void HandleOptionSelection(int choice, DialogueNodeList dialogueList, string optionText) {
+        playerChoice = choice;
+        currDN = dialogueList;
+
         dialogueOptionsObj.SetActive(false);
-        
-        // Show players reponse
-        nameBoxTxt.text = "Bailey";
-        bodyTxt.text = option3.text;
+
+        UpdateScreen();
+
+        currIdxBNList++;
     }
 }

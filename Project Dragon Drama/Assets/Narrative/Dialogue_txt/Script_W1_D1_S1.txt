@@ -1,5 +1,5 @@
 BEGIN DNL
-DN_Intro_0
+DN_Intro_1
 HomeroomTeacher:
 	Using the substitution method, we can substitute c for x to determine the limit of the function.
 HomeroomTeacher:
@@ -37,12 +37,12 @@ HomeroomTeacher:
 Sam:
 	Well?
 BEGIN BRANCH
-BN_Intro_0
+BN_Intro_1
 	1 -> Pay Attention to Class
 	2 -> The Pizza Squares
 BEGIN DNL
-BDN_Intro_0_BO1
-		{+1 Nerd}
+BDN_Intro_1_BO1
+		+1 Stat Nerd
 		Bailey:
 			We’ll figure it out later. I need to take notes.
 		Sam:
@@ -57,7 +57,7 @@ Yes, Sam. Just try to be back before the end of class this time…
 			Of course (not).
 		HomeroomTeacher:
 		<Sigh> Back to the example on the board, as we solve for the limit of x…
-BDN_Intro_0_BO2
+BDN_Intro_1_BO2
 		Bailey:
 			Hopefully they have those pizza squares again
 		Sam:
@@ -88,14 +88,15 @@ BDN_Intro_0_BO2
 			I hope everyone else was following along because I will not be going back over this.
 		Sam:
 			I’ll meet you in the cafeteria at lunch…
-END DNL
-END BRANCH
-Interrupt:
+DN_Intro_1_2
+Interrupt
 	CROSSFADE THROUGH BLACK
-Interrupt:
+Interrupt
 	BELL RINGS
 HomeroomTeacher:
 	…Alright, before you are dismissed, remember that there will be a test Friday and to hand over your homework from last night if you did not do so at the start of class.
 Bailey:
 	<I guess Sam already went to the cafeteria…>
 END DNL
+END BRANCH
+ED
