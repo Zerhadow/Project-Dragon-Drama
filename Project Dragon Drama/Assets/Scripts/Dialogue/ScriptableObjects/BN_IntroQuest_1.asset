@@ -15,7 +15,6 @@ MonoBehaviour:
   options:
   - " [REQ: 3 NERD] There\u2019s a Flaw\u2026"
   - " Could You Change That\u2026"
-  - 
   dlist1: {fileID: 11400000, guid: d81a6e84ce9810240b047799c9ea4ded, type: 2}
   dlist2: {fileID: 11400000, guid: 1fdaa4c911e54c04a94ebbe744b7f112, type: 2}
   dlist3: {fileID: 0}
