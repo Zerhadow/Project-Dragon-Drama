@@ -69,7 +69,8 @@ public class DialogueController : MonoBehaviour
         inBranch = false;
         startDn = true;
         // Debug.Log("CurrDN name: " + compositeNode.dNode[currIdxDNList]);
-        if(compositeNode.dNode[currIdxDNList] != null) { // if there is a dNode after BNode dNode
+        bool isCurrIdxDNListExceedingOrEqual = compositeNode.dNode.Count > currIdxDNList;
+        if(isCurrIdxDNListExceedingOrEqual && compositeNode.dNode[currIdxDNList] != null) { // if there is a dNode after BNode dNode
             currDN = compositeNode.dNode[currIdxDNList];
             currIdxDN = 0;
             ProcessDialogueNode();
@@ -102,6 +103,9 @@ public class DialogueController : MonoBehaviour
 
     private bool IsEndOfCompositeNode()
     {
+        // Debug.Log("DNLListIdx: " + currIdxDNList + " | Dnode Count: " + compositeNode.dNode.Count);
+        // Debug.Log("BNLListIdx: " + currIdxBNList + " | Bnode Count: " + compositeNode.bNode.Count);
+        // Debug.Log("DNLIdx: " + currIdxDN + " | List Count: " + currDN.nodeList.Count);
         return currIdxDNList >= compositeNode.dNode.Count - 1
             && currIdxBNList >= compositeNode.bNode.Count
             && currIdxDN >= currDN.nodeList.Count;
@@ -116,9 +120,10 @@ public class DialogueController : MonoBehaviour
 
         if (compositeNode.linked && cNodeList.Count > cNodeListIdx) {
             cNodeListIdx++;
-            ResetIndexes();
             SetCompositeNode();
         }
+
+        ResetIndexes();
 
         gameController.ChangeStates("Explore");
         return;
