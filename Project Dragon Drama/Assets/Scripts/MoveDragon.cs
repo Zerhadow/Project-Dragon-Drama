@@ -11,6 +11,7 @@ public class MoveDragon : MonoBehaviour
     public PlayerControls playerControls;
     private InputAction move;
     public bool canMove = true;
+    public Animator baileyAnimator;
 
     public float minX = -5f; // minimum x-value of the plane
     public float maxX = 5f;  // maximum x-value of the plane
@@ -22,6 +23,7 @@ public class MoveDragon : MonoBehaviour
         playerControls = new PlayerControls();
         move = playerControls.Player.Move;
         dragonTransform = transform;
+        baileyAnimator = GetComponent<Animator>();
     }
 
     private void OnEnable()
@@ -37,6 +39,7 @@ public class MoveDragon : MonoBehaviour
     void Update()
     {
         moveDirection = move.ReadValue<Vector2>();
+        
     }
 
     private void FixedUpdate()
