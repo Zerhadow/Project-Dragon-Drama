@@ -10,9 +10,9 @@ MonoImporter:
   - b_neutral: {fileID: 21300000, guid: e4f26d1dbcd77b244948225ec7c51e0f, type: 3}
   - s_neutral: {fileID: 21300000, guid: 32ea76ad5b55b244c897ed32b82342aa, type: 3}
   - persia_neutral: {fileID: 21300000, guid: 50ae420be7f0f9a4e84d3bc05b2d807b, type: 3}
-  - mg2PFP: {instanceID: 0}
-  - mg3PFP: {instanceID: 0}
-  - kenPFP: {instanceID: 0}
+  - jass_neutral: {fileID: 21300000, guid: 1f6a588a70e82854086c82c7afdcaf30, type: 3}
+  - nat_neutral: {fileID: 21300000, guid: 73fd208ab3a320b40973a86f8f1b4496, type: 3}
+  - ken_neutral: {fileID: 21300000, guid: e072b31a10e6a5143a2d71452e0cecc4, type: 3}
   - s1: {instanceID: 0}
   - s2: {instanceID: 0}
   - s3: {instanceID: 0}
