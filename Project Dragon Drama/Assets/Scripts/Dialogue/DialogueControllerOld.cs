@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class DialogueController : MonoBehaviour
+public class DialogueControllerOld : MonoBehaviour
 {
     [Header("Game System Dependencies")]
     private GameController gameController;
@@ -33,7 +33,7 @@ public class DialogueController : MonoBehaviour
     private int cNodeListIdx = 0;
     [SerializeField] public List<CompositeNode> cNodeList;
     private DialogueNodeList currDN; // current dialogue node sys is going through
-    private BranchNode currBN; // current branch node sys is going through
+    private BranchNode2 currBN; // current branch node sys is going through
 
     private void Awake() {
         dialogueOptionsObj.SetActive(false);
@@ -174,7 +174,7 @@ public class DialogueController : MonoBehaviour
         currIdxDN++;
     }
 
-    private void ShowOptions(BranchNode branchNode) {
+    private void ShowOptions(BranchNode2 branchNode) {
         if (branchNode.options != null) 
         {
             SetupBranchNodeOptions(branchNode);
@@ -186,7 +186,7 @@ public class DialogueController : MonoBehaviour
         }
     }
 
-    private void SetupBranchNodeOptions(BranchNode branchNode) {
+    private void SetupBranchNodeOptions(BranchNode2 branchNode) {
         if (branchNode.options.Count == 2) 
         {
             SetBranchNodeOptions(branchNode, false);
@@ -197,7 +197,7 @@ public class DialogueController : MonoBehaviour
         }
     }
 
-    private void SetBranchNodeOptions(BranchNode branchNode, bool showThirdOption) {
+    private void SetBranchNodeOptions(BranchNode2 branchNode, bool showThirdOption) {
         dialogueOptionsObj.SetActive(true);
         options3GameObj.SetActive(showThirdOption);
 

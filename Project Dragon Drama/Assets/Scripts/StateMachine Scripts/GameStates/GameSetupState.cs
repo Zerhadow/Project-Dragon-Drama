@@ -26,7 +26,6 @@ public class GameSetupState : State
             child.gameObject.SetActive(false);
         }
 
-        _controller.dialogueController.SetCompositeNode();
         _controller.playerController.SetMovemovent(false);
         // _stateMachine.ChangeState(_stateMachine.DialogueState);
     }
