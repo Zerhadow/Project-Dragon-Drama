@@ -86,6 +86,13 @@ public class DialogueController : MonoBehaviour
         gameController.UI.btnsObj.SetActive(false);
         gameController.UI.option1.text = content.opt1;
         gameController.UI.option2.text = content.opt2;
+
+        if(content.option3NodeList != null) {
+            gameController.UI.dialogueOptions3Obj.SetActive(true);
+            gameController.UI.option3.text = content.opt2;
+        } else {
+            gameController.UI.dialogueOptions3Obj.SetActive(false);
+        }
     }
 
     public void Option1() {

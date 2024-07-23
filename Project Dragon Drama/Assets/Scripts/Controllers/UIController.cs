@@ -17,6 +17,7 @@ public class UIController : MonoBehaviour
 
     [Header("BranchNode Object Variables")]
     public GameObject dialogueOptionsObj;
+    public GameObject dialogueOptions3Obj;
     public GameObject btnsObj;
     
     [Header("BranchNode Text Variables")]
