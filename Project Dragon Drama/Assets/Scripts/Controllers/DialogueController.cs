@@ -12,11 +12,12 @@ public class DialogueController : MonoBehaviour
     private NodeList nodeList;
     private int currentNodeIndex = 0;
     private Node currentNode;
+    [Header("Main Story Node Lists")]
+    [SerializeField] public List<NodeList> mainNodeLists;
 
     private void Awake() {
-        gameController.UI.dialogueOptionsObj.SetActive(false);
         gameController = GetComponentInParent<GameController>();
-        // portraitController = GetComponent<PortraitController>();
+        gameController.UI.dialogueOptionsObj.SetActive(false);
     }
 
     public void SetCurrentNodeList(NodeList list) {
@@ -48,6 +49,12 @@ public class DialogueController : MonoBehaviour
     // Goes to end of node list
     public void Skip() {
         Debug.Log("Skipping dialogue");
+
+        if (currentNodeIndex != nodeList.nodes.Count - 1 &
+            currentNodeIndex > nodeList.nodes.Count - 1) {
+            currentNodeIndex = nodeList.nodes.Count - 1; // make currNidx last idx
+            ActivateCurrentNode();
+        }
     }
 
     private void ActivateCurrentNode() {
@@ -71,6 +78,7 @@ public class DialogueController : MonoBehaviour
     {
         gameController.UI.nameBoxTxt.text = content.speakerName;
         gameController.UI.bodyTxt.text = content.bodyText;
+        portraitController.SetPortrait(content.speakerName, 0);
     }
 
     private void UpdateUIBN(NodeContent content) {

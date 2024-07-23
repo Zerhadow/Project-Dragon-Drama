@@ -43,7 +43,7 @@ public class PlayerController : MonoBehaviour
         // get NPC info
 
         // set composite node for dialogue controller
-        // gameController.dialogueController.SetCompositeNode(npc.nodeList[npc.nodeIdx]);
+        gameController.dialogueController.SetCurrentNodeList(npc.dialogueNodeLists[npc.nodeIdx]);
         npc.talkedToToday = true;
         npc.pressETextBox.SetActive(false);
 

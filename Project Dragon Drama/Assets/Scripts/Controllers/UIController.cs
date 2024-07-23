@@ -22,6 +22,7 @@ public class UIController : MonoBehaviour
     [Header("BranchNode Text Variables")]
     public TMP_Text option1;
     public TMP_Text option2;
+    public TMP_Text option3;
 
     private void Awake() {
         gameController = GetComponentInParent<GameController>();
