@@ -5,7 +5,7 @@ using UnityEngine;
 public enum NodeType {
     Dialogue,
     Branch,
-    Quest
+    AutoBranch
 }
 
 public class NodeContent {
@@ -16,13 +16,12 @@ public class NodeContent {
     public NodeList option1NodeList;
     public NodeList option2NodeList;
     public NodeList option3NodeList;
+    public NodeList nodeList1;
+    public NodeList nodeList2;
 }
 
 [CreateAssetMenu(menuName = "Dialogue System/Node")]
 public abstract class Node : ScriptableObject
 {
     public NodeType nodeType;
-
-    // Abstract method for handling node functionality
-    public abstract NodeContent GetContent();
 }

@@ -16,13 +16,4 @@ public class DialogueNode : Node
     public string speakerName;
     public string dialogueText;
     public Emotion emotion;
-
-    public override NodeContent GetContent() {
-        return new NodeContent
-        {
-            speakerName = speakerName,
-            bodyText = dialogueText,
-            emotion = emotion
-        };
-    }
 }

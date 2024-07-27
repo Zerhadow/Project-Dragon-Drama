@@ -59,13 +59,19 @@ public class DialogueController : MonoBehaviour
 
     private void ActivateCurrentNode() {
         currentNode = nodeList.nodes[currentNodeIndex];
-        NodeContent content = currentNode.GetContent();
+        // NodeContent content = currentNode.GetContent();
 
         if(currentNode.nodeType == NodeType.Dialogue) {
-            UpdateUIDN(content);
+            DialogueNode dn = currentNode as DialogueNode;
+            UpdateUIDN(dn);
         } else if (currentNode.nodeType == NodeType.Branch) {
-            UpdateUIBN(content);
-        } 
+            BranchNode bn = currentNode as BranchNode;
+            UpdateUIBN(bn);
+        } else if (currentNode.nodeType == NodeType.AutoBranch) {
+            AutoBranchNode abn = currentNode as AutoBranchNode;
+            SetCurrentNodeList(GetAutoNodeList(abn));
+            StartDialogue();
+        }
         // else if (currentNode.nodeType == NodeType.Quest) {
 
         // } 
@@ -74,48 +80,60 @@ public class DialogueController : MonoBehaviour
         }
     }
 
-    private void UpdateUIDN(NodeContent content)
+    private void UpdateUIDN(DialogueNode dn)
     {
-        gameController.UI.nameBoxTxt.text = content.speakerName;
-        gameController.UI.bodyTxt.text = content.bodyText;
-        portraitController.SetPortrait(content.speakerName, 0);
+        gameController.UI.nameBoxTxt.text = dn.speakerName;
+        gameController.UI.bodyTxt.text = dn.dialogueText;
+        portraitController.SetPortrait(dn.speakerName, 0);
     }
 
-    private void UpdateUIBN(NodeContent content) {
+    private void UpdateUIBN(BranchNode bn) {
         gameController.UI.dialogueOptionsObj.SetActive(true);
         gameController.UI.btnsObj.SetActive(false);
-        gameController.UI.option1.text = content.opt1;
-        gameController.UI.option2.text = content.opt2;
+        gameController.UI.option1.text = bn.opt1txt;
+        gameController.UI.option2.text = bn.opt2txt;
 
-        if(content.option3NodeList != null) {
+        if(bn.option3 != null) {
             gameController.UI.dialogueOptions3Obj.SetActive(true);
-            gameController.UI.option3.text = content.opt2;
+            gameController.UI.option3.text = bn.opt3txt;
         } else {
             gameController.UI.dialogueOptions3Obj.SetActive(false);
         }
     }
 
     public void Option1() {
-        NodeContent content = currentNode.GetContent();
-        SetCurrentNodeList(content.option1NodeList);
+        BranchNode bn = currentNode as BranchNode;
+        SetCurrentNodeList(bn.option1);
         gameController.UI.dialogueOptionsObj.SetActive(false);
         StartDialogue();
         gameController.UI.btnsObj.SetActive(true);
     }
 
     public void Option2() {
-        NodeContent content = currentNode.GetContent();
-        SetCurrentNodeList(content.option2NodeList);
+        BranchNode bn = currentNode as BranchNode;
+        SetCurrentNodeList(bn.option2);
         gameController.UI.dialogueOptionsObj.SetActive(false);
         StartDialogue();
         gameController.UI.btnsObj.SetActive(true);
     }
 
     public void Option3() {
-        NodeContent content = currentNode.GetContent();
-        SetCurrentNodeList(content.option3NodeList);
+        BranchNode bn = currentNode as BranchNode;
+        SetCurrentNodeList(bn.option3);
         gameController.UI.dialogueOptionsObj.SetActive(false);
         StartDialogue();
         gameController.UI.btnsObj.SetActive(true);
+    }
+
+    private NodeList GetAutoNodeList(AutoBranchNode cn) {
+        // get bool from player controller
+        bool b = gameController.playerController.flagController.GetFlag(cn.flagName);
+
+        // update nodelist based off bool
+        if(b) {
+            return cn.nl1;
+        } else {
+            return cn.nl2;
+        }
     }
 }

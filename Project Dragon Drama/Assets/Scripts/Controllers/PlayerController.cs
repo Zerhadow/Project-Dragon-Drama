@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
     public MoveDragon dragonMovement;
     public AreaController playerAreaController;
     public NPCController npc; // npc they are in range or talking too
+    public FlagController flagController;
 
     public void SetMovemovent(bool b) {
         dragonMovement.canMove = b;
@@ -16,6 +17,7 @@ public class PlayerController : MonoBehaviour
 
     private void Awake() {
         gameController = GetComponentInParent<GameController>();
+        flagController = GetComponentInChildren<FlagController>();
     }
 
     private void Update() {
