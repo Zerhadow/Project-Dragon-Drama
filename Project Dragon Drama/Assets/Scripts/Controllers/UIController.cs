@@ -5,15 +5,17 @@ using UnityEngine;
 public class UIController : MonoBehaviour
 {
     private GameController gameController;
-    private GameObject PauseCharUI;
-    private GameObject PauseInvUI;
-    private GameObject PauseStatsUI;
-    private GameObject PauseNotesUI;
 
     public GameObject canvas;
     public GameObject DialogueObj;
     public GameObject pauseMenuObj;
     public GameObject pressETextBox;
+
+    [Header("Pause Menu Objs")]
+    public GameObject PauseCharUI;
+    public GameObject PauseInvUI;
+    public GameObject PauseStatsUI;
+    public GameObject PauseNotesUI;
 
     private void Awake() {
         gameController = GetComponentInParent<GameController>();
@@ -28,7 +30,8 @@ public class UIController : MonoBehaviour
     }
 
     public void CharacterInfoUI() {
-
+        pauseMenuObj.SetActive(false);
+        PauseCharUI.SetActive(true);
     }
 
     public void InventoryUI() {
