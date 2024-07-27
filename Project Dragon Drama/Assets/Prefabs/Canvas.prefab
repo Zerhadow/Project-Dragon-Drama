@@ -156,11 +156,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueTextBox: {fileID: 8641837748400849822}
+  chapterIdx: 0
+  pageIdx: 0
   playerPFP: {fileID: 8051469007311818126}
   mg1PFP: {fileID: 6374637468654548803}
+  mg2PFP: {fileID: 0}
+  mg3PFP: {fileID: 0}
+  friendPFP: {fileID: 0}
+  kenPFP: {fileID: 0}
   cutsceneStart: 0
-  characterControllerBase: {fileID: 0}
+  dialogueTextObj: {fileID: 0}
   continueTextBox: {fileID: 2142674091551683290}
+  pressETextBox: {fileID: 0}
+  nextCutsceneBtn: {fileID: 0}
+  _tranController: {fileID: 0}
+  dialogueOptions: {fileID: 0}
+  diagOptions: {fileID: 0}
+  skipButton: {fileID: 0}
+  dialoguePts: 0
 --- !u!114 &3074218954687348084
 MonoBehaviour:
   m_ObjectHideFlags: 0
