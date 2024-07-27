@@ -59,7 +59,6 @@ public class DialogueController : MonoBehaviour
 
     private void ActivateCurrentNode() {
         currentNode = nodeList.nodes[currentNodeIndex];
-        // NodeContent content = currentNode.GetContent();
 
         if(currentNode.nodeType == NodeType.Dialogue) {
             DialogueNode dn = currentNode as DialogueNode;
@@ -126,8 +125,9 @@ public class DialogueController : MonoBehaviour
     }
 
     private NodeList GetAutoNodeList(AutoBranchNode cn) {
-        // get bool from player controller
-        bool b = gameController.playerController.flagController.GetFlag(cn.flagName);
+        // get bool from player controller\
+        FlagController fc = gameController.playerController.flagController;
+        bool b = fc.GetFlag(cn.flagName);
 
         // update nodelist based off bool
         if(b) {
