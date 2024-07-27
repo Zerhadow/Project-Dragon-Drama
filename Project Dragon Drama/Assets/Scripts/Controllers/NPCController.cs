@@ -6,10 +6,8 @@ public class NPCController : MonoBehaviour
 { 
     public GameObject pressETextBox;
     public PlayerController pc;
-    public DialogueController dc;
 
     [Header("NPC Dialogue Variables")] 
-    [SerializeField] public List<CompositeNode> nodeList = new List<CompositeNode>(); 
     public List<NodeList> dialogueNodeLists = new List<NodeList>();
     public int nodeIdx = 0;
     public bool talkedToToday = false; // if talked to NPC today, give other dialogue 
