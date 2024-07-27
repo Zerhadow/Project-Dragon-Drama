@@ -5,7 +5,8 @@ using UnityEngine;
 public enum NodeType {
     Dialogue,
     Branch,
-    AutoBranch
+    AutoBranch,
+    Stat
 }
 
 [CreateAssetMenu(menuName = "Dialogue System/Node")]

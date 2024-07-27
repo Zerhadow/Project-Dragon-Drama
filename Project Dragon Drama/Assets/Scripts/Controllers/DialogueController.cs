@@ -70,6 +70,9 @@ public class DialogueController : MonoBehaviour
             AutoBranchNode abn = currentNode as AutoBranchNode;
             SetCurrentNodeList(GetAutoNodeList(abn));
             StartDialogue();
+        } else if (currentNode.nodeType == NodeType.Stat) {
+            StatNode bn = currentNode as StatNode;
+            Debug.Log("Modifying stats");
         }
         // else if (currentNode.nodeType == NodeType.Quest) {
 
@@ -82,7 +85,7 @@ public class DialogueController : MonoBehaviour
     private void UpdateUIDN(DialogueNode dn)
     {
         gameController.UI.nameBoxTxt.text = dn.speakerName;
-        gameController.UI.bodyTxt.text = dn.dialogueText;
+        gameController.UI.bodyTxt.text = dn.dialogueText.Trim();
         portraitController.SetPortrait(dn.speakerName, 0);
     }
 
