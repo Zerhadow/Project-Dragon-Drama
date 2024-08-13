@@ -43,6 +43,7 @@ GameObject:
   - component: {fileID: 1533967014186632171}
   - component: {fileID: 3129691741328395824}
   - component: {fileID: 5349614322965801685}
+  - component: {fileID: 2252898342675321452}
   m_Layer: 0
   m_Name: bleachersSeats
   m_TagString: Untagged
@@ -115,6 +116,27 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &2252898342675321452
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1161747519798950003}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.3794917, y: 0.05869212, z: 0.17203583}
+  m_Center: {x: 0, y: 0.0000000037252903, z: 9.313226e-10}
 --- !u!1 &3357375874422663026
 GameObject:
   m_ObjectHideFlags: 0
@@ -126,6 +148,7 @@ GameObject:
   - component: {fileID: 7317390131745871884}
   - component: {fileID: 3274916736140309440}
   - component: {fileID: 1670332411028727211}
+  - component: {fileID: 6825276352063219977}
   m_Layer: 0
   m_Name: bleacherSteps
   m_TagString: Untagged
@@ -198,6 +221,27 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &6825276352063219977
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3357375874422663026}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.38601264, y: 0.07446529, z: 0.15737253}
+  m_Center: {x: -0.084563, y: 0.037232645, z: -0.0067293756}
 --- !u!1 &3749328787931193990
 GameObject:
   m_ObjectHideFlags: 0
@@ -242,6 +286,7 @@ GameObject:
   - component: {fileID: 5700028135060739985}
   - component: {fileID: 5299110635748784520}
   - component: {fileID: 488326974189454877}
+  - component: {fileID: 2693887917439250490}
   m_Layer: 0
   m_Name: bleachersLegs
   m_TagString: Untagged
@@ -314,6 +359,27 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &2693887917439250490
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6436492614216526830}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.35106048, y: 0.08821016, z: 0.16699097}
+  m_Center: {x: 0, y: 0.0000000037252903, z: 9.313226e-10}
 --- !u!1 &6575870399482611218
 GameObject:
   m_ObjectHideFlags: 0
@@ -358,6 +424,7 @@ GameObject:
   - component: {fileID: 4680899103056454815}
   - component: {fileID: 1770425205402381498}
   - component: {fileID: 8238598175579592877}
+  - component: {fileID: 1206674317783046023}
   m_Layer: 0
   m_Name: bleachersRails
   m_TagString: Untagged
@@ -430,6 +497,27 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &1206674317783046023
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9069625178880973811}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.0040127183, y: 0.13354516, z: 0.14723188}
+  m_Center: {x: 0, y: -0.0000000037252903, z: -4.656613e-10}
 --- !u!1 &9194169372270477811
 GameObject:
   m_ObjectHideFlags: 0

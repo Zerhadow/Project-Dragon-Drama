@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6490990799492639839}
   - component: {fileID: 2025381963925095919}
   - component: {fileID: 3592567231190444588}
+  - component: {fileID: 4570503412064616967}
   m_Layer: 0
   m_Name: bbPole
   m_TagString: Untagged
@@ -83,6 +84,27 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &4570503412064616967
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 579586414194301102}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.108047314, y: 0.21274298, z: 0.07347751}
+  m_Center: {x: 0, y: 0.10637149, z: 0.017111747}
 --- !u!1 &2022772563621727589
 GameObject:
   m_ObjectHideFlags: 0
@@ -191,6 +213,7 @@ GameObject:
   - component: {fileID: 2937671066764744628}
   - component: {fileID: 1946524150886881045}
   - component: {fileID: 9061017903079604978}
+  - component: {fileID: 1310170957030496401}
   m_Layer: 0
   m_Name: bbNet
   m_TagString: Untagged
@@ -263,3 +286,24 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &1310170957030496401
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8067276436692814090}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.10957224, y: 0.08050576, z: 0.038742878}
+  m_Center: {x: 0, y: 0.17288299, z: 0.0000000027939677}
