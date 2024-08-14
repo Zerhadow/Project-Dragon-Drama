@@ -8,4 +8,9 @@ public class AutoBranchNode : Node
     public NodeList nl1;
     public NodeList nl2;
     public string flagName;
+
+    public void Init(string name) {
+        nl1 = new NodeList();
+        nl2 = new NodeList();
+    }
 }

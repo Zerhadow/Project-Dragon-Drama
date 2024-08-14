@@ -9,4 +9,11 @@ public class NodeList : ScriptableObject
     public bool advanceTime = false;
     
     public List<Node> nodes = new List<Node>();
+    [HideInInspector] public string assetName;
+
+
+    public void Init(string name) {
+        nodes = new List<Node>();
+        assetName = name;
+    }
 }
