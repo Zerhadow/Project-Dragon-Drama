@@ -14,7 +14,8 @@ public class ImportController : MonoBehaviour
         // add fill path
         List<string> inputFilePaths = new List<string>();
 
-        inputFilePaths.Add("Assets/Narrative/Test Files/Test 1 - Create Nodelist with DNL.txt");
+        // inputFilePaths.Add("Assets/Narrative/Test Files/Test 1 - Create Nodelist with DNL.txt");
+        inputFilePaths.Add("Assets/Narrative/Test Files/Test 2 - Create Nodelist with BNL.txt");
 
         
         # region Completed files
@@ -69,14 +70,14 @@ public class ImportController : MonoBehaviour
             }
 
             if(fileLines[i].Trim().StartsWith("START NL")) {
-                if(null == null) {
+                if(nl == null) {
                     nl = ScriptableObject.CreateInstance<NodeList>();
                 }
                 // get name of node
                 string name  = fileLines[++i].Trim();
                 // Debug.Log("Name: " + name);
 
-                Debug.Log("Name: " + name);
+                // Debug.Log("Name: " + name);
                 nl.Init(name);
             }
 
@@ -92,37 +93,46 @@ public class ImportController : MonoBehaviour
             }
 
             if(fileLines[i].Trim().StartsWith("BEGIN BNL")) {
-                BranchNode2 bNode = ScriptableObject.CreateInstance<BranchNode2>();
+                BranchNode bNode = ScriptableObject.CreateInstance<BranchNode>();
                 // get name of node
                 string name  = fileLines[++i].Trim();
                 bNode.Init(name);
-
-                // get options strings
-                string opt1 = "", opt2 = "", opt3 = "";
-
-                // Debug.Log("txt: " + fileLines[++i].Trim());
+                // Debug.Log("Name: " + name);
 
                 if(fileLines[++i].Trim().StartsWith("1 ->")) {
-                    opt1 = fileLines[i].Trim().Substring(4);
-                    // Debug.Log(opt1);
+                    bNode.opt1txt = fileLines[i].Trim().Substring(4);
                 }
 
                 if(fileLines[++i].Trim().StartsWith("2 ->")) {
-                    opt2 = fileLines[i].Trim().Substring(4);
-                    // Debug.Log(opt2);
+                    bNode.opt2txt = fileLines[i].Trim().Substring(4);
                 }
 
                 if(fileLines[++i].Trim().StartsWith("3 ->")) {
-                    opt3 = fileLines[i].Trim().Substring(4);
-                    // opt3 = fileLines[i].Trim().Substring(4);
+                    bNode.opt3txt = fileLines[i].Trim().Substring(4);
                 }
 
-                bNode.FillOption(opt1, opt2, opt3);
+                int nlidx = 0;
+
+                if(String.IsNullOrEmpty(bNode.opt3txt)) {
+                    i = bNode.CreateNodeList(fileLines, i, nlidx++);
+                    i = bNode.CreateNodeList(fileLines, ++i, nlidx);
+                } else {
+                    i = bNode.CreateNodeList(fileLines, i, nlidx++);
+                    i = bNode.CreateNodeList(fileLines, ++i, nlidx++);
+                    i = bNode.CreateNodeList(fileLines, ++i, nlidx);
+                }
+
+                // bNode.FillOption(opt1, opt2, opt3);
                 
                 // fill node & update idx i
                 // Debug.Log("enter text: " + fileLines[i].Trim());
                 // i = bNode.FillBranchNode(fileLines, i, cNodeList);
                 // Debug.Log("exit text: " + fileLines[i].Trim());
+
+                UnityEditor.AssetDatabase.CreateAsset(bNode, "Assets/Scripts/Dialogue/ScriptableObjects/" + bNode.assetName + ".asset");
+                Debug.Log("Created: " + bNode.assetName);
+
+                nl.nodes.Add(bNode);
             }
 
             if(fileLines[i].Trim().StartsWith("END NL")) {
