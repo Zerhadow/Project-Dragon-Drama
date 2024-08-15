@@ -35,15 +35,18 @@ public class UIController : MonoBehaviour
     }
 
     public void InventoryUI() {
-
+        pauseMenuObj.SetActive(false);
+        PauseInvUI.SetActive(true);
     }
 
     public void StatsUI() {
-
+        pauseMenuObj.SetActive(false);
+        PauseStatsUI.SetActive(true);
     }
 
     public void NotesUI()
     {
-
+        pauseMenuObj.SetActive(false);
+        PauseNotesUI.SetActive(true);
     }
 }
