@@ -9,10 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 73a16b912b050e6459eef9a9ae6e1390, type: 3}
-  m_Name: BN_NL_Test3
+  m_Script: {fileID: 11500000, guid: 93fabff6e31488648924cbede4f9c198, type: 3}
+  m_Name: NL_Test4 DNL2
   m_EditorClassIdentifier: 
-  nodeType: 2
-  nl1: {fileID: 0}
-  nl2: {fileID: 0}
-  flagName: TEST3FLAG
+  nodeType: 0
+  speakerName: 'Player:'
+  dialogueText: I got smarter
+  emotion: 1

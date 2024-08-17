@@ -10,10 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 89a1fbfb77609f741a8f1de0fdb5dd1e, type: 3}
-  m_Name: ABN_NLT3_NL2
+  m_Name: NL_Test4
   m_EditorClassIdentifier: 
   linked: 0
   advanceTime: 0
   nodes:
-  - {fileID: 11400000, guid: 1cf310dcbf11d8b4a842ff681466615e, type: 2}
-  assetName: ABN_NLT3_NL2
+  - {fileID: 11400000, guid: 5a35388cacf30d44c95aa3d0ba5aba40, type: 2}
+  - {fileID: 11400000, guid: c3b2e441cb2b52d4d912872f1f102d70, type: 2}
+  - {fileID: 11400000, guid: 48ff108836878e54b901b4966078ae91, type: 2}
+  assetName: NL_Test4

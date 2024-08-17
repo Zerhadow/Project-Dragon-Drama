@@ -16,7 +16,8 @@ public class ImportController : MonoBehaviour
 
         // inputFilePaths.Add("Assets/Narrative/Test Files/Test 1 - Create Nodelist with DNL.txt");
         // inputFilePaths.Add("Assets/Narrative/Test Files/Test 2 - Create Nodelist with BNL.txt");
-        inputFilePaths.Add("Assets/Narrative/Test Files/Test 3 - Create Nodelist with ABN.txt");
+        // inputFilePaths.Add("Assets/Narrative/Test Files/Test 3 - Create Nodelist with ABN.txt");
+        inputFilePaths.Add("Assets/Narrative/Test Files/Test 4 - Create Nodelist with SN.txt");
 
         
         # region Completed files
@@ -124,6 +125,15 @@ public class ImportController : MonoBehaviour
                 // Debug.Log("Name: " + name);
                 abNode.SetFlag(fileLines[++i]);
                 nl.nodes.Add(abNode);
+            }
+
+            if(fileLines[i].Trim().StartsWith("BEGIN SN")) {
+                StatNode statNode = ScriptableObject.CreateInstance<StatNode>();
+                // get name of node
+                string name  = fileLines[++i].Trim();
+                statNode.SetNode(name, fileLines[++i], fileLines[++i]);
+                // Debug.Log("Name: " + name);
+                nl.nodes.Add(statNode);
             }
 
             if(fileLines[i].Trim().StartsWith("END NL")) {

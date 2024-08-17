@@ -9,11 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 89a1fbfb77609f741a8f1de0fdb5dd1e, type: 3}
-  m_Name: ABN_NLT3_NL1
+  m_Script: {fileID: 11500000, guid: 5b0a1c092ad6c194ca7ee013d8cf2cfb, type: 3}
+  m_Name: SN_NL_Test4
   m_EditorClassIdentifier: 
-  linked: 0
-  advanceTime: 0
-  nodes:
-  - {fileID: 11400000, guid: 1bd279e6599a58049b000782919c910a, type: 2}
-  assetName: ABN_NLT3_NL1
+  nodeType: 0
+  statType: Nerd
+  amount: 1
