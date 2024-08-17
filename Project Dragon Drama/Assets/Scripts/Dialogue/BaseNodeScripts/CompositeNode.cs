@@ -8,7 +8,7 @@ public class CompositeNode : ScriptableObject
     // public ConnectNode connectNode;
     [SerializeField] public bool startWithBranch;
     [SerializeField] public List<DialogueNodeList> dNode;
-    [SerializeField] public List<BranchNode> bNode;
+    [SerializeField] public List<BranchNode2> bNode;
     public bool linked = false;
     public bool advanceTime = false;
 

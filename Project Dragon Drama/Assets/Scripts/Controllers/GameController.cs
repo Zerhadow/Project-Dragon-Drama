@@ -38,4 +38,8 @@ public class GameController : MonoBehaviour
                 break;
         }
     }
+
+    public void ChangeToPreviousState() {
+        _stateMachine.ChangeStateToPrevious();
+    }
 }

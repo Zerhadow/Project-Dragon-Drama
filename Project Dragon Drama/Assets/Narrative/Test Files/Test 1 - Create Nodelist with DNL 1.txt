@@ -1,0 +1,15 @@
+START NL
+NL_Test1
+
+BEGIN DNL
+NL_Test1 DNL1
+Player:
+Happy
+	Bap
+BEGIN DNL
+NL_Test1 DNL2
+Other:
+Neutral
+	Cap
+
+END NL

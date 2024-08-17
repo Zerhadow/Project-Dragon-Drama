@@ -84,7 +84,7 @@ public class ImportFile2 : MonoBehaviour
             }
 
             if(fileLines[i].Trim().StartsWith("BEGIN BRANCH")) {
-                BranchNode bNode = ScriptableObject.CreateInstance<BranchNode>();
+                BranchNode2 bNode = ScriptableObject.CreateInstance<BranchNode2>();
                 // get name of node
                 string name  = fileLines[++i].Trim();
                 bNode.Init(name);

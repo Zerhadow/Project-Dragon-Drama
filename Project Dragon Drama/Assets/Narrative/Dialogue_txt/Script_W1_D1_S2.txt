@@ -1,47 +1,85 @@
 BEGIN DNL
 DN_Intro_2
-Interrupt:
-	Nataly, JASSICA, AND PERSIA WALK OUT OF THE CAFETERIA AND BUMP INTO BAILEY
+
+Interrupt
+	NATALY, JASSICA, AND PERSIA WALK OUT OF THE CAFETERIA AND BUMP INTO BAILEY
+Bailey:
+	HEY!
 Nataly:
-	Ugh. Watch where you’re going, whelp.
+	Watch where you’re going whelp.
 Bailey:
 	You walked into me!?!
 Persia:
-	You should know better than to be where Nataly is walking.
+	You should know better than to be in Nataly’s way..
 Nataly:
 	Leave it, Persia. Bookworm Bailey isn’t worth our time.
 Bailey:
+	Bookworm!?!
+Bailey:
 	That’s not even a good insult…
 Jassica:
-	We could just point out your weight. She just didn’t want to call out your weight.
+	Then you should be grateful we aren’t pointing out your weight.
 Nataly:
-	Right, what Jass said.
+	Right. What Jass said.
 Persia:
-	Yeah! What Nat said.
+	Yeah! What Nataly said.
 Bailey:
 	. . . . . .
 Nataly:
-	Come on, we have better things to do than waste time on her.
-Bailey:
-	Right, because your time matters sooo much.
-Nataly:
-	Why yes. It does.
-Jassica:
-	Do you really want us to stay here and keep mocking you?
+	What, nothing more to say?
+
 BEGIN BRANCH
 BN_Intro_2
-	1 -> Screw you
-	2 -> Whatever
+	1 -> Leave Me Alone
+	2 -> Screw You
+BEGIN DNL
+
 BDN_Intro_2_BO1
-		{-1 Relationship with Jassica & Persia}
-		Bailey:
-			Screw you. 
+	Bailey:
+		Just leave me alone already.
+	Nataly:
+		Aww. I think we huwt her feewings.
+	Persia:
+		That’s what she gets for being in our way!
+	Persia:
+		Maybe we should call her Boo Hoo Bailey instead!
+	Nataly:
+		Bit much Persia.
+
 BDN_Intro_2_BO2
-		Bailey:
-			Whatever…
-DN_Intro_2_1
+	Bailey:
+		Screw you!
+	Nataly:
+		Aw. She’s so pathetic when she’s angry.
+	Persia:
+		That’s what she gets for being in our way!
+	Bailey:
+		Whatever…
+	Persia:
+		You can’t just ignore Nataly li-
+	Nataly:
+		Cool it Persia. I don’t need you talking for me.
+
+END OF BRANCH
+END DNL
+
+DN_Intro_2_2
+
+Persia:
+	Oh.
+Persia:
+	Sorry Nat.
+Jassica:
+	Come on Nataly, Bailey isn’t worth the effort.
 Nataly:
-<Satisfied Hmph>
+	Hmf. You’re right.
+Nataly:
+	Let’s go before she wastes any more of our precious time.
+Bailey:
+	Because you’re sooo important…
+Nataly:
+	Why yes. We are.
 Interupt
 	NATALY, JASSICA, AND PERSIA WALK OFF
-END DNL
+
+ED

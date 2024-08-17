@@ -6,10 +6,9 @@ public class NPCController : MonoBehaviour
 { 
     public GameObject pressETextBox;
     public PlayerController pc;
-    public DialogueController dc;
 
     [Header("NPC Dialogue Variables")] 
-    [SerializeField] public List<CompositeNode> nodeList = new List<CompositeNode>(); 
+    public List<NodeList> dialogueNodeLists = new List<NodeList>();
     public int nodeIdx = 0;
     public bool talkedToToday = false; // if talked to NPC today, give other dialogue 
 
@@ -32,7 +31,7 @@ public class NPCController : MonoBehaviour
             // reset composite list for dialogue controller 
 
             pc.npc = null;
-            dc.compositeNode = null;
+            // dc.compositeNode = null;
 
             Debug.Log("Player in talking range of " + other.name); 
             pressETextBox.SetActive(false); 

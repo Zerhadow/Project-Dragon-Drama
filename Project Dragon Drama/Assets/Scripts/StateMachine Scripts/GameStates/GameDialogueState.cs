@@ -24,14 +24,8 @@ public class GameDialogueState : State
         // Don't allow player to move char
         _controller.playerController.SetMovemovent(false);
 
-        // check if composite node has something
-        if(_controller.dialogueController.compositeNode == null) {
-            // fill node with current index of composite node list
-            _controller.dialogueController.SetCompositeNode();
+        _controller.dialogueController.StartDialogue();
 
-        }
-
-        _controller.dialogueController.ShowFirstDisplay();
         _controller.dialogueController.portraitController.ResetPortraits();
     }
 
@@ -52,8 +46,5 @@ public class GameDialogueState : State
 
         // Return movement to char
         _controller.playerController.SetMovemovent(true);
-
-        // Reset CurrDNIdx
-        _controller.dialogueController.currIdxDN = 0;
     }
 }
