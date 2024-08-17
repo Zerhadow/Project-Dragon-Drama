@@ -70,9 +70,7 @@ public class ImportController : MonoBehaviour
             }
 
             if(fileLines[i].Trim().StartsWith("START NL")) {
-                if(nl == null) {
-                    nl = ScriptableObject.CreateInstance<NodeList>();
-                }
+                nl = ScriptableObject.CreateInstance<NodeList>();
                 // get name of node
                 string name  = fileLines[++i].Trim();
                 // Debug.Log("Name: " + name);
@@ -111,16 +109,16 @@ public class ImportController : MonoBehaviour
                     bNode.opt3txt = fileLines[i].Trim().Substring(4);
                 }
 
-                int nlidx = 0;
+                // int nlidx = 0;
 
-                if(String.IsNullOrEmpty(bNode.opt3txt)) {
-                    i = bNode.CreateNodeList(fileLines, i, nlidx++);
-                    i = bNode.CreateNodeList(fileLines, ++i, nlidx);
-                } else {
-                    i = bNode.CreateNodeList(fileLines, i, nlidx++);
-                    i = bNode.CreateNodeList(fileLines, ++i, nlidx++);
-                    i = bNode.CreateNodeList(fileLines, ++i, nlidx);
-                }
+                // if(String.IsNullOrEmpty(bNode.opt3txt)) {
+                //     i = bNode.CreateNodeList(fileLines, i, nlidx++);
+                //     i = bNode.CreateNodeList(fileLines, ++i, nlidx);
+                // } else {
+                //     i = bNode.CreateNodeList(fileLines, i, nlidx++);
+                //     i = bNode.CreateNodeList(fileLines, ++i, nlidx++);
+                //     i = bNode.CreateNodeList(fileLines, ++i, nlidx);
+                // }
 
                 // bNode.FillOption(opt1, opt2, opt3);
                 
