@@ -15,7 +15,8 @@ public class ImportController : MonoBehaviour
         List<string> inputFilePaths = new List<string>();
 
         // inputFilePaths.Add("Assets/Narrative/Test Files/Test 1 - Create Nodelist with DNL.txt");
-        inputFilePaths.Add("Assets/Narrative/Test Files/Test 2 - Create Nodelist with BNL.txt");
+        // inputFilePaths.Add("Assets/Narrative/Test Files/Test 2 - Create Nodelist with BNL.txt");
+        inputFilePaths.Add("Assets/Narrative/Test Files/Test 3 - Create Nodelist with ABN.txt");
 
         
         # region Completed files
@@ -109,28 +110,20 @@ public class ImportController : MonoBehaviour
                     bNode.opt3txt = fileLines[i].Trim().Substring(4);
                 }
 
-                // int nlidx = 0;
-
-                // if(String.IsNullOrEmpty(bNode.opt3txt)) {
-                //     i = bNode.CreateNodeList(fileLines, i, nlidx++);
-                //     i = bNode.CreateNodeList(fileLines, ++i, nlidx);
-                // } else {
-                //     i = bNode.CreateNodeList(fileLines, i, nlidx++);
-                //     i = bNode.CreateNodeList(fileLines, ++i, nlidx++);
-                //     i = bNode.CreateNodeList(fileLines, ++i, nlidx);
-                // }
-
-                // bNode.FillOption(opt1, opt2, opt3);
-                
-                // fill node & update idx i
-                // Debug.Log("enter text: " + fileLines[i].Trim());
-                // i = bNode.FillBranchNode(fileLines, i, cNodeList);
-                // Debug.Log("exit text: " + fileLines[i].Trim());
-
                 UnityEditor.AssetDatabase.CreateAsset(bNode, "Assets/Scripts/Dialogue/ScriptableObjects/" + bNode.assetName + ".asset");
                 Debug.Log("Created: " + bNode.assetName);
 
                 nl.nodes.Add(bNode);
+            }
+
+            if(fileLines[i].Trim().StartsWith("BEGIN ABN")) {
+                AutoBranchNode abNode = ScriptableObject.CreateInstance<AutoBranchNode>();
+                // get name of node
+                string name  = fileLines[++i].Trim();
+                abNode.Init(name);
+                // Debug.Log("Name: " + name);
+                abNode.SetFlag(fileLines[++i]);
+                nl.nodes.Add(abNode);
             }
 
             if(fileLines[i].Trim().StartsWith("END NL")) {

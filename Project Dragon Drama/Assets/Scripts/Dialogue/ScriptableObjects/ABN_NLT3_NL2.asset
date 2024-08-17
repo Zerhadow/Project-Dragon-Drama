@@ -9,10 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 93fabff6e31488648924cbede4f9c198, type: 3}
-  m_Name: BN_NLT2_NL2 DNL1
+  m_Script: {fileID: 11500000, guid: 89a1fbfb77609f741a8f1de0fdb5dd1e, type: 3}
+  m_Name: ABN_NLT3_NL2
   m_EditorClassIdentifier: 
-  nodeType: 0
-  speakerName: 'Player:'
-  dialogueText: Pizza 2
-  emotion: 1
+  linked: 0
+  advanceTime: 0
+  nodes:
+  - {fileID: 11400000, guid: 1cf310dcbf11d8b4a842ff681466615e, type: 2}
+  assetName: ABN_NLT3_NL2

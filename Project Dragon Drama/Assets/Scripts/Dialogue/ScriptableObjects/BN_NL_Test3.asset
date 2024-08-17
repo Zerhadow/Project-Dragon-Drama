@@ -9,14 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0dbcea4d89cd6bd4dbe84be1bf04604c, type: 3}
-  m_Name: BN_NL_Test2_1
+  m_Script: {fileID: 11500000, guid: 73a16b912b050e6459eef9a9ae6e1390, type: 3}
+  m_Name: BN_NL_Test3
   m_EditorClassIdentifier: 
-  nodeType: 1
-  opt1txt: ' Pizza One'
-  opt2txt: ' Pizza 2'
-  opt3txt: 
-  option1: {fileID: 0}
-  option2: {fileID: 0}
-  option3: {fileID: 0}
-  assetName: BN_NL_Test2_1
+  nodeType: 2
+  nl1: {fileID: 0}
+  nl2: {fileID: 0}
+  flagName: TEST3FLAG

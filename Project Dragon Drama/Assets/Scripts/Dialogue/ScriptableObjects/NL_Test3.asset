@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 89a1fbfb77609f741a8f1de0fdb5dd1e, type: 3}
-  m_Name: BN_NLT2_NL1
+  m_Name: NL_Test3
   m_EditorClassIdentifier: 
   linked: 0
   advanceTime: 0
   nodes:
-  - {fileID: 11400000, guid: c0a6f5e302961f744a4fea56fc273e41, type: 2}
-  assetName: BN_NLT2_NL1
+  - {fileID: 11400000, guid: 0aff608cb6f9c1345800d077c4e2ba17, type: 2}
+  assetName: NL_Test3
