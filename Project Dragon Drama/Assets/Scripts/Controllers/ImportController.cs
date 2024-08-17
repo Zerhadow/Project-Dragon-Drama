@@ -14,9 +14,9 @@ public class ImportController : MonoBehaviour
         // add fill path
         List<string> inputFilePaths = new List<string>();
 
-        // inputFilePaths.Add("Assets/Narrative/Test Files/Test 1 - Create Nodelist with DNL.txt");
+        // inputFilePaths.Add("Assets/Narrative/Test Files/Test 1 - Create Nodelist with DNL 1.txt");
         // inputFilePaths.Add("Assets/Narrative/Test Files/Test 2 - Create Nodelist with BNL.txt");
-        // inputFilePaths.Add("Assets/Narrative/Test Files/Test 3 - Create Nodelist with ABN.txt");
+        inputFilePaths.Add("Assets/Narrative/Test Files/Test 3 - Create Nodelist with ABN 1.txt");
         inputFilePaths.Add("Assets/Narrative/Test Files/Test 4 - Create Nodelist with SN.txt");
 
         
