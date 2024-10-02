@@ -42,15 +42,18 @@ public class MoveDragon : MonoBehaviour
     }
 
     private void Move() {
-        if(moveDirection != Vector2.zero)
-        {
-            baileyAnimator.SetBool("isWalking", true);
-        } else
-        {
-            baileyAnimator.SetBool("isWalking", false);
+        if(canMove) {
+            if(moveDirection != Vector2.zero)
+            {
+                baileyAnimator.SetBool("isWalking", true);
+            } else
+            {
+                baileyAnimator.SetBool("isWalking", false);
+            }
+            
+            moveDirection = move.ReadValue<Vector2>();
         }
-        
-        moveDirection = move.ReadValue<Vector2>();
+
     }
 
     private void FixedUpdate()
