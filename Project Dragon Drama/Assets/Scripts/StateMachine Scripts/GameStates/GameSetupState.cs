@@ -27,12 +27,15 @@ public class GameSetupState : State
         }
 
         _controller.playerController.SetMovemovent(false);
-        // _stateMachine.ChangeState(_stateMachine.DialogueState);
+
+        // possible fade in; use couroutine
     }
 
     public override void Update()
     {
         base.Update();
+
+        _stateMachine.ChangeState(_stateMachine.DialogueState); // runs on 1st tick
 
         // Debug Purposes: Will do key inputs to switch
         if(Input.GetKeyDown(KeyCode.Escape)) { _stateMachine.ChangeState(_stateMachine.PauseState); }

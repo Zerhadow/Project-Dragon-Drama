@@ -14,6 +14,8 @@ public class DialogueController : MonoBehaviour
     private Node currentNode;
     [Header("Main Story Node Lists")]
     [SerializeField] public List<NodeList> mainNodeLists;
+    private int mainPlotLineIdx;
+    private bool mainPlot = false;
 
     private void Awake() {
         gameController = GetComponentInParent<GameController>();
@@ -26,6 +28,11 @@ public class DialogueController : MonoBehaviour
 
         // Call this method to start the dialogue
     public void StartDialogue() {
+        if(nodeList == null) { // if empty in case of mainNode plot line
+            nodeList = mainNodeLists[mainPlotLineIdx];
+            mainPlot = true;
+        }
+
         if (nodeList.nodes.Count > 0) {
             currentNodeIndex = 0;
             ActivateCurrentNode();
@@ -41,6 +48,12 @@ public class DialogueController : MonoBehaviour
             ActivateCurrentNode();
         } else {
             Debug.Log("End of dialogue.");
+
+            if(mainPlot) {
+                mainPlotLineIdx++;
+                mainPlot = false;
+            }
+
             // find previous state and go back to it
             gameController.ChangeToPreviousState();
         }
