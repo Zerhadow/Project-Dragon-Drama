@@ -16,8 +16,9 @@ public class ImportController : MonoBehaviour
 
         // inputFilePaths.Add("Assets/Narrative/Test Files/Test 1 - Create Nodelist with DNL 1.txt");
         // inputFilePaths.Add("Assets/Narrative/Test Files/Test 2 - Create Nodelist with BNL.txt");
-        inputFilePaths.Add("Assets/Narrative/Test Files/Test 3 - Create Nodelist with ABN 1.txt");
-        inputFilePaths.Add("Assets/Narrative/Test Files/Test 4 - Create Nodelist with SN.txt");
+        // inputFilePaths.Add("Assets/Narrative/Test Files/Test 3 - Create Nodelist with ABN 1.txt");
+        // inputFilePaths.Add("Assets/Narrative/Test Files/Test 4 - Create Nodelist with SN.txt");
+        inputFilePaths.Add("Assets/Narrative/Dialogue Scripts/Script_W1_D1_S2.txt");
 
         
         # region Completed files

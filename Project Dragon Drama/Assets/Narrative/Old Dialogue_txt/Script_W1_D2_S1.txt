@@ -1,0 +1,57 @@
+BEGIN DNL
+DN_Intro_6
+
+Sam:
+	Hey Bai!
+Sam:
+	You ready to break the shackles of highschool oppression?
+Bailey:
+	I… guess?
+Sam:
+	Killer! Let’s get started!
+Bailey:
+	After class.
+Sam:
+	Right, after class. Of course.
+Bailey:
+	Of course.
+HomeroomTeacher:
+	All right students, open to the start of the chapter and let’s review…
+Interrupt
+	CROSSFADE THROUGH BLACK
+HomeroomTeacher
+	Before the bell rings, remember to finish-
+Interrupt
+	BELL RINGS
+HomeroomTeacher:
+	-anyhomeworkbeforethetesttomorrow!
+HomeroomTeacher:
+	Class dismissed.
+Sam:
+	Finally!!! I thought class would never end.
+Sam:
+	But I stayed all class so now you have to go along with my plan for not leaving.
+Bailey:
+	If this scheme gets you to stop skipping, then sure.
+Sam:
+	No promises.
+Bailey:
+	. . . . . .
+Sam:
+	We’ve got all of lunch and free period to try and change the [Planning Committee]’s mind.
+Sam:
+	I’ll reach out to my “contacts” while you see if you can follow up on that lead I found.
+Bailey:
+	You have “contacts” now?
+Sam:
+	I have my ways.
+Sam:
+	And you have a PlanningCommittee to trick.
+Bailey:
+	I’d prefer if we called it “persuade” instead.
+Sam:
+	Either way, you need to “persuade” them by tomorrow or they’ll start taking votes on Monday.
+Bailey:
+	Right. Let’s get started then.
+
+ED

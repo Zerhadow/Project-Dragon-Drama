@@ -43,31 +43,38 @@ public class DialogueController : MonoBehaviour
 
     // Call this method to progress to the next node
     public void NextNode() {
-        if (currentNodeIndex < nodeList.nodes.Count - 1) {
+        if (currentNodeIndex < nodeList.nodes.Count - 1) { // if the node isnt the last one
             currentNodeIndex++;
             ActivateCurrentNode();
         } else {
-            Debug.Log("End of dialogue.");
-
-            if(mainPlot) {
-                mainPlotLineIdx++;
-                mainPlot = false;
-            }
-
-            // find previous state and go back to it
-            gameController.ChangeToPreviousState();
+            EndTalk();
         }
+    }
+
+    private void EndTalk() {
+        Debug.Log("End of dialogue.");
+
+        if(mainPlot) {
+            mainPlotLineIdx++;
+            mainPlot = false;
+        }
+
+        // Advance time
+        if(nodeList.advanceTime) {
+            gameController.gameTimeController.AdvanceTime();
+        }
+
+        nodeList = null; // reset nodelist
+
+        // find previous state and go back to it
+        gameController.ChangeStates("Explore");
     }
 
     // Goes to end of node list
     public void Skip() {
         Debug.Log("Skipping dialogue");
 
-        if (currentNodeIndex != nodeList.nodes.Count - 1 &
-            currentNodeIndex > nodeList.nodes.Count - 1) {
-            currentNodeIndex = nodeList.nodes.Count - 1; // make currNidx last idx
-            ActivateCurrentNode();
-        }
+        EndTalk();
     }
 
     private void ActivateCurrentNode() {

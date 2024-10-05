@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89a1fbfb77609f741a8f1de0fdb5dd1e, type: 3}
+  m_Name: Smaug in Hall NL
+  m_EditorClassIdentifier: 
+  linked: 0
+  advanceTime: 0
+  nodes:
+  - {fileID: 11400000, guid: 5f939b1520890934ba10f63b49f2c3d2, type: 2}
+  - {fileID: 11400000, guid: a9f214b240708b9418fce417730386e0, type: 2}
+  - {fileID: 11400000, guid: 171a77b4d123b004f936313f4e3e029f, type: 2}
+  - {fileID: 11400000, guid: 6c6303512466ed74e99fb5af3f1b3d51, type: 2}
+  - {fileID: 11400000, guid: c6ca45bac5406954fbd3ef0d677b1cd9, type: 2}
+  - {fileID: 11400000, guid: f99c4c3173323374e9524f9fe45f7999, type: 2}
+  - {fileID: 11400000, guid: 7d27a6821bfaf604c8c878d305dcb45d, type: 2}
+  - {fileID: 11400000, guid: d6fff3ed4bb52174ba711b40150c422d, type: 2}
+  - {fileID: 11400000, guid: 536960c54bd3f8d43811c1612f811584, type: 2}
+  - {fileID: 11400000, guid: 6e11e83d7ccec1042b8bca0b96390aff, type: 2}
+  - {fileID: 11400000, guid: 19737a602a4d5b54e8dfe5e1746470ff, type: 2}
+  - {fileID: 11400000, guid: 3ec0d43c6f3d7584581d91bf9e96f2ac, type: 2}
+  - {fileID: 11400000, guid: 99ecaf957392ca34ab7618a488df8639, type: 2}
+  assetName: Smaug in Hall NL

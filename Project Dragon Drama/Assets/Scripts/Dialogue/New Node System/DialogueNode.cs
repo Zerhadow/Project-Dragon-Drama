@@ -7,7 +7,8 @@ public enum Emotion
 {
     Neutral,
     Happy,
-    Sad
+    Sad,
+    Mad
 }
 
 [CreateAssetMenu(menuName = "Dialogue System/Dialogue Node")]

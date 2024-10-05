@@ -1,0 +1,173 @@
+START NL
+Smaug in Hall NL
+
+BEGIN DNL
+SHDN 1
+Bailey:
+Mad
+	HEY!
+	BEGIN DNL
+SHDN 2
+Nataly:
+Neutral
+	Watch where you’re going whelp.
+	BEGIN DNL
+SHDN 3
+Bailey:
+Mad
+	You walked into me!?!
+	BEGIN DNL
+SHDN 4
+Persia:
+Neutral
+	You should know better than to be in Nataly’s way..
+	BEGIN DNL
+SHDN 5
+Nataly:
+Neutral
+	Leave it, Persia. Bookworm Bailey isn’t worth our time.
+	BEGIN DNL
+SHDN 6
+Bailey:
+Mad
+	Bookworm!?!
+	BEGIN DNL
+SHDN 7
+Bailey:
+Sad
+	That’s not even a good insult…
+	BEGIN DNL
+SHDN 8
+Jassica:
+Happy
+	Then you should be grateful we aren’t pointing out your weight.
+	BEGIN DNL
+SHDN 9
+Nataly:
+Happy
+	Right. What Jass said.
+	BEGIN DNL
+SHDN 10
+Persia:
+Happy
+	Yeah! What Nataly said.
+	BEGIN DNL
+SHDN 11
+Bailey:
+Sad
+	. . . . . .
+	BEGIN DNL
+SHDN 12
+Nataly:
+Happy
+	What, nothing more to say?
+
+BEGIN BNL
+SHBN 1
+	1 -> Leave Me Alone
+	2 -> Screw You
+END NL
+
+START NL
+SH BN NL 1
+
+BEGIN DNL
+SH BN NL1 DN 1
+	Bailey:
+	Sad
+		Just leave me alone already.
+		BEGIN DNL
+SH BN NL1 DN 2
+	Nataly:
+	Happy
+		Aww. I think we huwt her feewings.
+		BEGIN DNL
+SH BN NL1 DN 3
+	Persia:
+	Neutral
+		That’s what she gets for being in our way!
+	BEGIN DNL
+SH BN NL1 DN 4
+	Persia:
+	Happy
+		Maybe we should call her Boo Hoo Bailey instead!
+	BEGIN DNL
+SH BN NL1 DN 5
+	Nataly:
+	Neutral
+		Bit much Persia.
+END NL
+
+START NL
+SH BN NL 2
+
+BEGIN DNL
+SH BN NL2 DN 1
+	Bailey:
+	Mad
+		Screw you!
+	Nataly:
+	Happy
+		Aw. She’s so pathetic when she’s angry.
+	BEGIN DNL
+SH BN NL2 DN 2
+	Persia:
+	Neutral
+		That’s what she gets for being in our way!
+	BEGIN DNL
+SH BN NL2 DN 3
+	Bailey:
+	Sad
+		Whatever…
+	BEGIN DNL
+SH BN NL2 DN 4
+	Persia:
+	Mad
+		You can’t just ignore Nataly li-
+	BEGIN DNL
+SH BN NL2 DN 5
+	Nataly:
+	Neutral
+		Cool it Persia. I don’t need you talking for me.
+
+END NL
+
+START NL
+SH NL 2
+
+	BEGIN DNL
+SH 2 DN 1
+Persia:
+Neutral
+	Oh.
+	BEGIN DNL
+SH 2 DN 2
+Persia:
+Sad
+	Sorry Nat.
+	BEGIN DNL
+SH 2 DN 3
+Jassica:
+Neutral
+	Come on Nataly, Bailey isn’t worth the effort.
+	BEGIN DNL
+SH 2 DN 4
+Nataly:
+Neutral
+	Hmf. You’re right.
+	BEGIN DNL
+SH 2 DN 5
+Nataly:
+Neutral
+	Let’s go before she wastes any more of our precious time.
+	BEGIN DNL
+SH 2 DN 6
+Bailey:
+Neutral
+	Because you’re sooo important…
+	BEGIN DNL
+SH 2 DN 7
+Nataly:
+Happy
+	Why yes. We are.
+END NL
