@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: SH BN NL1 DN 5
   m_EditorClassIdentifier: 
   nodeType: 0
-  speakerName: "\tNataly"
+  speakerName: Nataly
   dialogueText: Bit much Persia.
   emotion: 0

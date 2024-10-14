@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: SH 2 DN 6
   m_EditorClassIdentifier: 
   nodeType: 0
-  speakerName: 'Bailey:'
+  speakerName: Bailey
   dialogueText: "Because you\u2019re sooo important\u2026"
   emotion: 0

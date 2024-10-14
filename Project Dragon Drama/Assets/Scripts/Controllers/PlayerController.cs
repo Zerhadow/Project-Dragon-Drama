@@ -24,9 +24,9 @@ public class PlayerController : MonoBehaviour
         if(playerAreaController.enteredHallway) {
             // check time of day
             var timeInfo = gameController.gameTimeController.GetCurrentTimeInfo();
-            // Debug.Log("Current Week: " + timeInfo.week);
-            // Debug.Log("Current Day of Week: " + timeInfo.dayOfWeek);
-            // Debug.Log("Current Time of Day: " + timeInfo.timeOfDay);
+            Debug.Log("Current Week: " + timeInfo.week);
+            Debug.Log("Current Day of Week: " + timeInfo.dayOfWeek);
+            Debug.Log("Current Time of Day: " + timeInfo.timeOfDay);
 
             bool timeCheck = gameController.gameTimeController.GetCheckTimeInfo(timeInfo);
 

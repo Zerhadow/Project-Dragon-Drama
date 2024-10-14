@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: SH 2 DN 5
   m_EditorClassIdentifier: 
   nodeType: 0
-  speakerName: 'Nataly:'
+  speakerName: Nataly
   dialogueText: "Let\u2019s go before she wastes any more of our precious time."
   emotion: 0

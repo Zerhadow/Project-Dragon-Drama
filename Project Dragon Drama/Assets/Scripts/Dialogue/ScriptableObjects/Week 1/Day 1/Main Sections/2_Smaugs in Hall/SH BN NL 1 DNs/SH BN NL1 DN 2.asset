@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: SH BN NL1 DN 2
   m_EditorClassIdentifier: 
   nodeType: 0
-  speakerName: "\tNataly"
+  speakerName: Nataly
   dialogueText: Aww. I think we huwt her feewings.
   emotion: 0

@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: SH BN NL2 DN 4
   m_EditorClassIdentifier: 
   nodeType: 0
-  speakerName: "\tPersia"
+  speakerName: Persia
   dialogueText: "You can\u2019t just ignore Nataly li-"
   emotion: 0

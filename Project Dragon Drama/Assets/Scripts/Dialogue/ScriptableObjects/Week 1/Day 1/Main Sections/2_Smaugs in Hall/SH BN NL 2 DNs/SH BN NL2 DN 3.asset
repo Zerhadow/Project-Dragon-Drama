@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: SH BN NL2 DN 3
   m_EditorClassIdentifier: 
   nodeType: 0
-  speakerName: "\tBailey"
+  speakerName: Bailey
   dialogueText: "Whatever\u2026"
   emotion: 0

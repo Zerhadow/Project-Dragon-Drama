@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0dbcea4d89cd6bd4dbe84be1bf04604c, type: 3}
+  m_Name: SBLBN 1
+  m_EditorClassIdentifier: 
+  nodeType: 1
+  opt1txt: ' She Called Me a Bookworm'
+  opt2txt: ' She Called Me Fat'
+  opt3txt: " It Doesn\u2019t Matter"
+  option1: {fileID: 0}
+  option2: {fileID: 0}
+  option3: {fileID: 0}
+  assetName: SBLBN 1

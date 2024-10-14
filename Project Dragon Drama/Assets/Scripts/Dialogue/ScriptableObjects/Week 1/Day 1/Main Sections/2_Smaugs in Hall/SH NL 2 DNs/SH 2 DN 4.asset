@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: SH 2 DN 4
   m_EditorClassIdentifier: 
   nodeType: 0
-  speakerName: 'Nataly:'
+  speakerName: Nataly
   dialogueText: "Hmf. You\u2019re right."
   emotion: 0

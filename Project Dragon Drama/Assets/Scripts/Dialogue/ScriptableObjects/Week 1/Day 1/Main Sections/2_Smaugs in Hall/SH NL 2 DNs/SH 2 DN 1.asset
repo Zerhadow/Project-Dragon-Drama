@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: SH 2 DN 1
   m_EditorClassIdentifier: 
   nodeType: 0
-  speakerName: 'Persia:'
+  speakerName: Persia
   dialogueText: Oh.
   emotion: 0

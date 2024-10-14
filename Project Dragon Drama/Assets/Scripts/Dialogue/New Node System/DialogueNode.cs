@@ -25,7 +25,8 @@ public class DialogueNode : Node
 
     public void FillNode(string speaker, string emotionStr, string message) {
         nodeType = NodeType.Dialogue;
-        speakerName = speaker;
+        speakerName = speaker.Trim();
+        speakerName = speakerName.Replace(":", "");
         dialogueText = message;
 
         switch(emotionStr) {

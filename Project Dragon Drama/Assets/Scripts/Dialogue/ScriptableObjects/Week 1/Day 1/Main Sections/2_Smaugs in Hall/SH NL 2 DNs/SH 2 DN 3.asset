@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: SH 2 DN 3
   m_EditorClassIdentifier: 
   nodeType: 0
-  speakerName: 'Jassica:'
+  speakerName: Jassica
   dialogueText: "Come on Nataly, Bailey isn\u2019t worth the effort."
   emotion: 0

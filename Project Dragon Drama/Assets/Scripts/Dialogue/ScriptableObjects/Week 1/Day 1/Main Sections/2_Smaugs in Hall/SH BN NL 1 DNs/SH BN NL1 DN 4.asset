@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: SH BN NL1 DN 4
   m_EditorClassIdentifier: 
   nodeType: 0
-  speakerName: "\tPersia"
+  speakerName: Persia
   dialogueText: Maybe we should call her Boo Hoo Bailey instead!
   emotion: 0

@@ -93,7 +93,11 @@ public class DialogueController : MonoBehaviour
         } else if (currentNode.nodeType == NodeType.Stat) {
             StatNode bn = currentNode as StatNode;
             Debug.Log("Modifying stats");
+        } else if (currentNode.nodeType == NodeType.SYSCALL) {
+            // make node
+            Debug.Log("SYS has been called. Reading Action");
         }
+
         // else if (currentNode.nodeType == NodeType.Quest) {
 
         // } 

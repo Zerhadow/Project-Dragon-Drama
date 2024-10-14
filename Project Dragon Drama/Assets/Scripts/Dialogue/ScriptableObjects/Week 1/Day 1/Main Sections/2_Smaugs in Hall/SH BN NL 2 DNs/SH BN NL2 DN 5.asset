@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: SH BN NL2 DN 5
   m_EditorClassIdentifier: 
   nodeType: 0
-  speakerName: "\tNataly"
+  speakerName: Nataly
   dialogueText: "Cool it Persia. I don\u2019t need you talking for me."
   emotion: 0

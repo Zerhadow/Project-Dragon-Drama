@@ -16,7 +16,7 @@ MonoBehaviour:
   opt1txt: ' Leave Me Alone'
   opt2txt: ' Screw You'
   opt3txt: 
-  option1: {fileID: 11400000, guid: 364c17eed60790e40a4791f820c8a292, type: 2}
-  option2: {fileID: 11400000, guid: a211268570dfbb24d8da1a774b02f2c9, type: 2}
+  option1: {fileID: 0}
+  option2: {fileID: 0}
   option3: {fileID: 0}
   assetName: SHBN 1

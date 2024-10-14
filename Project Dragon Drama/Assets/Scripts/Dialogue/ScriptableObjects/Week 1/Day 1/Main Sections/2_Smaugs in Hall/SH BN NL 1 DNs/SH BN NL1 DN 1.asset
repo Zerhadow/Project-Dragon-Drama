@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: SH BN NL1 DN 1
   m_EditorClassIdentifier: 
   nodeType: 0
-  speakerName: "\tBailey"
+  speakerName: Bailey
   dialogueText: Just leave me alone already.
   emotion: 0

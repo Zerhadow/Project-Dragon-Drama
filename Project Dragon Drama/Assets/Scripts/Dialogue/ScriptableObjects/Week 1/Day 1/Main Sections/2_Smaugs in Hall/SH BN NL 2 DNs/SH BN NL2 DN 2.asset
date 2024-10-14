@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: SH BN NL2 DN 2
   m_EditorClassIdentifier: 
   nodeType: 0
-  speakerName: "\tPersia"
+  speakerName: Persia
   dialogueText: "That\u2019s what she gets for being in our way!"
   emotion: 0
