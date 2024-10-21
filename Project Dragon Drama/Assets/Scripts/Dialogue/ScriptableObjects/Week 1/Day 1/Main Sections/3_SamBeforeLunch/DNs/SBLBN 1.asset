@@ -16,7 +16,7 @@ MonoBehaviour:
   opt1txt: ' She Called Me a Bookworm'
   opt2txt: ' She Called Me Fat'
   opt3txt: " It Doesn\u2019t Matter"
-  option1: {fileID: 0}
-  option2: {fileID: 0}
-  option3: {fileID: 0}
+  option1: {fileID: 11400000, guid: 20c8c9bdbbb594c4f80c7211e013ef89, type: 2}
+  option2: {fileID: 11400000, guid: b1ca74740ce06b140a3728441ea27376, type: 2}
+  option3: {fileID: 11400000, guid: 03965bebe935fc949a4431010524a34a, type: 2}
   assetName: SBLBN 1

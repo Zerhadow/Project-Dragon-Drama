@@ -9,9 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5b0a1c092ad6c194ca7ee013d8cf2cfb, type: 3}
-  m_Name: SBL BN NL3 SN 1
+  m_Script: {fileID: 11500000, guid: 3c58cab666af3284e956680b68ccb8ef, type: 3}
+  m_Name: SBL SYSCALL 1
   m_EditorClassIdentifier: 
-  nodeType: 3
-  statType: Sam
-  amount: 1
+  nodeType: 4
+  action: Next Scene

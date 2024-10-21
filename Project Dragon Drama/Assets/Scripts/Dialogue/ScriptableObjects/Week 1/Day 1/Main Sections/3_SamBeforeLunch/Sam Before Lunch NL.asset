@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89a1fbfb77609f741a8f1de0fdb5dd1e, type: 3}
   m_Name: Sam Before Lunch NL
   m_EditorClassIdentifier: 
-  linked: 0
+  linked: 1
   advanceTime: 1
   nodes:
   - {fileID: 11400000, guid: 9a1ca91f58ea91f47896c296c1a7072a, type: 2}
@@ -39,3 +39,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: b8d3b7597aa600349a6384abb9a0054a, type: 2}
   - {fileID: 11400000, guid: 45e375e2ea4baaf4fa120f99e87f985f, type: 2}
   assetName: Sam Before Lunch NL
+  linkedNL: {fileID: 0}

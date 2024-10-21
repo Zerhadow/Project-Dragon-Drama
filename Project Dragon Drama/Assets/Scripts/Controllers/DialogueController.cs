@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class DialogueController : MonoBehaviour
@@ -12,8 +13,10 @@ public class DialogueController : MonoBehaviour
     private NodeList nodeList;
     private int currentNodeIndex = 0;
     private Node currentNode;
+    private Node lastNode;
     [Header("Main Story Node Lists")]
     [SerializeField] public List<NodeList> mainNodeLists;
+    [SerializeField] public List<NodeList> eveningCharBooks;
     private int mainPlotLineIdx;
     private bool mainPlot = false;
 
@@ -43,8 +46,14 @@ public class DialogueController : MonoBehaviour
 
     // Call this method to progress to the next node
     public void NextNode() {
+        Debug.Log("Linked? " + nodeList.linked);
+
         if (currentNodeIndex < nodeList.nodes.Count - 1) { // if the node isnt the last one
             currentNodeIndex++;
+            ActivateCurrentNode();
+        } else if(nodeList.linked) {
+            nodeList = nodeList.linkedNL;
+            currentNodeIndex = 0;
             ActivateCurrentNode();
         } else {
             EndTalk();
@@ -74,7 +83,13 @@ public class DialogueController : MonoBehaviour
     public void Skip() {
         Debug.Log("Skipping dialogue");
 
-        EndTalk();
+        lastNode = nodeList.nodes.Last();
+
+        // Debug.Log("Type: " + lastNode.nodeType);
+
+        currentNode = lastNode;
+        currentNodeIndex = nodeList.nodes.Count - 1;
+        ActivateCurrentNode();
     }
 
     private void ActivateCurrentNode() {
@@ -95,7 +110,9 @@ public class DialogueController : MonoBehaviour
             Debug.Log("Modifying stats");
         } else if (currentNode.nodeType == NodeType.SYSCALL) {
             // make node
+            SystemCallNode syscall = currentNode as SystemCallNode;
             Debug.Log("SYS has been called. Reading Action");
+            ReadSysCallAction(syscall.action);
         }
 
         // else if (currentNode.nodeType == NodeType.Quest) {
@@ -114,6 +131,13 @@ public class DialogueController : MonoBehaviour
     }
 
     private void UpdateUIBN(BranchNode bn) {
+        // update the box for prev
+        lastNode = nodeList.nodes[currentNodeIndex -1];
+        DialogueNode dn = lastNode as DialogueNode;
+        gameController.UI.nameBoxTxt.text = dn.speakerName;
+        gameController.UI.bodyTxt.text = dn.dialogueText.Trim();
+        portraitController.SetPortrait(dn.speakerName, 0);
+        
         gameController.UI.dialogueOptionsObj.SetActive(true);
         gameController.UI.btnsObj.SetActive(false);
         gameController.UI.option1.text = bn.opt1txt;
@@ -161,6 +185,23 @@ public class DialogueController : MonoBehaviour
             return cn.nl1;
         } else {
             return cn.nl2;
+        }
+    }
+
+    private void ReadSysCallAction(string str) {
+        switch (str) {
+        case "Next Scene":
+            Debug.Log("Going to next scene");
+            gameController.NextScene();
+            break;
+        case "Fade In":
+            // call game or ui controller to fade in scene
+            break;
+        case "Fade Out":
+            // call game or ui controller to fade out scene
+            break;
+        default:
+            break;
         }
     }
 }
