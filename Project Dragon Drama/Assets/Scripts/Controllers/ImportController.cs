@@ -20,7 +20,8 @@ public class ImportController : MonoBehaviour
         // inputFilePaths.Add("Assets/Narrative/Test Files/Test 3 - Create Nodelist with ABN 1.txt");
         // inputFilePaths.Add("Assets/Narrative/Test Files/Test 4 - Create Nodelist with SN.txt");
         // inputFilePaths.Add("Assets/Narrative/Dialogue Scripts/Script_W1_D1_S2.txt");
-        inputFilePaths.Add("Assets/Narrative/Dialogue Scripts/Script_W1_D1_S3.txt");
+        // inputFilePaths.Add("Assets/Narrative/Dialogue Scripts/Script_W1_D1_S3.txt");
+        inputFilePaths.Add("Assets/Narrative/Dialogue Scripts/Script_W1_D1_E_SAM.txt");
 
         
         # region Completed files
