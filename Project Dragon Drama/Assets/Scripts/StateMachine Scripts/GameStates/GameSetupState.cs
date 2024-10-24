@@ -1,11 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.SearchService;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameSetupState : State
 {
     private GameFSM _stateMachine;
     private GameController _controller;
+    private bool eveningScene;
 
     public GameSetupState(GameFSM stateMachine, GameController controller)
     {
@@ -26,7 +29,13 @@ public class GameSetupState : State
             child.gameObject.SetActive(false);
         }
 
-        _controller.playerController.SetMovemovent(false);
+        if(SceneManager.GetActiveScene().name == "night_b1") {
+            eveningScene = true;
+            _controller.UI.eveningObj.SetActive(true);
+        } else { // you are in explore scene
+            eveningScene = false;
+            _controller.playerController.SetMovemovent(false);
+        }
 
         // possible fade in; use couroutine
     }
@@ -35,7 +44,9 @@ public class GameSetupState : State
     {
         base.Update();
 
-        _stateMachine.ChangeState(_stateMachine.DialogueState); // runs on 1st tick
+        if(!eveningScene) {
+            _stateMachine.ChangeState(_stateMachine.DialogueState); // runs on 1st tick
+        }
 
         // Debug Purposes: Will do key inputs to switch
         if(Input.GetKeyDown(KeyCode.Escape)) { _stateMachine.ChangeState(_stateMachine.PauseState); }

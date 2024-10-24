@@ -53,11 +53,11 @@ public class GameController : MonoBehaviour
         SceneManager.LoadScene(currentSceneIndex++);
     }
 
-    public void EveningCall() {
+    public void EveningCall(NodeList nl) {
         // Calling someone
         // Build 1 will just choose Sam
         
-        NodeList nl = dialogueController.eveningCharBooks[0];
+        // NodeList nl = dialogueController.eveningCharBooks[0];
         dialogueController.SetCurrentNodeList(nl);
         ChangeStates("Dialogue");
     }

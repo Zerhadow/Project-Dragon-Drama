@@ -46,7 +46,7 @@ public class DialogueController : MonoBehaviour
 
     // Call this method to progress to the next node
     public void NextNode() {
-        Debug.Log("Linked? " + nodeList.linked);
+        // Debug.Log("Linked? " + nodeList.linked);
 
         if (currentNodeIndex < nodeList.nodes.Count - 1) { // if the node isnt the last one
             currentNodeIndex++;

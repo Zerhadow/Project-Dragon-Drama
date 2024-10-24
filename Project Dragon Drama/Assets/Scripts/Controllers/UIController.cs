@@ -11,6 +11,7 @@ public class UIController : MonoBehaviour
     public GameObject DialogueObj;
     public GameObject pauseMenuObj;
     public GameObject pressETextBox;
+    public GameObject eveningObj;
 
     [Header("DialogueNode Variables")]
     public TMP_Text nameBoxTxt;

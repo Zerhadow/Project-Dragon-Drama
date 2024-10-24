@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b0a1c092ad6c194ca7ee013d8cf2cfb, type: 3}
   m_Name: ETS SN 1
   m_EditorClassIdentifier: 
-  nodeType: 0
+  nodeType: 3
   statType: Sam
   amount: 1
