@@ -3718,7 +3718,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1867001802}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1112071449}
+        m_TargetAssemblyTypeName: GameController, Assembly-CSharp
+        m_MethodName: EveningStudy
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: 3741e009ed687d24f8e24ffeee2b74cc, type: 2}
+          m_ObjectArgumentAssemblyTypeName: NodeList, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1867001802
 MonoBehaviour:
   m_ObjectHideFlags: 0

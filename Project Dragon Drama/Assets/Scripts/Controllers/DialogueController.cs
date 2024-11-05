@@ -200,6 +200,11 @@ public class DialogueController : MonoBehaviour
         case "Fade Out":
             // call game or ui controller to fade out scene
             break;
+        case "Goto Title Scene":
+            // call game or ui controller to fade out scene
+            Debug.Log("Going to title scene");
+            gameController.TitleScene();
+            break;
         default:
             break;
         }

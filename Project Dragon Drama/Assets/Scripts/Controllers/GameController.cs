@@ -53,6 +53,20 @@ public class GameController : MonoBehaviour
         SceneManager.LoadScene(currentSceneIndex++);
     }
 
+    public void TitleScene() {
+        // Load the first scene in the build order
+        SceneManager.LoadScene(0);
+    }
+
+    public void EveningStudy(NodeList nl) {
+        // Calling someone
+        // Build 1 will just choose Sam
+        
+        // NodeList nl = dialogueController.eveningCharBooks[0];
+        dialogueController.SetCurrentNodeList(nl);
+        ChangeStates("Dialogue");
+    }
+
     public void EveningCall(NodeList nl) {
         // Calling someone
         // Build 1 will just choose Sam
