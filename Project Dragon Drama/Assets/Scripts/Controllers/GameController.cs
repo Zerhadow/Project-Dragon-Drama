@@ -50,7 +50,7 @@ public class GameController : MonoBehaviour
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
 
         // Load the next scene in the build order
-        SceneManager.LoadScene(currentSceneIndex++);
+        SceneManager.LoadScene(++currentSceneIndex);
     }
 
     public void TitleScene() {
