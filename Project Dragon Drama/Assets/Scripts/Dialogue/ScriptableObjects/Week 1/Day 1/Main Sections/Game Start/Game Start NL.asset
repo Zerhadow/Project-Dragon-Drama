@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Game Start NL
   m_EditorClassIdentifier: 
   linked: 0
-  advanceTime: 0
+  advanceTime: 1
   nodes:
   - {fileID: 11400000, guid: cc5c142801ddb7746a21c8e6b09b6e17, type: 2}
   - {fileID: 11400000, guid: dccc524e96485224c929214e453fd538, type: 2}
@@ -27,3 +27,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 2c9967787f0942e40b2a8c6a2a431306, type: 2}
   - {fileID: 11400000, guid: 9a456d3e49b934f4da9ec53a27fc575b, type: 2}
   - {fileID: 11400000, guid: 4453e464952cea44db0a5f8fece5bb05, type: 2}
+  assetName: 

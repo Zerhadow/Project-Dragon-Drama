@@ -10,6 +10,7 @@ public class NodeList : ScriptableObject
     
     public List<Node> nodes = new List<Node>();
     [HideInInspector] public string assetName;
+    public NodeList linkedNL;
 
 
     public void Init(string name) {

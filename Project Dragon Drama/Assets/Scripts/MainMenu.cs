@@ -7,21 +7,22 @@ public class MainMenu : MonoBehaviour
 {
     AudioManager audioManager;
     AudioSource titleSource;
+    string titleName = "Title_b1"; // wtv the title scene is called
 
     void Awake() {
-        if(SceneManager.GetActiveScene().name == "Title Menu") {
+        if(SceneManager.GetActiveScene().name == titleName) {
             audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
+            
             if (audioManager == null) {
                 Debug.LogError("No audio manager found in the scene.");
             }
             
-            titleSource = GameObject.Find("TitleTrack").GetComponent<AudioSource>();
-            StartCoroutine(AudioManager.StartFade(titleSource, 3f, 1f));
+            audioManager.PlayTitle("title track");
         }
     }
 
     public void PlayGame() {
-        titleSource.Stop();
+        audioManager.StopTitle();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 

@@ -24,6 +24,12 @@ public class AreaController : MonoBehaviour
                     // inform player controller that player is in hallway
                     enteredHallway = true;
                     break;
+                case "Hallway3":
+                    Debug.Log("Player has entered final hallway"); // will trigger 3rd and final* cs and transition to another scene
+                    // inform player controller that player is in hallway
+                    enteredHallway = true;
+                    other.gameObject.SetActive(false);
+                    break;
                 default:
                     break;
             }

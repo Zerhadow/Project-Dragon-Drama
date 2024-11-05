@@ -1,0 +1,168 @@
+START NL
+Evening Talk with Sam W1D1 NL
+
+BEGIN DNL
+ETSDN 1
+Sam: 
+Excited
+Sup Bai?
+BEGIN SN
+ETS SN 1
+Sam
++1
+BEGIN DNL
+ETSDN 2
+Bailey: 
+Happy
+	Hey Sam.
+	BEGIN DNL
+ETSDN 2
+Bailey: 
+Happy
+	How were your afternoon classes?
+	BEGIN DNL
+ETSDN 3
+Sam: 
+Flippant
+	Forget about those!
+	BEGIN DNL
+ETSDN 4
+Sam: 
+Excited
+Have you put any thought into our plan?
+BEGIN DNL
+ETSDN 5
+Bailey: 
+Surprised
+	Oh, we’re going right into that.
+	BEGIN DNL
+ETSDN 6
+Bailey: 
+Neutral
+	What has you so invested in this?
+	BEGIN DNL
+ETSDN 7
+Sam: 
+Surprised
+	What do you mean!?!
+	BEGIN DNL
+ETSDN 8
+Sam: 
+Manic
+We’re literally plotting a social coup to overthrow the school’s  hierarchical status quo!!
+BEGIN DNL
+ETSDN 9
+Sam: 
+Excited
+	How are you NOT excited by that?
+BEGIN DNL
+ETSDN 10
+Bailey: 
+Laughing
+	Okay. When you put it like that it does sound fun.
+BEGIN DNL
+ETSDN 11
+Bailey: 
+Defeated
+	But I don’t have any ideas for the [Planning Committee] yet.
+BEGIN DNL
+ETSDN 12
+Sam: 
+Thinking
+	I don’t have anything iron yet either.
+BEGIN DNL
+ETSDN 13
+Sam: 
+Confident
+But…
+BEGIN DNL
+ETSDN 14
+Sam: 
+Confident
+I have been going through the old [HighschoolName] socials and might have something you can use.
+BEGIN DNL
+ETSDN 15
+Sam: 
+Confident
+It looks like there was some drama about the couple that won king and queen a few years ago. Back when we were still in middle school.
+BEGIN DNL
+ETSDN 16
+Bailey: 
+Interested
+Okay. How does old drama from before we were  even at [HighschoolName] help us?
+BEGIN DNL
+ETSDN 17
+Sam: 
+Mischievous
+	We weren’t there.
+BEGIN DNL
+ETSDN 18
+Sam: 
+Confident
+But the teachers were.
+BEGIN DNL
+ETSDN 19
+Sam: 
+Relaxed
+We just have to find one that will tell us what happened.
+BEGIN DNL
+ETSDN 20
+Bailey: 
+Neutral
+Well, I guess that’s a start at least.
+BEGIN DNL
+ETSDN 21
+Sam: 
+Happy
+There’s probably other ways to get through to the [Planning Committee] too.
+BEGIN DNL
+ETSDN 22
+Sam: 
+Happy
+If all else fails, you can always just talk to people and see where it goes.
+BEGIN DNL
+ETSDN 23
+Bailey: 
+Defeated
+Do I really have to talk to more people…
+BEGIN DNL
+ETSDN 24
+Sam: 
+Laughing
+It’ll be good for you!
+BEGIN DNL
+ETSDN 25
+Sam: 
+Reassuring
+Besides, you’re better at it  than you think.
+BEGIN DNL
+ETSDN 26
+Bailey: 
+Neutral
+Wait. What are you going to be doing during all this?
+BEGIN DNL
+ETSDN 27
+Sam: 
+Mischievous
+Finishing my homework.
+BEGIN DNL
+ETSDN 28
+Bailey: 
+Annoyed
+It’s meant to be done at ho-
+BEGIN DNL
+ETSDN 29
+Sam: 
+Hurriedly
+Oop. Dinner’s ready! Gotta go! Byyyye!
+BEGIN DNL
+ETSDN 30
+Bailey: 
+Shocked
+Sam? Hello?
+BEGIN DNL
+ETSDN 31
+Bailey: 
+Defeated
+Sigh…
+END NL

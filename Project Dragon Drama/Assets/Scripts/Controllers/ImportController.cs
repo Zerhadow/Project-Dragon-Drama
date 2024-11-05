@@ -6,6 +6,7 @@ using Palmmedia.ReportGenerator.Core.Reporting.Builders.Rendering;
 using UnityEditor;
 using UnityEngine;
 using System;
+using Unity.VisualScripting;
 
 public class ImportController : MonoBehaviour
 {        
@@ -16,8 +17,11 @@ public class ImportController : MonoBehaviour
 
         // inputFilePaths.Add("Assets/Narrative/Test Files/Test 1 - Create Nodelist with DNL 1.txt");
         // inputFilePaths.Add("Assets/Narrative/Test Files/Test 2 - Create Nodelist with BNL.txt");
-        inputFilePaths.Add("Assets/Narrative/Test Files/Test 3 - Create Nodelist with ABN 1.txt");
-        inputFilePaths.Add("Assets/Narrative/Test Files/Test 4 - Create Nodelist with SN.txt");
+        // inputFilePaths.Add("Assets/Narrative/Test Files/Test 3 - Create Nodelist with ABN 1.txt");
+        // inputFilePaths.Add("Assets/Narrative/Test Files/Test 4 - Create Nodelist with SN.txt");
+        // inputFilePaths.Add("Assets/Narrative/Dialogue Scripts/Script_W1_D1_S2.txt");
+        // inputFilePaths.Add("Assets/Narrative/Dialogue Scripts/Script_W1_D1_S3.txt");
+        inputFilePaths.Add("Assets/Narrative/Dialogue Scripts/Script_W1_D1_E_SAM.txt");
 
         
         # region Completed files
@@ -76,15 +80,14 @@ public class ImportController : MonoBehaviour
                 // get name of node
                 string name  = fileLines[++i].Trim();
                 // Debug.Log("Name: " + name);
-
-                // Debug.Log("Name: " + name);
                 nl.Init(name);
             }
 
             if(fileLines[i].Trim().StartsWith("BEGIN DNL")) { 
                 DialogueNode dNode = ScriptableObject.CreateInstance<DialogueNode>();
                 // get name of node
-                string name  = fileLines[++i].Trim();
+                string name = fileLines[++i].Trim();
+                // maybe provide some error checking of DNL idx in the future
                 // Debug.Log("Name: " + name);
                 dNode.SetAssetName(name);
                 // fill node & update idx i

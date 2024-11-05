@@ -6,6 +6,7 @@ NL_Test2 DNL1
 Player:
 Happy
 	Bap
+	
 BEGIN BNL
 BN_NL_Test2_1
 	1 -> Pizza One

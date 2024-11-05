@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
@@ -41,5 +43,36 @@ public class GameController : MonoBehaviour
 
     public void ChangeToPreviousState() {
         _stateMachine.ChangeStateToPrevious();
+    }
+
+    public void NextScene() {
+        // Get the current active scene's build index
+        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+
+        // Load the next scene in the build order
+        SceneManager.LoadScene(++currentSceneIndex);
+    }
+
+    public void TitleScene() {
+        // Load the first scene in the build order
+        SceneManager.LoadScene(0);
+    }
+
+    public void EveningStudy(NodeList nl) {
+        // Calling someone
+        // Build 1 will just choose Sam
+        
+        // NodeList nl = dialogueController.eveningCharBooks[0];
+        dialogueController.SetCurrentNodeList(nl);
+        ChangeStates("Dialogue");
+    }
+
+    public void EveningCall(NodeList nl) {
+        // Calling someone
+        // Build 1 will just choose Sam
+        
+        // NodeList nl = dialogueController.eveningCharBooks[0];
+        dialogueController.SetCurrentNodeList(nl);
+        ChangeStates("Dialogue");
     }
 }

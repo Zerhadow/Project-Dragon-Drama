@@ -13,6 +13,7 @@ public class StatNode : Node
         assetName = name.Trim();
         statType = type;
         amount = int.Parse(modifier);
+        nodeType = NodeType.Stat;
 
         UnityEditor.AssetDatabase.CreateAsset(this, "Assets/Scripts/Dialogue/ScriptableObjects/" + this.assetName + ".asset");
         Debug.Log("Created: " + assetName);

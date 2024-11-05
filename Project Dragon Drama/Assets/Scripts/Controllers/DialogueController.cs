@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class DialogueController : MonoBehaviour
@@ -12,8 +13,12 @@ public class DialogueController : MonoBehaviour
     private NodeList nodeList;
     private int currentNodeIndex = 0;
     private Node currentNode;
+    private Node lastNode;
     [Header("Main Story Node Lists")]
     [SerializeField] public List<NodeList> mainNodeLists;
+    [SerializeField] public List<NodeList> eveningCharBooks;
+    private int mainPlotLineIdx;
+    private bool mainPlot = false;
 
     private void Awake() {
         gameController = GetComponentInParent<GameController>();
@@ -26,6 +31,11 @@ public class DialogueController : MonoBehaviour
 
         // Call this method to start the dialogue
     public void StartDialogue() {
+        if(nodeList == null) { // if empty in case of mainNode plot line
+            nodeList = mainNodeLists[mainPlotLineIdx];
+            mainPlot = true;
+        }
+
         if (nodeList.nodes.Count > 0) {
             currentNodeIndex = 0;
             ActivateCurrentNode();
@@ -36,25 +46,50 @@ public class DialogueController : MonoBehaviour
 
     // Call this method to progress to the next node
     public void NextNode() {
-        if (currentNodeIndex < nodeList.nodes.Count - 1) {
+        // Debug.Log("Linked? " + nodeList.linked);
+
+        if (currentNodeIndex < nodeList.nodes.Count - 1) { // if the node isnt the last one
             currentNodeIndex++;
             ActivateCurrentNode();
+        } else if(nodeList.linked) {
+            nodeList = nodeList.linkedNL;
+            currentNodeIndex = 0;
+            ActivateCurrentNode();
         } else {
-            Debug.Log("End of dialogue.");
-            // find previous state and go back to it
-            gameController.ChangeToPreviousState();
+            EndTalk();
         }
+    }
+
+    private void EndTalk() {
+        Debug.Log("End of dialogue.");
+
+        if(mainPlot) {
+            mainPlotLineIdx++;
+            mainPlot = false;
+        }
+
+        // Advance time
+        if(nodeList.advanceTime) {
+            gameController.gameTimeController.AdvanceTime();
+        }
+
+        nodeList = null; // reset nodelist
+
+        // find previous state and go back to it
+        gameController.ChangeStates("Explore");
     }
 
     // Goes to end of node list
     public void Skip() {
         Debug.Log("Skipping dialogue");
 
-        if (currentNodeIndex != nodeList.nodes.Count - 1 &
-            currentNodeIndex > nodeList.nodes.Count - 1) {
-            currentNodeIndex = nodeList.nodes.Count - 1; // make currNidx last idx
-            ActivateCurrentNode();
-        }
+        lastNode = nodeList.nodes.Last();
+
+        // Debug.Log("Type: " + lastNode.nodeType);
+
+        currentNode = lastNode;
+        currentNodeIndex = nodeList.nodes.Count - 1;
+        ActivateCurrentNode();
     }
 
     private void ActivateCurrentNode() {
@@ -73,7 +108,13 @@ public class DialogueController : MonoBehaviour
         } else if (currentNode.nodeType == NodeType.Stat) {
             StatNode bn = currentNode as StatNode;
             Debug.Log("Modifying stats");
+        } else if (currentNode.nodeType == NodeType.SYSCALL) {
+            // make node
+            SystemCallNode syscall = currentNode as SystemCallNode;
+            Debug.Log("SYS has been called. Reading Action");
+            ReadSysCallAction(syscall.action);
         }
+
         // else if (currentNode.nodeType == NodeType.Quest) {
 
         // } 
@@ -90,6 +131,13 @@ public class DialogueController : MonoBehaviour
     }
 
     private void UpdateUIBN(BranchNode bn) {
+        // update the box for prev
+        lastNode = nodeList.nodes[currentNodeIndex -1];
+        DialogueNode dn = lastNode as DialogueNode;
+        gameController.UI.nameBoxTxt.text = dn.speakerName;
+        gameController.UI.bodyTxt.text = dn.dialogueText.Trim();
+        portraitController.SetPortrait(dn.speakerName, 0);
+        
         gameController.UI.dialogueOptionsObj.SetActive(true);
         gameController.UI.btnsObj.SetActive(false);
         gameController.UI.option1.text = bn.opt1txt;
@@ -137,6 +185,28 @@ public class DialogueController : MonoBehaviour
             return cn.nl1;
         } else {
             return cn.nl2;
+        }
+    }
+
+    private void ReadSysCallAction(string str) {
+        switch (str) {
+        case "Next Scene":
+            Debug.Log("Going to next scene");
+            gameController.NextScene();
+            break;
+        case "Fade In":
+            // call game or ui controller to fade in scene
+            break;
+        case "Fade Out":
+            // call game or ui controller to fade out scene
+            break;
+        case "Goto Title Scene":
+            // call game or ui controller to fade out scene
+            Debug.Log("Going to title scene");
+            gameController.TitleScene();
+            break;
+        default:
+            break;
         }
     }
 }

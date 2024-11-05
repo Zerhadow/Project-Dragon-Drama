@@ -1,0 +1,22 @@
+BEGIN BRANCH
+BN_Intro_7
+	1 -> End Day?
+	2 -> Continue Exploring?
+BEGIN DNL
+
+BDN_Intro_7_BO1
+	Bailey:
+		My free period is almost over. I’d better head back to class.
+	Interrupt
+		BELL RINGS
+		CROSSFADE TO BLACK
+
+BDN_Intro_7_BO2
+	Bailey:
+		I still have some more time left before class…
+
+END BRANCH
+END DNL
+
+ED
+

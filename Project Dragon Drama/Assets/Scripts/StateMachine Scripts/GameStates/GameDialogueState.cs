@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameDialogueState : State
 {
     private GameFSM _stateMachine;
     private GameController _controller;
+    private bool eveningScene;
 
     public GameDialogueState(GameFSM stateMachine, GameController controller)
     {
@@ -20,9 +22,14 @@ public class GameDialogueState : State
 
         // Activate UI Elems
         _controller.UI.DialogueObj.SetActive(true);
-        
-        // Don't allow player to move char
-        _controller.playerController.SetMovemovent(false);
+
+        if(SceneManager.GetActiveScene().name == "night_b1") {
+            eveningScene = true;
+            _controller.UI.eveningObj.SetActive(false);
+        } else { // you are in explore scene
+            eveningScene = false;
+            _controller.playerController.SetMovemovent(false); // dont allow player to move
+        }
 
         _controller.dialogueController.StartDialogue();
 

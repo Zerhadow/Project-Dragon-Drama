@@ -1,0 +1,396 @@
+START NL
+Sam Before Lunch NL
+
+BEGIN DNL
+SBLDN 1
+Sam:
+Mad
+Finally!
+BEGIN DNL
+SBLDN 2
+Sam:
+Neutral
+I thought you’d spend all lunch taking more notes or something.
+BEGIN DNL
+SBLDN 3
+Bailey:
+Happy
+Well some of us wait for class to be over before leaving.
+BEGIN DNL
+SBLDN 4
+Sam:
+Happy
+And some of us get the pizza while it’s still warm!
+BEGIN DNL
+SBLDN 5
+Bailey:
+Happy
+But it’s better cold . . . 
+BEGIN DNL
+SBLDN 6
+Sam:
+Happy
+I'll get some extra slices for you.
+BEGIN DNL
+SBLDN 7
+Bailey:
+Neutral
+Oh.
+BEGIN DNL
+SBLDN 8
+Bailey:
+Sad
+I think I’m just going to have a light sandwich today. . .
+BEGIN DNL
+SBLDN 9
+Sam:
+Neutral
+What’s up? I thought you liked the pizza?
+BEGIN DNL
+SBLDN 10
+Bailey:
+Sad
+Yeah. It’s. . .nothing.
+BEGIN DNL
+SBLDN 11
+Bailey:
+Sad
+Just something Nataly said. . .
+BEGIN DNL
+SBLDN 12
+Sam:
+Neutral
+Nataly? Why were you talking with Nataly?
+BEGIN DNL
+SBLDN 13
+Sam:
+Laughing
+We hate Nataly.
+BEGIN DNL
+SBLDN 14
+Bailey: 
+Annoyed
+It wasn’t exactly by choice.
+BEGIN DNL
+SBLDN 15
+Bailey: 
+Embarrassed
+She just bumped into me.
+BEGIN DNL
+SBLDN 16
+Sam: 
+Laughing
+	So you stopped to make some not-so-pleasant small talk?
+	BEGIN DNL
+SBLDN 17
+Bailey: 
+Embarrassed
+No, I mean she literally bumped into me.
+BEGIN DNL
+SBLDN 18
+Bailey: 
+Sad
+She literally walked right into me and then blamed ME for it!
+BEGIN DNL
+SBLDN 19
+Sam: 
+Annoyed
+Ugh. That is exactly what that flakey-scaled bitch would do.
+BEGIN DNL
+SBLDN 20
+Bailey: 
+Surprised
+	Sam!!!
+BEGIN DNL
+SBLDN 21
+Sam: 
+Relaxed
+	What? Just calling her what she is.
+BEGIN DNL
+SBLDN 22
+Sam: 
+Concerned
+	What did she even say?
+BEGIN BNL
+SBLBN 1
+	1 -> She Called Me a Bookworm
+	2 -> She Called Me Fat
+	3 -> It Doesn’t Matter
+END NL
+
+START NL
+SBL BN NL 1
+
+BEGIN DNL
+SBL BN NL1 DN 1
+Bailey: 
+Embarrassed
+			She called me “Bookworm Bailey.”
+		BEGIN DNL
+SBL BN NL1 DN 2
+		Sam: 
+		Surprised
+			Seriously!?
+BEGIN DNL
+SBL BN NL1 DN 3
+Sam: 
+Laughing
+That’s not even a good insult.
+		BEGIN DNL
+SBL BN NL1 DN 4
+		Bailey: 
+		Excited
+			That’s what I said!
+		BEGIN DNL
+SBL BN NL1 DN 5
+		Sam: 
+		Friendly
+			How are you going to let a little thing like that get to you?
+	BEGIN DNL
+SBL BN NL1 DN 6
+	Bailey: 
+	Embarrassed
+			I know. It’s dumb.
+BEGIN DNL
+SBL BN NL1 DN 7
+Bailey: 
+Defeated
+Jassica and Persia were with her and it just… got to me.
+		BEGIN DNL
+SBL BN NL1 DN 8
+		Sam: 
+		Laughing
+			Dude. Nataly wouldn’t be nothing without those two backing her up.
+		BEGIN DNL
+SBL BN NL1 DN 9
+		Bailey: 
+		Smiling
+That’s a double negative, Sam.
+BEGIN DNL
+SBL BN NL1 DN 10
+Sam: 
+Confused
+What?
+BEGIN DNL
+SBL BN NL1 DN 11
+Bailey: 
+Laughing
+“wouldn’t be nothing” means she would still be something.
+		BEGIN DNL
+SBL BN NL1 DN 12
+		Sam: 
+		Sarcastic
+			Yeah. She’d still be a flakey-scaled bitch.
+		BEGIN DNL
+SBL BN NL1 DN 13
+		Sam: 
+		Sarcastic
+And only a bookworm would point out a double negative, Bailey.
+		BEGIN DNL
+SBL BN NL1 DN 14
+		Bailey: 
+		Laughing
+			That’s still not a good insult.
+		BEGIN DNL
+SBL BN NL1 DN 15
+		Sam: 
+		Laughing
+			Obviously!
+BEGIN DNL
+SBL BN NL1 DN 16
+Bailey: 
+Happy
+Okay
+
+END NL
+
+START NL
+SBL BN NL 2
+
+BEGIN DNL
+SBL BN NL2 DN 1
+Bailey: 
+Emarrassed
+			Jassica and Nataly were making fun of my weight.
+		BEGIN DNL
+SBL BN NL2 DN 2
+		Sam: 
+		Flat
+			Bailey. You’re not fat.
+		BEGIN DNL
+SBL BN NL2 DN 3
+		Bailey: 
+		Embarrassed
+			I know…
+		BEGIN DNL
+SBL BN NL2 DN 4
+		Sam: 
+		Friendly
+			No, seriously. You’re practically a twig.
+BEGIN DNL
+SBL BN NL2 DN 5
+Sam: 
+Laughing
+If anything you need more pizza, not less.
+		BEGIN DNL
+SBL BN NL2 DN 6
+		Bailey: 
+		Soft Laugh
+Only you could ever make a case for more pizza being the healthy choice.
+		BEGIN DNL
+SBL BN NL2 DN 7
+		Sam: 
+		Laughing
+			Screw the healthy choice!
+		BEGIN DNL
+SBL BN NL2 DN 8
+		Sam: 
+		Shouting
+			And screw Natlie’s flakey little posse.
+BEGIN DNL
+SBL BN NL2 DN 9
+Sam: 
+Laughing
+Who even cares what they think?
+		BEGIN SN
+SBL BN NL2 SN 1
+School
+-1
+		BEGIN DNL
+SBL BN NL2 DN 10
+		Bailey: 
+		Defeated
+			I mean, most of the rest of the school.
+		BEGIN DNL
+SBL BN NL2 DN 11
+		Sam: 
+		Defiant
+			Well we don’t.
+BEGIN DNL
+SBL BN NL2 DN 12
+Sam: 
+ Friendly
+Here, just take a slice before it starts to get cold.
+		BEGIN DNL
+SBL BN NL2 DN 13
+		Bailey: 
+		Happy/Under Breath
+			But it’s better co-
+		BEGIN DNL
+SBL BN NL2 DN 14
+		Sam: 
+		 Laughing
+			IT IS NOT BETTER COLD!!!
+
+END NL
+
+START NL
+SBL BN NL 3
+
+BEGIN SN
+SBL BN NL3 SN 1
+Sam
+1
+BEGIN DNL
+SBL BN NL3 DN 1
+Bailey: 
+Embarrassed
+			It was dumb. Doesn’t really matter.
+		BEGIN DNL
+SBL BN NL3 DN 2
+		Sam: 
+		Excited
+			Eyyy! That’s my girl!.
+		BEGIN DNL
+SBL BN NL3 DN 3
+		Sam: 
+		Despressed
+			Still though…
+		BEGIN DNL
+SBL BN NL3 DN 4
+		Sam: 
+		Depressed
+	 I hate that she just gets away with that crap.
+		BEGIN DNL
+SBL BN NL3 DN 5
+		Bailey: 
+		Depressed
+			I know. But she isn’t worth it. 
+		BEGIN DNL
+SBL BN NL3 DN 6
+		Sam: 
+		Depressed
+			Yeah, you’re probably right. . .
+			
+END NL
+
+START NL
+SBL NL 2
+
+BEGIN DNL
+SBL2 DN 1
+Sam: 
+Excited
+	I’ve got it!
+	BEGIN DNL
+SBL2 DN 2
+Sam: 
+Happy
+I was thinking how we can get back at Nataly and her puppets.
+BEGIN DNL
+SBL2 DN 3
+Bailey: 
+Friendly
+	You really don’t have to keep comforting me.
+BEGIN DNL
+SBL2 DN 4
+Bailey: 
+Neutral
+I’d rather just forget about what they said today.
+BEGIN DNL
+SBL2 DN 5
+Sam: 
+Excited
+	No, not just for today. For how they are all the time!
+BEGIN DNL
+SBL2 DN 6
+Bailey: 
+Friendly
+	Sam. . .
+BEGIN DNL
+SBL2 DN 7
+Sam: 
+Imploring
+	Come on, Bailey. You know better than anyone that Nataly deserves it.
+BEGIN DNL
+SBL2 DN 8
+Bailey: 
+Uneasy
+	. . . . . .
+BEGIN DNL
+SBL2 DN 9
+Sam: 
+Excited
+It’ll be great!
+BEGIN DNL
+SBL2 DN 10
+Bailey: 
+Defeated
+	As long as it doesn’t involve anything that will get us in trouble.
+BEGIN DNL
+SBL2 DN 11
+Sam: 
+Mischievous
+	No promises.
+BEGIN DNL
+SBL2 DN 12
+Bailey: 
+Annoyed
+	. . . . . .
+BEGIN DNL
+SBL2 DN 13
+Sam: 
+Happy
+	So, the upcoming homecoming dance. . .
+
+	END NL

@@ -6,7 +6,8 @@ public enum NodeType {
     Dialogue,
     Branch,
     AutoBranch,
-    Stat
+    Stat,
+    SYSCALL
 }
 
 [CreateAssetMenu(menuName = "Dialogue System/Node")]
