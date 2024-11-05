@@ -1,0 +1,34 @@
+START NL
+NL_Test2
+
+BEGIN DNL
+NL_Test2 DNL1
+Player:
+Happy
+	Bap
+	
+BEGIN BNL
+BN_NL_Test2_1
+	1 -> Pizza One
+	2 -> Pizza 2
+END NL
+
+START NL
+BN_NLT2_NL1
+
+BEGIN DNL
+BN_NLT2_NL1 DNL1
+Player:
+Happy
+	Pizza One
+END NL
+
+START NL
+BN_NLT2_NL2
+
+BEGIN DNL
+BN_NLT2_NL2 DNL1
+Player:
+Happy
+	Pizza 2
+END NL

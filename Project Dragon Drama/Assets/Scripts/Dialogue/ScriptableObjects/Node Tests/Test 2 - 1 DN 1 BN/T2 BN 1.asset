@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0dbcea4d89cd6bd4dbe84be1bf04604c, type: 3}
+  m_Name: T2 BN 1
+  m_EditorClassIdentifier: 
+  nodeType: 1
+  opt1txt: What is the powerhouse of the Cell?
+  opt2txt: What is the mitochondria?
+  opt3txt: 
+  option1: {fileID: 11400000, guid: 932193f2413d12445a68b8134bba3ffa, type: 2}
+  option2: {fileID: 11400000, guid: 58368c5ba43beae4789f0e225f9eaa89, type: 2}
+  option3: {fileID: 0}

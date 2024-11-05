@@ -1,0 +1,21 @@
+START NL
+NL_Test4
+
+BEGIN DNL
+NL_Test4 DNL1
+Player:
+Neutral
+	Bap
+
+BEGIN SN
+SN_NL_Test4
+Nerd
+1
+
+BEGIN DNL
+NL_Test4 DNL2
+Player:
+Happy
+	I got smarter
+
+END NL

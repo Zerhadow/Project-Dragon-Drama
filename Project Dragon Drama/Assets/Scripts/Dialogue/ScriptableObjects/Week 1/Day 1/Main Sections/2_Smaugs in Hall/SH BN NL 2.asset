@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89a1fbfb77609f741a8f1de0fdb5dd1e, type: 3}
+  m_Name: SH BN NL 2
+  m_EditorClassIdentifier: 
+  linked: 0
+  advanceTime: 0
+  nodes:
+  - {fileID: 11400000, guid: d45dd6c4c5c2bb142b877fef35dba102, type: 2}
+  - {fileID: 11400000, guid: f8175d566c6a77441855004180d2ec28, type: 2}
+  - {fileID: 11400000, guid: c378ec64f2299f543b17bef00048149a, type: 2}
+  - {fileID: 11400000, guid: 1ad5ed40dc15c0740a15b9547c3047b0, type: 2}
+  - {fileID: 11400000, guid: d151ee49c112785478014574df4b4f4b, type: 2}
+  assetName: SH BN NL 2
