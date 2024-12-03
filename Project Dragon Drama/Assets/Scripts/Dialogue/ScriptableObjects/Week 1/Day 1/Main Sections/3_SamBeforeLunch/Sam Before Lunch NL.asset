@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89a1fbfb77609f741a8f1de0fdb5dd1e, type: 3}
+  m_Name: Sam Before Lunch NL
+  m_EditorClassIdentifier: 
+  linked: 1
+  advanceTime: 1
+  nodes:
+  - {fileID: 11400000, guid: 9a1ca91f58ea91f47896c296c1a7072a, type: 2}
+  - {fileID: 11400000, guid: 6cc4a734d24256e48a2dab9fed418d04, type: 2}
+  - {fileID: 11400000, guid: a3fb941a3da5df8479672c4a1622cc5d, type: 2}
+  - {fileID: 11400000, guid: 3e7bfa90ef16e174896a5ffab277eda5, type: 2}
+  - {fileID: 11400000, guid: ac14eb938be4b2841a7b1addf7fdae38, type: 2}
+  - {fileID: 11400000, guid: 17b274c89a93cd54b80c94d8a58dbe62, type: 2}
+  - {fileID: 11400000, guid: cec8331e973058346862cd4c524da4f7, type: 2}
+  - {fileID: 11400000, guid: 95dc111eae697764aba5724390360a9a, type: 2}
+  - {fileID: 11400000, guid: 00a99350dd1d6d2458afae5e62ff3fa8, type: 2}
+  - {fileID: 11400000, guid: 24e021f565097ae4fa2baee5fed5d531, type: 2}
+  - {fileID: 11400000, guid: e9aa1e98cc794ad49b2ded6cefb56ec6, type: 2}
+  - {fileID: 11400000, guid: 54ce7314cf9f4ba44aedc097650cb58f, type: 2}
+  - {fileID: 11400000, guid: 0515d0b05b32da14c8f8e73e7fec06bb, type: 2}
+  - {fileID: 11400000, guid: 5a1e64052af03944c84c4eec773a35ba, type: 2}
+  - {fileID: 11400000, guid: 271385a6c078e0341b5bfd2a76363a77, type: 2}
+  - {fileID: 11400000, guid: 8c3584a7c77b7f74bb3a31cec54d2936, type: 2}
+  - {fileID: 11400000, guid: 82d67746941e85d4f99e1d899cb7e7ac, type: 2}
+  - {fileID: 11400000, guid: 26a22ac46014c9d44a2fedf7de17c4e4, type: 2}
+  - {fileID: 11400000, guid: 560f2794020a61b418aa0471b1ee912d, type: 2}
+  - {fileID: 11400000, guid: bfe033f1e7c935e40a535198708460c0, type: 2}
+  - {fileID: 11400000, guid: b914fe5792b79944b92cd144ba9c5541, type: 2}
+  - {fileID: 11400000, guid: b8d3b7597aa600349a6384abb9a0054a, type: 2}
+  - {fileID: 11400000, guid: 45e375e2ea4baaf4fa120f99e87f985f, type: 2}
+  assetName: Sam Before Lunch NL
+  linkedNL: {fileID: 0}

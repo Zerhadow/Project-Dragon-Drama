@@ -6,6 +6,7 @@ using UnityEngine.Audio;
 public class AudioManager : MonoBehaviour {
     public AudioManager instance;
     public AudioFile[] audioFiles;
+    private AudioFile currFile; // current audio file being played
 
     private float timeToReset;
     private bool timerIsSet = false;
@@ -42,6 +43,23 @@ public class AudioManager : MonoBehaviour {
                 s.source.pitch = 1f + UnityEngine.Random.Range(-s.pitchVariation, s.pitchVariation);
             s.source.Play();
         }
+    }
+
+    public void PlayTitle(string name){
+        AudioFile s = Array.Find(instance.audioFiles, AudioFile => AudioFile.audioName == name);
+        if (s == null) {
+            Debug.LogError("Sound name" + name + "not found!");
+            return;
+        } else {
+            if (s.pitchVariation > 0)
+                s.source.pitch = 1f + UnityEngine.Random.Range(-s.pitchVariation, s.pitchVariation);
+            currFile = s;
+            s.source.Play();
+        }
+    }
+
+    public void StopTitle() {
+        currFile.source.Stop();
     }
 
     public void StopSound(String name) {

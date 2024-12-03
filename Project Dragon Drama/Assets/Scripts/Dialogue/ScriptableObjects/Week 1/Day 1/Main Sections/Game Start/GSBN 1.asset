@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0dbcea4d89cd6bd4dbe84be1bf04604c, type: 3}
+  m_Name: GSBN 1
+  m_EditorClassIdentifier: 
+  nodeType: 1
+  opt1txt: Pay Attention to Class
+  opt2txt: The Pizza Squares
+  opt3txt: 
+  option1: {fileID: 11400000, guid: 17aec6746e1b6fa49894a39e8298a45c, type: 2}
+  option2: {fileID: 11400000, guid: b8d89eee4a6c0374095e29d3aa512e79, type: 2}
+  option3: {fileID: 0}

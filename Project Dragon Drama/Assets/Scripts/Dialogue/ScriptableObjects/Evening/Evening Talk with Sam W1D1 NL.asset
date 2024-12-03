@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89a1fbfb77609f741a8f1de0fdb5dd1e, type: 3}
+  m_Name: Evening Talk with Sam W1D1 NL
+  m_EditorClassIdentifier: 
+  linked: 0
+  advanceTime: 1
+  nodes:
+  - {fileID: 11400000, guid: 63530a7d7b9ccd542b45400d58b60e02, type: 2}
+  - {fileID: 11400000, guid: 4a57970ae4169174fb6ebf2341a9d086, type: 2}
+  - {fileID: 11400000, guid: 409c7f25bd763f749a6475e11aa6b33a, type: 2}
+  - {fileID: 11400000, guid: d55cfa358b7defe43a8bb16ac8f60975, type: 2}
+  - {fileID: 11400000, guid: 64e6da8a58a88a947b3bb97070d49c18, type: 2}
+  - {fileID: 11400000, guid: 0e3b8da2f42ba9d48aaf6141a1054546, type: 2}
+  - {fileID: 11400000, guid: 3af3efdec6f721a4ab99f25766fcc9f6, type: 2}
+  - {fileID: 11400000, guid: 857393f172054fe4dbc0f9d360fc90a0, type: 2}
+  - {fileID: 11400000, guid: 427cbb929d1a6ca42a2970cfe4d86206, type: 2}
+  - {fileID: 11400000, guid: c70ab278af3b182408e400b091706a1d, type: 2}
+  - {fileID: 11400000, guid: d6de746dff130504196657a2bdac2f64, type: 2}
+  - {fileID: 11400000, guid: 728c333d329cb094db38c469fa3f7736, type: 2}
+  - {fileID: 11400000, guid: 48d8bbc30980e6b4d960b00254a44910, type: 2}
+  - {fileID: 11400000, guid: 837d0ae4b18a6cb40abad01287c823cd, type: 2}
+  - {fileID: 11400000, guid: 69aa5b613b6777b4c8bcf1117faf747c, type: 2}
+  - {fileID: 11400000, guid: bda9a245831e03b409f056410f1b2736, type: 2}
+  - {fileID: 11400000, guid: 6b764f3de05f3db4590d1bdb60f4abd6, type: 2}
+  - {fileID: 11400000, guid: 23246a70ff9845e46bdb65a2b8fa9abd, type: 2}
+  - {fileID: 11400000, guid: c47e56e1698344c45aa4b2b3caecaf84, type: 2}
+  - {fileID: 11400000, guid: e59be13a7a92e9341ac880c3648209be, type: 2}
+  - {fileID: 11400000, guid: 740acee70f5f5474ea67682ecdc9628d, type: 2}
+  - {fileID: 11400000, guid: e3d80b98f69e36548b582559d7cf98cf, type: 2}
+  - {fileID: 11400000, guid: ef153226c85a4364889dfed13d29d488, type: 2}
+  - {fileID: 11400000, guid: 91b826f4cafe58e458e122a9757946da, type: 2}
+  - {fileID: 11400000, guid: 7f56ccce697666e46a17ddc6c7623987, type: 2}
+  - {fileID: 11400000, guid: 19720275170cd154e873e9fa127e2694, type: 2}
+  - {fileID: 11400000, guid: 5a868627939d47f409f8e0b5dc13bd16, type: 2}
+  - {fileID: 11400000, guid: 8a6860cd1c9f35a4c98d564696085bb3, type: 2}
+  - {fileID: 11400000, guid: ef8e75d06277e894382047d2dfc64724, type: 2}
+  - {fileID: 11400000, guid: 5447460a910fbc1479ba5b08fc7365f7, type: 2}
+  - {fileID: 11400000, guid: 6f5aaa77f9bdbb74cbdf485847ed8117, type: 2}
+  - {fileID: 11400000, guid: 43970c72f265f8a489e6509d36fcff96, type: 2}
+  - {fileID: 11400000, guid: 06f891a42d5722b4eafef119341ea926, type: 2}
+  - {fileID: 11400000, guid: 44416d1bad9e31040b465ea4d9fa3663, type: 2}
+  assetName: Evening Talk with Sam W1D1 NL
+  linkedNL: {fileID: 0}

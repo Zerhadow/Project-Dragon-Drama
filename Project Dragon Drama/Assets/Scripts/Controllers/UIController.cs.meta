@@ -3,7 +3,11 @@ guid: 4ecf87d4fed525a4c91a67488f900db1
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - canvas: {fileID: 764487307730973364, guid: f2f334916422b54449e99d596a749782, type: 3}
+  - DialogueObj: {instanceID: 0}
+  - pauseMenuObj: {instanceID: 0}
+  - pressETextBox: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
